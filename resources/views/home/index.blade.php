@@ -14,5 +14,5 @@
     @include('home.subscribe-home.index')
 
     {{-- Booking Lapangan --}}
-    <h1>test aja ini ko</h1>
+    @include('home.kompetisi-home.index')
 @endsection
