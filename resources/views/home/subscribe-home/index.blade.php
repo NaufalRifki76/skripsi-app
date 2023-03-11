@@ -14,8 +14,8 @@
 <br>
 <div class="container mt-5 mb-5">
     <div class="row">
-        <div class="col-md-5 mobile-subscribe" data-aos="zoom-in" data-aos-delay="400">
-            <img src="" alt="img-subscribe">
+        <div class="col-md-5 mobile-subscribe text-center mb-3" data-aos="zoom-in" data-aos-delay="400">
+            <img src="{{ asset('Assets/home/subscribe/subscribe.png') }}" class="img-fluid" width="80%" alt="img-subscribe">
         </div>
         <div class="col-md-7">
             <div class="text-center">
@@ -34,14 +34,14 @@
                 </div>
                 <div class="col-4 text-center">
                     <a href="">
-                        <button type="button" class="btn"
+                        <button type="button" class="btn mt-3"
                             style="background-color: #62B6B7; color: white">Berlangganan</button>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="col-md-5 web-subscribe" data-aos="fade-left" data-aos-delay="400">
-            <img src="" alt="img-subscribe">
+        <div class="col-md-5 web-subscribe text-center" data-aos="fade-left" data-aos-delay="400">
+            <img src="{{ asset('Assets/home/subscribe/subscribe.png') }}" class="img-fluid" alt="img-subscribe">
         </div>
     </div>
 </div>
