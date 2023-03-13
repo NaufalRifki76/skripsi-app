@@ -15,4 +15,8 @@
 
     {{-- Booking Lapangan --}}
     @include('home.kompetisi-home.index')
+
+    {{-- Pinjam Alat --}}
+    @include('home.pinjam-home.index')
+
 @endsection
