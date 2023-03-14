@@ -19,4 +19,5 @@
     {{-- Pinjam Alat --}}
     @include('home.pinjam-home.index')
 
+    
 @endsection

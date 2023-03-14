@@ -9,15 +9,15 @@
             <div class="col-md-2">
                 <a href="">
                     <button type="button" class="btn mt-1"
-                        style="background-color: #62B6B7; color: white; border-radius: 12px">Lihat Semua</button>
+                        style="background-color: #62B6B7; color: white">Lihat Semua</button>
                 </a>
             </div>
         </div>
         <div class="row mt-5" data-aos="zoom-in" data-aos-delay="400">
             <div class="col-md-4">
                 <a class="text-dark" style="text-decoration: none" href="">
-                    <div class="card" style="border-radius: 12px">
-                        <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}" class="card-img-top img-fluid" style="height: 250px" alt="...">
+                    <div class="card mb-3" style="border-radius: 12px">
+                        <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}" class="card-img-top img-fluid" style="height: 250px; border-top-left-radius: 12px; border-top-right-radius: 12px" alt="...">
                         <div class="card-body">
                             <h5 class="card-title" style="color: #439A97">Nama Kompetisi</h5>
                             <div class="row">
@@ -43,8 +43,8 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <div class="card" style="border-radius: 12px">
-                    <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}" class="card-img-top img-fluid" style="height: 250px" alt="...">
+                <div class="card mb-3" style="border-radius: 12px">
+                    <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}" class="card-img-top img-fluid" style="height: 250px; border-top-left-radius: 12px; border-top-right-radius: 12px" alt="...">
                     <div class="card-body">
                         <h5 class="card-title" style="color: #439A97">Nama Kompetisi</h5>
                         <div class="row">
@@ -69,8 +69,8 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card" style="border-radius: 12px">
-                    <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}" class="card-img-top img-fluid" style="height: 250px" alt="...">
+                <div class="card mb-3" style="border-radius: 12px">
+                    <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}" class="card-img-top img-fluid" style="height: 250px; border-top-left-radius: 12px; border-top-right-radius: 12px" alt="...">
                     <div class="card-body">
                         <h5 class="card-title" style="color: #439A97">Nama Kompetisi</h5>
                         <div class="row">
