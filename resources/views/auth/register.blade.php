@@ -24,20 +24,37 @@
 
               </div>
 
-              <div class="form-outline mb-4">
-                <input type="text" id="form2Example18" class="form-control form-control-lg" />
-                <label class="form-label" for="form2Example18">Nama Lengkap</label>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Nama Lengkap (sesuai di KTP)</label>
               </div>
   
-              <div class="form-outline mb-4">
-                <input type="email" id="form2Example18" class="form-control form-control-lg" />
-                <label class="form-label" for="form2Example18">Email address</label>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email</label>
               </div>
-  
-              <div class="form-outline mb-4">
-                <input type="password" id="form2Example28" class="form-control form-control-lg" />
-                <label class="form-label" for="form2Example28">Password</label>
+
+              <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">No. Handphone</label>
               </div>
+
+              <div class="form-group row mt-3">
+                <div class="col-6">
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Password</label>
+                  </div>
+                </div>
+                
+                <div class="col-6">
+                  <div class="form-floating mb-3 ">
+                    <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput"> Ulangi Password</label>
+                  </div>
+                </div>
+              </div>
+              
   
               <div>
 

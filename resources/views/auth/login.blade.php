@@ -24,14 +24,14 @@
 
               </div>
   
-              <div class="form-outline mb-4">
-                <input type="email" id="form2Example18" class="form-control form-control-lg" />
-                <label class="form-label" for="form2Example18">Email address</label>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput input-label-sm">Email</label>
               </div>
   
-              <div class="form-outline mb-4">
-                <input type="password" id="form2Example28" class="form-control form-control-lg" />
-                <label class="form-label" for="form2Example28">Password</label>
+              <div class="form-group form-floating mb-3">
+                <input type="password" class="form-control form-control-sm"  placeholder=".form-control-sm" id="floatingInput">
+                <label for="floatingInput">Password</label>
               </div>
   
               <div>
