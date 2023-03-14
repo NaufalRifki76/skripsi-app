@@ -28,3 +28,8 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('auth.register');
 });
+
+Route::get('/subscribe', function () {
+    return view('subscribe.subscribe');
+});
+

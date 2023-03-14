@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto" style="margin-top: -2px">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/home">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="#">Booking Lapangan</a>
@@ -19,7 +19,7 @@
                     <a class="nav-link" href="#">Info Kompetisi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Berlangganan</a>
+                    <a class="nav-link" href="/subscribe">Berlangganan</a>
                 </li>
             </ul>
             <div class="">

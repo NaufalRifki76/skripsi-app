@@ -33,7 +33,7 @@
                     <p class="fs-6 mt-2" style="color: #62B6B7"><b>Klik tombol di samping untuk berlangganan</b></p>
                 </div>
                 <div class="col-4 text-center">
-                    <a href="">
+                    <a href="/subscribe">
                         <button type="button" class="btn mt-3"
                             style="background-color: #62B6B7; color: white">Berlangganan</button>
                     </a>
