@@ -30,7 +30,7 @@
 
     <div  class="card mt-5 border d-flex shadow p-3 mx-3"> 
       <div class="d-flex justify-content-end">
-        <button type="button" class="btn" style="background-color: #62B6B7; color: white" type="submit" ><i class="fa-solid fa-plus"></i></button>
+        <button class="btn" style="background-color: #62B6B7; color: white" type="submit" ><i class="fa-solid fa-plus"></i></button>
       </div>
       <form class="row g-3">
         <div class="col-12">

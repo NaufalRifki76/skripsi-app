@@ -36,8 +36,7 @@
                     </div>
                     <div class="col-5 text-center">
                         <a href="/subscribe">
-                            <button type="button" class="btn mt-2"
-                                style="background-color: #62B6B7; color: white">Berlangganan</button>
+                            <button type="button" class="btn-green-hover" style="margin-top: 7px">Berlangganan</button>
                         </a>
                     </div>
                 </div>

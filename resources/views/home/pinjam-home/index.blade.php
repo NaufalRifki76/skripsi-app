@@ -38,8 +38,7 @@
                     </div>
                     <div class="col-5 text-center">
                         <a href="">
-                            <button type="button" class="btn mt-3"
-                                style="background-color: #62B6B7; color: white">Sewa Perlengkapan</button>
+                            <button type="button" class="btn-green-hover" style="margin-top: 14px">Sewa Perlengkapan</button>
                         </a>
                     </div>
                 </div>

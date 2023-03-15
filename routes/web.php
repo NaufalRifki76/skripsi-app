@@ -30,10 +30,14 @@ Route::get('/register', function () {
 });
 
 Route::get('/subscribe', function () {
-    return view('subscribe.subscribe');
+    return view('subscribe.index');
+});
+
+Route::get('/lapangan', function () {
+    return view('lapangan.index');
 });
 
 Route::get('/sewa-perlengkapan', function () {
-    return view('sewa-perlengkapan.sewa-perlengkapan');
+    return view('sewa-perlengkapan.index');
 });
 

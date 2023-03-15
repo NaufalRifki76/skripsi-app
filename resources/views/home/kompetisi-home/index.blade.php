@@ -8,8 +8,7 @@
             </div>
             <div class="col-md-2">
                 <a href="">
-                    <button type="button" class="btn mt-1"
-                        style="background-color: #62B6B7; color: white">Lihat Semua</button>
+                    <button type="button" class="btn-green-transition mt-1">Lihat Semua</button>
                 </a>
             </div>
         </div>

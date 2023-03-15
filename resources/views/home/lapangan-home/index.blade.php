@@ -16,7 +16,7 @@
             height: 240px;
         }
         .card-size-web {
-            max-height: 300px;
+            max-height: 241px;
         }
     }
 </style>
@@ -88,7 +88,7 @@
     <div class="text-center mt-3">
         <h6 style="color: #FCE700" data-aos="fade-right" data-aos-delay="300">Klik tombol di bawah untuk melihat penawaran lainnya</h6>
         <a href="" data-aos="zoom-in" data-aos-delay="400">
-            <button type="button" class="btn mt-2" style="background-color: #62B6B7; color: white">Lihat Lapangan
+            <button type="button" class="btn-green-transition mt-2">Lihat Lapangan
                 Lainnya</button>
         </a>
     </div>

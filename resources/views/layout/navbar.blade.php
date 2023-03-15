@@ -23,7 +23,7 @@
                 </li>
             </ul>
             <div class="">
-                <button type="button" class="btn" style="background-color: #62B6B7; color: white">Login</button>
+                <button type="button" class="btn-green-hover">Login</button>
             </div>
         </div>
     </div>

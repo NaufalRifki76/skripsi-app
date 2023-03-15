@@ -19,5 +19,7 @@
     {{-- Pinjam Alat --}}
     @include('home.pinjam-home.index')
 
-    
+    {{-- footer --}}
+    @include('layout.footer')
+
 @endsection
