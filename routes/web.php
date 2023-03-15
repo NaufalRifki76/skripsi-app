@@ -33,3 +33,7 @@ Route::get('/subscribe', function () {
     return view('subscribe.subscribe');
 });
 
+Route::get('/sewa-perlengkapan', function () {
+    return view('sewa-perlengkapan.sewa-perlengkapan');
+});
+
