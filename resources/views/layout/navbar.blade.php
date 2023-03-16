@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto" style="margin-top: -2px">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="#">Booking Lapangan</a>
@@ -23,7 +23,9 @@
                 </li>
             </ul>
             <div class="">
-                <button type="button" class="btn-green-hover">Login</button>
+                <a href="{{ route('auth.login') }}">
+                    <button type="button" class="btn" style="background-color: #62B6B7; color: white">Login</button>
+                </a>
             </div>
         </div>
     </div>
