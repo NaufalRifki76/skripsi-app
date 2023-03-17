@@ -35,3 +35,16 @@ Route::get('/sewa-perlengkapan', function () {
     return view('sewa-perlengkapan.index');
 });
 
+Route::get('/info-kompetisi', function () {
+    return view('info-kompetisi.index');
+});
+
+Route::get('/tingkat-sekolah', function () {
+    return view('info-kompetisi.tingkat-sekolah');
+});
+
+
+Route::get('/tingkat-umur', function () {
+    return view('info-kompetisi.tingkat-umur');
+});
+
