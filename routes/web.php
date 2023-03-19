@@ -1,12 +1,20 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\VerificationController;
 use Illuminate\Support\Facades\Route;
 
+// Register
+Route::get('/register-user', [RegisterController::class, 'index'])->name('register-user');
+Route::post('/register-new', [RegisterController::class, 'create'])->name('register-new');
+Route::get("/email-confirm/{token}", [VerificationController::class, "parsingUrl"])->name("email-confirm");
 
-// Route::get('/home', function () {
-//     return view('welcome');
-// });
+// Login
+Route::match(['get', 'post'], '/login', [AuthController::class, 'login'])->name('auth.login');
 
+
+// --------------------- BAGIAN BAWAH INI UNTUK TESTING -------------------- //
 Route::get('/', function () {
     return view('home.index');
 })->name('home');

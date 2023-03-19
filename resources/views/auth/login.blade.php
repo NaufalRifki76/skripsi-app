@@ -62,7 +62,7 @@
                                         </div>
 
                                         <div class="d-flex justify-content-center mb-5">
-                                            <a href="/register" class="link-info" style=" color: #439A97">Belum Punya
+                                            <a href="{{route('register-user')}}" class="link-info" style=" color: #439A97">Belum Punya
                                                 Akun?</a></p>
                                         </div>
 
