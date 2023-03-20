@@ -1,6 +1,6 @@
 <br>
 <div class="mt-5" style="background-color: #ECFAF0">
-    <div class="container-fluid text-center">
+    <div class="container text-center">
         <br><br>
         <div data-aos="fade-right" data-aos-delay="300">
             <h6 style="color: #FCE700">Mengapa anda harus memesan lapangan di sini ?</h6>

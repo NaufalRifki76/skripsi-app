@@ -31,18 +31,27 @@ Route::get('/register', function () {
     return view('auth.register');
 })->name('auth.register');
 
+//  Subscribe
 Route::get('/subscribe', function () {
     return view('subscribe.index');
 });
 
+// Lapangan
 Route::get('/lapangan', function () {
     return view('lapangan.index');
 });
 
+Route::get('/lapangan-detail', function () {
+    return view('lapangan.detail');
+});
+
+
+// Perlengkapan
 Route::get('/sewa-perlengkapan', function () {
     return view('sewa-perlengkapan.index');
 });
 
+// Kompetisi
 Route::get('/info-kompetisi', function () {
     return view('info-kompetisi.index');
 });
@@ -50,7 +59,6 @@ Route::get('/info-kompetisi', function () {
 Route::get('/tingkat-sekolah', function () {
     return view('info-kompetisi.tingkat-sekolah');
 });
-
 
 Route::get('/tingkat-umur', function () {
     return view('info-kompetisi.tingkat-umur');
