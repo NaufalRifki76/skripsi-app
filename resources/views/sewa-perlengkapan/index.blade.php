@@ -11,7 +11,6 @@
         </div> 
 
   <form class="row g-3 mx-5">
-    
     <div class="col-12">
         <label for="inputState" class="form-label">Nama Lapangan</label>
         <select id="inputState" class="form-select">

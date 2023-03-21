@@ -14,11 +14,12 @@
             <div class="d-flex justify-content-center">
                 <p class="fw-bold" style="color: #439A97">Kompetisi Tingkat Sekolah</p>
             </div>
+
+            <a href="" class="text-decoration-none">
             <div class="card border-2 d-flex shadow p-5 align-items-center"> 
                     <div class="d-flex justify-content-center">
                         <img src="{{ asset('Assets/logo/logo.png') }}" class="img-fluid" width="300px" alt="logo">
-                      </div>
-               
+                    </div>
                     <p class="h-1 fw-bold pt-3" style="color: #439A97">Kategori Pendidikan :</p> 
                         <div class="mb-5 text-muted">
                             <p style="font-size: 15px"><i style="color: #439A97 " class="fa-solid fa-futbol me-2"></i>SD</p> 
@@ -26,13 +27,15 @@
                             <p style="font-size: 15px"><i style="color: #439A97 " class="fa-solid fa-futbol me-2"></i>SMA</p> 
                             <p style="font-size: 15px"><i style="color: #439A97 " class="fa-solid fa-futbol me-2"></i>UNIVERSITAS</p> 
                         </div> 
-                    </div>
+            </div>
+            </a>
          </div>
 
          <div class="col-lg-4 mb-5"> 
             <div class="d-flex justify-content-center">
                 <p class="fw-bold" style="color: #439A97">Kompetisi Kategori Umur</p>
             </div>
+            <a href="" class="text-decoration-none">
             <div class="card border-2 d-flex shadow p-5 align-items-center"> 
                 <div class="d-flex justify-content-center">
                     <img src="{{ asset('Assets/logo/logo.png') }}" class="img-fluid" width="300px" alt="logo">
@@ -44,7 +47,8 @@
                     <p style="font-size: 15px"><i style="color: #439A97 " class="fa-solid fa-futbol me-2"></i>Usia 19 Tahun</p> 
                     <p style="font-size: 15px"><i style="color: #439A97 " class="fa-solid fa-futbol me-2"></i>Semua Usia (Umum)</p> 
                 </div> 
-            </div> 
+            </div>
+            </a>
         </div> 
         
     </div>
