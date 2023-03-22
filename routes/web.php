@@ -45,6 +45,10 @@ Route::get('/lapangan-detail', function () {
     return view('lapangan.detail');
 });
 
+Route::get('/pesan-lapangan', function () {
+    return view('pesan-lapangan.detail');
+});
+
 
 // Perlengkapan
 Route::get('/sewa-perlengkapan', function () {
@@ -64,9 +68,11 @@ Route::get('/tingkat-umur', function () {
     return view('info-kompetisi.tingkat-umur');
 });
 
-
 Route::get('/kompetisi-detail', function () {
     return view('info-kompetisi.detail');
 });
+
+
+
 
 
