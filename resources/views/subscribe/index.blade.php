@@ -4,22 +4,21 @@
 <div>
     <div class="container"> 
         <div> 
-            <p class="h1 fw-bold text-center mb-2"  style="color: #439A97">Subscribe</p> 
+            <p class="h1 fw-bold text-center mb-2"  style="color: #439A97">Berlangganan</p> 
         </div> 
         <div> 
-            <p class="h4 fw-normal text-center mb-5"  style="color: #FCE700">Dapatkan keuntungan dalam 
+            <p class="h5 fw-normal text-center mb-5 px-5"  style="color: #FCE700">Dapatkan keuntungan dalam 
                 pemesanan lapangan dan peminjaman alat olahraga dengan berlangganan berama kami.</p> 
         </div> 
         <div class="row mt-3 d-flex justify-content-center"> 
             <div class="col-lg-4 mb-5  "> 
-                <div style="border-color: #439A97" class="card border-3 d-flex shadow p-5 align-items-center justify-content-center"> 
+                <div style="border: none; border-radius: 12px" class="card border-3 d-flex shadow p-5 align-items-center justify-content-center"> 
                     <div class="d-flex justify-content-center">
                         <img src="{{ asset('Assets/logo/logo.png') }}" class="img-fluid" width="300px" alt="logo">
                       </div>
-                        <p class="h-1 fw-bold pt-3" style="color: #439A97">AMATIR</p> 
-                        <span class="price mb-3"> 
-                            <sup class="sup">Rp</sup> 
-                            <span class="number">999999999</span>
+                        <p class="h5 fw-bold pt-3" style="color: #439A97">AMATIR</p> 
+                        <span class="price mb-3">  
+                            <span class="number">Free</span>
                          </span> 
                             <ul class="mb-5 list-unstyled text-muted"> 
                                 <p style="font-size: 15px"><i style="color: #439A97 " class="fa-solid fa-check me-2"></i>Akses booking lapangan 30 hari</p> 
@@ -31,11 +30,11 @@
                     </div>
 
                          <div class="col-lg-4 mb-5"> 
-                            <div style="border-color: #FCE700" class="card border-3 d-flex shadow p-5 align-items-center justify-content-center"> 
+                            <div style="border: none; border-radius: 12px" class="card border-3 d-flex shadow p-5 align-items-center justify-content-center"> 
                                 <div class="d-flex justify-content-center">
                                     <img src="{{ asset('Assets/logo/logo.png') }}" class="img-fluid" width="300px" alt="logo">
                                   </div>
-                                <p class="h-1 fw-bold pt-3" style="color: #F7C04A">PROFESIONAL</p> 
+                                <p class="h5 fw-bold pt-3" style="color: #F7C04A">PROFESIONAL</p> 
                                 <span class="price mb-3"> 
                                     <sup class="sup">Rp</sup> 
                                     <span class="number">999999999</span> 

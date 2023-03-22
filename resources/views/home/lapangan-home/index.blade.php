@@ -25,7 +25,7 @@
     <h2 data-aos="fade-right" data-aos-delay="300" style="color: #439A97">Lapangan Yang Tersedia</h2>
     <div class="row mt-5" data-aos="zoom-in" data-aos-delay="400">
         <div class="col-md-6 card-mob">
-            <div class="card mb-3 card-size-web" style="border-radius: 12px;">
+            <div class="card mb-3 shadow card-size-web" style="border-radius: 12px; border: none;">
                 <div class="row g-0">
                     <div class="col-md-4 card-image">
                         <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}"
@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="card mb-3 card-size-web card-mob" style="border-radius: 12px;">
+            <div class="card mb-3 shadow card-size-web card-mob" style="border-radius: 12px; border: none;">
                 <div class="row g-0">
                     <div class="col-md-4 card-image">
                         <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}"
