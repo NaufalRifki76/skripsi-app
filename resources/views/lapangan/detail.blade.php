@@ -10,6 +10,7 @@
         .mobile-pembatalan {
             display: none;
         }
+
         .margin-pembatalan {
             margin-top: -20px;
         }
@@ -62,10 +63,61 @@
                         <h4 style="color: #439A97"><u>Fasilitas</u></h4>
                         <div class="row">
                             <div class="col-md-6">
-
+                                <div class="d-flex align-items-center ms-5">
+                                    <div class="flex-shrink-0 my-3">
+                                        <img src="{{ asset('Assets/image-lapangan/drinks.png') }}" class="img-fluid"
+                                            width="34px" alt="...">
+                                    </div>
+                                    <div class="ms-3">
+                                        Minuman
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center ms-5">
+                                    <div class="flex-shrink-0 my-3">
+                                        <img src="{{ asset('Assets/image-lapangan/changing-room.png') }}" class="img-fluid"
+                                            width="34px" alt="...">
+                                    </div>
+                                    <div class="ms-3">
+                                        Ruang Ganti
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center ms-5">
+                                    <div class="flex-shrink-0 my-3">
+                                      <img src="{{ asset('Assets/image-lapangan/wifi.png') }}" class="img-fluid" width="34px" alt="...">
+                                    </div>
+                                    <div class="ms-3">
+                                      Wifi
+                                    </div>
+                                  </div>
                             </div>
                             <div class="col-md-6">
-
+                                <div class="d-flex align-items-center ms-5">
+                                    <div class="flex-shrink-0 my-3">
+                                        <img src="{{ asset('Assets/image-lapangan/toilet.png') }}" class="img-fluid"
+                                            width="34px" alt="...">
+                                    </div>
+                                    <div class="ms-3">
+                                        Toilet
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center ms-5">
+                                    <div class="flex-shrink-0 my-3">
+                                        <img src="{{ asset('Assets/image-lapangan/parking.png') }}" class="img-fluid"
+                                            width="34px" alt="...">
+                                    </div>
+                                    <div class="ms-3">
+                                        Parkir Kendaraan
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center ms-5">
+                                    <div class="flex-shrink-0 my-3">
+                                        <img src="{{ asset('Assets/image-lapangan/sewa-perlengkapan.png') }}" class="img-fluid"
+                                            width="34px" alt="...">
+                                    </div>
+                                    <div class="ms-3">
+                                        Sewa Perlengkapan
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -84,8 +136,8 @@
 
                 <div class="row mb-4">
                     <div class="col-md-5 text-center mobile-pembatalan">
-                        <img src="{{ asset('Assets/image-lapangan/pembatalan-transaksi.png') }}" width="60%" class="img-fluid mb-3"
-                            style="" alt="...">
+                        <img src="{{ asset('Assets/image-lapangan/pembatalan-transaksi.png') }}" width="60%"
+                            class="img-fluid mb-3" style="" alt="...">
                     </div>
                     <div class="col-md-7 text-center mb-5">
                         <h4 style="color: #439A97"><u>Kebijakan Pembatalan Lapangan</u></h4>
@@ -96,8 +148,8 @@
                         </p>
                     </div>
                     <div class="col-md-5 text-center web-pembatalan">
-                        <img src="{{ asset('Assets/image-lapangan/pembatalan-transaksi.png') }}" width="60%" class="img-fluid margin-pembatalan"
-                            style="" alt="...">
+                        <img src="{{ asset('Assets/image-lapangan/pembatalan-transaksi.png') }}" width="60%"
+                            class="img-fluid margin-pembatalan" style="" alt="...">
                     </div>
                 </div>
             </div>

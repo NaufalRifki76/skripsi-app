@@ -46,7 +46,7 @@ Route::get('/lapangan-detail', function () {
 });
 
 Route::get('/pesan-lapangan', function () {
-    return view('pesan-lapangan.detail');
+    return view('pesan-lapangan.index');
 });
 
 
