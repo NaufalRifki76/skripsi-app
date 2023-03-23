@@ -11,21 +11,20 @@ Route::post('/register-new', [RegisterController::class, 'create'])->name('regis
 Route::get("/email-confirm/{token}", [VerificationController::class, "parsingUrl"])->name("email-confirm");
 
 // Login
-Route::match(['get', 'post'], '/login', [AuthController::class, 'login'])->name('auth.login');
-
+Route::get('/', [AuthController::class, 'index'])->name('auth.dashboard');
+Route::get('/view', [AuthController::class, 'view'])->name('auth.view');
+Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
+Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 // --------------------- BAGIAN BAWAH INI UNTUK TESTING -------------------- //
-Route::get('/', function () {
-    return view('home.index');
-})->name('home');
+// Route::get('/', function () {
+//     return view('home.index');
+// })->name('home');
 
 // name('login')    name digunakan untuk memanggil route. \
 // contoh jelek: href={{ url('/login') }}   
 // contoh bagus: href={{ route('login') }}
 // contoh pemakaian ada di view('layout.navbar')
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('auth.login');
 
 Route::get('/register', function () {
     return view('auth.register');
