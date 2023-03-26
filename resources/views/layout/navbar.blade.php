@@ -19,7 +19,7 @@
                     <a class="nav-link" href="#">Info Kompetisi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/subscribe">Berlangganan</a>
+                    <a class="nav-link" href="{{route('subscribe.index')}}">Berlangganan</a>
                 </li>
             </ul>
             @if(Sentinel::getUser())

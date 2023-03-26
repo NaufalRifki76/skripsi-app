@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\Features\VipController;
 use Illuminate\Support\Facades\Route;
 
 // Register
@@ -16,6 +17,10 @@ Route::match(['get', 'post'], '/login', [AuthController::class, 'login'])->name(
 Route::get('/view', [AuthController::class, 'view'])->name('auth.view');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+
+// Subscribe
+Route::get('/subscribe.index', [VipController::class, 'index'])->name('subscribe.index');
+Route::get('/subscribe.startplan', [VipController::class, 'subscribe'])->name('subscribe.startplan');
 
 // --------------------- BAGIAN BAWAH INI UNTUK TESTING -------------------- //
 // Route::get('/', function () {
@@ -71,8 +76,3 @@ Route::get('/tingkat-umur', function () {
 Route::get('/kompetisi-detail', function () {
     return view('info-kompetisi.detail');
 });
-
-
-
-
-

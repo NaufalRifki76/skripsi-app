@@ -25,7 +25,7 @@
                                 <p style="font-size: 15px"><i style="color: #439A97 " class="fa-solid fa-check me-2"></i>Pinjam perlengkapan (1 alat)</p> 
                                 <p style="font-size: 15px"><i style="color: #439A97 " class="fa-solid fa-check me-2"></i>Pinjam perlengkapan (1 alat)  </p> 
                             </ul> 
-                            <button type="button" class="btn" style="background-color: #62B6B7; color: white">Subscribe</button>
+                            <button type="button" class="btn" style="background-color: #62B6B7; color: white" disabled>Standar</button>
                         </div> 
                     </div>
 
@@ -44,7 +44,7 @@
                                     <p style="font-size: 15px"><i style="color: #F7C04A " class="fa-solid fa-check me-2"></i>Gratis pinjam perlengkapan (1 alat)</p> 
                                     <p style="font-size: 15px"><i style="color: #F7C04A " class="fa-solid fa-check me-2"></i>Dapat meminjam lebih dari 1 alat </p> 
                                 </div> 
-                                <button type="button" class="btn" style="background-color: #F7C04A; color: white">Subscribe</button>
+                                <button type="button" class="btn" style="background-color: #F7C04A; color: white"><a href="{{route('subscribe.startplan')}}" style="text-decoration: none; color: white">Subscribe</a></button>
                             </div> 
                         </div> 
         </div>
