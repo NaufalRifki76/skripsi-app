@@ -39,6 +39,6 @@ class RegisterController extends Controller
         $user = Sentinel::register($credentials);
         $activation = Activation::create($user);
         Mail::to($user->email)->send(new ActivationMail($user, $activation->code));
-        return Redirect::route('auth.login');
+        return Redirect::route('auth.view')->with('success', 'Silahkan cek inbox email anda untuk verifikasi!');
     }
 }

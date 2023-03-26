@@ -30,7 +30,7 @@
                         <h5 class="mt-3">Email anda telah berhasil di daftarkan! <br> Terima kasih telah melakukan
                             registrasi.</h5>
                         <div class="mt-5">
-                            <a href="{{ route('auth.login') }}">
+                            <a href="{{ route('auth.view') }}">
                                 <h3><button class="btn text-white bg-primary">Login</button></h3>
                             </a>
                         </div>

@@ -50,6 +50,6 @@ class VerificationController extends Controller
             session()->flash("error", "Link tidak valid.");
         }
         $validLink  = $request->validLink;
-        return view('auth.activation', compact('validLink'));
+        return view('auth.activation', compact('validLink'))->with('success', 'Akun telah terverifikasi!');
     }
 }

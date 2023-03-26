@@ -12,6 +12,7 @@ Route::get("/email-confirm/{token}", [VerificationController::class, "parsingUrl
 
 // Login
 Route::get('/', [AuthController::class, 'index'])->name('auth.dashboard');
+Route::match(['get', 'post'], '/login', [AuthController::class, 'login'])->name('auth.login');
 Route::get('/view', [AuthController::class, 'view'])->name('auth.view');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');

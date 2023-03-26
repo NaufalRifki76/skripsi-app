@@ -1,6 +1,8 @@
 @extends('layout.index')
 
 @section('content')
+    @include('session-flash')
+    
     {{-- carousel home --}}
     @include('home.carousel-home')
 

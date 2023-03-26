@@ -17,6 +17,7 @@
 </style>
 
 @section('content')
+@include('session-flash')
 <body style="background-color: #CBEDD5">
     <div class="mt-4 mb-4">
         <div class="container">
