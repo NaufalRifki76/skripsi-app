@@ -76,3 +76,8 @@ Route::get('/tingkat-umur', function () {
 Route::get('/kompetisi-detail', function () {
     return view('info-kompetisi.detail');
 });
+
+// Profile
+Route::get('/profile', function () {
+    return view('profile.index');
+});

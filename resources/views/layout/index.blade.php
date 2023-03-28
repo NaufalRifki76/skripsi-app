@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="{{ asset('/css/button-kreasi.css') }}" />
+    {{-- style font --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -25,8 +29,17 @@
 
     <title>Main Bola</title>
 </head>
+<style>
+    .text-font-fix {
+        font-family: 'Lexend Deca', sans-serif;
+    }
 
-<body>
+    body {
+        overflow-x: hidden;
+    }
+</style>
+
+<body class="text-font-fix">
 
     {{-- navbar --}}
     @include('layout.navbar')
