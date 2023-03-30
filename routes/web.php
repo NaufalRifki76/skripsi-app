@@ -3,24 +3,34 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\Features\BookingController;
+use App\Http\Controllers\Features\CompetitionController;
 use App\Http\Controllers\Features\VipController;
 use Illuminate\Support\Facades\Route;
 
 // Register
-Route::get('/register-user', [RegisterController::class, 'index'])->name('register-user');
-Route::post('/register-new', [RegisterController::class, 'create'])->name('register-new');
-Route::get("/email-confirm/{token}", [VerificationController::class, "parsingUrl"])->name("email-confirm");
+Route::get('register-user', [RegisterController::class, 'index'])->name('register-user');
+Route::post('register-new', [RegisterController::class, 'create'])->name('register-new');
+Route::get("email-confirm/{token}", [VerificationController::class, "parsingUrl"])->name("email-confirm");
 
 // Login
 Route::get('/', [AuthController::class, 'index'])->name('auth.dashboard');
-Route::match(['get', 'post'], '/login', [AuthController::class, 'login'])->name('auth.login');
-Route::get('/view', [AuthController::class, 'view'])->name('auth.view');
-Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
-Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+Route::match(['get', 'post'], 'login', [AuthController::class, 'login'])->name('auth.login');
+Route::get('view', [AuthController::class, 'view'])->name('auth.view');
+Route::post('login', [AuthController::class, 'login'])->name('auth.login');
+Route::get('logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 // Subscribe
-Route::get('/subscribe.index', [VipController::class, 'index'])->name('subscribe.index');
-Route::get('/subscribe.startplan', [VipController::class, 'subscribe'])->name('subscribe.startplan');
+Route::get('subscribe.index', [VipController::class, 'index'])->name('subscribe.index');
+Route::get('subscribe.startplan', [VipController::class, 'subscribe'])->name('subscribe.startplan');
+
+// Booking Lapangan
+Route::get('lapangan.index', [BookingController::class, 'index'])->name('lapangan.index');
+
+// Info Kompetisi
+Route::get('kompetisi.index', [CompetitionController::class, 'index'])->name('kompetisi.index');
+Route::get('tingkat-pendidikan.index', [CompetitionController::class, 'pendidikan'])->name('tingkat-pendidikan.index');
+Route::get('tingkat-umur.index', [CompetitionController::class, 'umur'])->name('tingkat-umur.index');
 
 // --------------------- BAGIAN BAWAH INI UNTUK TESTING -------------------- //
 // Route::get('/', function () {
@@ -53,7 +63,6 @@ Route::get('/lapangan-detail', function () {
 Route::get('/pesan-lapangan', function () {
     return view('pesan-lapangan.index');
 });
-
 
 // Perlengkapan
 Route::get('/sewa-perlengkapan', function () {

@@ -16,7 +16,7 @@
                     <p class="fw-bold" style="color: #439A97">Kompetisi Tingkat Sekolah</p>
                 </div>
 
-                <a href="" class="text-decoration-none">
+                <a href="{{route('tingkat-pendidikan.index')}}" class="text-decoration-none">
                     <div class="card d-flex shadow align-items-center" style="border-radius: 12px; border: none"  >
                         <div class="d-flex justify-content-center">
                             <img src="{{ asset('Assets/logo/logo.png') }}" class="img-fluid" width="300px" alt="logo">
@@ -39,7 +39,7 @@
                 <div class="d-flex justify-content-center">
                     <p class="fw-bold" style="color: #439A97">Kompetisi Kategori Umur</p>
                 </div>
-                <a href="" class="text-decoration-none">
+                <a href="{{route('tingkat-umur.index')}}" class="text-decoration-none">
                     <div class="card d-flex shadow align-items-center" style="border-radius: 12px; border: none">
                         <div class="d-flex justify-content-center">
                             <img src="{{ asset('Assets/logo/logo.png') }}" class="img-fluid" width="300px" alt="logo">

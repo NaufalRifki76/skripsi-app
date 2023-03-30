@@ -7,7 +7,7 @@
                 <h2 style="color: #439A97">Info Kompetisi</h2>
             </div>
             <div class="col-md-2">
-                <a href="">
+                <a href="{{route('kompetisi.index')}}">
                     <button type="button" class="btn-green-transition mt-1">Lihat Semua</button>
                 </a>
             </div>
