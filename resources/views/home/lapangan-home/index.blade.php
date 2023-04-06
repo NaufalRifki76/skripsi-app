@@ -22,8 +22,8 @@
 </style>
 <br>
 <div class="container mt-5">
-    <h2 data-aos="fade-right" data-aos-delay="300" style="color: #439A97">Lapangan Yang Tersedia</h2>
-    <div class="row mt-5" data-aos="zoom-in" data-aos-delay="400">
+    <h2 style="color: #439A97">Lapangan Yang Tersedia</h2>
+    <div class="row mt-5">
         <div class="col-md-6 card-mob">
             <div class="card mb-3 shadow card-size-web" style="border-radius: 12px; border: none;">
                 <div class="row g-0">
@@ -87,10 +87,9 @@
     </div>
     <div class="text-center mt-3">
         <h6 style="color: #FCE700" data-aos="fade-right" data-aos-delay="300">Klik tombol di bawah untuk melihat penawaran lainnya</h6>
-        <a href="" data-aos="zoom-in" data-aos-delay="400">
-            <a href="{{route('lapangan.index')}}"><button type="button" class="btn-green-transition mt-2">Lihat Lapangan
-                Lainnya</button></a>
-        </a>
+            <a href="{{route('lapangan.index')}}">
+                <button type="button" class="btn-green-transition mt-2">Lihat Lapangan Lainnya</button>
+            </a>
     </div>
 </div>
 <br>
