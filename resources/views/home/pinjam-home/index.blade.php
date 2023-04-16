@@ -37,7 +37,7 @@
                         <p class="fs-6 mt-2" style="color: #62B6B7"><b>Yuk sewa perlengkapan yang anda inginkan dengan menekan tombol disamping.</b></p>
                     </div>
                     <div class="col-5 text-center">
-                        <a href="">
+                        <a href="{{ route('sewa-perlengkapan.index') }}">
                             <button type="button" class="btn-green-hover" style="margin-top: 14px">Sewa Perlengkapan</button>
                         </a>
                     </div>

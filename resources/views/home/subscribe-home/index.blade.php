@@ -35,7 +35,7 @@
                         <p class="fs-6 mt-3" style="color: #62B6B7"><b>Klik tombol di samping untuk berlangganan</b></p>
                     </div>
                     <div class="col-5 text-center">
-                        <a href="/subscribe">
+                        <a href="{{ route('subscribe.index') }}">
                             <button type="button" class="btn-green-hover" style="margin-top: 7px">Berlangganan</button>
                         </a>
                     </div>

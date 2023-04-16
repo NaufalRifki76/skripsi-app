@@ -17,13 +17,13 @@
             </div>
 
             <div class="col-md-3">
-                <label for="inputState" class="form-label">Kategori Pendidikan</label>
+                <label for="inputState" class="form-label">Kategori Umur</label>
                 <select id="inputState" class="form-select">
                   <option selected>Pilih Kategori ...</option>
-                  <option value="1">SD</option>
-                  <option value="2">SMP</option>
-                  <option value="3">SMA</option>
-                  <option value="3">Universitas</option>
+                  <option value="1">17</option>
+                  <option value="2">20</option>
+                  <option value="3">23</option>
+                  <option value="3">Tidak Ada Batasan</option>
                 </select>
               </div>
               <div class="col-md-2 mt-5">

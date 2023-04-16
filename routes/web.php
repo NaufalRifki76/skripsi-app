@@ -49,7 +49,7 @@ Route::get('/register', function () {
 //  Subscribe
 Route::get('/subscribe', function () {
     return view('subscribe.index');
-});
+})->name('subscribe.index');
 
 // Lapangan
 Route::get('/lapangan', function () {
@@ -58,7 +58,7 @@ Route::get('/lapangan', function () {
 
 Route::get('/lapangan-detail', function () {
     return view('lapangan.detail');
-});
+})->name('lapangan.detail');
 
 Route::get('/pesan-lapangan', function () {
     return view('pesan-lapangan.index');
@@ -67,7 +67,7 @@ Route::get('/pesan-lapangan', function () {
 // Perlengkapan
 Route::get('/sewa-perlengkapan', function () {
     return view('sewa-perlengkapan.index');
-});
+})->name('sewa-perlengkapan.index');
 
 // Kompetisi
 Route::get('/info-kompetisi', function () {
