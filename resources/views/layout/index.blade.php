@@ -27,6 +27,9 @@
     {{-- Animate On Scroll --}}
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    @stack('css')
+
+
     <title>Main Bola</title>
 </head>
 <style>
@@ -63,6 +66,11 @@
     {{-- JQuery --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    @stack('script')
+
 </body>
+
+
 
 </html>

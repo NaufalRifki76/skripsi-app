@@ -63,32 +63,26 @@
 
                                     <p class="fs-5 fw-bold text-center mt-5" style="margin-left: 10px">Pilih Jadwal
                                         Booking</p>
-                                    <div class="row mx-3 py-3">
-                                        <div class="col-md-3 text-center">
-                                            <button class="btn shadow text-center" style="border-radius: 12px;">
-                                                <h5 class="fs-6 pt-2">09.00 - 10.00</h5>
-                                                <h6 class="fs-6 opacity-75">Rp 150.000</h6>
-                                            </button>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Pilih Sesi Bermain</label>
+                                                <select name="nama-user" id="nama-user" class="form-control input-sm select_2"
+                                                    style="width: 100%;" data-placeholder="Select..*" required>
+                                                    <option></option>
+                                                    <option value="0">test</option>
+                                                    <option value="1">test a</option>
+                                                    <option value="2">test b</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="inputState" class="form-label">Harga</label>
+                                                <input class="form-control" id="ExpiredDate" placeholder="">
+                                            </div> 
+                                            <div class="col-md-2 mt-4">
+                                                <button type="button" class="btn-green-hover">Search</button>
+                                            </div>                                        
                                         </div>
-                                        <div class="col-md-3 text-center">
-                                            <button class="btn shadow text-center" style="border-radius: 12px">
-                                                <h5 class="fs-6 pt-2">09.00 - 10.00</h5>
-                                                <h6 class="fs-6 opacity-75">Rp 150.000</h6>
-                                            </button>
-                                        </div>
-                                        <div class="col-md-3 text-center">
-                                            <button class="btn shadow text-center" style="border-radius: 12px">
-                                                <h5 class="fs-6 pt-2">09.00 - 10.00</h5>
-                                                <h6 class="fs-6 opacity-75">Rp 150.000</h6>
-                                            </button>
-                                        </div>
-                                        <div class="col-md-3 text-center">
-                                            <button class="btn shadow text-center" style="border-radius: 12px">
-                                                <h5 class="fs-6 pt-2">09.00 - 10.00</h5>
-                                                <h6 class="fs-6 opacity-75">Rp 150.000</h6>
-                                            </button>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -136,4 +130,24 @@
                 </div>
             </div>
         </div>
+      
     @endsection
+@push('css')
+    {{-- Select --}}
+    <link rel="stylesheet" href="{{ url('plugins/select2/css/select2.css') }}">
+    <link rel="stylesheet" href="{{ url('plugins/select2/css/select2-bootstrap.css') }}">
+@endpush
+
+@push('scripts')
+    {{-- Select --}}
+    <script src="{{ url('plugins/select2/js/select2.full.js') }}"></script>
+
+    <script>
+        $('#nama-user').select2({
+            theme: "bootstrap",
+            placeholder: "Select",
+            width: '100%',
+            containerCssClass: ':all:',
+        });
+    </script>
+@endpush
