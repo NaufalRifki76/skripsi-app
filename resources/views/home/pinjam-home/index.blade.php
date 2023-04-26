@@ -23,18 +23,18 @@
                 <h1 style="color: #439A97" data-aos="zoom-in" data-aos-delay="400">Sewa Perlengkapan</h1>
                 <h6 class="mt-3" style="color: #FCE700" data-aos="fade-right" data-aos-delay="300">Sulit untuk membeli perlengkapan bola? Sewa Perlengkapan aja !</h6>
                 <div class="container mt-5" data-aos="zoom-in" data-aos-delay="400">
-                    <p class="fs-6" style="color: #62B6B7"><b>Temukan perlengkapan sepak bola, futsal, dan mini soccer yang anda inginkan di Main Bola.</b>
+                    <p class="fs-6" style="color: #62B6B7"><b>Temukan perlengkapan futsal yang anda inginkan di Main Bola.</b>
                     </p>
-                    <p class="fs-6" style="color: #62B6B7">1. Peminjaman Mudah.
-                        <br> 2. Kebersihan Alat Terjamin. <br> 3.
-                        Harganya Murah.
+                    <p class="fs-6" style="color: #62B6B7">1. Informasi lapangan yang menyediakan fasilitas sewa perlengkapan.
+                        <br> 2. Data perlengkapan yang akurat. <br> 3.
+                        Harganya terjangkau.
                     </p>
                 </div>
             </div>
             <div class="container mt-5" style="background-color: #ECFAF0; border-radius: 12px" data-aos="fade-right" data-aos-delay="300">
                 <div class="row">
                     <div class="col-7 text-center">
-                        <p class="fs-6 mt-2" style="color: #62B6B7"><b>Yuk sewa perlengkapan yang anda inginkan dengan menekan tombol disamping.</b></p>
+                        <p class="fs-6 mt-2" style="color: #62B6B7"><b>Yuk cari informasi sewa perlengkapan futsal yang anda inginkan dengan menekan tombol disamping.</b></p>
                     </div>
                     <div class="col-5 text-center">
                         <a href="{{ route('sewa-perlengkapan.index') }}">
