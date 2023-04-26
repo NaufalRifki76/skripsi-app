@@ -35,22 +35,20 @@
             <div class="col-md-4 px-3 text-center border-end">
                 <h4 style="color: #439A97"><u>Biaya Pendaftaran</u></h4>
                 <p class="fs-5 mt-2">Rp 2.000.000</p>
-                <h4 style="color: #439A97"><u>Tanggal Pendaftaran</u></h4>
-                <p class="fs-5 mt-2">17 Februari 2023 - 20 Desember 2023</p>
 
             </div>
             <div class="col-md-4 px-3 text-center border-end">
-                <h4 style="color: #439A97"><u>Tanggal Kompetisi Dimulai</u></h4>
+                <h4 style="color: #439A97"><u>Tanggal Pendaftaran</u></h4>
                 <p class="fs-5" >17 Februari 2023 </p>
                 <p class="fs-5" style="margin-top: -15px">sampai</p>
                 <p class="fs-5" style="margin-top: -15px">20 Desember 2023</p>
 
             </div>
             <div class="col-md-4 text-center">
-                <h4 style="color: #439A97"><u>Contact Person</u></h4>
-                <p class="fs-5" >0812 2788 9877 </p>
-                <p class="fs-5" style="margin-top: -15px">dan</p>
-                <p class="fs-5" style="margin-top: -15px">021 7899 9655</p>
+                <h4 style="color: #439A97"><u>Tanggal Kompetisi Dimulai</u></h4>
+                <p class="fs-5" >17 Februari 2023 </p>
+                <p class="fs-5" style="margin-top: -15px">sampai</p>
+                <p class="fs-5" style="margin-top: -15px">20 Desember 2023</p>
             </div>
         </div>
         <div class="border opacity-50 my-5"></div>
@@ -64,11 +62,10 @@
                 <p class="fs-5" > 30 Tim </p>
             </div>
             <div class="col-md-4 text-center">
-                <h4 style="color: #439A97"><u>Media Sosial</u></h4>
-                <p class="fs-5" >Binus_cup90</p>
-                <p class="fs-5" style="margin-top: -15px">Binus_cup90</p>
-                <p class="fs-5" style="margin-top: -15px">Binus_cup90</p>
-
+                <h4 style="color: #439A97"><u>Contact Person</u></h4>
+                <p class="fs-5" >0812 2788 9877 </p>
+                <p class="fs-5" style="margin-top: -15px">dan</p>
+                <p class="fs-5" style="margin-top: -15px">021 7899 9655</p>
             </div>
         </div>
     </div>
