@@ -13,13 +13,13 @@
     @include('home.keuntungan-home.index')
 
     {{-- Subscribe Home --}}
-    @include('home.subscribe-home.index')
-
-    {{-- Booking Lapangan --}}
-    @include('home.kompetisi-home.index')
+    {{-- @include('home.subscribe-home.index') --}}
 
     {{-- Pinjam Alat --}}
     @include('home.pinjam-home.index')
+
+    {{-- Booking Lapangan --}}
+    @include('home.kompetisi-home.index')
 
     {{-- footer --}}
     @include('layout.footer')
