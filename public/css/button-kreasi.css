@@ -30,3 +30,11 @@
   background-color: #CBEDD5;
   color: white;
 }
+
+.btn-grey-hover {
+  color: grey;
+}
+  
+.btn-grey-hover:hover {
+  color: #62B6B7;
+}

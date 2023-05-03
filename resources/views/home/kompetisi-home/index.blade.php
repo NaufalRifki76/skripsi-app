@@ -1,101 +1,52 @@
+<style>
+    @media screen and (max-width: 765px) {
+        .web-subscribe {
+        display: none;
+       }
+    }
+
+    @media screen and (min-width: 766px) {
+       .mobile-subscribe {
+        display: none;
+       }
+    }
+</style>
 <br>
-<div class="mt-5" style="background-color: #ECFAF0">
-    <div class="container">
-        <br><br>
-        <div class="row" data-aos="fade-right" data-aos-delay="300">
-            <div class="col-md-10">
-                <h2 style="color: #439A97">Info Kompetisi</h2>
+<br>
+<br>
+<br>
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-5 mobile-subscribe text-center mb-3">
+            <img src="{{ asset('Assets/home/kompetisi/competition.png') }}" class="img-fluid" width="75%" alt="img-subscribe">
+        </div>
+        <div class="col-md-7">
+            <div class="text-center">
+                <h2 class="fw-bold" style="color: #439A97">Info Kompetisi</h2>
+                <h6 class="mt-3" style="color: #FCE700">Cari informasi kompetisi futsal di "Main Bola"!</h6>
+                <div class="container mt-5">
+                    <p class="fs-6" style="color: #62B6B7">1. Mendapatkan informasi kompetisi futsal yang tersedia untuk didaftar.
+                        <br> 2. Memudahkan pengguna untuk mencari kompetisi kelompok umur dan pendidikan. <br> 3.
+                        Informasi yang diberikan akurat dan terpercaya.
+                    </p>
+                </div>
             </div>
-            <div class="col-md-2">
-                <a href="{{route('kompetisi.index')}}">
-                    <button type="button" class="btn-green-transition mt-1">Lihat Semua</button>
-                </a>
+            <div class="container mt-5" style="background-color: #ECFAF0; border-radius: 12px">
+                <div class="row">
+                    <div class="col-7 text-center">
+                        <p class="fs-6 mt-2" style="color: #62B6B7"><b>Cari informasi kompetisi futsal dengan menekan tombol di samping!</b></p>
+                    </div>
+                    <div class="col-5 text-center">
+                        <a href="{{ route('kompetisi.index') }}">
+                            <button type="button" class="btn-green-hover" style="margin-top: 14px">Cari Kompetisi</button>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <div class="row mt-5" data-aos="zoom-in" data-aos-delay="400">
-            <div class="col-md-4">
-                <a class="text-dark" style="text-decoration: none" href="">
-                    <div class="card mb-3" style="border-radius: 12px">
-                        <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}" class="card-img-top img-fluid" style="height: 250px; border-top-left-radius: 12px; border-top-right-radius: 12px" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: #439A97">Nama Kompetisi</h5>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="d-flex">
-                                        <i class="fa-solid fa-location-dot mt-1" style="margin-right: 10px"></i>
-                                        <p class="card-text">Jakarta</p>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="d-flex">
-                                        <i class="fa-regular fa-futbol mt-1" style="margin-right: 10px"></i>
-                                        <p class="card-text">Mini Soccer</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="card-text mt-2" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Some quick example text to build on the card title and make up the bulk of
-                                the card's content.</p>
-                            <h6 class="mt-2">Biaya Pendaftaran</h6>
-                            <p class="card-text">Rp <b>250.000</b></p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-3" style="border-radius: 12px">
-                    <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}" class="card-img-top img-fluid" style="height: 250px; border-top-left-radius: 12px; border-top-right-radius: 12px" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title" style="color: #439A97">Nama Kompetisi</h5>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="d-flex">
-                                    <i class="fa-solid fa-location-dot mt-1" style="margin-right: 10px"></i>
-                                    <p class="card-text">Jakarta</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="d-flex">
-                                    <i class="fa-regular fa-futbol mt-1" style="margin-right: 10px"></i>
-                                    <p class="card-text">Mini Soccer</p>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="card-text mt-2" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <h6 class="mt-2">Biaya Pendaftaran</h6>
-                        <p class="card-text">Rp <b>250.000</b></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-3" style="border-radius: 12px">
-                    <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}" class="card-img-top img-fluid" style="height: 250px; border-top-left-radius: 12px; border-top-right-radius: 12px" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title" style="color: #439A97">Nama Kompetisi</h5>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="d-flex">
-                                    <i class="fa-solid fa-location-dot mt-1" style="margin-right: 10px"></i>
-                                    <p class="card-text">Jakarta</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="d-flex">
-                                    <i class="fa-regular fa-futbol mt-1" style="margin-right: 10px"></i>
-                                    <p class="card-text">Mini Soccer</p>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="card-text mt-2" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <h6 class="mt-2">Biaya Pendaftaran</h6>
-                        <p class="card-text">Rp <b>250.000</b></p>
-                    </div>
-                </div>
-            </div>
+        <div class="col-md-5 web-subscribe text-center" style="margin-top: -40px">
+            <img src="{{ asset('Assets/home/kompetisi/competition.png') }}" class="img-fluid" width="75%" alt="img-kompetisi">
         </div>
     </div>
-    <br>
-    <br>
 </div>
+<br>

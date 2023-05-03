@@ -51,7 +51,7 @@
                             <p style="font-size: 15px"><i style="color: #439A97 " class="fa-solid fa-futbol me-2"></i>Usia
                                 19 Tahun</p>
                             <p style="font-size: 15px"><i style="color: #439A97 " class="fa-solid fa-futbol me-2"></i>Usia
-                                19 Tahun</p>
+                                23 Tahun</p>
                             <p style="font-size: 15px"><i style="color: #439A97 " class="fa-solid fa-futbol me-2"></i>Semua
                                 Usia (Umum)</p>
                         </div>

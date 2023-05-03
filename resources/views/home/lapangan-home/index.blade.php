@@ -21,8 +21,10 @@
     }
 </style>
 <br>
+<br>
+<br>
 <div class="container mt-5">
-    <h2 style="color: #439A97">Lapangan Yang Tersedia</h2>
+    <h2 class="fw-bold" style="color: #439A97">Lapangan Yang Tersedia</h2>
     <div class="row mt-5">
         <div class="col-md-6 card-mob">
             <a href="{{ route('lapangan.detail') }}" class="text-decoration-none text-dark">
@@ -88,7 +90,7 @@
         </div>
     </div>
     <div class="text-center mt-3">
-        <h6 style="color: #FCE700" data-aos="fade-right" data-aos-delay="300">Klik tombol di bawah untuk melihat penawaran lainnya</h6>
+        <h6 style="color: #FCE700">Klik tombol di bawah untuk melihat penawaran lainnya</h6>
             <a href="{{route('lapangan.index')}}">
                 <button type="button" class="btn-green-transition mt-2">Lihat Lapangan Lainnya</button>
             </a>

@@ -12,6 +12,12 @@
     }
 </style>
 <br>
+
+ <a href="{{ route('kompetisi.index') }}">
+                    <button type="button" class="btn-green-transition mt-1">Lihat Semua</button>
+                </a>
+
+
 <br>
 <div class="container mt-5 mb-5">
     <div class="row">
@@ -42,7 +48,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-5 web-subscribe text-center" style="margin-top: -20px" data-aos="fade-left" data-aos-delay="400">
+        <div class="col-md-5 web-subscribe text-center" style="margin-top: -20px">
             <img src="{{ asset('Assets/home/subscribe/subscribe.png') }}" class="img-fluid" width="80%" alt="img-subscribe">
         </div>
     </div>
