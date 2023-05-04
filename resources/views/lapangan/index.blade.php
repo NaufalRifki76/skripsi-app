@@ -72,147 +72,85 @@
     </div>
     <div class="container py-5">
         <div class="row">
-            <div class="col-md-6 card-mob card-web">
-                <div class="card mb-3 card-size-web zoom shadow" style="border-radius: 12px; border: none">
-                    <div class="row g-0">
-                        <div class="col-md-4 card-image">
-                            <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}"
-                                class="img-fluid mobile-img web-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Lapangan Sepak Bola Senayan</h5>
-                                <div class="d-flex">
-                                    <i class="fa-sharp fa-solid fa-star mt-1"
-                                        style="color: #FCE700; margin-right: 10px"></i>
-                                    <p class="card-text">4.9</p>
+            <div class="col-md-6">
+                <a class="text-dark text-decoration-none" href="{{ route('lapangan.detail') }}">
+                    <div class="card mb-3 card-size-web card-mob zoom shadow" style="border-radius: 12px; border: none">
+                        <div class="row g-0">
+                            <div class="col-md-4 card-image">
+                                <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}"
+                                    class="img-fluid mobile-img web-img" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">Lapangan Sepak Bola Senayan</h5>
+                                    <p class="card-text mt-2"
+                                        style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Jl. Setia
+                                        Budi Barat No.1, Kuningan, Setia Budi, Jakarta Pusat, DKI Jakarta, 10220</p>
+                                    <div class="d-flex">
+                                        <p class="card-text" style="margin-right: 10px">Lapangan Tersedia:</p>
+                                        <p class="card-text">3</p>
+                                    </div>
+                                    <div class="mt-3">
+                                        <p class="card-text mt-2">Harga</p>
+                                        <p class="card-text" style="margin-top: -15px">Rp <b>250.000</b><small
+                                                class="text-muted"> /
+                                                Jam</small></p>
+                                    </div>
                                 </div>
-                                <p class="card-text mt-2"
-                                    style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Jl. Setia Budi
-                                    Barat No.1, Kuningan, Setia Budi</p>
-                                <div class="d-flex">
-                                    <i class="fa-solid fa-futbol mt-1" style="margin-right: 10px"></i>
-                                    <p class="card-text">Futsal / Sepak Bola / Mini Soccer</p>
-                                </div>
-                                <p class="card-text mt-2">Harga</p>
-                                <p class="card-text" style="margin-top: -15px">Rp <b>250.000</b><small class="text-muted"> /
-                                        Jam</small></p>
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-md-6">
-                <div class="card mb-3 card-size-web card-mob zoom shadow" style="border-radius: 12px; border: none">
-                    <div class="row g-0">
-                        <div class="col-md-4 card-image">
-                            <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}"
-                                class="img-fluid mobile-img web-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Lapangan Sepak Bola Senayan</h5>
-                                <div class="d-flex">
-                                    <i class="fa-sharp fa-solid fa-star mt-1"
-                                        style="color: #FCE700; margin-right: 10px"></i>
-                                    <p class="card-text">4.9</p>
+                <a class="text-dark text-decoration-none" href="{{ route('lapangan.detail') }}">
+                    <div class="card mb-3 card-size-web card-mob zoom shadow" style="border-radius: 12px; border: none">
+                        <div class="row g-0">
+                            <div class="col-md-4 card-image">
+                                <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}"
+                                    class="img-fluid mobile-img web-img" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">Lapangan Sepak Bola Senayan</h5>
+                                    <p class="card-text mt-2"
+                                        style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Jl. Setia
+                                        Budi Barat No.1, Kuningan, Setia Budi, Jakarta Pusat, DKI Jakarta, 10220</p>
+                                    <div class="d-flex">
+                                        <p class="card-text" style="margin-right: 10px">Lapangan Tersedia:</p>
+                                        <p class="card-text">3</p>
+                                    </div>
+                                    <div class="mt-3">
+                                        <p class="card-text mt-2">Harga</p>
+                                        <p class="card-text" style="margin-top: -15px">Rp <b>250.000</b><small
+                                                class="text-muted"> /
+                                                Jam</small></p>
+                                    </div>
                                 </div>
-                                <p class="card-text mt-2"
-                                    style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Jl. Setia Budi
-                                    Barat No.1, Kuningan, Setia Budi</p>
-                                <div class="d-flex">
-                                    <i class="fa-solid fa-futbol mt-1" style="margin-right: 10px"></i>
-                                    <p class="card-text">Futsal / Sepak Bola / Mini Soccer</p>
-                                </div>
-                                <p class="card-text mt-2">Harga</p>
-                                <p class="card-text" style="margin-top: -15px">Rp <b>250.000</b><small class="text-muted"> /
-                                        Jam</small></p>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-6 card-mob card-web">
-                <div class="card mb-3 card-size-web zoom shadow" style="border-radius: 12px; border: none">
-                    <div class="row g-0">
-                        <div class="col-md-4 card-image">
-                            <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}"
-                                class="img-fluid mobile-img web-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Lapangan Sepak Bola Senayan</h5>
-                                <div class="d-flex">
-                                    <i class="fa-sharp fa-solid fa-star mt-1"
-                                        style="color: #FCE700; margin-right: 10px"></i>
-                                    <p class="card-text">4.9</p>
-                                </div>
-                                <p class="card-text mt-2"
-                                    style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Jl. Setia Budi
-                                    Barat No.1, Kuningan, Setia Budi</p>
-                                <div class="d-flex">
-                                    <i class="fa-solid fa-futbol mt-1" style="margin-right: 10px"></i>
-                                    <p class="card-text">Futsal / Sepak Bola / Mini Soccer</p>
-                                </div>
-                                <p class="card-text mt-2">Harga</p>
-                                <p class="card-text" style="margin-top: -15px">Rp <b>250.000</b><small
-                                        class="text-muted"> /
-                                        Jam</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 card-mob">
-                <div class="card mb-3 card-size-web zoom shadow" style="border-radius: 12px; border: none">
-                    <div class="row g-0">
-                        <div class="col-md-4 card-image">
-                            <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}"
-                                class="img-fluid mobile-img web-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Lapangan Sepak Bola Senayan</h5>
-                                <div class="d-flex">
-                                    <i class="fa-sharp fa-solid fa-star mt-1"
-                                        style="color: #FCE700; margin-right: 10px"></i>
-                                    <p class="card-text">4.9</p>
-                                </div>
-                                <p class="card-text mt-2"
-                                    style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Jl. Setia Budi
-                                    Barat No.1, Kuningan, Setia Budi</p>
-                                <div class="d-flex">
-                                    <i class="fa-solid fa-futbol mt-1" style="margin-right: 10px"></i>
-                                    <p class="card-text">Futsal / Sepak Bola / Mini Soccer</p>
-                                </div>
-                                <p class="card-text mt-2">Harga</p>
-                                <p class="card-text" style="margin-top: -15px">Rp <b>250.000</b><small
-                                        class="text-muted"> /
-                                        Jam</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
     <div class="d-flex justify-content-center mb-3">
         <nav aria-label="Page navigation example">
             <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
             </ul>
-          </nav>
+        </nav>
     </div>
 @endsection

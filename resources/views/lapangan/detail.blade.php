@@ -26,13 +26,13 @@
             <div class="col-md-5">
                 <div class="card shadow" style="border: none; border-radius: 12px; max-height: 500px;">
                     <div class="card-body text-center">
-                        <h4 style="color: #439A97">Stadion Madya Gelora Bung Karno</h4>
+                        <h4 class="fw-bold" style="color: #439A97">Stadion Madya Gelora Bung Karno</h4>
                         <p class="card-text mt-3" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
                             Jl. Setia Budi Barat No.1, Kuningan, Setia Budi</p>
-                        <p class="card-text fw-bold" style="color: #439A97">Jenis Lapangan</p>
-                        <p class="card-text" style="margin-top: -10px">Futsal/Sepak Bola/Mini Soccer</p>
+                        <p class="card-text fw-bold mt-3" style="color: #439A97">Lapangan Tersedia</p>
+                        <p class="card-text" style="margin-top: -10px">3</p>
                         <p class="card-text fw-bold" style="color: #439A97">Harga</p>
-                        <p class="card-text" style="margin-top: -10px">Rp <b class="fs-5">150,000</b> / Jam</p>
+                        <p class="card-text" style="margin-top: -10px">Rp <b class="fs-5">150.000</b> / Jam</p>
                         <button type="button" id="" name="" class="btn-green-hover">Cari
                             Lapangan</button>
                     </div>
@@ -123,18 +123,17 @@
                     </div>
                     <div class="col-md-5 text-center">
                         <h4 style="color: #439A97"><u>Sewa Perlengkapan</u></h4>
-                        <p style="color: #FCE700; font-size: 16px">Main bola lebih mudah dengan sewa perlengkapan di website
-                            kami!</p>
-                        <p class="fs-6 mt-3">Cari perlengkapan futsal, sepak bola, atau mini soccer yang anda inginkan
+                        <p style="color: #FCE700; font-size: 16px">Main bola lebih mudah dengan sewa perlengkapan di lapangan ini!</p>
+                        <p class="fs-6 mt-3">Cari perlengkapan futsal yang anda inginkan
                             dengan menekan tombol di bawah!</p>
-                        <button type="button" id="" name="" class="btn-green-hover">Sewa
+                        <button type="button" id="" name="" class="btn-green-hover">Cari
                             Perlengkapan</button>
                     </div>
                 </div>
 
-                <div class="border opacity-50 my-5"></div>
+                {{-- <div class="border opacity-50 my-5"></div> --}}
 
-                <div class="row mb-4">
+                {{-- <div class="row mb-4">
                     <div class="col-md-5 text-center mobile-pembatalan">
                         <img src="{{ asset('Assets/image-lapangan/pembatalan-transaksi.png') }}" width="60%"
                             class="img-fluid mb-3" style="" alt="...">
@@ -151,7 +150,7 @@
                         <img src="{{ asset('Assets/image-lapangan/pembatalan-transaksi.png') }}" width="60%"
                             class="img-fluid margin-pembatalan" style="" alt="...">
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

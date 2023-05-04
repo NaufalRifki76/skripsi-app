@@ -13,8 +13,8 @@
                         <h4 style="color: #439A97">Stadion Madya Gelora Bung Karno</h4>
                         <p class="card-text mt-3" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
                             Jl. Setia Budi Barat No.1, Kuningan, Setia Budi</p>
-                        <p class="card-text fw-bold" style="color: #439A97">Jenis Lapangan</p>
-                        <p class="card-text" style="margin-top: -10px">Futsal/Sepak Bola/Mini Soccer</p>
+                        <p class="card-text fw-bold" style="color: #439A97">Lapangan Tersedia</p>
+                        <p class="card-text" style="margin-top: -10px">3</p>
                         <p class="card-text fw-bold" style="color: #439A97">Harga</p>
                         <p class="card-text" style="margin-top: -10px">Rp <b class="fs-5">150,000</b> / Jam</p>
                     </div>

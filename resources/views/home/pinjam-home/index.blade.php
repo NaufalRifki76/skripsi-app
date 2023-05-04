@@ -38,7 +38,7 @@
                     </div>
                     <div class="col-5 text-center">
                         <a href="{{ route('sewa-perlengkapan.index') }}">
-                            <button type="button" class="btn-green-hover" style="margin-top: 14px">Sewa Perlengkapan</button>
+                            <button type="button" class="btn-green-hover" style="margin-top: 14px">Cari Perlengkapan</button>
                         </a>
                     </div>
                 </div>
