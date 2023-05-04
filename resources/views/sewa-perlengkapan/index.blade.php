@@ -1,18 +1,33 @@
 @extends('layout.index')
 
 @section('content')
+<div style="background-color: #ECFAF0">
     <div class="container">
-
-        <div>
-            <p class="h1 fw-bold text-center mb-2" style="color: #439A97">Sewa Perlengkapan</p>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8 text-center py-4"
+                style="background-color: #439a97; border-bottom-right-radius: 12px; border-bottom-left-radius: 12px">
+                <h1 style="color: white">Sewa perlengkapan</h1>
+                <h5 style="color: #FCE700">Cari lapangan yang menyediakan sewa perlengkapan yang anda butuhkan dengan mudah di sini !</h5>
+            </div>
+            <div class="col-2"></div>
         </div>
-        <div>
-            <p class="h4 fw-normal text-center mb-5" style="color: #FCE700">Cari lapangan yang menyediakan sewa perlengkapan
-                yang anda butuhkan
-                dengan mudah di sini !</p>
+        <div class="row py-5 mx-5">
+            <div class="col-md-10 mb-2">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="nama-lapangan"
+                        placeholder="Nama Lapangan Yang Anda Cari ...">
+                    <label for="nama-lapangan">Nama Lapangan</label>
+                </div>
+            </div>
+            <div class="col-md-2 text-center">
+                <button type="submit" id="" name="" class="btn-green-transition mt-2">Cari Perlengkapan</button>
+            </div>
         </div>
-
-        <form class="row g-3 mx-5">
+    </div>
+</div>
+    <div class="container">
+        {{-- <div class="row g-3 mx-5">
             <div class="col-12">
                 <label for="inputState" class="form-label">Nama Lapangan</label>
                 <select id="inputState" class="form-select">
@@ -22,13 +37,13 @@
                     <option value="3">Lapangan Futsal C</option>
                 </select>
             </div>
-        </form>
+        </div> --}}
 
         {{-- jika belom milih lapangan muncul tulisan dibawah, juka sudah pilih lapangan hilang --}}
         <p class="h4 fw-normal text-center my-5" style="color: #FCE700">Pilih lapangan terlebih dahulu!</p>
 
         {{-- Jika belum milih lapangan tidak akan muncul card dibawah, jika sudah milih lapangan akan muncul card dibawah --}}
-        <div class="card mt-5 border d-flex shadow p-3 mx-3">
+        <div class="card mt-5 border d-flex shadow p-3 m-5">
             <div class="row g-3">
                 <div class="col-12">
                     <label for="inputState" class="form-label">Jenis perlengkapan yang tersedia di "Nama Lapangan"</label>
