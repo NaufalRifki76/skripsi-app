@@ -62,7 +62,23 @@ Route::get('/lapangan-detail', function () {
 
 Route::get('/pesan-lapangan', function () {
     return view('pesan-lapangan.index');
-});
+})->name('lapangan.pesan');
+
+Route::get('/pesan-lapangan-detail', function () {
+    return view('pesan-lapangan.pesan');
+})->name('lapangan.pesan.detail');
+
+Route::get('/pesan-lapangan-konfirmasi', function () {
+    return view('pesan-lapangan.pesan-konfirmasi');
+})->name('lapangan.pesan.konfirmasi');
+
+Route::get('/pesan-lapangan-pembayaran', function () {
+    return view('pesan-lapangan.pembayaran');
+})->name('lapangan.pesan.pembayaran');
+
+Route::get('/pesan-lapangan-sukses', function () {
+    return view('pesan-lapangan.sukses');
+})->name('lapangan.pesan.sukses');
 
 // Perlengkapan
 Route::get('/sewa-perlengkapan', function () {

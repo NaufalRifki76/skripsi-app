@@ -33,8 +33,10 @@
                         <p class="card-text" style="margin-top: -10px">3</p>
                         <p class="card-text fw-bold" style="color: #439A97">Harga</p>
                         <p class="card-text" style="margin-top: -10px">Rp <b class="fs-5">150.000</b> / Jam</p>
-                        <button type="button" id="" name="" class="btn-green-hover">Cari
-                            Lapangan</button>
+                        <a href="{{ route('lapangan.pesan') }}" class="text-decoration-none ">
+                            <button type="button" id="" name="" class="btn-green-hover">Cari
+                                Lapangan</button>
+                        </a>
                     </div>
                 </div>
             </div>
