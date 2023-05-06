@@ -8,41 +8,43 @@
             <div class="col-md-8">
                 <div class="card shadow mb-5" style="border: none; border-radius: 12px">
                     <div class="card-body">
-                        <div class="row mb-4">
-                            <h4 style="color: #439A97">Jumlah Yang Harus Dibayar</h4>
-                            <div class="mb-3">
-                                <label for="inputState" class="form-label h5">Total Biaya</label>
-                                <input type="text" disabled class="form-control bg-white" id=""
-                                    placeholder="Rp. 155000">
+                        <form action="">
+                            <div class="row mb-4">
+                                <h4 style="color: #439A97">Jumlah Yang Harus Dibayar</h4>
+                                <div class="mb-3">
+                                    <label for="inputState" class="form-label h5">Total Biaya</label>
+                                    <input type="text" disabled class="form-control bg-white" id=""
+                                        placeholder="Rp. 155000">
+                                </div>
                             </div>
-                        </div>
-                        <div class="row mb-4">
-                            <h4 style="color: #439A97">Informasi Pembayaran</h4>
-                            <p class="fs-6 text-danger">Lakukan pembayaran dengan transfer ke nomor rekeking yang tersedia
-                                di bawah!</p>
-                            <div class="mb-3">
-                                <label for="inputState" class="form-label h5">Nomor Rekening</label>
-                                <input type="text" disabled class="form-control bg-white" id=""
-                                    placeholder="123456789">
+                            <div class="row mb-4">
+                                <h4 style="color: #439A97">Informasi Pembayaran</h4>
+                                <p class="fs-6 text-danger">Lakukan pembayaran dengan transfer ke nomor rekeking yang tersedia
+                                    di bawah!</p>
+                                <div class="mb-3">
+                                    <label for="inputState" class="form-label h5">Nomor Rekening</label>
+                                    <input type="text" disabled class="form-control bg-white" id=""
+                                        placeholder="123456789">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputState" class="form-label h5">Atas Nama</label>
+                                    <input type="text" disabled class="form-control bg-white" id=""
+                                        placeholder="Stadion Madya Gelora Bung Karno">
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="inputState" class="form-label h5">Atas Nama</label>
-                                <input type="text" disabled class="form-control bg-white" id=""
-                                    placeholder="Stadion Madya Gelora Bung Karno">
+                            <div class="row">
+                                <h4 style="color: #439A97">Bukti Pembayaran</h4>
+                                <p class="fs-6 text-danger">Upload bukti transfer anda dengan mengisi formulir di bawah!</p>
+                                <div class="mb-3">
+                                    <label for="inputState" class="form-label h5">Nomor Rekening</label>
+                                    <input type="file" disabled class="form-control bg-white" id=""
+                                        placeholder="123456789">
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <h4 style="color: #439A97">Bukti Pembayaran</h4>
-                            <p class="fs-6 text-danger">Upload bukti transfer anda dengan mengisi formulir di bawah!</p>
-                            <div class="mb-3">
-                                <label for="inputState" class="form-label h5">Nomor Rekening</label>
-                                <input type="file" disabled class="form-control bg-white" id=""
-                                    placeholder="123456789">
+                            <div class="text-center mt-4 mb-3">
+                                <button type="button" class="btn-green-hover text-decoration-none pembayaran">Pesan Lapangan</button>
                             </div>
-                        </div>
-                        <div class="text-center mt-4 mb-3">
-                            <button class="btn-green-hover text-decoration-none pembayaran">Pesan Lapangan</button>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -63,7 +65,7 @@
                         showCancelButton: true,
                         confirmButtonColor: '#62B6B7',
                         cancelButtonColor: '#d33',
-                        confirmButtonText: '<a class="text-decoration-none text-white" href="{{ route('lapangan.pesan.sukses') }}">Ya, lanjutkan pemesanan!</a>',
+                        confirmButtonText: '<a type="button" class="text-decoration-none text-white" href="{{ route('lapangan.pesan.sukses') }}">Ya, lanjutkan pemesanan!</a>',
                         cancelButtonText: 'Batalkan'
                     })
                 });

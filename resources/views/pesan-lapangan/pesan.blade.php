@@ -8,49 +8,51 @@
             <div class="col-md-8">
                 <div class="card shadow" style="border: none; border-radius: 12px">
                     <div class="card-body">
-                        <p class="h5 mb-3">Nama Lapangan: <b>Stadion Madya Gelora Bung Karno</b></p>
-                        <p class="h5 mb-3">Lapangan: <b>A</b></p>
-                        <div class="mb-3">
-                            <label for="inputState" class="form-label h5">Pilih tanggal pemesanan lapangan</label>
-                            <input type="date" class="form-control" id="ExpiredDate" placeholder="">
-                        </div>
-                        <div class="row fieldGroup mb-3">
-                            <div class="col-md-6">
-                                <label for="inputJam" class="form-label h5">Pilih Jam</label>
-                                <select id="inputJam" class="form-select">
-                                    <option selected>Pilih jam anda bermain...</option>
-                                    <option disabled value="1">09.00 - 10.00</option>
-                                    <option value="2">10.00 - 11.00</option>
-                                    <option value="3">11.00 - 12.00</option>
-                                </select>
+                        <form action="">
+                            <p class="h5 mb-3">Nama Lapangan: <b>Stadion Madya Gelora Bung Karno</b></p>
+                            <p class="h5 mb-3">Lapangan: <b>A</b></p>
+                            <div class="mb-3">
+                                <label for="inputState" class="form-label h5">Pilih tanggal pemesanan lapangan</label>
+                                <input type="date" class="form-control" id="ExpiredDate" placeholder="">
                             </div>
-                            <div class="col-md-5">
-                                <label for="inputState" class="form-label h5">Harga Sewa</label>
-                                <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
-                                    placeholder="">
+                            <div class="row fieldGroup mb-3">
+                                <div class="col-md-6">
+                                    <label for="inputJam" class="form-label h5">Pilih Jam</label>
+                                    <select id="inputJam" class="form-select">
+                                        <option selected>Pilih jam anda bermain...</option>
+                                        <option disabled value="1">09.00 - 10.00</option>
+                                        <option value="2">10.00 - 11.00</option>
+                                        <option value="3">11.00 - 12.00</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-5">
+                                    <label for="inputState" class="form-label h5">Harga Sewa</label>
+                                    <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
+                                        placeholder="">
+                                </div>
+                                <div class="col-md-1">
+                                    <button type="button" class="btn-green-hover addMore" style="margin-top: 30px;"><i class="fa-solid fa-plus"></i></button>
+                                </div>
                             </div>
-                            <div class="col-md-1">
-                                <button type="button" class="btn-green-hover addMore" style="margin-top: 30px;"><i class="fa-solid fa-plus"></i></button>
-                            </div>
-                        </div>
-                        <div class="row fieldGroupCopy mb-3" style="display: none;">
-                            <div class="col-md-6">
-                                <label for="inputJam" class="form-label h5">Pilih Jam</label>
-                                <select id="inputJam" class="form-select">
-                                    <option selected>Pilih jam anda bermain...</option>
-                                    <option disabled value="1">09.00 - 10.00</option>
-                                    <option value="2">10.00 - 11.00</option>
-                                    <option value="3">11.00 - 12.00</option>
-                                </select>
-                            </div>
-                            <div class="col-md-5">
-                                <label for="inputState" class="form-label h5">Harga Sewa</label>
-                                <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
-                                    placeholder="">
-                            </div>
-                            <div class="col-md-1">
-                                <button type="button" class="btn-red-hover remove" style="margin-top: 30px;"><i class="fa-solid fa-trash"></i></button>
-                            </div>
+                            <div class="row fieldGroupCopy mb-3" style="display: none;">
+                                <div class="col-md-6">
+                                    <label for="inputJam" class="form-label h5">Pilih Jam</label>
+                                    <select id="inputJam" class="form-select">
+                                        <option selected>Pilih jam anda bermain...</option>
+                                        <option disabled value="1">09.00 - 10.00</option>
+                                        <option value="2">10.00 - 11.00</option>
+                                        <option value="3">11.00 - 12.00</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-5">
+                                    <label for="inputState" class="form-label h5">Harga Sewa</label>
+                                    <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
+                                        placeholder="">
+                                </div>
+                                <div class="col-md-1">
+                                    <button type="button" class="btn-red-hover remove" style="margin-top: 30px;"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+                        </form>
                         </div>
                         <div class="text-center mt-4 mb-3">
                             <a href="{{ route('lapangan.pesan.konfirmasi') }}" class="btn-green-hover text-decoration-none">Lanjutkan Pemesanan</a>

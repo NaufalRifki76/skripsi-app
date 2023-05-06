@@ -21,7 +21,7 @@
                 </div>
             </div>
             <p class="h3 fw-bold text-center py-5" style="color: #439A97">Pesan Lapangan Yang Anda Inginkan</p>
-            <div class="row">
+            <div class="row mb-5">
                 <div class="col-md-4">
                     <div class="card shadow" style="border: none; border-radius: 12px;">
                         <img src="{{ asset('Assets/image-lapangan/lapangan-detail.jpg') }}" style="border-top-left-radius: 12px; border-top-right-radius: 12px;" class="card-img-top" alt="...">
@@ -36,7 +36,7 @@
                     <div class="card shadow" style="border: none; border-radius: 12px;">
                         <img src="{{ asset('Assets/image-lapangan/lapangan-detail.jpg') }}" style="border-top-left-radius: 12px; border-top-right-radius: 12px;" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Lapangan A</h5>
+                          <h5 class="card-title">Lapangan B</h5>
                           <p class="card-text my-4">Harga Sewa: <b>150.000</b> / jam</p>
                           <a href="#" class="btn-green-hover text-decoration-none">Pesan Lapangan</a>
                         </div>
@@ -46,14 +46,14 @@
                     <div class="card shadow" style="border: none; border-radius: 12px;">
                         <img src="{{ asset('Assets/image-lapangan/lapangan-detail.jpg') }}" style="border-top-left-radius: 12px; border-top-right-radius: 12px;" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Lapangan A</h5>
+                          <h5 class="card-title">Lapangan C</h5>
                           <p class="card-text my-4">Harga Sewa: <b>150.000</b> / jam</p>
                           <a href="#" class="btn-green-hover text-decoration-none">Pesan Lapangan</a>
                         </div>
                       </div>
                 </div>
             </div>
-            <div class="card shadow my-4" style="border: none; border-radius: 12px;">
+            {{-- <div class="card shadow my-4" style="border: none; border-radius: 12px;">
                 <div class="card-body">
 
                     <div class="row px-5">
@@ -160,7 +160,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
       
     @endsection
