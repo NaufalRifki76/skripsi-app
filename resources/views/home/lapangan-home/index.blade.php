@@ -24,7 +24,7 @@
 <br>
 <br>
 <div class="container mt-5">
-    <h2 class="fw-bold" style="color: #439A97">Lapangan Yang Tersedia</h2>
+    <h1 class="fw-bold" style="color: #439A97">Lapangan Yang Tersedia</h1>
     <div class="row mt-5">
         <div class="col-md-6 card-mob">
             <a href="{{ route('lapangan.detail') }}" class="text-decoration-none text-dark">

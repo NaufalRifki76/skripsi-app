@@ -23,7 +23,7 @@
         <div class="col-md-7">
             <div class="text-center">
                 <h1 class="fw-bold" style="color: #439A97">Sewa Perlengkapan</h1>
-                <h6 class="mt-3" style="color: #FCE700">Sulit untuk membeli perlengkapan bola? Sewa Perlengkapan aja!</h6>
+                <h5 class="mt-3" style="color: #FCE700">Sulit untuk membeli perlengkapan bola? Sewa Perlengkapan aja!</h5>
                 <div class="container mt-5">
                     <p class="fs-6" style="color: #62B6B7">1. Informasi lapangan yang menyediakan fasilitas sewa perlengkapan.
                         <br> 2. Data perlengkapan yang akurat. <br> 3.

@@ -13,7 +13,7 @@
                             <p class="h5 mb-3">Lapangan: <b>A</b></p>
                             <div class="mb-3">
                                 <label for="inputState" class="form-label h5">Pilih tanggal pemesanan lapangan</label>
-                                <input type="date" class="form-control" id="ExpiredDate" placeholder="">
+                                <input type="date" class="form-control inputdate" id="" placeholder="">
                             </div>
                             <div class="row fieldGroup mb-3">
                                 <div class="col-md-6">
@@ -31,7 +31,8 @@
                                         placeholder="">
                                 </div>
                                 <div class="col-md-1">
-                                    <button type="button" class="btn-green-hover addMore" style="margin-top: 30px;"><i class="fa-solid fa-plus"></i></button>
+                                    <button type="button" class="btn-green-hover addMore" style="margin-top: 30px;"><i
+                                            class="fa-solid fa-plus"></i></button>
                                 </div>
                             </div>
                             <div class="row fieldGroupCopy mb-3" style="display: none;">
@@ -50,18 +51,20 @@
                                         placeholder="">
                                 </div>
                                 <div class="col-md-1">
-                                    <button type="button" class="btn-red-hover remove" style="margin-top: 30px;"><i class="fa-solid fa-trash"></i></button>
+                                    <button type="button" class="btn-red-hover remove" style="margin-top: 30px;"><i
+                                            class="fa-solid fa-trash"></i></button>
                                 </div>
                         </form>
-                        </div>
-                        <div class="text-center mt-4 mb-3">
-                            <a href="{{ route('lapangan.pesan.konfirmasi') }}" class="btn-green-hover text-decoration-none">Lanjutkan Pemesanan</a>
-                        </div>
+                    </div>
+                    <div class="text-center mt-4 mb-3">
+                        <a href="{{ route('lapangan.pesan.konfirmasi') }}"
+                            class="btn-green-hover text-decoration-none">Lanjutkan Pemesanan</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-2"></div>
         </div>
+        <div class="col-md-2"></div>
+    </div>
     </div>
 
     @push('css')
@@ -100,6 +103,22 @@
                 $("body").on("click", ".remove", function() {
                     $(this).parents(".fieldGroup").remove();
                 });
+            });
+        </script>
+        <script type="text/javascript">
+            $(function() {
+                var dtToday = new Date();
+
+                var month = dtToday.getMonth() + 1;
+                var day = dtToday.getDate();
+                var year = dtToday.getFullYear();
+                if (month < 10)
+                    month = '0' + month.toString();
+                if (day < 10)
+                    day = '0' + day.toString();
+
+                var maxDate = year + '-' + month + '-' + day;
+                $('.inputdate').attr('min', maxDate);
             });
         </script>
     @endpush

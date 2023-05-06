@@ -22,8 +22,8 @@
         </div>
         <div class="col-md-7">
             <div class="text-center">
-                <h2 class="fw-bold" style="color: #439A97">Info Kompetisi</h2>
-                <h6 class="mt-3" style="color: #FCE700">Cari informasi kompetisi futsal di "Main Bola"!</h6>
+                <h1 class="fw-bold" style="color: #439A97">Info Kompetisi</h1>
+                <h5 class="mt-3" style="color: #FCE700">Cari informasi kompetisi futsal di "Main Bola"!</h5>
                 <div class="container mt-5">
                     <p class="fs-6" style="color: #62B6B7">1. Mendapatkan informasi kompetisi futsal yang tersedia untuk didaftar.
                         <br> 2. Memudahkan pengguna untuk mencari kompetisi kelompok umur dan pendidikan. <br> 3.

@@ -5,8 +5,8 @@
     <div class="container text-center">
         <br><br>
         <div>
-            <h6  style="color: #FCE700">Mengapa anda harus memesan lapangan di sini ?</h6>
-            <h2 class="fw-bold" style="color: #439A97">Keuntungan booking lapangan di MAIN BOLA</h2>
+            <h5 style="color: #FCE700">Mengapa anda harus memesan lapangan di sini ?</h5>
+            <h1 class="fw-bold" style="color: #439A97">Keuntungan booking lapangan di MAIN BOLA</h1>
         </div>
         <div class="row mt-5">
             <div class="col-md-4">
