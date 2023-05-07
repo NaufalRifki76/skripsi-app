@@ -80,6 +80,10 @@ Route::get('/pesan-lapangan-sukses', function () {
     return view('pesan-lapangan.sukses');
 })->name('lapangan.pesan.sukses');
 
+Route::get('/riwayat-pemesanan', function () {
+    return view('riwayat-pemesanan.index');
+})->name('riwayat.pemesanan');
+
 // Perlengkapan
 Route::get('/sewa-perlengkapan', function () {
     return view('sewa-perlengkapan.index');

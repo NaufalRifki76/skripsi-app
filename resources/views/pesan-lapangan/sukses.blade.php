@@ -12,7 +12,7 @@
                     <img src="{{ asset('Assets/lapangan/transaction-success.jpg') }}" class="img-fluid my-3" width="50%" alt="">
                     <h6 class="mb-3 mx-3">Anda dapat melihat status pemesanan lapangan yang anda lakukan dengan menekan tombol di bawah!</h6>
                     <div class="mt-4 mb-3">
-                        <a href="" class="btn-green-hover text-decoration-none">Lihat Status Pemesanan</a>
+                        <a href="{{ route('riwayat.pemesanan') }}" class="btn-green-hover text-decoration-none">Lihat Status Pemesanan</a>
                     </div>
                 </div>
             </div>
