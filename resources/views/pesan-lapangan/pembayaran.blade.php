@@ -37,7 +37,7 @@
                                 <p class="fs-6 text-danger">Upload bukti transfer anda dengan mengisi formulir di bawah!</p>
                                 <div class="mb-3">
                                     <label for="inputState" class="form-label h5">Nomor Rekening</label>
-                                    <input type="file" disabled class="form-control bg-white" id=""
+                                    <input type="file" class="form-control bg-white" accept=".jpg,.jpeg,.png" id=""
                                         placeholder="123456789">
                                 </div>
                             </div>
