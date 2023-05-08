@@ -3,20 +3,38 @@
 namespace App\Http\Controllers\Features;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tournament;
+use App\Models\TournamentPhotos;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Http\Request;
 
 class CompetitionController extends Controller
 {
     public function index(){
-        return view('info-kompetisi.index');
+        if(!Sentinel::getUser()) {
+            return redirect()->route('auth.login');
+        } else{
+            return view('info-kompetisi.index');
+        }
     }
 
     public function pendidikan(){
-        return view('info-kompetisi.tingkat-sekolah');
+        if(!Sentinel::getUser()) {
+            return redirect()->route('auth.login');
+        } else{
+            $tournament = Tournament::where('education_category', null)->get();
+            $tournamentPhotos = Tournament::where('education_category', null)->with('tournament_photos')->get();
+            return view('info-kompetisi.tingkat-sekolah', compact('tournament', 'tournamentPhotos'));
+        }
     }
 
     public function umur(){
-        return view('info-kompetisi.tingkat-umur');
+        if(!Sentinel::getUser()) {
+            return redirect()->route('auth.login');
+        } else{
+            $tournament = Tournament::where('age_category', null)->get();
+            $tournamentPhotos = Tournament::where('age_category', null)->with('tournament_photos')->get();
+            return view('info-kompetisi.tingkat-umur', compact('tournament', 'tournamentPhotos'));
+        }
     }
 }
