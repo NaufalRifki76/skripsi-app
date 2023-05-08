@@ -5,7 +5,7 @@
 <style>
     .background-img-riwayat {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("Assets/riwayat-pemesanan/bg.jpg");
-}
+    }
 </style>
 
 <div style="background-color: #ECFAF0">

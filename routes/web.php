@@ -84,6 +84,10 @@ Route::get('/riwayat-pemesanan', function () {
     return view('riwayat-pemesanan.index');
 })->name('riwayat.pemesanan');
 
+Route::get('/mitra-join', function () {
+    return view('mitra.join');
+})->name('mitra.join');
+
 // Perlengkapan
 Route::get('/sewa-perlengkapan', function () {
     return view('sewa-perlengkapan.index');
@@ -109,4 +113,4 @@ Route::get('/kompetisi-detail', function () {
 // Profile
 Route::get('/profile', function () {
     return view('profile.index');
-});
+})->name('profile.index');

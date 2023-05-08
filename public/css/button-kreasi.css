@@ -25,6 +25,21 @@
   margin: 4px 2px;
   transition: 0.3s;
 }
+
+.btn-green2-hover {
+  background-color: #CBEDD5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 20px;
+  margin: 4px 2px;
+  transition: 0.3s;
+}
+
+.btn-green2-hover:hover {
+  background-color: #439A97;
+  color: white;
+}
   
 .btn-red-hover:hover {
   background-color: #f98a61;
