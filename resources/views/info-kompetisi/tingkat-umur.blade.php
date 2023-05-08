@@ -44,24 +44,24 @@
     <div class="container row m-5">
         <div class="col-md-4">
             <a class="text-dark" style="text-decoration: none" href="">
+                @foreach ($tournament as $key => $tUmur)
                 <div class="card mb-3" style="border-radius: 12px">
                     <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}" class="card-img-top img-fluid"
                         style="height: 250px; border-top-left-radius: 12px; border-top-right-radius: 12px" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title mt-2" style="color: #439A97">Nama Kompetisi</h5>
+                        <h5 class="card-title mt-2" style="color: #439A97">{{$tUmur->tournament_name}}</h5>
                         <div class="d-flex my-3">
                             <i class="fa-solid fa-location-dot mt-1" style="margin-right: 10px"></i>
                             <p class="card-text" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-                                Jalan. Maja Pahit Permai, Karet Tengsin, Tanah Abang, Jakarta Pusat, DKI Jakarta, 10330</p>
+                                {{$tUmur->tournament_address}}</p>
                         </div>
                         <p class="card-text mt-2" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-                            Some quick
-                            example text to build on the card title and make up the bulk of
-                            the card's content.</p>
+                            {{$tUmur->tournament_detail}}</p>
                         <h6 class="mt-2">Biaya Pendaftaran</h6>
-                        <p class="card-text">Rp <b>250.000</b></p>
+                        <p class="card-text">Rp <b>{{$tUmur->entry_fee}}</b></p>
                     </div>
                 </div>
+                @endforeach
             </a>
         </div>
     </div>
