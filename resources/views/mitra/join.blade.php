@@ -25,12 +25,14 @@
                                 <h3 class="fw-bold text-white mb-3">Informasi Lapangan Yang Anda Daftarkan</h3>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5 text-white">Nama Lapangan <span class="text-danger">*</span></label>
+                                        <label for="inputState" class="form-label h5 text-white">Nama Lapangan <span
+                                                class="text-danger">*</span></label>
                                         <input type="text" class="form-control bg-white" required id=""
                                             placeholder="Nama lapangan anda...">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="" class="form-label h5 text-white">Alamat <span class="text-danger">*</span></label>
+                                        <label for="" class="form-label h5 text-white">Alamat <span
+                                                class="text-danger">*</span></label>
                                         <textarea class="form-control" required placeholder="Alamat lapangan anda..." id="" rows="3"></textarea>
                                     </div>
                                     <div class="mb-3">
@@ -44,21 +46,24 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="mb-3">
-                                                <label for="inputState" class="form-label h5 text-white">Jam Buka <span class="text-danger">*</span></label>
+                                                <label for="inputState" class="form-label h5 text-white">Jam Buka <span
+                                                        class="text-danger">*</span></label>
                                                 <input type="time" required class="form-control bg-white" id=""
                                                     placeholder="">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="mb-3">
-                                                <label for="inputState" class="form-label h5 text-white">Jam Tutup <span class="text-danger">*</span></label>
+                                                <label for="inputState" class="form-label h5 text-white">Jam Tutup <span
+                                                        class="text-danger">*</span></label>
                                                 <input type="time" required class="form-control bg-white" id=""
                                                     placeholder="">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="" class="form-label h5 text-white">Deskripsi Lapangan <span class="text-danger">*</span></label>
+                                        <label for="" class="form-label h5 text-white">Deskripsi Lapangan <span
+                                                class="text-danger">*</span></label>
                                         <textarea class="form-control" required placeholder="Deskripsi lapangan anda..." id="" rows="3"></textarea>
                                     </div>
                                     <div class="mb-3">
@@ -139,7 +144,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5 text-white">Nama Lapangan <span class="text-danger">*</span></label>
+                                        <label for="inputState" class="form-label h5 text-white">Nama Lapangan <span
+                                                class="text-danger">*</span></label>
                                         <input type="text" class="form-control bg-white" required id=""
                                             placeholder="Nama lapangan anda...">
                                     </div>
@@ -167,7 +173,8 @@
                             <div class="row fieldGroupCopy" style="display: none;">
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5 text-white">Nama Lapangan <span class="text-danger">*</span></label>
+                                        <label for="inputState" class="form-label h5 text-white">Nama Lapangan <span
+                                                class="text-danger">*</span></label>
                                         <input type="text" class="form-control bg-white" required id=""
                                             placeholder="Nama lapangan anda...">
                                     </div>
@@ -208,14 +215,20 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5 text-white">Nama Perlengkapan <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control bg-white" required id=""
-                                            placeholder="Nama lapangan anda...">
+                                        <label for="namaPerlengkapan" class="form-label h5 text-white">Nama Perlengkapan
+                                            <span class="text-danger">*</span></label>
+                                        <select id="namaPerlengkapan" required class="form-select">
+                                            <option disabled selected>Pilih perlengkapan...</option>
+                                            <option value="1">Sepatu</option>
+                                            <option value="2">Rompi</option>
+                                            <option value="3">Sarung Tangan kiper</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5 text-white">Jumlah <span class="text-danger">*</span></label>
+                                        <label for="inputState" class="form-label h5 text-white">Jumlah <span
+                                                class="text-danger">*</span></label>
                                         <input type="text" class="form-control bg-white" required id=""
                                             placeholder="Jumlah perlengkapan...">
                                     </div>
@@ -235,14 +248,20 @@
                             <div class="row fieldGroupCopy2" style="display: none;">
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5 text-white">Nama Perlengkapan <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control bg-white" required id=""
-                                            placeholder="Nama lapangan anda...">
+                                        <label for="namaPerlengkapan" class="form-label h5 text-white">Nama Perlengkapan
+                                            <span class="text-danger">*</span></label>
+                                        <select id="namaPerlengkapan" required class="form-select">
+                                            <option selected>Pilih perlengkapan...</option>
+                                            <option disabled value="1">Sepatu</option>
+                                            <option value="2">Rompi</option>
+                                            <option value="3">Sarung Tangan kiper</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5 text-white">Jumlah <span class="text-danger">*</span></label>
+                                        <label for="inputState" class="form-label h5 text-white">Jumlah <span
+                                                class="text-danger">*</span></label>
                                         <input type="text" class="form-control bg-white" required id=""
                                             placeholder="Jumlah perlengkapan...">
                                     </div>
@@ -276,10 +295,24 @@
         </div>
     </div>
 
+    @push('css')
+        {{-- Select --}}
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+    @endpush
+
     @push('script')
         {{-- Select2 --}}
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         <script>
+            // select
+            $(document).ready(function() {
+                $('#namaPerlengkapan').select2({
+                    theme: "bootstrap-5",
+                });
+            });
+
             // script untuk Data Lapangan Tersedia
             $(document).ready(function() {
                 // membatasi jumlah inputan

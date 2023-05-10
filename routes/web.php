@@ -88,6 +88,10 @@ Route::get('/riwayat-pemesanan', function () {
     return view('riwayat-pemesanan.index');
 })->name('riwayat.pemesanan');
 
+Route::get('/daftar-lapangan', function () {
+    return view('mitra.join');
+})->name('mitra.join');
+
 // Perlengkapan
 Route::get('/sewa-perlengkapan', function () {
     return view('sewa-perlengkapan.index');
