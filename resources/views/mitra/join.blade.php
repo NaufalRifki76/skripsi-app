@@ -18,12 +18,14 @@
                 <div class="card shadow-lg background-img-riwayat mb-5" style="border: none; border-radius: 12px">
                     <div class="card-body">
                         <form action="">
+
+                            {{-- Data Venue --}}
                             <div class="row">
                                 <h3 class="fw-bold text-white mb-3">Informasi Lapangan Yang Anda Daftarkan</h3>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Nama Lapangan</label>
-                                        <input type="text" required class="form-control bg-white" id=""
+                                        <input type="text" class="form-control bg-white" required id=""
                                             placeholder="Nama lapangan anda...">
                                     </div>
                                     <div class="mb-3">
@@ -120,7 +122,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row fieldGroup">
+
+                            {{-- Data Lapangan Tersedia --}}
+                            <div class="row fieldGroup mb-3">
                                 <div class="col-md-10">
                                     <h3 class="fw-bold mb-3 mt-2 text-white">Data Lapangan Tersedia</h3>
                                 </div>
@@ -183,6 +187,73 @@
                                             class="fa-solid fa-trash"></i></button>
                                 </div>
                             </div>
+
+                            {{-- Perlengkapan Tersedia --}}
+                            <div class="row fieldGroup2">
+                                <div class="col-md-10">
+                                    <h3 class="fw-bold mb-3 mt-2 text-white">Data Perlengkapan Tersedia</h3>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <button type="button" class="btn-green2-hover addMore2 shadow-lg"
+                                        style="margin-top: 10px;"><i class="fa-solid fa-plus"></i></button>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label for="inputState" class="form-label h5 text-white">Nama Perlengkapan</label>
+                                        <input type="text" class="form-control bg-white" required id=""
+                                            placeholder="Nama lapangan anda...">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label for="inputState" class="form-label h5 text-white">Jumlah</label>
+                                        <input type="text" class="form-control bg-white" required
+                                            id="" placeholder="Jumlah perlengkapan...">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label for="inputState" class="form-label h5 text-white">Harga Sewa Per-Jam</label>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="">Rp</span>
+                                            <input type="number" class="form-control" required id=""
+                                                aria-describedby="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row fieldGroupCopy2" style="display: none;">
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label for="inputState" class="form-label h5 text-white">Nama Perlengkapan</label>
+                                        <input type="text" class="form-control bg-white" required id=""
+                                            placeholder="Nama lapangan anda...">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label for="inputState" class="form-label h5 text-white">Jumlah</label>
+                                        <input type="text" class="form-control bg-white" required
+                                            id="" placeholder="Jumlah perlengkapan...">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label for="inputState" class="form-label h5 text-white">Harga Sewa Per-Jam</label>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="">Rp</span>
+                                            <input type="number" class="form-control" required id=""
+                                                aria-describedby="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-end">
+                                    <button type="button" class="btn-red-hover remove2 mt-2"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </div>
+
+                           
                             <div class="text-center">
                                 <button type="submit" class="btn-green2-hover mt-4">Kirim</button>
                             </div>
@@ -198,6 +269,7 @@
         {{-- Select2 --}}
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         <script>
+            // script untuk Data Lapangan Tersedia
             $(document).ready(function() {
                 // membatasi jumlah inputan
                 var maxGroup = 10;
@@ -216,6 +288,28 @@
                 //remove fields group
                 $("body").on("click", ".remove", function() {
                     $(this).parents(".fieldGroup").remove();
+                });
+            });
+
+            // Script untuk data perlengkapan
+            $(document).ready(function() {
+                // membatasi jumlah inputan
+                var maxGroup2 = 10;
+
+                //melakukan proses multiple input 
+                $(".addMore2").click(function() {
+                    if ($('body').find('.fieldGroup2').length < maxGroup2) {
+                        var fieldHTML = '<div class="row fieldGroup2">' + $(".fieldGroupCopy2").html() +
+                            '</div>';
+                        $('body').find('.fieldGroup2:last').after(fieldHTML);
+                    } else {
+                        alert('Maximum ' + maxGroup2 + ' groups are allowed.');
+                    }
+                });
+
+                //remove fields group
+                $("body").on("click", ".remove2", function() {
+                    $(this).parents(".fieldGroup2").remove();
                 });
             });
         </script>
