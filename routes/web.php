@@ -110,6 +110,10 @@ Route::get('/kompetisi-detail', function () {
     return view('info-kompetisi.detail');
 });
 
+Route::get('/kompetisi-daftar', function () {
+    return view('info-kompetisi.daftar');
+})->name('daftar.kompetisi');
+
 // Profile
 Route::get('/profile', function () {
     return view('profile.index');
