@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Features\BookingController;
 use App\Http\Controllers\Features\CompetitionController;
+use App\Http\Controllers\Features\MitraController;
 use App\Http\Controllers\Features\VipController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,9 @@ Route::get('lapangan.index', [BookingController::class, 'index'])->name('lapanga
 Route::get('kompetisi.index', [CompetitionController::class, 'index'])->name('kompetisi.index');
 Route::get('tingkat-pendidikan.index', [CompetitionController::class, 'pendidikan'])->name('tingkat-pendidikan.index');
 Route::get('tingkat-umur.index', [CompetitionController::class, 'umur'])->name('tingkat-umur.index');
+
+// Mitra
+Route::get('mitra.index', [MitraController::class, 'index'])->name('mitra.index');
 
 // --------------------- BAGIAN BAWAH INI UNTUK TESTING -------------------- //
 // Route::get('/', function () {
@@ -83,10 +87,6 @@ Route::get('/pesan-lapangan-sukses', function () {
 Route::get('/riwayat-pemesanan', function () {
     return view('riwayat-pemesanan.index');
 })->name('riwayat.pemesanan');
-
-Route::get('/mitra-join', function () {
-    return view('mitra.join');
-})->name('mitra.join');
 
 // Perlengkapan
 Route::get('/sewa-perlengkapan', function () {

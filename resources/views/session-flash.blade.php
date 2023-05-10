@@ -18,6 +18,6 @@
     <div class="alert alert-sm alert-border-left alert-danger alert-dismissible">
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
         <i class="fa-solid fa-circle-info pr10"></i>
-        <strong>Gagal: </strong> Cek kembali kelengkapan form anda!
+        <strong>Gagal: </strong> Silahkan login terlebih dahulu, atau register apabila anda belum mempunyai akun.
     </div>
 @endif
