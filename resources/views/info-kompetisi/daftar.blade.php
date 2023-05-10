@@ -8,7 +8,7 @@
 </style>
 <div class="container">
     <div class="py-5">
-        <p class="h2 fw-bold text-center" style="color: #439A97">Publikasikan kompetisi anda di sini!</p>
+        <p class="h1 fw-bold text-center" style="color: #439A97">Publikasikan kompetisi anda di sini!</p>
         <p class="h5 fw-normal text-center" style="color: #FCE700">Bergabung dengan kami untuk menciptakan generasi futsal yang unggul!</p>
         <div class="row">
             <div class="col-md-1"></div>

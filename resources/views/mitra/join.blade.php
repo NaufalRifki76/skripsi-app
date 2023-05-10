@@ -9,7 +9,7 @@
 
     <div class="container">
         <div class="py-5">
-            <p class="h3 fw-bold text-center" style="color: #439A97">Bergabung Menjadi Mitra Kami</p>
+            <p class="h1 fw-bold text-center" style="color: #439A97">Bergabung Menjadi Mitra Kami</p>
             <p class="h5 fw-normal text-center" style="color: #FCE700">Isi formulir di bawah untuk mendaftarkan lapangan yang anda miliki!</p>
         </div>
         <div class="row">
@@ -23,12 +23,12 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Nama Lapangan</label>
-                                        <input type="text" class="form-control bg-white" id=""
+                                        <input type="text" required class="form-control bg-white" id=""
                                             placeholder="Nama lapangan anda...">
                                     </div>
                                     <div class="mb-3">
                                         <label for="" class="form-label h5 text-white">Alamat</label>
-                                        <textarea class="form-control" placeholder="Alamat lapangan anda..." id="" rows="3"></textarea>
+                                        <textarea class="form-control" required placeholder="Alamat lapangan anda..." id="" rows="3"></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Foto Lapangan (.jpg, .png)</label>
@@ -41,33 +41,33 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="inputState" class="form-label h5 text-white">Jam Buka</label>
-                                                <input type="time" class="form-control bg-white" id=""
+                                                <input type="time" required class="form-control bg-white" id=""
                                                     placeholder="">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="inputState" class="form-label h5 text-white">Jam Tutup</label>
-                                                <input type="time" class="form-control bg-white" id=""
+                                                <input type="time" required class="form-control bg-white" id=""
                                                     placeholder="">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="" class="form-label h5 text-white">Deskripsi Lapangan</label>
-                                        <textarea class="form-control" placeholder="Deskripsi lapangan anda..." id="" rows="3"></textarea>
+                                        <textarea class="form-control" required placeholder="Deskripsi lapangan anda..." id="" rows="3"></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Harga Sewa Lapangan Per-Jam</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="">Rp</span>
-                                            <input type="number" class="form-control" id="" aria-describedby="">
+                                            <input type="number" class="form-control" required id="" aria-describedby="">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="" class="form-label h5 text-white">Fasilitas Lapangan (Ceklis fasilitas yang
-                                        tersedia di tempat anda.)</label>
+                                        tersedia di tempat anda).</label>
                                     <div class="row px-4">
                                         <div class="col-md-4">
                                             <div class="form-check mb-3">
@@ -131,7 +131,7 @@
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Nama Lapangan</label>
-                                        <input type="text" class="form-control bg-white" id=""
+                                        <input type="text" class="form-control bg-white" required id=""
                                             placeholder="Nama lapangan anda...">
                                     </div>
                                 </div>
@@ -147,7 +147,7 @@
                                         <label for="inputState" class="form-label h5 text-white">Harga Sewa Per-Jam</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="">Rp</span>
-                                            <input type="number" class="form-control" id=""
+                                            <input type="number" class="form-control" required id=""
                                                 aria-describedby="">
                                         </div>
                                     </div>
@@ -157,7 +157,7 @@
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Nama Lapangan</label>
-                                        <input type="text" class="form-control bg-white" id=""
+                                        <input type="text" class="form-control bg-white" required id=""
                                             placeholder="Nama lapangan anda...">
                                     </div>
                                 </div>
@@ -173,7 +173,7 @@
                                         <label for="inputState" class="form-label h5 text-white">Harga Sewa Per-Jam</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="">Rp</span>
-                                            <input type="number" class="form-control" id=""
+                                            <input type="number" class="form-control" required id=""
                                                 aria-describedby="">
                                         </div>
                                     </div>
