@@ -37,31 +37,31 @@
                                         <h3 class="fw-bold" style=" color: #439A97">Register</h3>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input style="border-radius: 5px" type="text" class="form-control" id="name" name="name"
+                                        <input style="border-radius: 5px" type="text" class="form-control" required id="name" name="name"
                                             placeholder="name@example.com">
                                         <label for="floatingInput">Nama Lengkap (sesuai di KTP)</label>
                                     </div>
-                                    <div class="form-floating mb-3">
-                                        <input style="border-radius: 5px" type="email" class="form-control" id="email" name="email"
+                                    <div class="form-floating mb-3"> 
+                                        <input style="border-radius: 5px" type="email" class="form-control" required id="email" name="email"
                                             placeholder="name@example.com">
                                         <label for="floatingInput">Email</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input style="border-radius: 5px" type="number" class="form-control" id="no_telephone" name="no_telephone"
+                                        <input style="border-radius: 5px" type="number" class="form-control" required id="no_telephone" name="no_telephone"
                                             placeholder="name@example.com">
                                         <label for="floatingInput">No. Handphone</label>
                                     </div>
                                     <div class="form-group row mt-3">
                                         <div class="col-md-6">
                                             <div style="border-radius: 5px" class="form-floating mb-3">
-                                                <input type="password" class="form-control" id="password" name="password"
+                                                <input type="password" class="form-control" required id="password" name="password"
                                                     placeholder="name@example.com">
                                                 <label for="floatingInput">Password</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating mb-3 ">
-                                                <input style="border-radius: 5px" type="password" class="form-control" id="password_confirmation" name="password_confirmation"
+                                                <input style="border-radius: 5px" type="password" class="form-control" required id="password_confirmation" name="password_confirmation"
                                                     placeholder="name@example.com">
                                                 <label for="floatingInput">Konfirmasi Password</label>
                                             </div>

@@ -40,12 +40,12 @@
                                         <h3 class="fw-bold px-2" style=" color: #439A97">Login</h3>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="email" class="form-control" id="email" name="email"
+                                        <input type="email" class="form-control" required id="email" name="email"
                                             placeholder="name@example.com">
                                         <label for="floatingInput input-label-sm">Email</label>
                                     </div>
                                     <div class="form-group form-floating mb-3">
-                                        <input type="password" class="form-control form-control-sm" name="password"
+                                        <input type="password" class="form-control form-control-sm" required name="password"
                                             placeholder=".form-control-sm" id="password">
                                         <label for="floatingInput">Password</label>
                                     </div>
