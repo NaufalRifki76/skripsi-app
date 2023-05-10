@@ -19,35 +19,46 @@
                     <div class="card-body">
                         <form action="">
                             <div class="row">
-                                <h3 class="fw-bold mb-3">Informasi Lapangan Yang Anda Daftarkan</h3>
+                                <h3 class="fw-bold text-white mb-3">Informasi Lapangan Yang Anda Daftarkan</h3>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5">Nama Lapangan</label>
+                                        <label for="inputState" class="form-label h5 text-white">Nama Lapangan</label>
                                         <input type="text" class="form-control bg-white" id=""
                                             placeholder="Nama lapangan anda...">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="" class="form-label h5">Alamat</label>
+                                        <label for="" class="form-label h5 text-white">Alamat</label>
                                         <textarea class="form-control" placeholder="Alamat lapangan anda..." id="" rows="3"></textarea>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5">Foto Lapangan (.jpg, .png)</label>
+                                        <label for="inputState" class="form-label h5 text-white">Foto Lapangan (.jpg, .png)</label>
                                         <input type="file" class="form-control bg-white" accept=".jpg, .jpeg, .png"
                                             id="" placeholder="Jumlah lapangan tersedia...">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="inputState" class="form-label h5">Lapangan Tersedia</label>
-                                        <input type="number" class="form-control bg-white" id=""
-                                            placeholder="Jumlah lapangan tersedia...">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="inputState" class="form-label h5 text-white">Jam Buka</label>
+                                                <input type="time" class="form-control bg-white" id=""
+                                                    placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="inputState" class="form-label h5 text-white">Jam Tutup</label>
+                                                <input type="time" class="form-control bg-white" id=""
+                                                    placeholder="">
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="" class="form-label h5">Deskripsi Lapangan</label>
+                                        <label for="" class="form-label h5 text-white">Deskripsi Lapangan</label>
                                         <textarea class="form-control" placeholder="Deskripsi lapangan anda..." id="" rows="3"></textarea>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5">Harga Sewa Lapangan Per-Jam</label>
+                                        <label for="inputState" class="form-label h5 text-white">Harga Sewa Lapangan Per-Jam</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="">Rp</span>
                                             <input type="number" class="form-control" id="" aria-describedby="">
@@ -55,21 +66,21 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="" class="form-label h5">Fasilitas Lapangan (Ceklis fasilitas yang
+                                    <label for="" class="form-label h5 text-white">Fasilitas Lapangan (Ceklis fasilitas yang
                                         tersedia di tempat anda.)</label>
                                     <div class="row px-4">
                                         <div class="col-md-4">
                                             <div class="form-check mb-3">
                                                 <input class="form-check-input" type="checkbox" value=""
                                                     id="">
-                                                <label class="form-check-label" for="">
+                                                <label class="form-check-label text-white" for="">
                                                     Minuman
                                                 </label>
                                             </div>
                                             <div class="form-check mb-3">
                                                 <input class="form-check-input" type="checkbox" value=""
                                                     id="">
-                                                <label class="form-check-label" for="">
+                                                <label class="form-check-label text-white" for="">
                                                     Ruang Ganti
                                                 </label>
                                             </div>
@@ -78,14 +89,14 @@
                                             <div class="form-check mb-3">
                                                 <input class="form-check-input" type="checkbox" value=""
                                                     id="">
-                                                <label class="form-check-label" for="">
+                                                <label class="form-check-label text-white" for="">
                                                     Toilet
                                                 </label>
                                             </div>
                                             <div class="form-check mb-3">
                                                 <input class="form-check-input" type="checkbox" value=""
                                                     id="">
-                                                <label class="form-check-label" for="">
+                                                <label class="form-check-label text-white" for="">
                                                     Parkir Kendaraan
                                                 </label>
                                             </div>
@@ -94,14 +105,14 @@
                                             <div class="form-check mb-3">
                                                 <input class="form-check-input" type="checkbox" value=""
                                                     id="">
-                                                <label class="form-check-label" for="">
+                                                <label class="form-check-label text-white" for="">
                                                     Wifi
                                                 </label>
                                             </div>
                                             <div class="form-check mb-3">
                                                 <input class="form-check-input" type="checkbox" value=""
                                                     id="">
-                                                <label class="form-check-label" for="">
+                                                <label class="form-check-label text-white" for="">
                                                     Sewa Perlengkapan
                                                 </label>
                                             </div>
@@ -111,7 +122,7 @@
                             </div>
                             <div class="row fieldGroup">
                                 <div class="col-md-10">
-                                    <h3 class="fw-bold mb-3 mt-2">Data Lapangan Tersedia</h3>
+                                    <h3 class="fw-bold mb-3 mt-2 text-white">Data Lapangan Tersedia</h3>
                                 </div>
                                 <div class="col-md-2 text-end">
                                     <button type="button" class="btn-green2-hover addMore shadow-lg"
@@ -119,21 +130,21 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5">Nama Lapangan</label>
+                                        <label for="inputState" class="form-label h5 text-white">Nama Lapangan</label>
                                         <input type="text" class="form-control bg-white" id=""
                                             placeholder="Nama lapangan anda...">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5">Foto Lapangan (.jpg, .png)</label>
+                                        <label for="inputState" class="form-label h5 text-white">Foto Lapangan (.jpg, .png)</label>
                                         <input type="file" class="form-control bg-white" accept=".jpg, .jpeg, .png"
                                             id="" placeholder="Jumlah lapangan tersedia...">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5">Harga Sewa Per-Jam</label>
+                                        <label for="inputState" class="form-label h5 text-white">Harga Sewa Per-Jam</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="">Rp</span>
                                             <input type="number" class="form-control" id=""
@@ -145,21 +156,21 @@
                             <div class="row fieldGroupCopy" style="display: none;">
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5">Nama Lapangan</label>
+                                        <label for="inputState" class="form-label h5 text-white">Nama Lapangan</label>
                                         <input type="text" class="form-control bg-white" id=""
                                             placeholder="Nama lapangan anda...">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5">Foto Lapangan (.jpg, .png)</label>
+                                        <label for="inputState" class="form-label h5 text-white">Foto Lapangan (.jpg, .png)</label>
                                         <input type="file" class="form-control bg-white" accept=".jpg, .jpeg, .png"
                                             id="" placeholder="Jumlah lapangan tersedia...">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5">Harga Sewa Per-Jam</label>
+                                        <label for="inputState" class="form-label h5 text-white">Harga Sewa Per-Jam</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="">Rp</span>
                                             <input type="number" class="form-control" id=""
