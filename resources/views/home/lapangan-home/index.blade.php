@@ -4,6 +4,7 @@
             border-top-left-radius: 12px;
             border-top-right-radius: 12px;
         }
+
         .card-mob {
             margin-bottom: 10px;
         }
@@ -13,8 +14,9 @@
         .web-img {
             border-top-left-radius: 12px;
             border-bottom-left-radius: 12px;
-            height: 240px;
+            height: 200px;
         }
+
         .card-size-web {
             max-height: 241px;
         }
@@ -36,21 +38,17 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">Lapangan Sepak Bola Senayan</h5>
-                                <div class="d-flex">
-                                    <i class="fa-sharp fa-solid fa-star mt-1"
-                                        style="color: #FCE700; margin-right: 10px"></i>
-                                    <p class="card-text">4.9</p>
-                                </div>
-                                <p class="card-text mt-2"
-                                    style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Jl. Setia Budi
+                                <h5 class="card-title fw-bold">Lapangan Sepak Bola Senayan</h5>
+                                <p class="card-text mt-3"
+                                    style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Jl. Setia
+                                    Budi
                                     Barat No.1, Kuningan, Setia Budi</p>
-                                <div class="d-flex">
-                                    <i class="fa-solid fa-futbol mt-1" style="margin-right: 10px"></i>
-                                    <p class="card-text">Futsal / Sepak Bola / Mini Soccer</p>
-                                </div>
-                                <p class="card-text mt-2">Harga</p>
-                                <p class="card-text" style="margin-top: -15px">Rp <b>250.000</b><small class="text-muted"> /
+                                <p class="card-text mt-3"
+                                    style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Lapangan
+                                    Tersedia: 3</p>
+                                <p class="card-text mt-3">Harga</p>
+                                <p class="card-text" style="margin-top: -15px">Rp <b>250.000</b><small
+                                        class="text-muted"> /
                                         Jam</small></p>
                             </div>
                         </div>
@@ -67,20 +65,15 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">Lapangan Sepak Bola Senayan</h5>
-                            <div class="d-flex">
-                                <i class="fa-sharp fa-solid fa-star mt-1"
-                                    style="color: #FCE700; margin-right: 10px"></i>
-                                <p class="card-text">4.9</p>
-                            </div>
-                            <p class="card-text mt-2"
-                                style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Jl. Setia Budi
+                            <h5 class="card-title fw-bold">Lapangan Sepak Bola Senayan</h5>
+                            <p class="card-text text-truncate mt-3" style="max">Jl. Setia Budi
+                                Barat No.1, Kuningan, Setia Budi Jl. Setia Budi
+                                Barat No.1, Kuningan, Setia Budi Jl. Setia Budi
                                 Barat No.1, Kuningan, Setia Budi</p>
-                            <div class="d-flex">
-                                <i class="fa-solid fa-futbol mt-1" style="margin-right: 10px"></i>
-                                <p class="card-text">Futsal / Sepak Bola / Mini Soccer</p>
-                            </div>
-                            <p class="card-text mt-2">Harga</p>
+                                <p class="card-text mt-3"
+                                    style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Lapangan
+                                    Tersedia: 3</p>
+                            <p class="card-text mt-3">Harga</p>
                             <p class="card-text" style="margin-top: -15px">Rp <b>250.000</b><small class="text-muted"> /
                                     Jam</small></p>
                         </div>
@@ -91,10 +84,9 @@
     </div>
     <div class="text-center mt-3">
         <h6 style="color: #FCE700">Klik tombol di bawah untuk melihat penawaran lainnya</h6>
-            <a href="{{route('lapangan.index')}}">
-                <button type="button" class="btn-green-transition mt-2">Lihat Lapangan Lainnya</button>
-            </a>
+        <a href="{{ route('lapangan.index') }}">
+            <button type="button" class="btn-green-transition mt-2">Lihat Lapangan Lainnya</button>
+        </a>
     </div>
 </div>
 <br>
-
