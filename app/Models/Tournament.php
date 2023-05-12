@@ -15,16 +15,19 @@ class Tournament extends Model
         'start_date',
         'end_date',
         'tournament_detail',
-        'min_education',
-        'max_education',
-        'min_age',
-        'max_age',
+        'entry_fee',
+        'education_category',
+        'age_category',
+        'registration_start',
+        'registration_end',
+        'team_pool',
+        'contact_person'
     ];
 
     protected $table = 'tournaments';
 
-    public function tournament_photos()
+    public function tournament_base64()
     {
-        return $this->hasOne(TournamentPhotos::class, 'tournament_id', '');
+        return $this->hasOne(TournamentPhotos::class);
     }
 }
