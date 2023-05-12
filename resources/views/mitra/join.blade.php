@@ -3,7 +3,7 @@
 @section('content')
     <style>
         .background-img-riwayat {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("Assets/riwayat-pemesanan/bg.jpg");
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("Assets/riwayat-pemesanan/bg.jpg");
         }
     </style>
 
@@ -36,30 +36,18 @@
                                         <textarea class="form-control" required placeholder="Alamat lapangan anda..." id="" rows="3"></textarea>
                                     </div>
                                     <div class="mb-3">
+                                        <label for="inputState" class="form-label h5 text-white">Jam Buka <span
+                                                class="text-danger">*</span></label>
+                                        <input type="time" required class="form-control bg-white" id=""
+                                            placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Foto Lapangan (.jpg,
                                             .png)</label>
                                         <input type="file" class="form-control bg-white" accept=".jpg, .jpeg, .png"
                                             id="" placeholder="Jumlah lapangan tersedia...">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label for="inputState" class="form-label h5 text-white">Jam Buka <span
-                                                        class="text-danger">*</span></label>
-                                                <input type="time" required class="form-control bg-white" id=""
-                                                    placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label for="inputState" class="form-label h5 text-white">Jam Tutup <span
-                                                        class="text-danger">*</span></label>
-                                                <input type="time" required class="form-control bg-white" id=""
-                                                    placeholder="">
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="" class="form-label h5 text-white">Deskripsi Lapangan <span
@@ -67,13 +55,10 @@
                                         <textarea class="form-control" required placeholder="Deskripsi lapangan anda..." id="" rows="3"></textarea>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5 text-white">Harga Sewa Lapangan
-                                            Per-Jam <span class="text-danger">*</span></label>
-                                        <div class="input-group mb-3">
-                                            <span class="input-group-text" id="">Rp</span>
-                                            <input type="number" class="form-control" required id=""
-                                                aria-describedby="">
-                                        </div>
+                                        <label for="inputState" class="form-label h5 text-white">Jam Tutup <span
+                                                class="text-danger">*</span></label>
+                                        <input type="time" required class="form-control bg-white" id=""
+                                            placeholder="">
                                     </div>
                                 </div>
                                 <div class="mb-3">

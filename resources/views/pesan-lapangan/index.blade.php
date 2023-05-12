@@ -1,56 +1,70 @@
 @extends('layout.index')
 
 @section('content')
+
     <div class="container">
-        <div class="row">
-            <div class="col-md-7">
-                <img src="{{ asset('Assets/image-lapangan/lapangan-detail.jpg') }}" class="img-fluid"
-                    style="max-height: 500px; border-radius: 12px" alt="...">
-            </div>
-            <div class="col-md-5">
-                <div class="card shadow" style="border: none; border-radius: 12px; max-height: 500px;">
-                    <div class="card-body text-center">
-                        <h4 style="color: #439A97">Stadion Madya Gelora Bung Karno</h4>
-                        <p class="card-text mt-3" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+        <div class="card shadow" style="border: none; border-radius: 12px;">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{{ asset('Assets/image-lapangan/lapangan-detail.jpg') }}" class="img-fluid"
+                        style="max-height: 400px; border-top-left-radius: 12px; border-bottom-left-radius: 12px;"
+                        alt="...">
+                </div>
+                <div class="col-md-6">
+                    <div class="mt-5">
+                        <h2 class="fw-bold" style="color: #439A97">Stadion Madya Gelora Bung Karno</h2>
+                        <p class="card-text mt-4 fs-5"
+                            style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
                             Jl. Setia Budi Barat No.1, Kuningan, Setia Budi</p>
-                        <p class="card-text fw-bold" style="color: #439A97">Lapangan Tersedia</p>
-                        <p class="card-text" style="margin-top: -10px">3</p>
-                        <p class="card-text fw-bold" style="color: #439A97">Harga</p>
-                        <p class="card-text" style="margin-top: -10px">Rp <b class="fs-5">150,000</b> / Jam</p>
+                        <p class="card-text h4 fw-bold mt-4" style="color: #439A97">Lapangan Tersedia</p>
+                        <p class="card-text fs-5" style="margin-top: -10px">3</p>
+                        <p class="card-text h4 fw-bold mt-4" style="color: #439A97">Harga Mulai Dari</p>
+                        <p class="card-text fs-5" style="margin-top: -10px">Rp <b class="fs-5">150.000</b> / Jam</p>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <p class="h3 fw-bold text-center py-5" style="color: #439A97">Pesan Lapangan Yang Anda Inginkan</p>
             <div class="row mb-5">
                 <div class="col-md-4">
-                    <div class="card shadow" style="border: none; border-radius: 12px;">
-                        <img src="{{ asset('Assets/image-lapangan/lapangan-detail.jpg') }}" style="border-top-left-radius: 12px; border-top-right-radius: 12px;" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Lapangan A</h5>
-                          <p class="card-text my-4">Harga Sewa: <b>150.000</b> / jam</p>
-                          <a href="{{ route('lapangan.pesan.detail') }}" class="btn-green-hover text-decoration-none">Pesan Lapangan</a>
+                    <div class="card shadow mb-3" style="border: none; border-radius: 12px;">
+                        <img src="{{ asset('Assets/image-lapangan/lapangan-detail.jpg') }}"
+                            style="border-top-left-radius: 12px; border-top-right-radius: 12px;" height="200"
+                            alt="...">
+                        <div class="card-body my-2">
+                            <h5 class="card-title fw-bold">Lapangan A</h5>
+                            <p class="card-text my-4">Harga Sewa: <b>150.000</b> / jam</p>
+                            <a href="{{ route('lapangan.pesan.detail') }}"
+                                class="btn-green-hover text-decoration-none">Pesan Lapangan</a>
                         </div>
-                      </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card shadow" style="border: none; border-radius: 12px;">
-                        <img src="{{ asset('Assets/image-lapangan/lapangan-detail.jpg') }}" style="border-top-left-radius: 12px; border-top-right-radius: 12px;" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Lapangan B</h5>
-                          <p class="card-text my-4">Harga Sewa: <b>150.000</b> / jam</p>
-                          <a href="#" class="btn-green-hover text-decoration-none">Pesan Lapangan</a>
+                    <div class="card shadow mb-3" style="border: none; border-radius: 12px;">
+                        <img src="{{ asset('Assets/image-lapangan/lapangan-detail.jpg') }}"
+                            style="border-top-left-radius: 12px; border-top-right-radius: 12px;" height="200"
+                            alt="...">
+                        <div class="card-body my-2">
+                            <h5 class="card-title fw-bold">Lapangan B</h5>
+                            <p class="card-text my-4">Harga Sewa: <b>150.000</b> / jam</p>
+                            <a href="{{ route('lapangan.pesan.detail') }}"
+                                class="btn-green-hover text-decoration-none">Pesan Lapangan</a>
                         </div>
-                      </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card shadow" style="border: none; border-radius: 12px;">
-                        <img src="{{ asset('Assets/image-lapangan/lapangan-detail.jpg') }}" style="border-top-left-radius: 12px; border-top-right-radius: 12px;" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Lapangan C</h5>
-                          <p class="card-text my-4">Harga Sewa: <b>150.000</b> / jam</p>
-                          <a href="#" class="btn-green-hover text-decoration-none">Pesan Lapangan</a>
+                    <div class="card shadow mb-3" style="border: none; border-radius: 12px;">
+                        <img src="{{ asset('Assets/image-lapangan/lapangan-detail.jpg') }}"
+                            style="border-top-left-radius: 12px; border-top-right-radius: 12px;" height="200"
+                            alt="...">
+                        <div class="card-body my-2">
+                            <h5 class="card-title fw-bold">Lapangan C</h5>
+                            <p class="card-text my-4">Harga Sewa: <b>150.000</b> / jam</p>
+                            <a href="{{ route('lapangan.pesan.detail') }}"
+                                class="btn-green-hover text-decoration-none">Pesan Lapangan</a>
                         </div>
-                      </div>
+                    </div>
                 </div>
             </div>
             {{-- <div class="card shadow my-4" style="border: none; border-radius: 12px;">
@@ -162,24 +176,23 @@
                 </div>
             </div> --}}
         </div>
-      
     @endsection
-@push('css')
-    {{-- Select --}}
-    <link rel="stylesheet" href="{{ url('plugins/select2/css/select2.css') }}">
-    <link rel="stylesheet" href="{{ url('plugins/select2/css/select2-bootstrap.css') }}">
-@endpush
+    @push('css')
+        {{-- Select --}}
+        <link rel="stylesheet" href="{{ url('plugins/select2/css/select2.css') }}">
+        <link rel="stylesheet" href="{{ url('plugins/select2/css/select2-bootstrap.css') }}">
+    @endpush
 
-@push('scripts')
-    {{-- Select --}}
-    <script src="{{ url('plugins/select2/js/select2.full.js') }}"></script>
+    @push('scripts')
+        {{-- Select --}}
+        <script src="{{ url('plugins/select2/js/select2.full.js') }}"></script>
 
-    <script>
-        $('#nama-user').select2({
-            theme: "bootstrap",
-            placeholder: "Select",
-            width: '100%',
-            containerCssClass: ':all:',
-        });
-    </script>
-@endpush
+        <script>
+            $('#nama-user').select2({
+                theme: "bootstrap",
+                placeholder: "Select",
+                width: '100%',
+                containerCssClass: ':all:',
+            });
+        </script>
+    @endpush

@@ -4,7 +4,7 @@
 
 <style>
     .background-img-riwayat {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("Assets/riwayat-pemesanan/bg.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("Assets/riwayat-pemesanan/bg.jpg");
     }
 </style>
 
@@ -47,12 +47,12 @@
                     <div class="row">
                         <div class="col-md-7">
                             <div class="mb-3">
-                                <label for="inputState" class="form-label h5">Nama Pemesan</label>
+                                <label for="inputState" class="form-label text-white h5">Nama Pemesan</label>
                                 <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
                                     placeholder="Faris Fakim">
                             </div>
                             <div class="mb-3">
-                                <label for="inputState" class="form-label h5">Nama Lapangan</label>
+                                <label for="inputState" class="form-label text-white h5">Nama Lapangan</label>
                                 <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
                                     placeholder="Stadion Madya Gelora Bung Karno">
                             </div>
@@ -64,27 +64,27 @@
                             <div class="card bg-transparent border-white border-3" style="border-radius: 12px;">
                                 <div class="card-body text-center">
                                     <h5 class="mb-2">
-                                       <b>Status Pemesanan:</b> 
+                                       <b class="text-white">Status Pemesanan:</b> 
                                        <span class="badge bg-warning shadow">Menunggu</span>
                                        {{-- <span class="badge bg-success shadow">Berhasil</span>
                                        <span class="badge bg-danger shadow">Dibatalkan</span> --}}
                                     </h5>
-                                    <p class="fs-6" style="margin-bottom: -5px">  Menunggu di setujui oleh pihak lapangan!</p>
+                                    <p class="fs-6 text-white" style="margin-bottom: -5px">  Menunggu di setujui oleh pihak lapangan!</p>
                                     {{-- <p class="fs-6" style="margin-bottom: -5px">  Pesanan anda berhasil!</p>
                                     <p class="fs-6" style="margin-bottom: -5px">  Pesanan anda dibatalkan!</p> --}}
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="inputState" class="form-label h5">Lapangan</label>
+                            <label for="inputState" class="form-label text-white h5">Lapangan</label>
                             <input type="text" disabled class="form-control bg-white" id="ExpiredDate" placeholder="A">
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="inputState" class="form-label h5">Tanggal Pemesanan Lapangan</label>
+                            <label for="inputState" class="form-label text-white h5">Tanggal Pemesanan Lapangan</label>
                             <input disabled type="date" class="form-control bg-white" id="ExpiredDate" placeholder="">
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="inputJam" class="form-label h5">Jam Bermain</label>
+                            <label for="inputJam" class="form-label text-white h5">Jam Bermain</label>
                             <select disabled id="inputJam" class="form-select bg-white">
                                 <option selected>Pilih jam anda bermain...</option>
                                 <option selected value="1">09.00 - 10.00</option>
@@ -93,7 +93,7 @@
                             </select>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="inputState" class="form-label h5">Total Biaya</label>
+                            <label for="inputState" class="form-label text-white h5">Total Biaya</label>
                                     <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
                                         placeholder="Rp. 155000">
                         </div>
