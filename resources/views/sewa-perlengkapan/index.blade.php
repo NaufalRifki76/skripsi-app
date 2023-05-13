@@ -49,7 +49,7 @@
                     <label for="inputState" class="form-label">Jenis perlengkapan yang tersedia di "Nama Lapangan"</label>
 
                 </div>
-                <table id="tabel-kompetisi-umur" class="table table-striped table-bordered display" width="100%" cellspacing="0">
+                <table id="tabel-perlengkapan" class="table table-striped table-bordered display" width="100%" cellspacing="0">
                   <thead style="background-color: #439a97">
                       <tr>
                           <th class="text-center">Nama perlengkapan</th>
@@ -97,7 +97,7 @@
         <script src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.colVis.min.js"></script>
         <script>
             $(document).ready(function() {
-                $('#tabel-kompetisi-umur').DataTable();
+                $('#tabel-perlengkapan').DataTable();
             });
         </script>
     @endpush

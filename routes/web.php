@@ -122,3 +122,13 @@ Route::get('/kompetisi-daftar', function () {
 Route::get('/profile', function () {
     return view('profile.index');
 })->name('profile.index');
+
+
+// Penyedia Lapangan
+Route::get('/home-mitra', function () {
+    return view('layout.penyedia-lapangan.index');
+})->name('mitra.index');
+
+Route::get('/detail-pemesanan-mitra', function () {
+    return view('layout.penyedia-lapangan.detail-pemesanan');
+})->name('mitra.detail-pemesanan');

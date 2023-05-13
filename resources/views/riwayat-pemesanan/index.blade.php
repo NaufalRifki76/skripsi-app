@@ -48,12 +48,12 @@
                         <div class="col-md-7">
                             <div class="mb-3">
                                 <label for="inputState" class="form-label text-white h5">Nama Pemesan</label>
-                                <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
+                                <input type="text" disabled class="form-control bg-white" id=""
                                     placeholder="Faris Fakim">
                             </div>
                             <div class="mb-3">
                                 <label for="inputState" class="form-label text-white h5">Nama Lapangan</label>
-                                <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
+                                <input type="text" disabled class="form-control bg-white" id=""
                                     placeholder="Stadion Madya Gelora Bung Karno">
                             </div>
                             <div class="mb-3">
@@ -76,12 +76,20 @@
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
+                            <label for="inputState" class="form-label text-white h5">No Telpon Pemesan</label>
+                            <input type="text" disabled class="form-control bg-white" id="" placeholder="08156998655">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="inputState" class="form-label text-white h5">Email Pemesan</label>
+                            <input type="text" disabled class="form-control bg-white" id="" placeholder="testing2gmail.com">
+                        </div>
+                        <div class="col-md-6 mb-3">
                             <label for="inputState" class="form-label text-white h5">Lapangan</label>
-                            <input type="text" disabled class="form-control bg-white" id="ExpiredDate" placeholder="A">
+                            <input type="text" disabled class="form-control bg-white" id="" placeholder="A">
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="inputState" class="form-label text-white h5">Tanggal Pemesanan Lapangan</label>
-                            <input disabled type="date" class="form-control bg-white" id="ExpiredDate" placeholder="">
+                            <input disabled type="date" class="form-control bg-white" id="" placeholder="">
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="inputJam" class="form-label text-white h5">Jam Bermain</label>
@@ -94,7 +102,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="inputState" class="form-label text-white h5">Total Biaya</label>
-                                    <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
+                                    <input type="text" disabled class="form-control bg-white" id=""
                                         placeholder="Rp. 155000">
                         </div>
                     </div>
