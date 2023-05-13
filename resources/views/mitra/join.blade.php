@@ -18,8 +18,7 @@
             <div class="col-md-8">
                 <div class="card shadow-lg background-img-riwayat mb-5" style="border: none; border-radius: 12px">
                     <div class="card-body">
-                        <form action="">
-
+                        <form action="" method="POST">
                             {{-- Data Venue --}}
                             <div class="row">
                                 <h3 class="fw-bold text-white mb-3">Informasi Lapangan Yang Anda Daftarkan</h3>
@@ -27,13 +26,13 @@
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Nama Lapangan <span
                                                 class="text-danger">*</span></label>
-                                        <input type="text" class="form-control bg-white" required id=""
+                                        <input type="text" class="form-control bg-white" required id="venue_name" name="venue_name"
                                             placeholder="Nama lapangan anda...">
                                     </div>
                                     <div class="mb-3">
                                         <label for="" class="form-label h5 text-white">Alamat <span
                                                 class="text-danger">*</span></label>
-                                        <textarea class="form-control" required placeholder="Alamat lapangan anda..." id="" rows="3"></textarea>
+                                        <textarea class="form-control" required placeholder="Alamat lapangan anda..." id="venue_address" name="venue_address" rows="3"></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Jam Buka <span
@@ -47,18 +46,32 @@
                                         <label for="inputState" class="form-label h5 text-white">Foto Lapangan (.jpg,
                                             .png)</label>
                                         <input type="file" class="form-control bg-white" accept=".jpg, .jpeg, .png"
-                                            id="" placeholder="Jumlah lapangan tersedia...">
+                                            id="venue_photo_base64" name="venue_photo_base64" placeholder="Jumlah lapangan tersedia...">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="inputState" class="form-label h5 text-white">Jam Buka <span
+                                                        class="text-danger">*</span></label>
+                                                <input type="time" required class="form-control bg-white" id="open_hour" name="open_hour"
+                                                    placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="inputState" class="form-label h5 text-white">Jam Tutup <span
+                                                        class="text-danger">*</span></label>
+                                                <input type="time" required class="form-control bg-white" id="close_hour" name="close_hour"
+                                                    placeholder="">
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="" class="form-label h5 text-white">Deskripsi Lapangan <span
                                                 class="text-danger">*</span></label>
-                                        <textarea class="form-control" required placeholder="Deskripsi lapangan anda..." id="" rows="3"></textarea>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="inputState" class="form-label h5 text-white">Jam Tutup <span
-                                                class="text-danger">*</span></label>
-                                        <input type="time" required class="form-control bg-white" id=""
-                                            placeholder="">
+                                        <textarea class="form-control" required placeholder="Deskripsi lapangan anda..." id="venue_desc" name="venue_desc" rows="3"></textarea>
                                     </div>
                                 </div>
                                 <div class="mb-3">
@@ -68,15 +81,15 @@
                                     <div class="row px-4">
                                         <div class="col-md-4">
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="">
+                                                <input class="form-check-input" type="checkbox" value="1"
+                                                    id="drinks" name="drinks">
                                                 <label class="form-check-label text-white" for="">
                                                     Minuman
                                                 </label>
                                             </div>
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="">
+                                                <input class="form-check-input" type="checkbox" value="1"
+                                                    id="locker_room" name="locker_room">
                                                 <label class="form-check-label text-white" for="">
                                                     Ruang Ganti
                                                 </label>
@@ -84,15 +97,15 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="">
+                                                <input class="form-check-input" type="checkbox" value="1"
+                                                    id="toilet" name="toilet">
                                                 <label class="form-check-label text-white" for="">
                                                     Toilet
                                                 </label>
                                             </div>
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="">
+                                                <input class="form-check-input" type="checkbox" value="1"
+                                                    id="parking_space" name="parking_space">
                                                 <label class="form-check-label text-white" for="">
                                                     Parkir Kendaraan
                                                 </label>
@@ -100,15 +113,15 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="">
+                                                <input class="form-check-input" type="checkbox" value="1"
+                                                    id="wifi" name="wifi">
                                                 <label class="form-check-label text-white" for="">
                                                     Wifi
                                                 </label>
                                             </div>
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="perlengkapan">
+                                                <input class="form-check-input" type="checkbox" value="1"
+                                                    id="rent_equipments" name="rent_equipments">
                                                 <label class="form-check-label text-white" for="">
                                                     Sewa Perlengkapan
                                                 </label>
@@ -204,9 +217,9 @@
                                             <span class="text-danger">*</span></label>
                                         <select id="namaPerlengkapan" required class="form-select">
                                             <option disabled selected>Pilih perlengkapan...</option>
-                                            <option value="1">Sepatu</option>
-                                            <option value="2">Rompi</option>
-                                            <option value="3">Sarung Tangan kiper</option>
+                                            @foreach ($rent as $item)
+                                            <option value="{{$item->id}}">{{$item->item_name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
