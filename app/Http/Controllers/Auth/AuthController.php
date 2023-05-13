@@ -9,6 +9,7 @@ use Cartalyst\Sentinel\Laravel\Facades\Activation;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 
 class AuthController extends Controller
 {
@@ -25,6 +26,10 @@ class AuthController extends Controller
                 return redirect()->route('auth.dashboard');
             }
         }
+    }
+
+    public function returnLogin(){
+        return view('auth.login');
     }
 
     public function login(){
@@ -47,18 +52,17 @@ class AuthController extends Controller
                     if($activation->completed == 0){
                         Mail::to($user->email)->send(new ActivationMail($user, $activation->code));
                         $message = 'Your account is not active. Check your email for activation.';
-                        return back();
+                        return redirect()->route('auth.dashboard');
                     }
                 }
                 else{
                     $message = 'Your account is not active.';
-                    return back();
+                    return redirect()->route('auth.dashboard');
                 }
             }
             else{
-                back();
+                return redirect()->route('return.login')->with('failed', 'Username atau password anda salah!');
             }
-
             return redirect()->route('auth.dashboard');
         } catch (\Throwable $th) {
             dd($th);
