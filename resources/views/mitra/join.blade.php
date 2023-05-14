@@ -3,7 +3,7 @@
 @section('content')
     <style>
         .background-img-riwayat {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("Assets/riwayat-pemesanan/bg.jpg");
+            background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("Assets/riwayat-pemesanan/bg.jpg");
         }
     </style>
 
@@ -18,7 +18,8 @@
             <div class="col-md-8">
                 <div class="card shadow-lg background-img-riwayat mb-5" style="border: none; border-radius: 12px">
                     <div class="card-body">
-                        <form action="" method="POST">
+                        <form action="">
+
                             {{-- Data Venue --}}
                             <div class="row">
                                 <h3 class="fw-bold text-white mb-3">Informasi Lapangan Yang Anda Daftarkan</h3>
@@ -26,27 +27,19 @@
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Nama Lapangan <span
                                                 class="text-danger">*</span></label>
-                                        <input type="text" class="form-control bg-white" required id="venue_name" name="venue_name"
+                                        <input type="text" class="form-control bg-white" required id=""
                                             placeholder="Nama lapangan anda...">
                                     </div>
                                     <div class="mb-3">
                                         <label for="" class="form-label h5 text-white">Alamat <span
                                                 class="text-danger">*</span></label>
-                                        <textarea class="form-control" required placeholder="Alamat lapangan anda..." id="venue_address" name="venue_address" rows="3"></textarea>
+                                        <textarea class="form-control" required placeholder="Alamat lapangan anda..." id="" rows="3"></textarea>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="inputState" class="form-label h5 text-white">Jam Buka <span
-                                                class="text-danger">*</span></label>
-                                        <input type="time" required class="form-control bg-white" id=""
-                                            placeholder="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Foto Lapangan (.jpg,
                                             .png)</label>
                                         <input type="file" class="form-control bg-white" accept=".jpg, .jpeg, .png"
-                                            id="venue_photo_base64" name="venue_photo_base64" placeholder="Jumlah lapangan tersedia...">
+                                            id="" placeholder="Jumlah lapangan tersedia...">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -55,7 +48,7 @@
                                             <div class="mb-3">
                                                 <label for="inputState" class="form-label h5 text-white">Jam Buka <span
                                                         class="text-danger">*</span></label>
-                                                <input type="time" required class="form-control bg-white" id="open_hour" name="open_hour"
+                                                <input type="time" required class="form-control bg-white" id=""
                                                     placeholder="">
                                             </div>
                                         </div>
@@ -63,7 +56,7 @@
                                             <div class="mb-3">
                                                 <label for="inputState" class="form-label h5 text-white">Jam Tutup <span
                                                         class="text-danger">*</span></label>
-                                                <input type="time" required class="form-control bg-white" id="close_hour" name="close_hour"
+                                                <input type="time" required class="form-control bg-white" id=""
                                                     placeholder="">
                                             </div>
                                         </div>
@@ -71,7 +64,16 @@
                                     <div class="mb-3">
                                         <label for="" class="form-label h5 text-white">Deskripsi Lapangan <span
                                                 class="text-danger">*</span></label>
-                                        <textarea class="form-control" required placeholder="Deskripsi lapangan anda..." id="venue_desc" name="venue_desc" rows="3"></textarea>
+                                        <textarea class="form-control" required placeholder="Deskripsi lapangan anda..." id="" rows="3"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inputState" class="form-label h5 text-white">Harga Sewa Lapangan
+                                            Per-Jam <span class="text-danger">*</span></label>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="">Rp</span>
+                                            <input type="number" class="form-control" required id=""
+                                                aria-describedby="">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
@@ -81,15 +83,15 @@
                                     <div class="row px-4">
                                         <div class="col-md-4">
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" value="1"
-                                                    id="drinks" name="drinks">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="">
                                                 <label class="form-check-label text-white" for="">
                                                     Minuman
                                                 </label>
                                             </div>
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" value="1"
-                                                    id="locker_room" name="locker_room">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="">
                                                 <label class="form-check-label text-white" for="">
                                                     Ruang Ganti
                                                 </label>
@@ -97,15 +99,15 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" value="1"
-                                                    id="toilet" name="toilet">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="">
                                                 <label class="form-check-label text-white" for="">
                                                     Toilet
                                                 </label>
                                             </div>
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" value="1"
-                                                    id="parking_space" name="parking_space">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="">
                                                 <label class="form-check-label text-white" for="">
                                                     Parkir Kendaraan
                                                 </label>
@@ -113,15 +115,15 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" value="1"
-                                                    id="wifi" name="wifi">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="">
                                                 <label class="form-check-label text-white" for="">
                                                     Wifi
                                                 </label>
                                             </div>
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" value="1"
-                                                    id="rent_equipments" name="rent_equipments">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="perlengkapan">
                                                 <label class="form-check-label text-white" for="">
                                                     Sewa Perlengkapan
                                                 </label>
@@ -217,9 +219,9 @@
                                             <span class="text-danger">*</span></label>
                                         <select id="namaPerlengkapan" required class="form-select">
                                             <option disabled selected>Pilih perlengkapan...</option>
-                                            @foreach ($rent as $item)
-                                            <option value="{{$item->id}}">{{$item->item_name}}</option>
-                                            @endforeach
+                                            <option value="1">Sepatu</option>
+                                            <option value="2">Rompi</option>
+                                            <option value="3">Sarung Tangan kiper</option>
                                         </select>
                                     </div>
                                 </div>

@@ -126,9 +126,9 @@ Route::get('/profile', function () {
 
 
 // Penyedia Lapangan
-Route::get('/home-mitra', function () {
-    return view('layout.penyedia-lapangan.index');
-})->name('mitra.index');
+// Route::get('/home-mitra', function () {
+//     return view('layout.penyedia-lapangan.index');
+// })->name('mitra.index');
 
 Route::get('/detail-pemesanan-mitra', function () {
     return view('layout.penyedia-lapangan.detail-pemesanan');
