@@ -80,14 +80,14 @@
                                     <div class="row px-4">
                                         <div class="col-md-4">
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" value=""
+                                                <input class="form-check-input" type="checkbox" value="1"
                                                     id="drinks" name="drinks">
                                                 <label class="form-check-label text-white" for="">
                                                     Minuman
                                                 </label>
                                             </div>
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" value=""
+                                                <input class="form-check-input" type="checkbox" value="1"
                                                     id="locker_room" name="locker_room">
                                                 <label class="form-check-label text-white" for="">
                                                     Ruang Ganti
@@ -96,14 +96,14 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" value=""
+                                                <input class="form-check-input" type="checkbox" value="1"
                                                     id="toilet" name="toilet">
                                                 <label class="form-check-label text-white" for="">
                                                     Toilet
                                                 </label>
                                             </div>
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" value=""
+                                                <input class="form-check-input" type="checkbox" value="1"
                                                     id="parking_space" name="parking_space">
                                                 <label class="form-check-label text-white" for="">
                                                     Parkir Kendaraan
@@ -112,14 +112,14 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" value=""
+                                                <input class="form-check-input" type="checkbox" value="1"
                                                     id="wifi" name="wifi">
                                                 <label class="form-check-label text-white" for="">
                                                     Wifi
                                                 </label>
                                             </div>
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" value=""
+                                                <input class="form-check-input" type="checkbox" value="1"
                                                     id="perlengkapan" name="rent_equipments">
                                                 <label class="form-check-label text-white" for="">
                                                     Sewa Perlengkapan
@@ -218,9 +218,9 @@
                                             <span class="text-danger">*</span></label>
                                         <select id="namaPerlengkapan" name="item_id[]" required class="form-select">
                                             <option disabled selected>Pilih perlengkapan...</option>
-                                            <option value="1">Sepatu</option>
-                                            <option value="2">Rompi</option>
-                                            <option value="3">Sarung Tangan kiper</option>
+                                            @foreach ($rent as $key => $perlengkapan)
+                                                <option value="{{$perlengkapan->id}}">{{$perlengkapan->item_name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -238,7 +238,7 @@
                                             Per-Jam <span class="text-danger">*</span></label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="">Rp</span>
-                                            <input type="number" class="form-control" required id=""
+                                            <input type="number" class="form-control" required id="item_rent_cost" name="item_rent_cost[]"
                                                 aria-describedby="">
                                         </div>
                                     </div>
@@ -249,11 +249,11 @@
                                     <div class="mb-3">
                                         <label for="namaPerlengkapan" class="form-label h5 text-white">Nama Perlengkapan
                                             <span class="text-danger">*</span></label>
-                                        <select id="namaPerlengkapan" required class="form-select">
+                                        <select id="namaPerlengkapan" name="item_id[]" required class="form-select">
                                             <option selected>Pilih perlengkapan...</option>
-                                            <option disabled value="1">Sepatu</option>
-                                            <option value="2">Rompi</option>
-                                            <option value="3">Sarung Tangan kiper</option>
+                                            @foreach ($rent as $key => $perlengkapan)
+                                                <option value="{{$perlengkapan->id}}">{{$perlengkapan->item_name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -261,7 +261,7 @@
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Jumlah <span
                                                 class="text-danger">*</span></label>
-                                        <input type="text" class="form-control bg-white" required id=""
+                                        <input type="text" class="form-control bg-white" required id="item_qty" name="item_qty[]"
                                             placeholder="Jumlah perlengkapan...">
                                     </div>
                                 </div>
@@ -271,7 +271,7 @@
                                             Per-Jam <span class="text-danger">*</span></label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="">Rp</span>
-                                            <input type="number" class="form-control" required id=""
+                                            <input type="number" class="form-control" required id="item_rent_cost" name="item_rent_cost[]"
                                                 aria-describedby="">
                                         </div>
                                     </div>
@@ -281,7 +281,6 @@
                                             class="fa-solid fa-trash"></i></button>
                                 </div>
                             </div>
-
 
                             <div class="text-center">
                                 <button type="submit" class="btn-green2-hover mt-4">Kirim</button>
