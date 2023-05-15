@@ -34,8 +34,12 @@ Route::get('kompetisi.index', [CompetitionController::class, 'index'])->name('ko
 Route::get('tingkat-pendidikan.index', [CompetitionController::class, 'pendidikan'])->name('tingkat-pendidikan.index');
 Route::get('tingkat-umur.index', [CompetitionController::class, 'umur'])->name('tingkat-umur.index');
 
-// Mitra
+// Join Mitra
 Route::get('mitra.index', [MitraController::class, 'index'])->name('mitra.index');
+Route::post('mitra.join', [MitraController::class, 'store'])->name('mitra.join');
+
+// Mitra
+Route::get('mitra.home', [MitraController::class, 'mitraIndex'])->name('mitra.home');
 
 // --------------------- BAGIAN BAWAH INI UNTUK TESTING -------------------- //
 // Route::get('/', function () {
@@ -89,9 +93,9 @@ Route::get('/riwayat-pemesanan', function () {
     return view('riwayat-pemesanan.index');
 })->name('riwayat.pemesanan');
 
-Route::get('/daftar-lapangan', function () {
-    return view('mitra.join');
-})->name('mitra.join');
+// Route::get('/daftar-lapangan', function () {
+//     return view('mitra.join');
+// })->name('mitra.join');
 
 // Perlengkapan
 Route::get('/sewa-perlengkapan', function () {

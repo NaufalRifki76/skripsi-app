@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Features;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\FieldDetail;
 use App\Models\RentItems;
+use App\Models\Role;
 use App\Models\Venue;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Support\Facades\DB;
@@ -67,19 +69,30 @@ class MitraController extends Controller
 
                 $field_detail = $request->field_name;
                 $field_cost = $request->field_cost_hour;
-                $imageFile = $request->venue_photo_base64;
+                $venue_image = $request->venue_photo_base64;
+                $field_image = $request->file('field_photo_base64');
+
                 for($i=0; $i<count($field_detail); $i++){
                     $fielddetail = $venue_id->field_detail()->create([
                         'field_name'        => $field_detail[$i],
                         'field_cost_hour'   => $field_cost[$i]
                     ]);
 
-                    if ($imageFile != null) {
-                        $tournamentBase64[$i] = base64_encode(file_get_contents($imageFile[$i]));
-                        $fieldphoto = $venue_id->venue_base64()->create([
-                            'venue_photo_base64' => $tournamentBase64[$i]
+                    if ($venue_image != null) {
+                        $venueBase64[$i] = base64_encode(file_get_contents($venue_image));
+                        $venuephoto = $venue_id->venue_base64()->create([
+                            'venue_photo_base64' => $venueBase64[$i]
                         ]);
                     }
+
+                    // $field_id = FieldDetail::where('id', $fielddetail)->first();
+                    // if ($field_image != null) {
+                    //     $realpath = $field_image[$i]->getRealPath();
+                    //     $fieldBase64[$i] = base64_encode(file_get_contents($realpath));
+                    //     $venuephoto = FieldDetail::where('id', $fielddetail)->first()->photo_field_detail()->create([
+                    //         'field_photo_base64' => $fieldBase64[$i]
+                    //     ]);
+                    // }
                 }
 
                 if ($request->item_id != null) {
@@ -87,19 +100,33 @@ class MitraController extends Controller
                     $item_qty = $request->item_qty;
                     $item_cost = $request->item_rent_cost;
                     for ($j=0; $j < count($item_id); $j++) { 
-                        $venuerent = $venue_id->venue_rent_item->create([
+                        $venuerent = $venue_id->venue_rent_item()->create([
                             'item_id'           => $item_id[$j],
                             'item_qty'          => $item_qty[$j],
-                            'item_rent_cost'    => $item_cost[$j]
+                            'item_rent_cost'    => $item_cost[$j],
                         ]);
                     }
                 }
 
+                $vendorRole = Role::where('slug', 'vendor')->first();
+                $user->roles()->detach(Role::where('slug', 'user')->first()->id);
+                $user->roles()->attach($vendorRole->id);
+                $user->save();
+
                 DB::commit();
+                return redirect()->route('mitra.home')->with('success', 'Akun anda telah menjadi akun Vendor!');
             } catch (\Throwable $th) {
                 dd($th);
                 DB::rollBack();
             }
+        }
+    }
+
+    public function mitraIndex(){
+        if(!Sentinel::getUser()) {
+            return redirect()->route('auth.login');
+        } else{
+            return view('layout.penyedia-lapangan.index');
         }
     }
 }

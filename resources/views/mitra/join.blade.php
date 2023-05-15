@@ -18,8 +18,8 @@
             <div class="col-md-8">
                 <div class="card shadow-lg background-img-riwayat mb-5" style="border: none; border-radius: 12px">
                     <div class="card-body">
-                        <form action="">
-
+                        <form action="{{route('mitra.join')}}" method="POST" enctype="multipart/form-data">
+                            @csrf
                             {{-- Data Venue --}}
                             <div class="row">
                                 <h3 class="fw-bold text-white mb-3">Informasi Lapangan Yang Anda Daftarkan</h3>
@@ -168,7 +168,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row fieldGroupCopy" style="display: none;">
+                            {{-- <div class="row fieldGroupCopy" style="display: none;">
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Nama Lapangan <span
@@ -201,7 +201,7 @@
                                     <button type="button" class="btn-red-hover remove mt-2"><i
                                             class="fa-solid fa-trash"></i></button>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             {{-- Perlengkapan Tersedia --}}
                             <div class="row fieldGroup2 showthis-upload">
@@ -244,7 +244,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row fieldGroupCopy2" style="display: none;">
+                            {{-- <div class="row fieldGroupCopy2" style="display: none;">
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="namaPerlengkapan" class="form-label h5 text-white">Nama Perlengkapan
@@ -280,7 +280,7 @@
                                     <button type="button" class="btn-red-hover remove2 mt-2"><i
                                             class="fa-solid fa-trash"></i></button>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <div class="text-center">
                                 <button type="submit" class="btn-green2-hover mt-4">Kirim</button>
