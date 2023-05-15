@@ -27,44 +27,41 @@
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Nama Lapangan <span
                                                 class="text-danger">*</span></label>
-                                        <input type="text" class="form-control bg-white" required id="venue_name" name="venue_name"
-                                            placeholder="Nama lapangan anda...">
+                                        <input type="text" class="form-control bg-white" required id="venue_name"
+                                            name="venue_name" placeholder="Nama lapangan anda...">
                                     </div>
                                     <div class="mb-3">
                                         <label for="" class="form-label h5 text-white">Alamat <span
                                                 class="text-danger">*</span></label>
-                                        <textarea class="form-control" required placeholder="Alamat lapangan anda..." id="venue_address" name="venue_address" rows="3"></textarea>
+                                        <textarea class="form-control" required placeholder="Alamat lapangan anda..." id="venue_address" name="venue_address"
+                                            rows="3"></textarea>
                                     </div>
+                                    <div class="mb-3">
+                                        <label for="inputState" class="form-label h5 text-white">Jam Buka <span
+                                                class="text-danger">*</span></label>
+                                        <input type="time" required class="form-control bg-white" id="open_hour"
+                                            name="open_hour" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Foto Lapangan (.jpg,
                                             .png)</label>
                                         <input type="file" class="form-control bg-white" accept=".jpg, .jpeg, .png"
-                                            id="venue_photo_base64" name="venue_photo_base64" placeholder="Jumlah lapangan tersedia...">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label for="inputState" class="form-label h5 text-white">Jam Buka <span
-                                                        class="text-danger">*</span></label>
-                                                <input type="time" required class="form-control bg-white" id="open_hour" name="open_hour"
-                                                    placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label for="inputState" class="form-label h5 text-white">Jam Tutup <span
-                                                        class="text-danger">*</span></label>
-                                                <input type="time" required class="form-control bg-white" id="close_hour" name="close_hour"
-                                                    placeholder="">
-                                            </div>
-                                        </div>
+                                            id="venue_photo_base64" name="venue_photo_base64"
+                                            placeholder="Jumlah lapangan tersedia...">
                                     </div>
                                     <div class="mb-3">
                                         <label for="" class="form-label h5 text-white">Deskripsi Lapangan <span
                                                 class="text-danger">*</span></label>
-                                        <textarea class="form-control" required placeholder="Deskripsi lapangan anda..." id="venue_desc" name="venue_desc" rows="3"></textarea>
+                                        <textarea class="form-control" required placeholder="Deskripsi lapangan anda..." id="venue_desc" name="venue_desc"
+                                            rows="3"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inputState" class="form-label h5 text-white">Jam Tutup <span
+                                                class="text-danger">*</span></label>
+                                        <input type="time" required class="form-control bg-white" id="close_hour"
+                                            name="close_hour" placeholder="">
                                     </div>
                                     {{-- <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Harga Sewa Lapangan
@@ -146,8 +143,8 @@
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Nama Lapangan <span
                                                 class="text-danger">*</span></label>
-                                        <input type="text" class="form-control bg-white" required id="field_name" name="field_name[]"
-                                            placeholder="Nama lapangan anda...">
+                                        <input type="text" class="form-control bg-white" required id="field_name"
+                                            name="field_name[]" placeholder="Nama lapangan anda...">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -155,7 +152,8 @@
                                         <label for="inputState" class="form-label h5 text-white">Foto Lapangan (.jpg,
                                             .png)</label>
                                         <input type="file" class="form-control bg-white" accept=".jpg, .jpeg, .png"
-                                            id="field_photo_base64" name="field_photo_base64[]" placeholder="Jumlah lapangan tersedia...">
+                                            id="field_photo_base64" name="field_photo_base64[]"
+                                            placeholder="Jumlah lapangan tersedia...">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -164,8 +162,8 @@
                                             Per-Jam <span class="text-danger">*</span></label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="">Rp</span>
-                                            <input type="number" class="form-control" required id="field_cost_hour" name="field_cost_hour[]"
-                                                aria-describedby="">
+                                            <input type="number" class="form-control" required id="field_cost_hour"
+                                                name="field_cost_hour[]" aria-describedby="">
                                         </div>
                                     </div>
                                 </div>
@@ -175,8 +173,8 @@
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Nama Lapangan <span
                                                 class="text-danger">*</span></label>
-                                        <input type="text" class="form-control bg-white" required id="field_name" name="field_name[]"
-                                            placeholder="Nama lapangan anda...">
+                                        <input type="text" class="form-control bg-white" required id="field_name"
+                                            name="field_name[]" placeholder="Nama lapangan anda...">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -184,7 +182,8 @@
                                         <label for="inputState" class="form-label h5 text-white">Foto Lapangan (.jpg,
                                             .png)</label>
                                         <input type="file" class="form-control bg-white" accept=".jpg, .jpeg, .png"
-                                            id="field_photo_base64" name="field_photo_base64[]" placeholder="Jumlah lapangan tersedia...">
+                                            id="field_photo_base64" name="field_photo_base64[]"
+                                            placeholder="Jumlah lapangan tersedia...">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -193,8 +192,8 @@
                                             Per-Jam <span class="text-danger">*</span></label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="">Rp</span>
-                                            <input type="number" class="form-control" required id="field_cost_hour" name="field_cost_hour[]"
-                                                aria-describedby="">
+                                            <input type="number" class="form-control" required id="field_cost_hour"
+                                                name="field_cost_hour[]" aria-describedby="">
                                         </div>
                                     </div>
                                 </div>
@@ -229,8 +228,8 @@
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Jumlah <span
                                                 class="text-danger">*</span></label>
-                                        <input type="text" class="form-control bg-white" required id="item_qty" name="item_qty[]"
-                                            placeholder="Jumlah perlengkapan...">
+                                        <input type="text" class="form-control bg-white" required id="item_qty"
+                                            name="item_qty[]" placeholder="Jumlah perlengkapan...">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
