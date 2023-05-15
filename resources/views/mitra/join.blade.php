@@ -27,19 +27,19 @@
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Nama Lapangan <span
                                                 class="text-danger">*</span></label>
-                                        <input type="text" class="form-control bg-white" required id=""
+                                        <input type="text" class="form-control bg-white" required id="venue_name" name="venue_name"
                                             placeholder="Nama lapangan anda...">
                                     </div>
                                     <div class="mb-3">
                                         <label for="" class="form-label h5 text-white">Alamat <span
                                                 class="text-danger">*</span></label>
-                                        <textarea class="form-control" required placeholder="Alamat lapangan anda..." id="" rows="3"></textarea>
+                                        <textarea class="form-control" required placeholder="Alamat lapangan anda..." id="venue_address" name="venue_address" rows="3"></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Foto Lapangan (.jpg,
                                             .png)</label>
                                         <input type="file" class="form-control bg-white" accept=".jpg, .jpeg, .png"
-                                            id="" placeholder="Jumlah lapangan tersedia...">
+                                            id="venue_photo_base64" name="venue_photo_base64" placeholder="Jumlah lapangan tersedia...">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -48,7 +48,7 @@
                                             <div class="mb-3">
                                                 <label for="inputState" class="form-label h5 text-white">Jam Buka <span
                                                         class="text-danger">*</span></label>
-                                                <input type="time" required class="form-control bg-white" id=""
+                                                <input type="time" required class="form-control bg-white" id="open_hour" name="open_hour"
                                                     placeholder="">
                                             </div>
                                         </div>
@@ -56,7 +56,7 @@
                                             <div class="mb-3">
                                                 <label for="inputState" class="form-label h5 text-white">Jam Tutup <span
                                                         class="text-danger">*</span></label>
-                                                <input type="time" required class="form-control bg-white" id=""
+                                                <input type="time" required class="form-control bg-white" id="close_hour" name="close_hour"
                                                     placeholder="">
                                             </div>
                                         </div>
@@ -64,9 +64,9 @@
                                     <div class="mb-3">
                                         <label for="" class="form-label h5 text-white">Deskripsi Lapangan <span
                                                 class="text-danger">*</span></label>
-                                        <textarea class="form-control" required placeholder="Deskripsi lapangan anda..." id="" rows="3"></textarea>
+                                        <textarea class="form-control" required placeholder="Deskripsi lapangan anda..." id="venue_desc" name="venue_desc" rows="3"></textarea>
                                     </div>
-                                    <div class="mb-3">
+                                    {{-- <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Harga Sewa Lapangan
                                             Per-Jam <span class="text-danger">*</span></label>
                                         <div class="input-group mb-3">
@@ -74,7 +74,7 @@
                                             <input type="number" class="form-control" required id=""
                                                 aria-describedby="">
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="mb-3">
                                     <label for="" class="form-label h5 text-white">Fasilitas Lapangan (Ceklis
@@ -84,14 +84,14 @@
                                         <div class="col-md-4">
                                             <div class="form-check mb-3">
                                                 <input class="form-check-input" type="checkbox" value=""
-                                                    id="">
+                                                    id="drinks" name="drinks">
                                                 <label class="form-check-label text-white" for="">
                                                     Minuman
                                                 </label>
                                             </div>
                                             <div class="form-check mb-3">
                                                 <input class="form-check-input" type="checkbox" value=""
-                                                    id="">
+                                                    id="locker_room" name="locker_room">
                                                 <label class="form-check-label text-white" for="">
                                                     Ruang Ganti
                                                 </label>
@@ -100,14 +100,14 @@
                                         <div class="col-md-4">
                                             <div class="form-check mb-3">
                                                 <input class="form-check-input" type="checkbox" value=""
-                                                    id="">
+                                                    id="toilet" name="toilet">
                                                 <label class="form-check-label text-white" for="">
                                                     Toilet
                                                 </label>
                                             </div>
                                             <div class="form-check mb-3">
                                                 <input class="form-check-input" type="checkbox" value=""
-                                                    id="">
+                                                    id="parking_space" name="parking_space">
                                                 <label class="form-check-label text-white" for="">
                                                     Parkir Kendaraan
                                                 </label>
@@ -116,14 +116,14 @@
                                         <div class="col-md-4">
                                             <div class="form-check mb-3">
                                                 <input class="form-check-input" type="checkbox" value=""
-                                                    id="">
+                                                    id="wifi" name="wifi">
                                                 <label class="form-check-label text-white" for="">
                                                     Wifi
                                                 </label>
                                             </div>
                                             <div class="form-check mb-3">
                                                 <input class="form-check-input" type="checkbox" value=""
-                                                    id="perlengkapan">
+                                                    id="perlengkapan" name="rent_equipments">
                                                 <label class="form-check-label text-white" for="">
                                                     Sewa Perlengkapan
                                                 </label>
@@ -146,7 +146,7 @@
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Nama Lapangan <span
                                                 class="text-danger">*</span></label>
-                                        <input type="text" class="form-control bg-white" required id=""
+                                        <input type="text" class="form-control bg-white" required id="field_name" name="field_name[]"
                                             placeholder="Nama lapangan anda...">
                                     </div>
                                 </div>
@@ -155,7 +155,7 @@
                                         <label for="inputState" class="form-label h5 text-white">Foto Lapangan (.jpg,
                                             .png)</label>
                                         <input type="file" class="form-control bg-white" accept=".jpg, .jpeg, .png"
-                                            id="" placeholder="Jumlah lapangan tersedia...">
+                                            id="field_photo_base64" name="field_photo_base64[]" placeholder="Jumlah lapangan tersedia...">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -164,7 +164,7 @@
                                             Per-Jam <span class="text-danger">*</span></label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="">Rp</span>
-                                            <input type="number" class="form-control" required id=""
+                                            <input type="number" class="form-control" required id="field_cost_hour" name="field_cost_hour[]"
                                                 aria-describedby="">
                                         </div>
                                     </div>
@@ -175,7 +175,7 @@
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Nama Lapangan <span
                                                 class="text-danger">*</span></label>
-                                        <input type="text" class="form-control bg-white" required id=""
+                                        <input type="text" class="form-control bg-white" required id="field_name" name="field_name[]"
                                             placeholder="Nama lapangan anda...">
                                     </div>
                                 </div>
@@ -184,7 +184,7 @@
                                         <label for="inputState" class="form-label h5 text-white">Foto Lapangan (.jpg,
                                             .png)</label>
                                         <input type="file" class="form-control bg-white" accept=".jpg, .jpeg, .png"
-                                            id="" placeholder="Jumlah lapangan tersedia...">
+                                            id="field_photo_base64" name="field_photo_base64[]" placeholder="Jumlah lapangan tersedia...">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -193,7 +193,7 @@
                                             Per-Jam <span class="text-danger">*</span></label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="">Rp</span>
-                                            <input type="number" class="form-control" required id=""
+                                            <input type="number" class="form-control" required id="field_cost_hour" name="field_cost_hour[]"
                                                 aria-describedby="">
                                         </div>
                                     </div>
@@ -217,7 +217,7 @@
                                     <div class="mb-3">
                                         <label for="namaPerlengkapan" class="form-label h5 text-white">Nama Perlengkapan
                                             <span class="text-danger">*</span></label>
-                                        <select id="namaPerlengkapan" required class="form-select">
+                                        <select id="namaPerlengkapan" name="item_id[]" required class="form-select">
                                             <option disabled selected>Pilih perlengkapan...</option>
                                             <option value="1">Sepatu</option>
                                             <option value="2">Rompi</option>
@@ -229,7 +229,7 @@
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Jumlah <span
                                                 class="text-danger">*</span></label>
-                                        <input type="text" class="form-control bg-white" required id=""
+                                        <input type="text" class="form-control bg-white" required id="item_qty" name="item_qty[]"
                                             placeholder="Jumlah perlengkapan...">
                                     </div>
                                 </div>
