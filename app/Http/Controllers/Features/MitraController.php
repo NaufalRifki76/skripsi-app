@@ -72,7 +72,8 @@ class MitraController extends Controller
                 $field_detail = $request->field_name;
                 $field_cost = $request->field_cost_hour;
                 $venue_image = $request->venue_photo_base64;
-                $field_image = $request->file('field_photo_base64');
+                $field_image = $request->field_photo_base64;
+                // dd($field_image);
 
                 if ($venue_image != null) {
                     $venueBase64 = base64_encode(file_get_contents($venue_image));
@@ -87,15 +88,24 @@ class MitraController extends Controller
                         'field_cost_hour'   => $field_cost[$i]
                     ]);
 
-                    // $field_id = FieldDetail::where('id', $fielddetail)->first();
-                    // if ($field_image != null) {
-                    //     $realpath = $field_image[$i]->getRealPath();
-                    //     $fieldBase64[$i] = base64_encode(file_get_contents($realpath));
-                    //     $venuephoto = FieldDetail::where('id', $fielddetail)->first()->photo_field_detail()->create([
-                    //         'field_photo_base64' => $fieldBase64[$i]
-                    //     ]);
-                    // }
+                    $field_id = FieldDetail::where('id', $fielddetail->id)->first();
+                    if ($field_image[$i] != null) {
+                        $fieldBase64[$i] = base64_encode(file_get_contents($field_image[$i]));
+                        $fieldphoto = $field_id->field_base64()->create([
+                            'field_photo_base64' => $fieldBase64[$i],
+                        ]);
+                    }
                 }
+                
+                // for ($j=0; $j<count($field_detail)-1; $j++) { 
+                //     $field_id = FieldDetail::where('id', $fielddetail->id)->first();
+                //     if ($field_image != null) {
+                //         $fieldBase64[$j] = base64_encode(file_get_contents($field_image[$j]));
+                //         $fieldphoto = $field_id->field_base64()->create([
+                //             'field_photo_base64' => $fieldBase64[$j]
+                //         ]);
+                //     }
+                // }
 
                 if ($request->item_id != null) {
                     $item_id = $request->item_id;
