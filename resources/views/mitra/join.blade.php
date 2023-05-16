@@ -18,14 +18,14 @@
             <div class="col-md-8">
                 <div class="card shadow-lg background-img-riwayat mb-5" style="border: none; border-radius: 12px">
                     <div class="card-body">
-                        <form action="{{route('mitra.join')}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{route('mitra.join')}}" method="POST" enctype="multipart/form-data" novalidate>
                             @csrf
                             {{-- Data Venue --}}
                             <div class="row">
                                 <h3 class="fw-bold text-white mb-3">Informasi Lapangan Yang Anda Daftarkan</h3>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5 text-white">Nama Lapangan <span
+                                        <label for="inputState" class="form-label h5 text-white">Nama Venue <span
                                                 class="text-danger">*</span></label>
                                         <input type="text" class="form-control bg-white" required id="venue_name"
                                             name="venue_name" placeholder="Nama lapangan anda...">
@@ -168,7 +168,7 @@
                                     </div>
                                 </div>
                             </div>
-                            {{-- <div class="row fieldGroupCopy" style="display: none;">
+                            <div class="row fieldGroupCopy" style="display: none;">
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Nama Lapangan <span
@@ -201,7 +201,7 @@
                                     <button type="button" class="btn-red-hover remove mt-2"><i
                                             class="fa-solid fa-trash"></i></button>
                                 </div>
-                            </div> --}}
+                            </div>
 
                             {{-- Perlengkapan Tersedia --}}
                             <div class="row fieldGroup2 showthis-upload">
@@ -243,14 +243,14 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            {{-- <div class="row fieldGroupCopy2" style="display: none;">
+                            </div> 
+                            <div class="row fieldGroupCopy2" style="display: none;">
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="namaPerlengkapan" class="form-label h5 text-white">Nama Perlengkapan
                                             <span class="text-danger">*</span></label>
                                         <select id="namaPerlengkapan" name="item_id[]" required class="form-select">
-                                            <option selected>Pilih perlengkapan...</option>
+                                            <option disabled selected>Pilih perlengkapan...</option>
                                             @foreach ($rent as $key => $perlengkapan)
                                                 <option value="{{$perlengkapan->id}}">{{$perlengkapan->item_name}}</option>
                                             @endforeach
@@ -280,7 +280,7 @@
                                     <button type="button" class="btn-red-hover remove2 mt-2"><i
                                             class="fa-solid fa-trash"></i></button>
                                 </div>
-                            </div> --}}
+                            </div>
 
                             <div class="text-center">
                                 <button type="submit" class="btn-green2-hover mt-4">Kirim</button>

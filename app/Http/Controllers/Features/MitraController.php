@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\FieldDetail;
 use App\Models\RentItems;
 use App\Models\Role;
+use App\Models\UserRole;
 use App\Models\Venue;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Support\Facades\DB;
@@ -26,6 +27,7 @@ class MitraController extends Controller
         if(!Sentinel::getUser()) {
             return redirect()->route('auth.login');
         } else{
+            // dd($request->drinks);
             try {
                 $request->validate([
                     'venue_name'         => 'required',
@@ -72,18 +74,18 @@ class MitraController extends Controller
                 $venue_image = $request->venue_photo_base64;
                 $field_image = $request->file('field_photo_base64');
 
-                for($i=0; $i<count($field_detail); $i++){
+                if ($venue_image != null) {
+                    $venueBase64 = base64_encode(file_get_contents($venue_image));
+                    $venuephoto = $venue_id->venue_base64()->create([
+                        'venue_photo_base64' => $venueBase64
+                    ]);
+                }
+
+                for($i=0; $i<count($field_detail)-1; $i++){
                     $fielddetail = $venue_id->field_detail()->create([
                         'field_name'        => $field_detail[$i],
                         'field_cost_hour'   => $field_cost[$i]
                     ]);
-
-                    if ($venue_image != null) {
-                        $venueBase64[$i] = base64_encode(file_get_contents($venue_image));
-                        $venuephoto = $venue_id->venue_base64()->create([
-                            'venue_photo_base64' => $venueBase64[$i]
-                        ]);
-                    }
 
                     // $field_id = FieldDetail::where('id', $fielddetail)->first();
                     // if ($field_image != null) {
@@ -109,9 +111,8 @@ class MitraController extends Controller
                 }
 
                 $vendorRole = Role::where('slug', 'vendor')->first();
-                $user->roles()->detach(Role::where('slug', 'user')->first()->id);
+                $user->roles()->detach();
                 $user->roles()->attach($vendorRole->id);
-                $user->save();
 
                 DB::commit();
                 return redirect()->route('mitra.home')->with('success', 'Akun anda telah menjadi akun Vendor!');
