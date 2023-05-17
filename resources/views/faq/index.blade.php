@@ -8,7 +8,7 @@
 </style>
 <div class="container">
     <div class="py-5">
-        <p class="h1 fw-bold text-center" style="color: #439A97">Halaman FAQ !</p>
+        <p class="h1 fw-bold text-center" style="color: #439A97">Halaman FAQ</p>
         <p class="h5 fw-normal text-center" style="color: #FCE700">Cari informasi yang mungkin anda ingin tanyakan di bawah!</p>
         <div class="row mt-5">
             <div class="col-md-1"></div>

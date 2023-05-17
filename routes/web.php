@@ -143,3 +143,9 @@ Route::get('/detail-pemesanan-mitra', function () {
 Route::get('/faq-index', function () {
     return view('faq.index');
 })->name('faq.index');
+
+
+// tentang kami
+Route::get('/tentang-kami', function () {
+    return view('tentang-kami.index');
+})->name('tentang-kami.index');
