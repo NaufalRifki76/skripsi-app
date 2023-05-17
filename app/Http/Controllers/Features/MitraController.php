@@ -120,12 +120,12 @@ class MitraController extends Controller
                     }
                 }
 
-                $vendorRole = Role::where('slug', 'vendor')->first();
-                $user->roles()->detach();
-                $user->roles()->attach($vendorRole->id);
+                // $vendorRole = Role::where('slug', 'vendor')->first();
+                // $user->roles()->detach();
+                // $user->roles()->attach($vendorRole->id);
 
                 DB::commit();
-                return redirect()->route('mitra.home')->with('success', 'Akun anda telah menjadi akun Vendor!');
+                return redirect()->route('mitra.index')->with('success', 'Aplikasi mitra anda sedang kami review!');
             } catch (\Throwable $th) {
                 dd($th);
                 DB::rollBack();
