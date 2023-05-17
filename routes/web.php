@@ -150,6 +150,7 @@ Route::get('/tentang-kami', function () {
     return view('tentang-kami.index');
 })->name('tentang-kami.index');
 
+
 // forgot password
 Route::get('/email', function () {
     return view('email.forgot-password');
@@ -162,3 +163,9 @@ Route::get('/kirim-email', function () {
 Route::get('/ganti-password', function () {
     return view('lupa-password.ganti-password');
 })->name('lupa-password.ganti-password');
+
+
+// pengembalian dana
+Route::get('/pengembalian-dana', function () {
+    return view('pengembalian-dana.index');
+})->name('pengembalian-dana.index');
