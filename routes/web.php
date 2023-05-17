@@ -137,3 +137,9 @@ Route::get('/profile', function () {
 Route::get('/detail-pemesanan-mitra', function () {
     return view('layout.penyedia-lapangan.detail-pemesanan');
 })->name('mitra.detail-pemesanan');
+
+
+// faq
+Route::get('/faq-index', function () {
+    return view('faq.index');
+})->name('faq.index');
