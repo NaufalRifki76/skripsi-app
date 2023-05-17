@@ -149,3 +149,16 @@ Route::get('/faq-index', function () {
 Route::get('/tentang-kami', function () {
     return view('tentang-kami.index');
 })->name('tentang-kami.index');
+
+// forgot password
+Route::get('/email', function () {
+    return view('email.forgot-password');
+})->name('tentang-kami.index');
+
+Route::get('/kirim-email', function () {
+    return view('lupa-password.kirim-email');
+})->name('lupa-password.kirim-email');
+
+Route::get('/ganti-password', function () {
+    return view('lupa-password.ganti-password');
+})->name('lupa-password.ganti-password');
