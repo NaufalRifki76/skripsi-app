@@ -50,7 +50,7 @@
                                         <label for="inputState" class="form-label h5 text-white">Foto Lapangan (.jpg,
                                             .png)</label>
                                         <input type="file" class="form-control bg-white" accept=".jpg, .jpeg, .png"
-                                            id="venue_photo_base64" name="venue_photo_base64"
+                                            id="venue_photo_base64" name="venue_photo_base64" required
                                             placeholder="Jumlah lapangan tersedia...">
                                     </div>
                                     <div class="mb-3">
@@ -169,7 +169,7 @@
                                         <label for="inputState" class="form-label h5 text-white">Foto Lapangan (.jpg,
                                             .png)</label>
                                         <input type="file" class="form-control bg-white" accept=".jpg, .jpeg, .png"
-                                            id="field_photo_base64" name="field_photo_base64[]"
+                                            id="field_photo_base64" name="field_photo_base64[]" required
                                             placeholder="Jumlah lapangan tersedia...">
                                     </div>
                                 </div>
@@ -199,7 +199,7 @@
                                         <label for="inputState" class="form-label h5 text-white">Foto Lapangan (.jpg,
                                             .png)</label>
                                         <input type="file" class="form-control bg-white" accept=".jpg, .jpeg, .png"
-                                            id="field_photo_base64" name="field_photo_base64[]"
+                                            id="field_photo_base64" name="field_photo_base64[]" required
                                             placeholder="Jumlah lapangan tersedia...">
                                     </div>
                                 </div>
