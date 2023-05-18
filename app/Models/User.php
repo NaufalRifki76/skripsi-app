@@ -24,6 +24,8 @@ class User extends EloquentUser
         'email',
         'password',
         'no_telephone',
+        'vip_status',
+        'successful_transaction'
     ];
 
     /**

@@ -7,6 +7,8 @@
         }
     </style>
 
+@include('session-flash')
+
     <div class="container">
         <div class="py-5">
             <p class="h1 fw-bold text-center" style="color: #439A97">Bergabung Menjadi Mitra Kami</p>
@@ -68,7 +70,7 @@
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Nama Rekening <span
                                                 class="text-danger">*</span></label>
-                                        <input type="text" required class="form-control bg-white" id=""
+                                        <input type="text" required class="form-control bg-white" id="bank" name="bank"
                                             name="" placeholder="">
                                     </div>
                                 </div>
@@ -76,7 +78,7 @@
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Nomor Rekening <span
                                                 class="text-danger">*</span></label>
-                                        <input type="number" required class="form-control bg-white" id=""
+                                        <input type="number" required class="form-control bg-white" id="bank_acc_no" name="bank_acc_no"
                                             name="" placeholder="">
                                     </div>
                                 </div>
@@ -84,7 +86,7 @@
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Atas Nama Rekening <span
                                                 class="text-danger">*</span></label>
-                                        <input type="text" required class="form-control bg-white" id=""
+                                        <input type="text" required class="form-control bg-white" id="bank_acc_name" name="bank_acc_name"
                                             name="" placeholder="">
                                     </div>
                                 </div>
