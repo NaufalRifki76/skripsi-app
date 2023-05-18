@@ -154,7 +154,7 @@ Route::get('/tentang-kami', function () {
 // forgot password
 Route::get('/email', function () {
     return view('email.forgot-password');
-})->name('tentang-kami.index');
+})->name('email.forgot-password');
 
 Route::get('/kirim-email', function () {
     return view('lupa-password.kirim-email');
@@ -169,3 +169,7 @@ Route::get('/ganti-password', function () {
 Route::get('/pengembalian-dana', function () {
     return view('pengembalian-dana.index');
 })->name('pengembalian-dana.index');
+
+Route::get('/syarat-pengembalian-dana', function () {
+    return view('pengembalian-dana.syarat-ketentuan');
+})->name('pengembalian-dana.syarat-ketentuan');
