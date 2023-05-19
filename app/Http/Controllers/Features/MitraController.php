@@ -33,7 +33,7 @@ class MitraController extends Controller
                     'venue_name'         => 'required',
                     'venue_address'      => 'required',
                     'open_hour'          => 'required',
-                    'venue_photo_base64' => 'nullable',
+                    'venue_photo_base64' => 'required',
                     'venue_desc'         => 'required',
                     'close_hour'         => 'required',
                     'bank'               => 'nullable',
@@ -46,7 +46,7 @@ class MitraController extends Controller
                     'wifi'               => 'nullable',
                     'rent_equipments'    => 'nullable',
                     'field_name'         => 'required',
-                    'field_photo_base64' => 'nullable',
+                    'field_photo_base64' => 'required',
                     'field_cost_hour'    => 'required',
                     'item_id'            => 'nullable',
                     'item_qty'           => 'nullable',
@@ -62,7 +62,7 @@ class MitraController extends Controller
                     'open_hour'         => $request->open_hour,
                     'close_hour'        => $request->close_hour,
                     'venue_desc'        => $request->venue_desc,
-                    'bank'              => $request->drinks,
+                    'bank'              => $request->bank,
                     'bank_acc_no'       => $request->bank_acc_no,
                     'bank_acc_name'     => $request->bank_acc_name,
                     'drinks'            => $request->drinks,
@@ -135,6 +135,7 @@ class MitraController extends Controller
             } catch (\Throwable $th) {
                 dd($th);
                 DB::rollBack();
+                return back()->with('failed', 'Cek kelengkapan dari form anda!');
             }
         }
     }
