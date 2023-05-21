@@ -89,6 +89,10 @@ Route::get('/pesan-lapangan-sukses', function () {
     return view('pesan-lapangan.sukses');
 })->name('lapangan.pesan.sukses');
 
+Route::get('/pesan-lapangan-pilih-jam', function () {
+    return view('pesan-lapangan.pilih-jam');
+})->name('lapangan.pesan.jam');
+
 Route::get('/riwayat-pemesanan', function () {
     return view('riwayat-pemesanan.index');
 })->name('riwayat.pemesanan');
