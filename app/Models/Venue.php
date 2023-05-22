@@ -23,7 +23,8 @@ class Venue extends Model
         'toilet',
         'parking_space',
         'wifi',
-        'rent_equipments'
+        'rent_equipments',
+        'isapproved'
     ];
     
     protected $table = 'venue';
@@ -41,5 +42,15 @@ class Venue extends Model
     public function venue_rent_item()
     {
         return $this->hasMany(VenueRentItems::class);
+    }
+
+    public function rent_hours()
+    {
+        return $this->hasMany(RentHours::class);
+    }
+
+    public function rent_hours_available()
+    {
+        return $this->hasOne(RentHoursAvailable::class);
     }
 }

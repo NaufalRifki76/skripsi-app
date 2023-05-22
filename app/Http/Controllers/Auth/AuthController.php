@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Mail\ActivationMail;
+use App\Models\Role;
 use App\Models\User;
+use App\Models\UserRole;
 use Cartalyst\Sentinel\Laravel\Facades\Activation;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Http\Request;
@@ -14,7 +16,17 @@ use Illuminate\Support\Facades\Redirect;
 class AuthController extends Controller
 {
     public function index(){
-        return view('home.index');
+        if (Sentinel::check()) {
+            $userId = Sentinel::getUser()->id;
+            $role = UserRole::where('user_id', $userId)->first();
+            if ($role->role_id == 2) {
+                return view('home.index');
+            } elseif ($role->role_id == 3) {
+                return view('layout.penyedia-lapangan.index');
+            }
+        } else {
+            return view('home.index');
+        }
     }
 
     public function view(){

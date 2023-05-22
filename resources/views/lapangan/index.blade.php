@@ -1,4 +1,8 @@
 @extends('layout.index')
+@php
+    use App\Models\Venue;
+    use App\Models\VenuePhotos;
+@endphp
 <style>
     @media screen and (max-width: 765px) {
         .mobile-img {
@@ -72,66 +76,59 @@
     </div>
     <div class="container py-5">
         <div class="row">
-            <div class="col-md-6">
-                <a class="text-dark text-decoration-none" href="{{ route('lapangan.detail') }}">
-                    <div class="card mb-3 card-size-web card-mob zoom shadow" style="border-radius: 12px; border: none">
-                        <div class="row g-0">
-                            <div class="col-md-4 card-image">
-                                <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}"
-                                    class="img-fluid mobile-img web-img" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Lapangan Sepak Bola Senayan</h5>
-                                    <p class="card-text mt-2"
-                                        style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Jl. Setia
-                                        Budi Barat No.1, Kuningan, Setia Budi, Jakarta Pusat, DKI Jakarta, 10220</p>
-                                    <div class="d-flex">
-                                        <p class="card-text" style="margin-right: 10px">Lapangan Tersedia:</p>
-                                        <p class="card-text">3</p>
-                                    </div>
-                                    <div class="mt-3">
-                                        <p class="card-text mt-2">Harga</p>
-                                        <p class="card-text" style="margin-top: -15px">Rp <b>250.000</b><small
-                                                class="text-muted"> /
-                                                Jam</small></p>
+            @foreach ($venue as $key => $venues)
+                <div class="col-md-6">
+                    <a class="text-dark text-decoration-none" href="">
+                        <div class="card mb-3 card-size-web card-mob zoom shadow" style="border-radius: 12px; border: none">
+                            <div class="row g-0">
+                                <div class="col-md-4 card-image">
+                                    {{-- @php
+                                        $venue_id = Venue::where('id', $key)->first();
+                                        $base64 = VenuePhotos::where('venue_id', $venue_id->id)->first();
+                                    @endphp
+                                    <img src="data:image/png;base64,{{$base64->venue_photo_base64}}"
+                                        class="img-fluid mobile-img web-img" alt="..."> --}}
+                                    @php
+                                        $venue = Venue::where('id', $key+1)->first();
+                                        if ($venue) {
+                                            $base64 = VenuePhotos::where('venue_id', $venue->id)->first();
+                                            // if ($base64) {
+                                                echo '<div class="card-image card-circular">';
+                                                echo '<img class="rounded img-fluid" width="250px" src="data:image/png;base64,' . $base64->venue_photo_base64 . '">';
+                                                echo '</div>';
+                                            // } else{
+                                                // dd($venue, $base64);
+                                            // }
+                                        }
+                                    @endphp
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title fw-bold">{{$venues->venue_name}}</h5>
+                                        <p class="card-text mt-2"
+                                            style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{$venues->venue_address}}</p>
+                                        <div class="d-flex">
+                                            @php
+                                                $qty = $venue->field_detail()->count();
+                                            @endphp
+                                            <p class="card-text" style="margin-right: 10px">Lapangan Tersedia: {{$qty}}</p>
+                                        </div>
+                                        <div class="mt-3">
+                                            <p class="card-text mt-2">Harga mulai dari:</p>
+                                            @php
+                                                $start_price = $venue->field_detail()->min('field_cost_hour');
+                                            @endphp
+                                            <p class="card-text" style="margin-top: -15px">Rp <b>{{$start_price}}</b><small
+                                                    class="text-muted"> /
+                                                    Jam</small></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6">
-                <a class="text-dark text-decoration-none" href="{{ route('lapangan.detail') }}">
-                    <div class="card mb-3 card-size-web card-mob zoom shadow" style="border-radius: 12px; border: none">
-                        <div class="row g-0">
-                            <div class="col-md-4 card-image">
-                                <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}"
-                                    class="img-fluid mobile-img web-img" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Lapangan Sepak Bola Senayan</h5>
-                                    <p class="card-text mt-2"
-                                        style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Jl. Setia
-                                        Budi Barat No.1, Kuningan, Setia Budi, Jakarta Pusat, DKI Jakarta, 10220</p>
-                                    <div class="d-flex">
-                                        <p class="card-text" style="margin-right: 10px">Lapangan Tersedia:</p>
-                                        <p class="card-text">3</p>
-                                    </div>
-                                    <div class="mt-3">
-                                        <p class="card-text mt-2">Harga</p>
-                                        <p class="card-text" style="margin-top: -15px">Rp <b>250.000</b><small
-                                                class="text-muted"> /
-                                                Jam</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
+            @endforeach
         </div>
     </div>
     <div class="d-flex justify-content-center mb-3">
