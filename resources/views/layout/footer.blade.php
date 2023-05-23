@@ -15,7 +15,7 @@
                 <h5 style="color: #62B6B7">Daftar Halaman</h5>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="{{ route('auth.dashboard') }}" class="btn-grey-hover text-decoration-none">Home</a></li>
-                    <li class="nav-item mb-2"><a href="{{ route('lapangan.index') }}" class="btn-grey-hover text-decoration-none">Booking Lapangan</a></li>
+                    <li class="nav-item mb-2"><a href="{{ route('lapangan-index') }}" class="btn-grey-hover text-decoration-none">Booking Lapangan</a></li>
                     <li class="nav-item mb-2"><a href="{{ route('sewa-perlengkapan.index') }}" class="btn-grey-hover text-decoration-none">Info Sewa perlengkapan</a></li>
                     <li class="nav-item mb-2"><a href="{{ route('kompetisi.index') }}" class="btn-grey-hover text-decoration-none">Info Kompetisi</a></li>
                 </ul>

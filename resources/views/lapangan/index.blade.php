@@ -78,7 +78,7 @@
         <div class="row">
             @foreach ($venue as $key => $venues)
                 <div class="col-md-6">
-                    <a class="text-dark text-decoration-none" href="">
+                    <a class="text-dark text-decoration-none" href="{{route('lapangan-detail', ['id' => $venues->id])}}">
                         <div class="card mb-3 card-size-web card-mob zoom shadow" style="border-radius: 12px; border: none">
                             <div class="row g-0">
                                 <div class="col-md-4 card-image">
@@ -89,16 +89,12 @@
                                     <img src="data:image/png;base64,{{$base64->venue_photo_base64}}"
                                         class="img-fluid mobile-img web-img" alt="..."> --}}
                                     @php
-                                        $venue = Venue::where('id', $key+1)->first();
+                                        $venue = Venue::where('id', $venues->id)->first();
                                         if ($venue) {
                                             $base64 = VenuePhotos::where('venue_id', $venue->id)->first();
-                                            // if ($base64) {
-                                                echo '<div class="card-image card-circular">';
-                                                echo '<img class="rounded img-fluid" width="250px" src="data:image/png;base64,' . $base64->venue_photo_base64 . '">';
-                                                echo '</div>';
-                                            // } else{
-                                                // dd($venue, $base64);
-                                            // }
+                                            echo '<div class="card-image card-circular">';
+                                            echo '<img class="rounded img-fluid" width="250px" src="data:image/png;base64,' . $base64->venue_photo_base64 . '">';
+                                            echo '</div>';
                                         }
                                     @endphp
                                 </div>

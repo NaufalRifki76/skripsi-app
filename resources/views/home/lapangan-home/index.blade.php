@@ -84,7 +84,7 @@
     </div>
     <div class="text-center mt-3">
         <h6 style="color: #FCE700">Klik tombol di bawah untuk melihat penawaran lainnya</h6>
-        <a href="{{ route('lapangan.index') }}">
+        <a href="{{ route('lapangan-index') }}">
             <button type="button" class="btn-green-transition mt-2">Lihat Lapangan Lainnya</button>
         </a>
     </div>

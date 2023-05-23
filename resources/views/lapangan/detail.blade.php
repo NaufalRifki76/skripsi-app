@@ -1,4 +1,8 @@
 @extends('layout.index')
+@php
+    use App\Models\Venue;
+    use App\Models\VenuePhotos;
+@endphp
 <style>
     @media screen and (max-width: 765px) {
         .web-pembatalan {
@@ -22,19 +26,34 @@
             <div >
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="{{ asset('Assets/image-lapangan/lapangan-detail.jpg') }}" class="img-fluid"
-                            style="max-height: 400px; border-top-left-radius: 12px; border-bottom-left-radius: 12px;" alt="...">
+                        @php
+                            $venues = Venue::where('id', $venue->id)->first();
+                            if ($venues) {
+                                $base64 = VenuePhotos::where('venue_id', $venues->id)->first();
+                                echo '<div class="card-image card-circular">';
+                                echo '<img class="rounded img-fluid"style="max-height: 400px; border-top-left-radius: 12px; border-bottom-left-radius: 12px;" src="data:image/png;base64,' . $base64->venue_photo_base64 . '">';
+                                echo '</div>';
+                            }
+                        @endphp
+                        {{-- <img src="{{ asset('Assets/image-lapangan/lapangan-detail.jpg') }}" class="img-fluid"
+                            style="max-height: 400px; border-top-left-radius: 12px; border-bottom-left-radius: 12px;" alt="..."> --}}
                     </div>
                     <div class="col-md-6">
                         <div class="mt-4">
-                            <h2 class="fw-bold" style="color: #439A97">Stadion Madya Gelora Bung Karno</h2>
+                            <h2 class="fw-bold" style="color: #439A97">{{$venue->venue_name}}</h2>
                             <p class="card-text mt-4 fs-5" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-                                Jl. Setia Budi Barat No.1, Kuningan, Setia Budi</p>
+                                {{$venue->venue_address}}</p>
                             <p class="card-text h4 fw-bold mt-4" style="color: #439A97">Lapangan Tersedia</p>
-                            <p class="card-text fs-5" style="margin-top: -10px">3</p>
-                            <p class="card-text h4 fw-bold mt-4" style="color: #439A97">Harga</p>
-                            <p class="card-text fs-5" style="margin-top: -10px">Rp <b class="fs-5">150.000</b> / Jam</p>
-                            <a href="{{ route('lapangan.pesan') }}" class="text-decoration-none ">
+                            @php
+                                $qty = $venues->field_detail()->count();
+                            @endphp
+                            <p class="card-text fs-5" style="margin-top: -10px">{{$qty}}</p>
+                            <p class="card-text h4 fw-bold mt-4" style="color: #439A97">Harga mulai dari:</p>
+                            @php
+                                $start_price = $venues->field_detail()->min('field_cost_hour');
+                            @endphp
+                            <p class="card-text fs-5" style="margin-top: -10px">Rp <b class="fs-5">{{$start_price}}</b> / Jam</p>
+                            <a href="{{ route('lapangan-order', ['id' => $venue->id]) }}" class="text-decoration-none ">
                                 <button type="button" id="" name="" class="btn-green-hover">Cari
                                     Lapangan</button>
                             </a>
@@ -49,13 +68,11 @@
                 <div class="row mt-4">
                     <div class="col-md-7 px-3 text-center border-end">
                         <h4 class="fw-bold" style="color: #439A97"><u>Deskripsi Lapangan</u></h4>
-                        <p class="fs-5 mt-3">Lapangan futsal Sintetis. 3 lapangan. Ukuran 18 x 20 m. Lokasi diatas Plaza
-                            Kenari Mas Kramat Raya</p>
+                        <p class="fs-5 mt-3">{{$venue->venue_desc}}</p>
                     </div>
                     <div class="col-md-5 text-center">
                         <h4 class="fw-bold" style="color: #439A97"><u>Lokasi Lapangan</u></h4>
-                        <p class="fs-5 mt-3">Jl. Asia Afrika, RT.1/RW.3, Gelora, Kecamatan
-                            Tanah Abang, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 10270</p>
+                        <p class="fs-5 mt-3">{{$venue->venue_address}}</p>
                     </div>
                 </div>
 
@@ -67,61 +84,73 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="d-flex align-items-center ms-5">
-                                    <div class="flex-shrink-0 my-3">
-                                        <img src="{{ asset('Assets/image-lapangan/drinks.png') }}" class="img-fluid"
-                                            width="34px" alt="...">
-                                    </div>
-                                    <div class="ms-3">
-                                        Minuman
-                                    </div>
+                                    @if ($venue->drinks == 1)
+                                        <div class="flex-shrink-0 my-3">
+                                            <img src="{{ asset('Assets/image-lapangan/drinks.png') }}" class="img-fluid"
+                                                width="34px" alt="...">
+                                        </div>
+                                        <div class="ms-3">
+                                            Minuman
+                                        </div>
+                                    @endif
                                 </div>
                                 <div class="d-flex align-items-center ms-5">
-                                    <div class="flex-shrink-0 my-3">
-                                        <img src="{{ asset('Assets/image-lapangan/changing-room.png') }}" class="img-fluid"
-                                            width="34px" alt="...">
-                                    </div>
-                                    <div class="ms-3">
-                                        Ruang Ganti
-                                    </div>
+                                    @if ($venue->locker_room == 1)
+                                        <div class="flex-shrink-0 my-3">
+                                            <img src="{{ asset('Assets/image-lapangan/changing-room.png') }}" class="img-fluid"
+                                                width="34px" alt="...">
+                                        </div>
+                                        <div class="ms-3">
+                                            Ruang Ganti
+                                        </div>
+                                    @endif
                                 </div>
                                 <div class="d-flex align-items-center ms-5">
-                                    <div class="flex-shrink-0 my-3">
-                                        <img src="{{ asset('Assets/image-lapangan/wifi.png') }}" class="img-fluid"
-                                            width="34px" alt="...">
-                                    </div>
-                                    <div class="ms-3">
-                                        Wifi
-                                    </div>
+                                    @if ($venue->wifi == 1)
+                                        <div class="flex-shrink-0 my-3">
+                                            <img src="{{ asset('Assets/image-lapangan/wifi.png') }}" class="img-fluid"
+                                                width="34px" alt="...">
+                                        </div>
+                                        <div class="ms-3">
+                                            Wifi
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
                                 <div class="d-flex align-items-center">
-                                    <div class="flex-shrink-0 my-3">
-                                        <img src="{{ asset('Assets/image-lapangan/toilet.png') }}" class="img-fluid"
-                                            width="34px" alt="...">
-                                    </div>
-                                    <div class="ms-3">
-                                        Toilet
-                                    </div>
+                                    @if ($venue->toilet == 1)
+                                        <div class="flex-shrink-0 my-3">
+                                            <img src="{{ asset('Assets/image-lapangan/toilet.png') }}" class="img-fluid"
+                                                width="34px" alt="...">
+                                        </div>
+                                        <div class="ms-3">
+                                            Toilet
+                                        </div>
+                                    @endif
                                 </div>
                                 <div class="d-flex align-items-center">
-                                    <div class="flex-shrink-0 my-3">
-                                        <img src="{{ asset('Assets/image-lapangan/parking.png') }}" class="img-fluid"
-                                            width="34px" alt="...">
-                                    </div>
-                                    <div class="ms-3">
-                                        Parkir Kendaraan
-                                    </div>
+                                    @if ($venue->parking_space == 1)
+                                        <div class="flex-shrink-0 my-3">
+                                            <img src="{{ asset('Assets/image-lapangan/parking.png') }}" class="img-fluid"
+                                                width="34px" alt="...">
+                                        </div>
+                                        <div class="ms-3">
+                                            Parkir Kendaraan
+                                        </div>
+                                    @endif
                                 </div>
                                 <div class="d-flex align-items-center">
-                                    <div class="flex-shrink-0 my-3">
-                                        <img src="{{ asset('Assets/image-lapangan/sewa-perlengkapan.png') }}"
-                                            class="img-fluid" width="34px" alt="...">
-                                    </div>
-                                    <div class="ms-3">
-                                        Sewa Perlengkapan
-                                    </div>
+                                    @if ($venue->rent_equipments == 1)
+                                        <div class="flex-shrink-0 my-3">
+                                            <img src="{{ asset('Assets/image-lapangan/sewa-perlengkapan.png') }}"
+                                                class="img-fluid" width="34px" alt="...">
+                                        </div>
+                                        <div class="ms-3">
+                                            Sewa Perlengkapan
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>

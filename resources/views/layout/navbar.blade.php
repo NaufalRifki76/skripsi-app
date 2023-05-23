@@ -13,7 +13,7 @@
                     <a class="nav-link active" aria-current="page" href="{{ route('auth.dashboard') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{route('lapangan.index')}}">Booking Lapangan</a>
+                    <a class="nav-link" aria-current="page" href="{{route('lapangan-index')}}">Booking Lapangan</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{route('sewa-perlengkapan.index')}}">Info Sewa Perlengkapan</a>

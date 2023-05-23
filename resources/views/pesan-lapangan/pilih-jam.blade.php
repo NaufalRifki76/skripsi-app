@@ -17,17 +17,80 @@
                 <div class="card shadow background-img-pemesanan" style="border: none; border-radius: 12px">
                     <form action="">
                         <div class="card-body">
-                            <p class="h5 mb-3 text-white">Nama Lapangan: <b>Stadion Madya Gelora Bung Karno</b></p>
-                            <p class="h5 mb-3 text-white">Lapangan: <b>A</b></p>
+                            <p class="h5 mb-3 text-white">Nama Lapangan: <b>{{$venue->venue_name}}</b></p>
+                            <p class="h5 mb-3 text-white">Lapangan: <b>{{$field->field_name}}</b></p>
+                            <p class="h5 mb-3 text-white">Hari & Tanggal: <b>{{\Carbon\Carbon::parse($date)->locale('id')->translatedFormat('l, d F Y')}}</b></p>
                             <div class="row fieldGroup mb-3">
                                 <div class="col-md-6">
                                     <label for="inputJam" class="form-label h5 text-white">Pilih Jam <span
                                             class="text-danger">*</span></label>
                                     <select id="inputJam" class="form-select" required>
-                                        <option selected>Pilih jam anda bermain...</option>
-                                        <option disabled value="1">09.00 - 10.00</option>
-                                        <option value="2">10.00 - 11.00</option>
-                                        <option value="3">11.00 - 12.00</option>
+                                        <option disabled selected>Pilih jam anda bermain...</option>
+                                        @if ($hours->up00 != null)
+                                            @if ($availability->up00 == null)
+                                                <option value="0">00.00 - 01.00</option>
+                                            @endif
+                                        @endif
+                                        @if ($hours->up01 != null)
+                                            @if ($availability->up01 == null)
+                                                <option value="1">01.00 - 02.00</option>
+                                            @endif
+                                        @endif
+                                        @if ($hours->up02 != null)
+                                            @if ($availability->up02 == null)
+                                                <option value="2">02.00 - 03.00</option>
+                                            @endif
+                                        @endif
+                                        @if ($hours->up03 != null)
+                                            @if ($availability->up03 == null)
+                                                <option value="3">03.00 - 04.00</option>
+                                            @endif
+                                        @endif
+                                        @if ($hours->up04 != null)
+                                            @if ($availability->up04 == null)
+                                                <option value="4">04.00 - 05.00</option>
+                                            @endif
+                                        @endif
+                                        @if ($hours->up05 != null)
+                                            @if ($availability->up05 == null)
+                                                <option value="5">05.00 - 06.00</option>
+                                            @endif
+                                        @endif
+                                        @if ($hours->up06 != null)
+                                            @if ($availability->up06 == null)
+                                                <option value="6">06.00 - 07.00</option>
+                                            @endif
+                                        @endif
+                                        @if ($hours->up07 != null)
+                                            @if ($availability->up07 == null)
+                                                <option value="7">07.00 - 08.00</option>
+                                            @endif
+                                        @endif
+                                        @if ($hours->up08 != null)
+                                            @if ($availability->up08 == null)
+                                                <option value="8">08.00 - 09.00</option>
+                                            @endif
+                                        @endif
+                                        @if ($hours->up09 != null)
+                                            @if ($availability->up09 == null)
+                                                <option value="9">09.00 - 10.00</option>
+                                            @endif
+                                        @endif
+                                        
+                                        <option value="10">10.00 - 11.00</option>
+                                        <option value="11">11.00 - 12.00</option>
+                                        <option value="11">12.00 - 13.00</option>
+                                        <option value="11">13.00 - 14.00</option>
+                                        <option value="11">14.00 - 15.00</option>
+                                        <option value="11">15.00 - 16.00</option>
+                                        <option value="11">16.00 - 17.00</option>
+                                        <option value="11">17.00 - 18.00</option>
+                                        <option value="11">18.00 - 19.00</option>
+                                        <option value="11">19.00 - 20.00</option>
+                                        <option value="11">20.00 - 21.00</option>
+                                        <option value="11">21.00 - 22.00</option>
+                                        <option value="11">22.00 - 23.00</option>
+                                        <option value="11">23.00 - 00.00</option>
                                     </select>
                                 </div>
                                 <div class="col-md-5">

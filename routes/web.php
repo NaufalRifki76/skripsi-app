@@ -27,7 +27,11 @@ Route::get('subscribe.index', [VipController::class, 'index'])->name('subscribe.
 Route::get('subscribe.startplan', [VipController::class, 'subscribe'])->name('subscribe.startplan');
 
 // Booking Lapangan
-Route::get('lapangan.index', [BookingController::class, 'index'])->name('lapangan.index');
+Route::get('lapangan-index', [BookingController::class, 'index'])->name('lapangan-index');
+Route::get('lapangan-detail/{id}', [BookingController::class, 'venuedetail'])->name('lapangan-detail');
+Route::get('lapangan-order/{id}', [BookingController::class, 'order'])->name('lapangan-order');
+Route::get('lapangan-order-date/{venueid}/{fieldid}', [BookingController::class, 'orderdate'])->name('lapangan-order-date');
+Route::post('lapangan-order-time/{venueid}/{fieldid}', [BookingController::class, 'ordertime'])->name('lapangan-order-time');
 
 // Info Kompetisi
 Route::get('kompetisi.index', [CompetitionController::class, 'index'])->name('kompetisi.index');
