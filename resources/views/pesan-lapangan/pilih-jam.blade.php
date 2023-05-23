@@ -27,80 +27,227 @@
                                     <select id="inputJam" class="form-select" required>
                                         <option disabled selected>Pilih jam anda bermain...</option>
                                         @if ($hours->up00 != null)
-                                            @if ($availability->up00 == null)
+                                            @if ($availability == null)
                                                 <option value="0">00.00 - 01.00</option>
+                                            @else
+                                                @if ($availability->contains('up00', 1) != 1)
+                                                    <option value="0">00.00 - 01.00</option>
+                                                @endif
                                             @endif
                                         @endif
                                         @if ($hours->up01 != null)
-                                            @if ($availability->up01 == null)
+                                            @if ($availability == null)
                                                 <option value="1">01.00 - 02.00</option>
+                                            @else
+                                                @if ($availability->contains('up01', 1) != 1)
+                                                    <option value="1">01.00 - 02.00</option>
+                                                @endif
                                             @endif
                                         @endif
                                         @if ($hours->up02 != null)
-                                            @if ($availability->up02 == null)
+                                            @if ($availability == null)
                                                 <option value="2">02.00 - 03.00</option>
+                                            @else
+                                                @if ($availability->contains('up02', 1) != 1)
+                                                    <option value="2">02.00 - 03.00</option>
+                                                @endif
                                             @endif
                                         @endif
                                         @if ($hours->up03 != null)
-                                            @if ($availability->up03 == null)
+                                            @if ($availability == null)
                                                 <option value="3">03.00 - 04.00</option>
+                                            @else
+                                                @if ($availability->contains('up03', 1) != 1)
+                                                    <option value="3">03.00 - 04.00</option>
+                                                @endif
                                             @endif
                                         @endif
                                         @if ($hours->up04 != null)
-                                            @if ($availability->up04 == null)
+                                            @if ($availability == null)
                                                 <option value="4">04.00 - 05.00</option>
+                                            @else
+                                                @if ($availability->contains('up04', 1) != 1)
+                                                    <option value="4">04.00 - 05.00</option>
+                                                @endif
                                             @endif
                                         @endif
                                         @if ($hours->up05 != null)
-                                            @if ($availability->up05 == null)
+                                            @if ($availability == null)
                                                 <option value="5">05.00 - 06.00</option>
+                                            @else
+                                                @if ($availability->contains('up05', 1) != 1)
+                                                    <option value="5">05.00 - 06.00</option>
+                                                @endif
                                             @endif
                                         @endif
                                         @if ($hours->up06 != null)
-                                            @if ($availability->up06 == null)
+                                            @if ($availability == null)
                                                 <option value="6">06.00 - 07.00</option>
+                                            @else
+                                                @if ($availability->contains('up06', 1) != 1)
+                                                    <option value="6">06.00 - 07.00</option>
+                                                @endif
                                             @endif
                                         @endif
                                         @if ($hours->up07 != null)
-                                            @if ($availability->up07 == null)
+                                            @if ($availability == null)
                                                 <option value="7">07.00 - 08.00</option>
+                                            @else
+                                                @if ($availability->contains('up07', 1) != 1)
+                                                    <option value="7">07.00 - 08.00</option>
+                                                @endif
                                             @endif
                                         @endif
                                         @if ($hours->up08 != null)
-                                            @if ($availability != null)
-                                                @if ($availability->up08 == null)
+                                            @if ($availability == null)
+                                                <option value="8">08.00 - 09.00</option>
+                                            @else
+                                                @if ($availability->contains('up08', 1) != 1)
                                                     <option value="8">08.00 - 09.00</option>
                                                 @endif
                                             @endif
                                         @endif
                                         @if ($hours->up09 != null)
-                                            @if ($availability != null)
-                                                @if ($availability->up09 == null)
+                                            @if ($availability == null)
+                                                <option value="9">09.00 - 10.00</option>
+                                            @else
+                                                @if ($availability->contains('up09', 1) != 1)
                                                     <option value="9">09.00 - 10.00</option>
                                                 @endif
                                             @endif
                                         @endif
-                                        
-                                        <option value="10">10.00 - 11.00</option>
-                                        <option value="11">11.00 - 12.00</option>
-                                        <option value="11">12.00 - 13.00</option>
-                                        <option value="11">13.00 - 14.00</option>
-                                        <option value="11">14.00 - 15.00</option>
-                                        <option value="11">15.00 - 16.00</option>
-                                        <option value="11">16.00 - 17.00</option>
-                                        <option value="11">17.00 - 18.00</option>
-                                        <option value="11">18.00 - 19.00</option>
-                                        <option value="11">19.00 - 20.00</option>
-                                        <option value="11">20.00 - 21.00</option>
-                                        <option value="11">21.00 - 22.00</option>
-                                        <option value="11">22.00 - 23.00</option>
-                                        <option value="11">23.00 - 00.00</option>
+                                        @if ($hours->up10 != null)
+                                            @if ($availability == null)
+                                                <option value="10">10.00 - 11.00</option>
+                                            @else
+                                                @if ($availability->contains('up10', 1) != 1)
+                                                    <option value="10">10.00 - 11.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up11 != null)
+                                            @if ($availability == null)
+                                                <option value="11">11.00 - 12.00</option>
+                                            @else
+                                                @if ($availability->contains('up11', 1) != 1)
+                                                    <option value="11">11.00 - 12.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up12 != null)
+                                            @if ($availability == null)
+                                                <option value="12">12.00 - 13.00</option>
+                                            @else
+                                                @if ($availability->contains('up12', 1) != 1)
+                                                    <option value="12">12.00 - 13.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up13 != null)
+                                            @if ($availability == null)
+                                                <option value="13">13.00 - 14.00</option>
+                                            @else
+                                                @if ($availability->contains('up13', 1) != 1)
+                                                    <option value="13">13.00 - 14.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up14 != null)
+                                            @if ($availability == null)
+                                                <option value="14">14.00 - 15.00</option>
+                                            @else
+                                                @if ($availability->contains('up14', 1) != 1)
+                                                    <option value="14">14.00 - 15.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up15 != null)
+                                            @if ($availability == null)
+                                                <option value="15">15.00 - 16.00</option>
+                                            @else
+                                                @if ($availability->contains('up15', 1) != 1)
+                                                    <option value="15">15.00 - 16.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up16 != null)
+                                            @if ($availability == null)
+                                                <option value="16">16.00 - 17.00</option>
+                                            @else
+                                                @if ($availability->contains('up16', 1) != 1)
+                                                    <option value="16">16.00 - 17.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up17 != null)
+                                            @if ($availability == null)
+                                                <option value="17">17.00 - 18.00</option>
+                                            @else
+                                                @if ($availability->contains('up17', 1) != 1)
+                                                    <option value="17">17.00 - 18.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up18 != null)
+                                            @if ($availability == null)
+                                                <option value="18">18.00 - 19.00</option>
+                                            @else
+                                                @if ($availability->contains('up18', 1) != 1)
+                                                    <option value="18">18.00 - 19.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up19 != null)
+                                            @if ($availability == null)
+                                                <option value="19">19.00 - 20.00</option>
+                                            @else
+                                                @if ($availability->contains('up19', 1) != 1)
+                                                    <option value="19">19.00 - 20.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up20 != null)
+                                            @if ($availability == null)
+                                                <option value="20">20.00 - 21.00</option>
+                                            @else
+                                                @if ($availability->contains('up20', 1) != 1)
+                                                    <option value="20">20.00 - 21.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up21 != null)
+                                            @if ($availability == null)
+                                                <option value="21">21.00 - 22.00</option>
+                                            @else
+                                                @if ($availability->contains('up21', 1) != 1)
+                                                    <option value="21">21.00 - 22.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up22 != null)
+                                            @if ($availability == null)
+                                                <option value="22">22.00 - 23.00</option>
+                                            @else
+                                                @if ($availability->contains('up22', 1) != 1)
+                                                    <option value="22">22.00 - 23.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up23 != null)
+                                            @if ($availability == null)
+                                                <option value="23">23.00 - 00.00</option>
+                                            @else
+                                                @if ($availability->contains('up23', 1) != 1)
+                                                    <option value="23">23.00 - 00.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
                                     </select>
                                 </div>
                                 <div class="col-md-5">
                                     <label for="inputState" class="form-label h5 text-white">Harga Sewa</label>
                                     <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
-                                        placeholder="">
+                                        placeholder="" value="Rp{{$field->field_cost_hour}}">
                                 </div>
                                 <div class="col-md-1">
                                     <button type="button" class="btn-green-hover addMore" style="margin-top: 30px;"><i
@@ -109,19 +256,232 @@
                             </div>
                             <div class="row fieldGroupCopy mb-3" style="display: none;">
                                 <div class="col-md-6">
-                                    <label for="inputJam" class="form-label h5">Pilih Jam <span
+                                    <label for="inputJam" class="form-label h5 text-white">Pilih Jam <span
                                             class="text-danger">*</span></label>
                                     <select id="inputJam" class="form-select" required>
-                                        <option selected>Pilih jam anda bermain...</option>
-                                        <option disabled value="1">09.00 - 10.00</option>
-                                        <option value="2">10.00 - 11.00</option>
-                                        <option value="3">11.00 - 12.00</option>
+                                        <option disabled selected>Pilih jam anda bermain...</option>
+                                        @if ($hours->up00 != null)
+                                            @if ($availability == null)
+                                                <option value="0">00.00 - 01.00</option>
+                                            @else
+                                                @if ($availability->contains('up00', 1) != 1)
+                                                    <option value="0">00.00 - 01.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up01 != null)
+                                            @if ($availability == null)
+                                                <option value="1">01.00 - 02.00</option>
+                                            @else
+                                                @if ($availability->contains('up01', 1) != 1)
+                                                    <option value="1">01.00 - 02.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up02 != null)
+                                            @if ($availability == null)
+                                                <option value="2">02.00 - 03.00</option>
+                                            @else
+                                                @if ($availability->contains('up02', 1) != 1)
+                                                    <option value="2">02.00 - 03.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up03 != null)
+                                            @if ($availability == null)
+                                                <option value="3">03.00 - 04.00</option>
+                                            @else
+                                                @if ($availability->contains('up03', 1) != 1)
+                                                    <option value="3">03.00 - 04.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up04 != null)
+                                            @if ($availability == null)
+                                                <option value="4">04.00 - 05.00</option>
+                                            @else
+                                                @if ($availability->contains('up04', 1) != 1)
+                                                    <option value="4">04.00 - 05.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up05 != null)
+                                            @if ($availability == null)
+                                                <option value="5">05.00 - 06.00</option>
+                                            @else
+                                                @if ($availability->contains('up05', 1) != 1)
+                                                    <option value="5">05.00 - 06.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up06 != null)
+                                            @if ($availability == null)
+                                                <option value="6">06.00 - 07.00</option>
+                                            @else
+                                                @if ($availability->contains('up06', 1) != 1)
+                                                    <option value="6">06.00 - 07.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up07 != null)
+                                            @if ($availability == null)
+                                                <option value="7">07.00 - 08.00</option>
+                                            @else
+                                                @if ($availability->contains('up07', 1) != 1)
+                                                    <option value="7">07.00 - 08.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up08 != null)
+                                            @if ($availability == null)
+                                                <option value="8">08.00 - 09.00</option>
+                                            @else
+                                                @if ($availability->contains('up08', 1) != 1)
+                                                    <option value="8">08.00 - 09.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up09 != null)
+                                            @if ($availability == null)
+                                                <option value="9">09.00 - 10.00</option>
+                                            @else
+                                                @if ($availability->contains('up09', 1) != 1)
+                                                    <option value="9">09.00 - 10.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up10 != null)
+                                            @if ($availability == null)
+                                                <option value="10">10.00 - 11.00</option>
+                                            @else
+                                                @if ($availability->contains('up10', 1) != 1)
+                                                    <option value="10">10.00 - 11.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up11 != null)
+                                            @if ($availability == null)
+                                                <option value="11">11.00 - 12.00</option>
+                                            @else
+                                                @if ($availability->contains('up11', 1) != 1)
+                                                    <option value="11">11.00 - 12.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up12 != null)
+                                            @if ($availability == null)
+                                                <option value="12">12.00 - 13.00</option>
+                                            @else
+                                                @if ($availability->contains('up12', 1) != 1)
+                                                    <option value="12">12.00 - 13.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up13 != null)
+                                            @if ($availability == null)
+                                                <option value="13">13.00 - 14.00</option>
+                                            @else
+                                                @if ($availability->contains('up13', 1) != 1)
+                                                    <option value="13">13.00 - 14.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up14 != null)
+                                            @if ($availability == null)
+                                                <option value="14">14.00 - 15.00</option>
+                                            @else
+                                                @if ($availability->contains('up14', 1) != 1)
+                                                    <option value="14">14.00 - 15.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up15 != null)
+                                            @if ($availability == null)
+                                                <option value="15">15.00 - 16.00</option>
+                                            @else
+                                                @if ($availability->contains('up15', 1) != 1)
+                                                    <option value="15">15.00 - 16.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up16 != null)
+                                            @if ($availability == null)
+                                                <option value="16">16.00 - 17.00</option>
+                                            @else
+                                                @if ($availability->contains('up16', 1) != 1)
+                                                    <option value="16">16.00 - 17.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up17 != null)
+                                            @if ($availability == null)
+                                                <option value="17">17.00 - 18.00</option>
+                                            @else
+                                                @if ($availability->contains('up17', 1) != 1)
+                                                    <option value="17">17.00 - 18.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up18 != null)
+                                            @if ($availability == null)
+                                                <option value="18">18.00 - 19.00</option>
+                                            @else
+                                                @if ($availability->contains('up18', 1) != 1)
+                                                    <option value="18">18.00 - 19.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up19 != null)
+                                            @if ($availability == null)
+                                                <option value="19">19.00 - 20.00</option>
+                                            @else
+                                                @if ($availability->contains('up19', 1) != 1)
+                                                    <option value="19">19.00 - 20.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up20 != null)
+                                            @if ($availability == null)
+                                                <option value="20">20.00 - 21.00</option>
+                                            @else
+                                                @if ($availability->contains('up20', 1) != 1)
+                                                    <option value="20">20.00 - 21.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up21 != null)
+                                            @if ($availability == null)
+                                                <option value="21">21.00 - 22.00</option>
+                                            @else
+                                                @if ($availability->contains('up21', 1) != 1)
+                                                    <option value="21">21.00 - 22.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up22 != null)
+                                            @if ($availability == null)
+                                                <option value="22">22.00 - 23.00</option>
+                                            @else
+                                                @if ($availability->contains('up22', 1) != 1)
+                                                    <option value="22">22.00 - 23.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                        @if ($hours->up23 != null)
+                                            @if ($availability == null)
+                                                <option value="23">23.00 - 00.00</option>
+                                            @else
+                                                @if ($availability->contains('up23', 1) != 1)
+                                                    <option value="23">23.00 - 00.00</option>
+                                                @endif
+                                            @endif
+                                        @endif
                                     </select>
                                 </div>
                                 <div class="col-md-5">
                                     <label for="inputState" class="form-label h5 text-white">Harga Sewa</label>
                                     <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
-                                        placeholder="">
+                                        placeholder="" value="Rp{{$field->field_cost_hour}}">
                                 </div>
                                 <div class="col-md-1">
                                     <button type="button" class="btn-red-hover remove" style="margin-top: 30px;"><i

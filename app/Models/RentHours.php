@@ -12,6 +12,7 @@ class RentHours extends Model
     protected $fillable = [
         'venue_id',
         'field_id',
+        'order_date',
         'up00',
         'up01',
         'up02',
@@ -44,4 +45,9 @@ class RentHours extends Model
     {
         return $this->belongsTo(Venue::class);
     }
+
+    // public function scopeWithUp09($query)
+    // {
+    //     return $query->where('up09', 1);
+    // }
 }
