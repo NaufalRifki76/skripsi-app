@@ -67,13 +67,17 @@
                                             @endif
                                         @endif
                                         @if ($hours->up08 != null)
-                                            @if ($availability->up08 == null)
-                                                <option value="8">08.00 - 09.00</option>
+                                            @if ($availability != null)
+                                                @if ($availability->up08 == null)
+                                                    <option value="8">08.00 - 09.00</option>
+                                                @endif
                                             @endif
                                         @endif
                                         @if ($hours->up09 != null)
-                                            @if ($availability->up09 == null)
-                                                <option value="9">09.00 - 10.00</option>
+                                            @if ($availability != null)
+                                                @if ($availability->up09 == null)
+                                                    <option value="9">09.00 - 10.00</option>
+                                                @endif
                                             @endif
                                         @endif
                                         

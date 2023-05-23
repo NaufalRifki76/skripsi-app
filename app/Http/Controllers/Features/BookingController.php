@@ -69,6 +69,7 @@ class BookingController extends Controller{
             $hours = RentHoursAvailable::where('venue_id', $venueid)->first();
             $venue = Venue::where('id', $venueid)->first();
             $field = FieldDetail::where('id', $fieldid)->first();
+            // dd($availability);
             return view('pesan-lapangan.pilih-jam', compact('venueid', 'fieldid', 'venue', 'field', 'date', 'hours', 'availability'));
         }
     }
