@@ -16,7 +16,7 @@ Route::get("email-confirm/{token}", [VerificationController::class, "parsingUrl"
 
 // Login
 Route::get('/', [AuthController::class, 'index'])->name('auth.dashboard');
-Route::match(['get', 'post'], 'login', [AuthController::class, 'login'])->name('auth.login');
+// Route::match(['get', 'post'], 'login', [AuthController::class, 'login'])->name('auth.login');
 Route::get('view', [AuthController::class, 'view'])->name('auth.view');
 Route::get('return.login', [AuthController::class, 'returnLogin'])->name('return.login');
 Route::post('login', [AuthController::class, 'login'])->name('auth.login');
@@ -32,6 +32,7 @@ Route::get('lapangan-detail/{id}', [BookingController::class, 'venuedetail'])->n
 Route::get('lapangan-order/{id}', [BookingController::class, 'order'])->name('lapangan-order');
 Route::get('lapangan-order-date/{venueid}/{fieldid}', [BookingController::class, 'orderdate'])->name('lapangan-order-date');
 Route::post('lapangan-order-time/{venueid}/{fieldid}', [BookingController::class, 'ordertime'])->name('lapangan-order-time');
+Route::post('lapangan-confirm/{venueid}/{fieldid}/{date}', [BookingController::class, 'orderconfirm'])->name('lapangan-confirm');
 
 // Info Kompetisi
 Route::get('kompetisi.index', [CompetitionController::class, 'index'])->name('kompetisi.index');
@@ -60,9 +61,9 @@ Route::get('/register', function () {
 })->name('auth.register');
 
 //  Subscribe
-Route::get('/subscribe', function () {
-    return view('subscribe.index');
-})->name('subscribe.index');
+// Route::get('/subscribe', function () {
+//     return view('subscribe.index');
+// })->name('subscribe.index');
 
 // Lapangan
 Route::get('/lapangan', function () {

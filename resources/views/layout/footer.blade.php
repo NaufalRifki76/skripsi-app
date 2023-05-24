@@ -16,7 +16,7 @@
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="{{ route('auth.dashboard') }}" class="btn-grey-hover text-decoration-none">Home</a></li>
                     <li class="nav-item mb-2"><a href="{{ route('lapangan-index') }}" class="btn-grey-hover text-decoration-none">Booking Lapangan</a></li>
-                    <li class="nav-item mb-2"><a href="{{ route('sewa-perlengkapan.index') }}" class="btn-grey-hover text-decoration-none">Info Sewa perlengkapan</a></li>
+                    <li class="nav-item mb-2"><a href="" class="btn-grey-hover text-decoration-none">Info Sewa perlengkapan</a></li>
                     <li class="nav-item mb-2"><a href="{{ route('kompetisi.index') }}" class="btn-grey-hover text-decoration-none">Info Kompetisi</a></li>
                 </ul>
             </div>
@@ -25,10 +25,10 @@
                 <h5 style="color: #62B6B7">Hubungi Kami</h5>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="{{ route('mitra.index') }}" class="btn-grey-hover text-decoration-none">Bergabung Menjadi Mitra Kami</a></li>
-                    <li class="nav-item mb-2"><a href="{{ route('daftar.kompetisi') }}" class="btn-grey-hover text-decoration-none">Publikasikan Kompetisi Anda</a></li>
-                    <li class="nav-item mb-2"><a href="{{ route('pengembalian-dana.syarat-ketentuan') }}" class="btn-grey-hover text-decoration-none">Formulir Pengembalian Dana</a></li>
-                    <li class="nav-item mb-2"><a href="{{ route('faq.index') }}" class="btn-grey-hover text-decoration-none">FAQs</a></li>
-                    <li class="nav-item mb-2"><a href="{{ route('tentang-kami.index') }}" class="btn-grey-hover text-decoration-none">Tentang Kami</a></li>
+                    <li class="nav-item mb-2"><a href="" class="btn-grey-hover text-decoration-none">Publikasikan Kompetisi Anda</a></li>
+                    <li class="nav-item mb-2"><a href="" class="btn-grey-hover text-decoration-none">Formulir Pengembalian Dana</a></li>
+                    <li class="nav-item mb-2"><a href="" class="btn-grey-hover text-decoration-none">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="" class="btn-grey-hover text-decoration-none">Tentang Kami</a></li>
                 </ul>
             </div>
         </div>

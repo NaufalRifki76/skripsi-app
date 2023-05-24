@@ -28,10 +28,10 @@
                             <div class="text-center mt-4 mb-3">
                                 <button type="submit" class="btn-green-hover text-decoration-none"> Lanjutkan
                                     Pemesanan</button>
-                                <a href="{{ route('lapangan.pesan.jam') }}">
+                                {{-- <a href="{{ route('lapangan.pesan.jam') }}">
                                     <button type="button" class="btn-green-hover text-decoration-none"> Lanjutkan
                                         Pemesanan test</button>
-                                </a>
+                                </a> --}}
                             </div>
                         </div>
                     </form>

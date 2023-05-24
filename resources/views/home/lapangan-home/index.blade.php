@@ -29,7 +29,7 @@
     <h1 class="fw-bold" style="color: #439A97">Lapangan Yang Tersedia</h1>
     <div class="row mt-5">
         <div class="col-md-6 card-mob">
-            <a href="{{ route('lapangan.detail') }}" class="text-decoration-none text-dark">
+            <a href="" class="text-decoration-none text-dark">
                 <div class="card mb-3 shadow card-size-web" style="border-radius: 12px; border: none;">
                     <div class="row g-0">
                         <div class="col-md-4 card-image">

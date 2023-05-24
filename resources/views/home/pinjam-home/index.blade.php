@@ -37,7 +37,7 @@
                         <p class="fs-6 mt-2" style="color: #62B6B7"><b>Yuk cari informasi sewa perlengkapan futsal yang anda inginkan dengan menekan tombol disamping.</b></p>
                     </div>
                     <div class="col-5 text-center">
-                        <a href="{{ route('sewa-perlengkapan.index') }}">
+                        <a href="">
                             <button type="button" class="btn-green-hover" style="margin-top: 14px">Cari Perlengkapan</button>
                         </a>
                     </div>

@@ -15,16 +15,17 @@
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <div class="card shadow background-img-pemesanan" style="border: none; border-radius: 12px">
-                    <form action="">
+                    <form action="{{route('lapangan-confirm', ['venueid' => $venueid, 'fieldid' => $fieldid, 'date' => $date])}}" method="POST">
+                        @csrf
                         <div class="card-body">
                             <p class="h5 mb-3 text-white">Nama Lapangan: <b>{{$venue->venue_name}}</b></p>
                             <p class="h5 mb-3 text-white">Lapangan: <b>{{$field->field_name}}</b></p>
-                            <p class="h5 mb-3 text-white">Hari & Tanggal: <b>{{\Carbon\Carbon::parse($date)->locale('id')->translatedFormat('l, d F Y')}}</b></p>
+                            <p class="h5 mb-3 text-white">Hari & Tanggal: <b>{{Carbon\Carbon::parse($date)->locale('id')->translatedFormat('l, d F Y')}}</b></p>
                             <div class="row fieldGroup mb-3">
                                 <div class="col-md-6">
                                     <label for="inputJam" class="form-label h5 text-white">Pilih Jam <span
                                             class="text-danger">*</span></label>
-                                    <select id="inputJam" class="form-select" required>
+                                    <select id="inputJam" name="up" class="form-select" required>
                                         <option disabled selected>Pilih jam anda bermain...</option>
                                         @if ($hours->up00 != null)
                                             @if ($availability == null)
@@ -246,7 +247,7 @@
                                 </div>
                                 <div class="col-md-5">
                                     <label for="inputState" class="form-label h5 text-white">Harga Sewa</label>
-                                    <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
+                                    <input type="text" disabled class="form-control bg-white" id="ExpiredDate" name="field_cost_hour"
                                         placeholder="" value="Rp{{$field->field_cost_hour}}">
                                 </div>
                                 <div class="col-md-1">
@@ -480,7 +481,7 @@
                                 </div>
                                 <div class="col-md-5">
                                     <label for="inputState" class="form-label h5 text-white">Harga Sewa</label>
-                                    <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
+                                    <input type="text" disabled class="form-control bg-white" id="ExpiredDate" name="field_cost_hour"
                                         placeholder="" value="Rp{{$field->field_cost_hour}}">
                                 </div>
                                 <div class="col-md-1">
@@ -489,11 +490,15 @@
                                 </div>
                             </div>
                             <div class="text-center mt-4 mb-3">
+                                <button type="submit" class="btn-green-hover text-decoration-none"> Lanjutkan
+                                    Pemesanan</button>
+                            </div>
+                            {{-- <div class="text-center mt-4 mb-3">
                                 <a href="{{ route('lapangan.pesan.konfirmasi') }}">
                                     <button type="button" class="btn-green-hover text-decoration-none"> Lanjutkan
-                                        Pemesanan</button>
+                                        Pemesanan test</button>
                                 </a>
-                            </div>
+                            </div> --}}
                         </div>
                     </form>
                 </div>
@@ -512,14 +517,12 @@
     @push('script')
         {{-- Select2 --}}
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-        <script>
+        <script type="text/javascript">
             $(document).ready(function() {
                 $('#inputJam').select2({
                     theme: "bootstrap-5",
                 });
-            });
 
-            $(document).ready(function() {
                 // membatasi jumlah inputan
                 var maxGroup = 10;
 
@@ -538,22 +541,6 @@
                 $("body").on("click", ".remove", function() {
                     $(this).parents(".fieldGroup").remove();
                 });
-            });
-        </script>
-        <script type="text/javascript">
-            $(function() {
-                var dtToday = new Date();
-
-                var month = dtToday.getMonth() + 1;
-                var day = dtToday.getDate();
-                var year = dtToday.getFullYear();
-                if (month < 10)
-                    month = '0' + month.toString();
-                if (day < 10)
-                    day = '0' + day.toString();
-
-                var maxDate = year + '-' + month + '-' + day;
-                $('.inputdate').attr('min', maxDate);
             });
         </script>
     @endpush
