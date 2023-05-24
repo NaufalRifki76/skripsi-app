@@ -79,88 +79,118 @@ class BookingController extends Controller{
         if(!Sentinel::getUser()) {
             return redirect()->route('auth.login');
         } else{
-            $request->validate([
-                'up'                => 'required',
-                'field_cost_hour'   => 'required'
-            ]);
-
-            $hours = $request->up;
-            $venue = Venue::where('id', $venueid)->first();
-            $field = FieldDetail::where('id', $fieldid)->first();
-            $user = Sentinel::getUser();
-
-            $rent_order = $user->rent_order()->create([
-                'cust_name'     => $user->name,
-                'venue_id'      => $venueid,
-                'venue_name'    => $venue->venue_name,
-                'cust_number'   => $user->no_telephone,
-                'cust_email'    => $user->email,
-                'field'         => $field->field_name,
-                'order_date'    => $date,
-                'price_sum'     => $request->field_cost_hour * count($hours) + 5000,
-            ]);
-
-            $venue_rent = $venue->rent_hours()->create([
-                'field_id'      => $fieldid,
-                'order_date'    => $date,
-            ]);
-
-            $venue_id_forrent = RentHours::where('id', $venue_rent->id);
-            for ($i=0; $i<count($hours)-1; $i++) { 
-                if ($hours[$i] == 0) {
-                    $venue_id_forrent->up00 = 1;
-                } elseif ($hours[$i] == 1) {
-                    $venue_id_forrent->up01 = 1;
-                } elseif ($hours[$i] == 2) {
-                    $venue_id_forrent->up02 = 1;
-                } elseif ($hours[$i] == 3) {
-                    $venue_id_forrent->up03 = 1;
-                } elseif ($hours[$i] == 4) {
-                    $venue_id_forrent->up04 = 1;
-                } elseif ($hours[$i] == 5) {
-                    $venue_id_forrent->up05 = 1;
-                } elseif ($hours[$i] == 6) {
-                    $venue_id_forrent->up06 = 1;
-                } elseif ($hours[$i] == 7) {
-                    $venue_id_forrent->up07 = 1;
-                } elseif ($hours[$i] == 8) {
-                    $venue_id_forrent->up08 = 1;
-                } elseif ($hours[$i] == 9) {
-                    $venue_id_forrent->up09 = 1;
-                } elseif ($hours[$i] == 10) {
-                    $venue_id_forrent->up10 = 1;
-                } elseif ($hours[$i] == 11) {
-                    $venue_id_forrent->up11 = 1;
-                } elseif ($hours[$i] == 12) {
-                    $venue_id_forrent->up12 = 1;
-                } elseif ($hours[$i] == 13) {
-                    $venue_id_forrent->up13 = 1;
-                } elseif ($hours[$i] == 14) {
-                    $venue_id_forrent->up14 = 1;
-                } elseif ($hours[$i] == 15) {
-                    $venue_id_forrent->up15 = 1;
-                } elseif ($hours[$i] == 16) {
-                    $venue_id_forrent->up16 = 1;
-                } elseif ($hours[$i] == 17) {
-                    $venue_id_forrent->up17 = 1;
-                } elseif ($hours[$i] == 18) {
-                    $venue_id_forrent->up18 = 1;
-                } elseif ($hours[$i] == 19) {
-                    $venue_id_forrent->up19 = 1;
-                } elseif ($hours[$i] == 20) {
-                    $venue_id_forrent->up20 = 1;
-                } elseif ($hours[$i] == 21) {
-                    $venue_id_forrent->up21 = 1;
-                } elseif ($hours[$i] == 22) {
-                    $venue_id_forrent->up22 = 1;
-                } elseif ($hours[$i] == 23) {
-                    $venue_id_forrent->up23 = 1;
+            try {
+                $request->validate([
+                    'up'                => 'required',
+                ]);
+    
+                $hours = $request->up;
+                $venue = Venue::where('id', $venueid)->first();
+                $field = FieldDetail::where('id', $fieldid)->first();
+                $user = Sentinel::getUser();
+                $price_sum = $field->field_cost_hour * count($hours) + 5000;
+    
+                $rent_order = $user->rent_order()->create([
+                    'cust_name'     => $user->name,
+                    'venue_id'      => $venueid,
+                    'venue_name'    => $venue->venue_name,
+                    'cust_number'   => $user->no_telephone,
+                    'cust_email'    => $user->email,
+                    'field'         => $field->field_name,
+                    'order_date'    => $date,
+                    'price_sum'     => $price_sum,
+                ]);
+    
+                $venue_rent = $venue->rent_hours()->create([
+                    'field_id'      => $fieldid,
+                    'order_date'    => $date,
+                    'order_id'      => $rent_order->id,
+                ]);
+    
+                $venue_id_forrent = RentHours::where('id', $venue_rent->id)->first();
+                for ($i=0; $i<count($hours); $i++) { 
+                    if ($hours[$i] == 0) {
+                        $venue_id_forrent->up00 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 1) {
+                        $venue_id_forrent->up01 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 2) {
+                        $venue_id_forrent->up02 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 3) {
+                        $venue_id_forrent->up03 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 4) {
+                        $venue_id_forrent->up04 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 5) {
+                        $venue_id_forrent->up05 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 6) {
+                        $venue_id_forrent->up06 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 7) {
+                        $venue_id_forrent->up07 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 8) {
+                        $venue_id_forrent->up08 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 9) {
+                        $venue_id_forrent->up09 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 10) {
+                        $venue_id_forrent->up10 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 11) {
+                        $venue_id_forrent->up11 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 12) {
+                        $venue_id_forrent->up12 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 13) {
+                        $venue_id_forrent->up13 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 14) {
+                        $venue_id_forrent->up14 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 15) {
+                        $venue_id_forrent->up15 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 16) {
+                        $venue_id_forrent->up16 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 17) {
+                        $venue_id_forrent->up17 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 18) {
+                        $venue_id_forrent->up18 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 19) {
+                        $venue_id_forrent->up19 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 20) {
+                        $venue_id_forrent->up20 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 21) {
+                        $venue_id_forrent->up21 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 22) {
+                        $venue_id_forrent->up22 = 1;
+                        $venue_id_forrent->save();
+                    } elseif ($hours[$i] == 23) {
+                        $venue_id_forrent->up23 = 1;
+                        $venue_id_forrent->save();
+                    }
                 }
-
-                $venue_id_forrent->save();
+                
+                DB::commit();
+                return view('pesan-lapangan.pesan-konfirmasi');
+            } catch (\Throwable $th) {
+                dd($th);
+                DB::rollBack();
+                return back()->with('failed', 'Cek kelengkapan dari form anda!');
             }
-
-            return view('pesan-lapangan.pesan-konfirmasi');
         }
     }
 }

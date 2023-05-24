@@ -20,7 +20,7 @@
                                 <div class="col-md-6">
                                     <label for="inputJam" class="form-label h5 text-white">Pilih Jam <span
                                             class="text-danger">*</span></label>
-                                    <select id="inputJam" name="up" class="form-select" required>
+                                    <select id="inputJam" name="up[]" class="form-select" required>
                                         <option disabled selected>Pilih jam anda bermain...</option>
                                         @if ($hours->up00 != null)
                                             @if ($availability == null)
@@ -254,7 +254,7 @@
                                 <div class="col-md-6">
                                     <label for="inputJam" class="form-label h5 text-white">Pilih Jam <span
                                             class="text-danger">*</span></label>
-                                    <select id="inputJam" class="form-select" required>
+                                    <select id="inputJam" name="up[]" class="form-select" required>
                                         <option disabled selected>Pilih jam anda bermain...</option>
                                         @if ($hours->up00 != null)
                                             @if ($availability == null)
@@ -488,12 +488,12 @@
                                 <button type="submit" class="btn-green-hover text-decoration-none"> Lanjutkan
                                     Pemesanan</button>
                             </div>
-                            {{-- <div class="text-center mt-4 mb-3">
+                            <div class="text-center mt-4 mb-3">
                                 <a href="{{ route('lapangan.pesan.konfirmasi') }}">
                                     <button type="button" class="btn-green-hover text-decoration-none"> Lanjutkan
                                         Pemesanan test</button>
                                 </a>
-                            </div> --}}
+                            </div>
                         </div>
                     </form>
                 </div>

@@ -12,6 +12,7 @@ class RentHours extends Model
     protected $fillable = [
         'venue_id',
         'field_id',
+        'order_id',
         'order_date',
         'up00',
         'up01',
