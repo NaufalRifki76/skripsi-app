@@ -79,7 +79,7 @@
             @foreach ($venue as $key => $venues)
                 <div class="col-md-6">
                     <a class="text-dark text-decoration-none" href="{{route('lapangan-detail', ['id' => $venues->id])}}">
-                        <div class="card mb-3 card-size-web card-mob zoom shadow" style="border-radius: 12px; border: none">
+                        <div class="card mb-3 card-size-web card-mob zoom shadow" style="border: none">
                             <div class="row g-0">
                                 <div class="col-md-4 card-image">
                                     {{-- @php
@@ -93,7 +93,7 @@
                                         if ($venue) {
                                             $base64 = VenuePhotos::where('venue_id', $venue->id)->first();
                                             echo '<div class="card-image card-circular">';
-                                            echo '<img class="rounded img-fluid" width="250px" src="data:image/png;base64,' . $base64->venue_photo_base64 . '">';
+                                            echo '<img class="rounded img-fluid" width="200px" style="height: 195px" src="data:image/png;base64,' . $base64->venue_photo_base64 . '">';
                                             echo '</div>';
                                         }
                                     @endphp

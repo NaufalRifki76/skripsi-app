@@ -22,7 +22,7 @@
 </style>
 @section('content')
     <div class="container">
-        <div class="card shadow" style="border: none; border-radius: 12px; max-height: 500px;">
+        <div class="card shadow" style="border: none; max-height: 500px;">
             <div >
                 <div class="row">
                     <div class="col-md-6">
@@ -31,7 +31,7 @@
                             if ($venues) {
                                 $base64 = VenuePhotos::where('venue_id', $venues->id)->first();
                                 echo '<div class="card-image card-circular">';
-                                echo '<img class="rounded img-fluid"style="max-height: 400px; border-top-left-radius: 12px; border-bottom-left-radius: 12px;" src="data:image/png;base64,' . $base64->venue_photo_base64 . '">';
+                                echo '<img class="rounded img-fluid" width="600px" style="max-height: 400px; border-radius:24px; border-top-left-radius: 12px; border-bottom-left-radius: 12px;" src="data:image/png;base64,' . $base64->venue_photo_base64 . '">';
                                 echo '</div>';
                             }
                         @endphp
@@ -41,7 +41,7 @@
                     <div class="col-md-6">
                         <div class="mt-4">
                             <h2 class="fw-bold" style="color: #439A97">{{$venue->venue_name}}</h2>
-                            <p class="card-text mt-4 fs-5" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                            <p class="card-text mt-4 fs-5 me-4" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
                                 {{$venue->venue_address}}</p>
                             <p class="card-text h4 fw-bold mt-4" style="color: #439A97">Lapangan Tersedia</p>
                             @php
@@ -62,7 +62,7 @@
                 </div>
             </div>
         </div>
-        <div class="card shadow my-4" style="border: none; border-radius: 12px;">
+        <div class="card shadow my-4" style="border: none;">
             <div class="card-body">
 
                 <div class="row mt-4">
