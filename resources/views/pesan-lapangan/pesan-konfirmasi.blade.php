@@ -1,11 +1,6 @@
 @extends('layout.index')
 
 @section('content')
-    <style>
-        .background-img-pemesanan {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Assets/background/bg-pemesanan.jpg");
-        }
-    </style>
     <div class="container">
         <p class="h3 fw-bold text-center py-5" style="color: #439A97">Konfirmasi Pemesanan Lapangan Anda</p>
         <div class="row">
@@ -85,4 +80,12 @@
         <div class="col-md-2"></div>
     </div>
     </div>
+
+    @push('css')
+    <style>
+        .background-img-pemesanan {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{{ asset('Assets/background/bg-pesan.jpg') }}");
+        }
+    </style>
+@endpush
 @endsection

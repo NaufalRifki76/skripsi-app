@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="container">
-        <div class="card shadow" style="border: none; border-radius: 12px;">
+        <div class="card shadow" style="border: none;">
             <div class="row">
                 <div class="col-md-6">
                     @php
@@ -15,7 +15,7 @@
                         if ($venues) {
                             $base64 = VenuePhotos::where('venue_id', $venues->id)->first();
                             echo '<div class="card-image card-circular">';
-                            echo '<img class="rounded img-fluid"style="max-height: 400px; border-top-left-radius: 12px; border-bottom-left-radius: 12px;" src="data:image/png;base64,' . $base64->venue_photo_base64 . '">';
+                            echo '<img class="rounded img-fluid" width="600px" style="max-height: 400px; border-top-left-radius: 12px; border-bottom-left-radius: 12px;" src="data:image/png;base64,' . $base64->venue_photo_base64 . '">';
                             echo '</div>';
                         }
                     @endphp
@@ -26,7 +26,7 @@
                 <div class="col-md-6">
                     <div class="mt-5">
                         <h2 class="fw-bold" style="color: #439A97">{{$venue->venue_name}}</h2>
-                        <p class="card-text mt-4 fs-5"
+                        <p class="card-text mt-4 fs-5 me-4"
                             style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
                             {{$venue->venue_address}}</p>
                         <p class="card-text h4 fw-bold mt-4" style="color: #439A97">Lapangan Tersedia</p>
@@ -48,10 +48,10 @@
             <div class="row mb-5">
                 @foreach ($field as $key => $fields)
                     <div class="col-md-4">
-                        <div class="card shadow mb-3" style="border: none; border-radius: 12px;">
+                        <div class="card shadow mb-3" style="border: none;">
                             @php
                                 echo '<div class="card-image card-circular">';
-                                echo '<img class="rounded img-fluid" style="border-top-left-radius: 12px; border-top-right-radius: 12px;" height="200" src="data:image/png;base64,' . $field_photo[$key] . '">';
+                                echo '<img class="rounded img-fluid" width="410"  style="height:200px;" src="data:image/png;base64,' . $field_photo[$key] . '">';
                                 echo '</div>';
                             @endphp
                             {{-- <img src="{{ asset('Assets/image-lapangan/lapangan-detail.jpg') }}"

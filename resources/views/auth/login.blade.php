@@ -63,15 +63,19 @@
 
     {{-- main login --}}
     @include('session-flash')
- 
+    <style>
+        .background-img-pemesanan {
+            background-image: url("Assets/background/bg-pemesanan.jpg");
+        }
+    </style>
         <div class="mt-4 mb-4">
             <div class="container">
                 <div class="container">
                     <div class="card shadow" style="border-radius: 8px; border: none;">
                         <div class="row">
-                            <div class="col-md-5">
-                                <img src="https://i.pinimg.com/474x/f3/50/75/f350753b65cb5de1b2e203913b81a609.jpg"
-                                    alt="Login image" class="w-100 img-login">
+                            <div class="col-md-5 background-img-pemesanan">
+                                {{-- <img src="https://i.pinimg.com/474x/f3/50/75/f350753b65cb5de1b2e203913b81a609.jpg"
+                                    alt="Login image" class="w-100 img-login"> --}}
                             </div>
                             <div class="col-md-7">
                                 <div class="text-center mt-3 mb-4">

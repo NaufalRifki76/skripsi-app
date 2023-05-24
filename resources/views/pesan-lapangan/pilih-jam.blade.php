@@ -1,11 +1,6 @@
 @extends('layout.index')
 
 @section('content')
-    <style>
-        .background-img-pemesanan {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Assets/background/bg-pemesanan.jpg");
-        }
-    </style>
     <div class="container">
         <div class="py-5">
             <p class="h3 fw-bold text-center" style="color: #439A97">Halaman Pemesanan Lapangan</p>
@@ -17,9 +12,10 @@
                 <div class="card shadow background-img-pemesanan" style="border: none; border-radius: 12px">
                     <form action="">
                         <div class="card-body">
-                            <p class="h5 mb-3 text-white">Nama Lapangan: <b>{{$venue->venue_name}}</b></p>
-                            <p class="h5 mb-3 text-white">Lapangan: <b>{{$field->field_name}}</b></p>
-                            <p class="h5 mb-3 text-white">Hari & Tanggal: <b>{{\Carbon\Carbon::parse($date)->locale('id')->translatedFormat('l, d F Y')}}</b></p>
+                            <p class="h5 mb-3 text-white">Nama Lapangan: <b>{{ $venue->venue_name }}</b></p>
+                            <p class="h5 mb-3 text-white">Lapangan: <b>{{ $field->field_name }}</b></p>
+                            <p class="h5 mb-3 text-white">Hari & Tanggal:
+                                <b>{{ \Carbon\Carbon::parse($date)->locale('id')->translatedFormat('l, d F Y') }}</b></p>
                             <div class="row fieldGroup mb-3">
                                 <div class="col-md-6">
                                     <label for="inputJam" class="form-label h5 text-white">Pilih Jam <span
@@ -247,7 +243,7 @@
                                 <div class="col-md-5">
                                     <label for="inputState" class="form-label h5 text-white">Harga Sewa</label>
                                     <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
-                                        placeholder="" value="Rp{{$field->field_cost_hour}}">
+                                        placeholder="" value="Rp{{ $field->field_cost_hour }}">
                                 </div>
                                 <div class="col-md-1">
                                     <button type="button" class="btn-green-hover addMore" style="margin-top: 30px;"><i
@@ -481,7 +477,7 @@
                                 <div class="col-md-5">
                                     <label for="inputState" class="form-label h5 text-white">Harga Sewa</label>
                                     <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
-                                        placeholder="" value="Rp{{$field->field_cost_hour}}">
+                                        placeholder="" value="Rp{{ $field->field_cost_hour }}">
                                 </div>
                                 <div class="col-md-1">
                                     <button type="button" class="btn-red-hover remove" style="margin-top: 30px;"><i
@@ -507,6 +503,12 @@
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
         <link rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+
+        <style>
+            .background-img-pemesanan {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{{ asset('Assets/background/bg-pesan.jpg') }}");
+            }
+        </style>
     @endpush
 
     @push('script')
