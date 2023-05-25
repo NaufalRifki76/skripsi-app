@@ -66,7 +66,7 @@
                         </div>
                     </div>
                 @endforeach
-                <div class="col-md-4">
+                {{-- <div class="col-md-4">
                     <div class="card shadow mb-3" style="border: none; border-radius: 12px;">
                         <img src="{{ asset('Assets/image-lapangan/lapangan-detail.jpg') }}"
                             style="border-top-left-radius: 12px; border-top-right-radius: 12px;" height="200"
@@ -78,7 +78,7 @@
                                 class="btn-green-hover text-decoration-none">Pesan Lapangan</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     @endsection
