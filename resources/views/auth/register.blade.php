@@ -52,6 +52,10 @@
         font-family: 'Lexend Deca', sans-serif;
     }
 
+    .background-img-pemesanan {
+            /* filter: brightness(90%); */
+        }
+
     body {
         overflow-x: hidden;
     }
@@ -70,8 +74,8 @@
                 <div class="card shadow" style="border-radius: 8px; border: none;">
                     <div class="row">
                         <div class="col-md-5">
-                            <img src="https://i.pinimg.com/474x/f3/50/75/f350753b65cb5de1b2e203913b81a609.jpg" alt="Login image"
-                                class="w-100 img-register">
+                            <img src="{{ asset('Assets/register.jpg') }}" alt="Login image"
+                                class="w-100 img-register background-img-pemesanan" >
                         </div>
                         <div class="col-md-7">
                             <div class="text-center mt-3">
@@ -83,20 +87,26 @@
                                     <div class="d-flex justify-content-center">
                                         <h3 class="fw-bold" style=" color: #439A97">Register</h3>
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div class="form-floating mb-3 mt-3">
                                         <input style="border-radius: 5px" type="text" class="form-control" required id="name" name="name"
                                             placeholder="name@example.com">
                                         <label for="floatingInput">Nama Lengkap (sesuai di KTP)</label>
                                     </div>
-                                    <div class="form-floating mb-3"> 
-                                        <input style="border-radius: 5px" type="email" class="form-control" required id="email" name="email"
-                                            placeholder="name@example.com">
-                                        <label for="floatingInput">Email</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input style="border-radius: 5px" type="number" class="form-control" required id="no_telephone" name="no_telephone"
-                                            placeholder="name@example.com">
-                                        <label for="floatingInput">No. Handphone</label>
+                                    <div class="form-group row">
+                                        <div class="col-md-6"> 
+                                            <div class="form-floating mb-3 mt-3">
+                                                <input style="border-radius: 5px" type="email" class="form-control" required id="email" name="email"
+                                                    placeholder="name@example.com">
+                                                <label for="floatingInput">Email</label>
+                                            </div>
+                                            </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mt-3">
+                                                <input style="border-radius: 5px" type="number" class="form-control" required id="no_telephone" name="no_telephone"
+                                                    placeholder="name@example.com">
+                                                <label for="floatingInput">No. Handphone</label>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group row mt-3">
                                         <div class="col-md-6">
@@ -120,7 +130,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <div class="d-flex justify-content-center mb-5 mt-3">
+                                <div class="d-flex justify-content-center mb-3 mt-4">
                                     <p>Sudah punya akun? Silahkan <a href="{{ route('auth.view') }}" type="button" class="btn-grey-hover">login</a>.</p>
                                 </div>
                             </div>

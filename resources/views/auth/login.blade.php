@@ -65,7 +65,7 @@
     @include('session-flash')
     <style>
         .background-img-pemesanan {
-            background-image: url("Assets/background/bg-pemesanan.jpg");
+            /* filter: brightness(90%); */
         }
     </style>
         <div class="mt-4 mb-4">
@@ -73,12 +73,12 @@
                 <div class="container">
                     <div class="card shadow" style="border-radius: 8px; border: none;">
                         <div class="row">
-                            <div class="col-md-5 background-img-pemesanan">
-                                {{-- <img src="https://i.pinimg.com/474x/f3/50/75/f350753b65cb5de1b2e203913b81a609.jpg"
-                                    alt="Login image" class="w-100 img-login"> --}}
+                            <div class="col-md-5">
+                                <img src="{{ asset('Assets/login.jpg') }}"
+                                    alt="Login image" class="w-100 img-login background-img-pemesanan">
                             </div>
                             <div class="col-md-7">
-                                <div class="text-center mt-3 mb-4">
+                                <div class="text-center mt-3">
                                     <img src="{{ asset('Assets/logo/logo.png') }}" class="img-fluid me-4" width="250px"
                                         alt="logo">
                                 </div>
@@ -96,12 +96,12 @@
                                         <label for="password" class="form-label">Password</label>
                                         <input type="password" class="form-control" required id="password" name="password">
                                       </div> --}}
-                                        <div class="form-floating mb-3">
+                                        <div class="form-floating mb-3 mt-3">
                                             <input type="email" class="form-control" required id="email"
                                                 name="email" placeholder="name@example.com">
                                             <label for="floatingInput input-label-sm">Email</label>
                                         </div>
-                                        <div class="form-group form-floating mb-3">
+                                        <div class="form-group form-floating mb-3 mt-4">
                                             <input type="password" class="form-control form-control" required
                                                 name="password" placeholder=".form-control-sm" id="password">
                                             <label for="floatingInput">Password</label>
