@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Features\BookingController;
 use App\Http\Controllers\Features\CompetitionController;
 use App\Http\Controllers\Features\MitraController;
+use App\Http\Controllers\Features\ProfileController;
 use App\Http\Controllers\Features\VipController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,9 @@ Route::get('return.login', [AuthController::class, 'returnLogin'])->name('return
 Route::post('login', [AuthController::class, 'login'])->name('auth.login');
 Route::get('logout', [AuthController::class, 'logout'])->name('auth.logout');
 
+// Profile
+Route::get('riwayat-order', [ProfileController::class, 'index'])->name('riwayat-order');
+
 // Subscribe
 Route::get('subscribe.index', [VipController::class, 'index'])->name('subscribe.index');
 Route::get('subscribe.startplan', [VipController::class, 'subscribe'])->name('subscribe.startplan');
@@ -33,6 +37,8 @@ Route::get('lapangan-order/{id}', [BookingController::class, 'order'])->name('la
 Route::get('lapangan-order-date/{venueid}/{fieldid}', [BookingController::class, 'orderdate'])->name('lapangan-order-date');
 Route::post('lapangan-order-time/{venueid}/{fieldid}', [BookingController::class, 'ordertime'])->name('lapangan-order-time');
 Route::post('lapangan-confirm/{venueid}/{fieldid}/{date}', [BookingController::class, 'orderconfirm'])->name('lapangan-confirm');
+Route::get('lapangan-transfer-funds/{rentorder_id}/{venue_id}', [BookingController::class, 'transferfunds'])->name('lapangan-transfer-funds');
+Route::post('lapangan-transfer-store/{rentorder_id}', [BookingController::class, 'storetransfer'])->name('lapangan-transfer-store');
 
 // Info Kompetisi
 Route::get('kompetisi.index', [CompetitionController::class, 'index'])->name('kompetisi.index');

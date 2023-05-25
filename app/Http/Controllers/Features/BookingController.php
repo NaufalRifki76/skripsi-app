@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\FieldDetail;
 use App\Models\RentHours;
 use App\Models\RentHoursAvailable;
+use App\Models\RentOrder;
 use App\Models\User;
 use App\Models\Venue;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\DB;
 class BookingController extends Controller{
     public function index(){
         if(!Sentinel::getUser()) {
-            return redirect()->route('auth.login');
+            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else{
             $venue = Venue::all();
             return view('lapangan.index', compact('venue'));
@@ -24,7 +25,7 @@ class BookingController extends Controller{
 
     public function venuedetail($id){
         if(!Sentinel::getUser()) {
-            return redirect()->route('auth.login');
+            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else{
             $venue = Venue::where('id', $id)->first();
             return view('lapangan.detail', compact('venue'));
@@ -33,7 +34,7 @@ class BookingController extends Controller{
 
     public function order($id){
         if(!Sentinel::getUser()) {
-            return redirect()->route('auth.login');
+            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else{
             $venue = Venue::where('id', $id)->first();
             $field = FieldDetail::where('venue_id', $id)->get();
@@ -49,7 +50,7 @@ class BookingController extends Controller{
 
     public function orderdate($venueid, $fieldid){
         if(!Sentinel::getUser()) {
-            return redirect()->route('auth.login');
+            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else{
             $venue = Venue::where('id', $venueid)->first();
             $field = FieldDetail::where('id', $fieldid)->first();
@@ -59,7 +60,7 @@ class BookingController extends Controller{
 
     public function ordertime($venueid, $fieldid, Request $request){
         if(!Sentinel::getUser()) {
-            return redirect()->route('auth.login');
+            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else{
             $request->validate([
                 'order_date' => 'required',
@@ -77,7 +78,7 @@ class BookingController extends Controller{
 
     public function orderconfirm($venueid, $fieldid, $date, Request $request){
         if(!Sentinel::getUser()) {
-            return redirect()->route('auth.login');
+            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else{
             try {
                 $request->validate([
@@ -185,7 +186,50 @@ class BookingController extends Controller{
                 }
                 
                 DB::commit();
-                return view('pesan-lapangan.pesan-konfirmasi');
+
+                $order_info = RentOrder::where('user_id', $user->id)
+                ->where('order_date', $date)
+                ->where('price_sum', $price_sum)
+                ->first();
+
+                return view('pesan-lapangan.pesan-konfirmasi', compact('order_info', 'field', 'venue_id_forrent', 'venueid'));
+            } catch (\Throwable $th) {
+                dd($th);
+                DB::rollBack();
+                return back()->with('failed', 'Cek kelengkapan dari form anda!');
+            }
+        }
+    }
+
+    public function transferfunds($rentorder_id, $venue_id){
+        if(!Sentinel::getUser()) {
+            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
+        } else{
+            $order_info = RentOrder::where('id', $rentorder_id)->first();
+            $venue_info = Venue::where('id', $venue_id)->first();
+            return view('pesan-lapangan.pembayaran', compact('order_info', 'venue_info'));
+        }
+    }
+
+    public function storetransfer(Request $request, $rentorder_id){
+        if(!Sentinel::getUser()) {
+            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
+        } else{
+            try {
+                $request->validate([
+                    'transfer_confirm_base64' => 'required',
+                ]);
+                
+                $transcript = RentOrder::where('id', $rentorder_id)->first();
+                
+                $transfer_image = $request->transfer_confirm_base64;
+                if ($transfer_image != null) {
+                    $transferBase64 = base64_encode(file_get_contents($transfer_image));
+                }
+
+                $transcript->transfer_confirm_base64 = $transferBase64;
+                $transcript->save();
+                return view('pesan-lapangan.sukses');
             } catch (\Throwable $th) {
                 dd($th);
                 DB::rollBack();

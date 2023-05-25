@@ -14,13 +14,14 @@
             <div class="col-md-8">
                 <div class="card background-img-pemesanan shadow mb-5" style="border: none; border-radius: 12px">
                     <div class="card-body">
-                        <form action="">
+                        <form action="{{route('lapangan-transfer-store', ['rentorder_id' => $order_info->id])}}" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="row mb-4">
                                 <h4 class="fw-bold" style="color: #fff">Jumlah Yang Harus Dibayar</h4>
                                 <div class="mb-3">
                                     <label for="inputState" class="form-label text-white h5">Total Biaya</label>
-                                    <input type="text" disabled class="form-control bg-white" id=""
-                                        placeholder="Rp. 155000">
+                                    <input type="text" disabled class="form-control bg-white" id="" value="Rp. {{$order_info->price_sum}}"
+                                        placeholder="">
                                 </div>
                             </div>
                             <div class="row mb-4">
@@ -30,12 +31,12 @@
                                     di bawah!</p>
                                 <div class="mb-3">
                                     <label for="inputState" class="form-label h5 text-white">Nomor Rekening</label>
-                                    <input type="text" disabled class="form-control bg-white" id=""
+                                    <input type="text" disabled class="form-control bg-white" id="" value="{{$venue_info->bank_acc_no}}"
                                         placeholder="123456789">
                                 </div>
                                 <div class="mb-3">
                                     <label for="inputState" class="form-label h5 text-white">Atas Nama</label>
-                                    <input type="text" disabled class="form-control bg-white" id=""
+                                    <input type="text" disabled class="form-control bg-white" id="" value="{{$venue_info->bank_acc_name}}"
                                         placeholder="Stadion Madya Gelora Bung Karno">
                                 </div>
                             </div>
@@ -43,11 +44,13 @@
                                 <h4 class="fw-bold" style="color: #fff">Bukti Pembayaran</h4>
                                 <p class="fs-6 text-warning">Upload bukti transfer anda dengan mengisi formulir di bawah!
                                 </p>
+                                <p class="fs-6 text-warning">Tipe file yang diterima: jpg, jpeg, png.
+                                </p>
                                 <div class="mb-3">
                                     <label for="inputState" class="form-label text-white h5">Bukti Transfer <span
                                             class="text-danger">*</span></label>
-                                    <input type="file" class="form-control bg-white" required accept=".jpg,.jpeg,.png"
-                                        id="" placeholder="123456789">
+                                    <input type="file" class="form-control bg-white" required accept=".jpg, .jpeg, .png"
+                                        id="transfer_confirm_base64" name="transfer_confirm_base64" placeholder="Jenis file upload: jpg/jpeg/png">
                                 </div>
                             </div>
                             <div class="text-center mt-4 mb-3">
@@ -68,8 +71,7 @@
             }
         </style>
     @endpush
-    @push('script')
-        {{-- Sweet Alert --}}
+    {{-- @push('script')
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
             $(document).ready(function() {
@@ -82,11 +84,11 @@
                         showCancelButton: true,
                         confirmButtonColor: '#62B6B7',
                         cancelButtonColor: '#d33',
-                        confirmButtonText: '<a type="button" class="text-decoration-none text-white" href="{{ route('lapangan.pesan.sukses') }}">Ya, lanjutkan pemesanan!</a>',
+                        confirmButtonText: '<a type="submit" class="text-decoration-none text-white" href="{{ route('lapangan.pesan.sukses') }}">Ya, lanjutkan pemesanan!</a>',
                         cancelButtonText: 'Batalkan'
                     })
                 });
             });
         </script>
-    @endpush
+    @endpush --}}
 @endsection

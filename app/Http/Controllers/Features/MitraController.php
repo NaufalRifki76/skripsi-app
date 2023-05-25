@@ -16,7 +16,7 @@ class MitraController extends Controller
 {
     public function index(){
         if(!Sentinel::getUser()) {
-            return redirect()->route('auth.login');
+            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else{
             $rent = RentItems::all();
             return view('mitra.join', compact('rent'));
@@ -25,7 +25,7 @@ class MitraController extends Controller
 
     public function store(Request $request){
         if(!Sentinel::getUser()) {
-            return redirect()->route('auth.login');
+            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else{
             // dd($request->drinks);
             try {
@@ -142,7 +142,7 @@ class MitraController extends Controller
 
     public function mitraIndex(){
         if(!Sentinel::getUser()) {
-            return redirect()->route('auth.login');
+            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else{
             return view('layout.penyedia-lapangan.index');
         }

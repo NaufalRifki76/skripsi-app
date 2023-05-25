@@ -19,6 +19,7 @@ class RegisterController extends Controller
 
     public function create(Request $request){
         // dd($request->name);
+        app()->setLocale('id');
         $validated = $request->validate([
             'name'                  => 'required|max:255',
             'email'                 => ['required','unique:App\Models\User', 'email'],
@@ -29,7 +30,6 @@ class RegisterController extends Controller
         if (!$validated) {
             return redirect()->back()->withErrors($validated)->with('failed', 'cek form anda!');
         }
-        
 
         $credentials = [
             'name'              => $validated['name'],
