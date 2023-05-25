@@ -28,6 +28,9 @@
     {{-- Animate On Scroll --}}
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    {{-- Jquery --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     @stack('css-mitra')
 
 

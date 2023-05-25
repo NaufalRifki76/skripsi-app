@@ -8,6 +8,7 @@ use App\Http\Controllers\Features\CompetitionController;
 use App\Http\Controllers\Features\MitraController;
 use App\Http\Controllers\Features\ProfileController;
 use App\Http\Controllers\Features\VipController;
+use App\Http\Controllers\Vendor\VendorController;
 use Illuminate\Support\Facades\Route;
 
 // Register
@@ -51,6 +52,9 @@ Route::post('mitra.join', [MitraController::class, 'store'])->name('mitra.join')
 
 // Mitra
 Route::get('mitra.home', [MitraController::class, 'mitraIndex'])->name('mitra.home');
+
+// Vendor
+Route::get('index-vendor', [VendorController::class, 'index'])->name('index-vendor');
 
 // --------------------- BAGIAN BAWAH INI UNTUK TESTING -------------------- //
 // Route::get('/', function () {

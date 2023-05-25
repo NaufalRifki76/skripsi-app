@@ -7,8 +7,7 @@ use App\Models\RentOrder;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Http\Request;
 
-class ProfileController extends Controller
-{
+class ProfileController extends Controller{
     public function index(){
         if(!Sentinel::getUser()) {
             return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');

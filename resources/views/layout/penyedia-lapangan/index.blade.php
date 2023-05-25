@@ -10,24 +10,50 @@
     <div class="row g-3">
         <div class="col-12">
             <label for="inputState" class="form-label">Data Pemesan Lapangan</label>
-
         </div>
-        <table id="tabel-mitra" class="table table-striped table-bordered display" width="100%" cellspacing="0">
+        <table id="tabel-mitra" class="table table-striped table-bordered display text-center" width="100%" cellspacing="0" >
             <thead style="background-color: #439a97">
                 <tr>
                     <th class="text-center">Nama Pemesan</th>
                     <th class="text-center">Lapangan</th>
                     <th class="text-center">Tanggal</th>
-                    <th class="text-center">Jam</th>
+                    {{-- <th class="text-center">Jam</th> --}}
                     <th class="text-center">Total Harga</th>
                     <th class="text-center">Status</th>
-                    <th class="text-center">Bukti Transfer</th>
+                    {{-- <th class="text-center">Bukti Transfer</th> --}}
                     <th class="text-center">Action</th>
                 </tr>
             </thead>
         </table>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function(){  
+        var tabel_mitra = $('#tabel-mitra').DataTable({
+            processing: true,
+            serverSide: true,
+            responsive: true,
+            ajax: {
+                url: "{{route('index-vendor')}}",
+                type: 'GET',
+            },
+            columns: [
+                {data: 'cust_name', name: 'cust_name'},
+                {data: 'field', name: 'field'},
+                {data: 'order_date', name: 'order_date'},
+                // {data: 'hours', name: 'hours'},
+                {data: 'price_sum', name: 'price_sum'},
+                {data: 'confirmation', name: 'confirmation'},
+                {data: 'action', name: 'action'}
+            ],
+            
+            order: [
+                [0, 'asc']
+            ],
+        });
+    });
+</script>
 
 @push('css-mitra')
         {{-- Select --}}
@@ -62,10 +88,5 @@
         <script src="https://cdn.datatables.net/buttons/2.3.2/js/dataTables.buttons.min.js"></script>
         <script src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.bootstrap5.min.js"></script>
         <script src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.colVis.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $('#tabel-mitra').DataTable();
-            });
-        </script>
     @endpush
 @endsection
