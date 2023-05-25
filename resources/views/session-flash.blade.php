@@ -23,7 +23,7 @@
 @endif --}}
 
 @if ($errors->any())
-    <div class="alert alert-danger">
+    <div class="alert alert-danger alert-sm alert-border-left alert-dismissible">
         <ul>
             <strong>Gagal: Cek kembali form anda!</strong> {!! Session::get('failed') !!}
             @foreach ($errors->all() as $error)

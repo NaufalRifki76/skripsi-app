@@ -67,10 +67,12 @@
     @include('layout.navbar-auth')
 
     {{-- main regsiter --}}
-    @include('session-flash')
     <div class="mt-4 mb-4">
         <div class="container">
             <div class="container">
+                <div class="my-3">
+                    @include('session-flash')
+                </div>
                 <div class="card shadow" style="border-radius: 8px; border: none;">
                     <div class="row">
                         <div class="col-md-5">
@@ -123,6 +125,9 @@
                                                 <label for="floatingInput">Konfirmasi Password</label>
                                             </div>
                                         </div>
+                                        <div class="col-md-12">
+                                            <p class="text-danger" style="font-size: 12px;">* Password harus memiliki minimal 1 huruf besar,  8 karakter, dan 1 angka!</p>
+                                        </div>
                                     </div>
                                     <div>
                                         <div class="d-flex justify-content-center pt-1 mb-2">
@@ -130,7 +135,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <div class="d-flex justify-content-center mb-3 mt-4">
+                                <div class="d-flex justify-content-center mb-3 mt-3">
                                     <p>Sudah punya akun? Silahkan <a href="{{ route('auth.view') }}" type="button" class="btn-grey-hover">login</a>.</p>
                                 </div>
                             </div>

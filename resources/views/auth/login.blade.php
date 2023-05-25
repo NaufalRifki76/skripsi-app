@@ -60,17 +60,12 @@
 
     {{-- navbar --}}
     @include('layout.navbar-auth')
-
-    {{-- main login --}}
-    @include('session-flash')
-    <style>
-        .background-img-pemesanan {
-            /* filter: brightness(90%); */
-        }
-    </style>
         <div class="mt-4 mb-4">
             <div class="container">
                 <div class="container">
+                    <div class="my-3">
+                        @include('session-flash')
+                    </div>
                     <div class="card shadow" style="border-radius: 8px; border: none;">
                         <div class="row">
                             <div class="col-md-5">

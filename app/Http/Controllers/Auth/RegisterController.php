@@ -26,7 +26,10 @@ class RegisterController extends Controller
             'password'              => ['required', 'confirmed', Password::min(8), 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/'],
             'password_confirmation' => ['required', 'min: 8', 'same:password']
         ]);
-        return redirect()->back()->withInput()->withErrors($validated)->with('failed', 'cek form anda!');
+        if (!$validated) {
+            return redirect()->back()->withErrors($validated)->with('failed', 'cek form anda!');
+        }
+        
 
         $credentials = [
             'name'              => $validated['name'],
@@ -35,17 +38,13 @@ class RegisterController extends Controller
             'no_telephone'      => $validated['no_telephone'],
         ];
 
-        if (!$validated) {
-            return Redirect::route('register-user')->with('failed', 'cek form anda!');
-        }
-
         // dd($credentials);
 
         $user = Sentinel::register($credentials);
         $activation = Activation::create($user);
         Mail::to($user->email)->send(new ActivationMail($user, $activation->code));
         if ($activation) {
-            return Redirect::route('auth.view')->with('success', 'Silahkan cek inbox email anda untuk verifikasi!');
+            return Redirect::route('auth.view')->with('success', 'Registrasi berhasil, silahkan cek email anda untuk melakukan verifikasi!');
         }
     }
 }
