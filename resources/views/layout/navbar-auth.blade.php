@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ route('mitra.index') }}">
+        <a class="navbar-brand" href="{{ route('auth.dashboard') }}">
             <img src="{{ asset('Assets/logo/logo.png') }}" class="img-fluid" width="120px" alt="logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"

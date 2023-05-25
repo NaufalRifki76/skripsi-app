@@ -68,7 +68,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label for="inputState" class="form-label h5 text-white">Nama Rekening <span
+                                        <label for="inputState" class="form-label h5 text-white">Nama Bank <span
                                                 class="text-danger">*</span></label>
                                         <input type="text" required class="form-control bg-white" id="bank" name="bank"
                                             name="" placeholder="">
