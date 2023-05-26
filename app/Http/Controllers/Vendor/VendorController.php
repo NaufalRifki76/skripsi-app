@@ -29,15 +29,36 @@ class VendorController extends Controller{
                         return 'Ditolak';
                     }
                 })
+                ->addColumn('price_sum', function ($row){
+                    return "Rp. $row->price_sum";
+                })
                 ->addColumn('action', function ($row){
                     $button = "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-danger text-white' data-id='".$row['id']."' id='accBtn' href=''>Tolak</a>";
-                    $button .= "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-success text-white' data-id='".$row['id']."' id='denyBtn' href=''>Terima</a>";
-                    $button .= "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-info text-white' data-id='".$row['id']."' id='denyBtn' href=''>Jam Booking & Bukti TF</a>";
+                    $button .= "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-success text-white' data-id='".$row['id']."' id='denyBtn' href='".route('acc-order', [$row->id])."'>Terima</a>";
+                    $button .= "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-info text-white' data-id='".$row['id']."' id='detailBtn' href='".route('detail-order', [$row->id])."'>Detail Order</a>";
                     return $button;
                 })
                 ->rawColumns(['action'])
                 ->make(true);
+
+                //penyedia-lapangan.index
             }
         }
+    }
+
+    public function accorder($id){
+        $order = RentOrder::where('id', $id)->first();
+        $order->confirmation = 1;
+        $order->save();
+        return redirect()->route('auth.dashboard')->with('success', 'Order telah dikonfirmasi! Silahkan persiapkan lapangan anda untuk pemesanan terebut.');
+    }
+
+    public function denyorder($id){
+
+    }
+
+    public function detailorder($id){
+        $order = RentOrder::where('id', $id)->first();
+        return view('layout.penyedia-lapangan.detail-pemesanan', compact('order'));
     }
 }

@@ -23,8 +23,8 @@ class CompetitionController extends Controller
             return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else{
             $tournament = Tournament::where('education_category', null)->get();
-            $tournamentPhotos = Tournament::where('education_category', null)->with('tournament_photos')->get();
-            return view('info-kompetisi.tingkat-sekolah', compact('tournament', 'tournamentPhotos'));
+            // $tournamentPhotos = Tournament::where('education_category', null)->with('tournament_photos')->get();
+            return view('info-kompetisi.tingkat-sekolah', compact('tournament'));
         }
     }
 
@@ -33,8 +33,8 @@ class CompetitionController extends Controller
             return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else{
             $tournament = Tournament::where('age_category', null)->get();
-            $tournamentPhotos = Tournament::where('age_category', null)->with('tournament_photos')->get();
-            return view('info-kompetisi.tingkat-umur', compact('tournament', 'tournamentPhotos'));
+            // $tournamentPhotos = Tournament::where('age_category', null)->with('tournament_photos')->get();
+            return view('info-kompetisi.tingkat-umur', compact('tournament'));
         }
     }
 }

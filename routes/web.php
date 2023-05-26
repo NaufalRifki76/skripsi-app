@@ -55,6 +55,8 @@ Route::get('mitra.home', [MitraController::class, 'mitraIndex'])->name('mitra.ho
 
 // Vendor
 Route::get('index-vendor', [VendorController::class, 'index'])->name('index-vendor');
+Route::get('acc-order/{id}', [VendorController::class, 'accorder'])->name('acc-order');
+Route::get('detail-order/{id}', [VendorController::class, 'detailorder'])->name('detail-order');
 
 // --------------------- BAGIAN BAWAH INI UNTUK TESTING -------------------- //
 // Route::get('/', function () {

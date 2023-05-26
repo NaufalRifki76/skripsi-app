@@ -1,7 +1,7 @@
 @extends('layout.penyedia-lapangan.layout')
 
 @section('mitra')
-@include('layout.penyedia-lapangan.modal')
+{{-- @include('layout.penyedia-lapangan.modal') --}}
 @include('session-flash')
 <div class="text-center">
     <h2 class="my-5" style="color: #439a97">Temukan data pemesan lapangan anda pada tabel di bawah!</h2>
