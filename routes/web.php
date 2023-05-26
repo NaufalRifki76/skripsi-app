@@ -192,3 +192,7 @@ Route::get('/pengembalian-dana', function () {
 Route::get('/syarat-pengembalian-dana', function () {
     return view('pengembalian-dana.syarat-ketentuan');
 })->name('pengembalian-dana.syarat-ketentuan');
+
+Route::get('/tolak-pemesanan', function () {
+    return view('layout.penyedia-lapangan.tolak');
+})->name('tolak-pemesanan');
