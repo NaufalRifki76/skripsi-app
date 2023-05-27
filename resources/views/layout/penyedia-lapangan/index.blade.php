@@ -2,7 +2,9 @@
 
 @section('mitra')
 {{-- @include('layout.penyedia-lapangan.modal') --}}
-@include('session-flash')
+<div class="mx-5 my-3">
+    @include('session-flash')
+</div>
 <div class="text-center">
     <h2 class="my-5" style="color: #439a97">Temukan data pemesan lapangan anda pada tabel di bawah!</h2>
 </div>
