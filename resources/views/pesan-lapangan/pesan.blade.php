@@ -20,7 +20,16 @@
                             <div class="mb-3">
                                 <label for="inputState" class="form-label h5 text-white">Pilih tanggal pemesanan lapangan
                                     <span class="text-danger">*</span></label>
-                                <input type="date" class="form-control inputdate" required id="order_date"
+                                    @if ($user->vip_status == 1)
+                                        @php
+                                            $maxDate = now()->addMonths(2)->toDateString();
+                                        @endphp
+                                    @elseif ($user->vip_status == 0)
+                                        @php
+                                            $maxDate = now()->addMonths(1)->toDateString();
+                                        @endphp
+                                    @endif
+                                <input type="date" min="{{ now()->toDateString() }}" max="{{ $maxDate }}" class="form-control inputdate" required id="order_date"
                                     name="order_date" placeholder="">
                             </div>
                             <div class="text-center mt-4 mb-3">
@@ -61,6 +70,9 @@
 
                 var maxDate = year + '-' + month + '-' + day;
                 $('.inputdate').attr('min', maxDate);
+
+                const dateInput = document.getElementById('order_date');
+                dateInput.max = '{{ $maxDate }}';
             });
         </script>
     @endpush

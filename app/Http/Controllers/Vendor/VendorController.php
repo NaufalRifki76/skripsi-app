@@ -57,6 +57,9 @@ class VendorController extends Controller{
             $order->confirmation = 1;
             $order->save();
             $user->successful_transaction = $user->successful_transaction + 1;
+            if ($user->successful_transaction == 8) {
+                $user->vip_status = 1;
+            }
             $user->save();
             return redirect()->route('auth.dashboard')->with('success', 'Order telah dikonfirmasi! Silahkan persiapkan lapangan anda untuk pemesanan terebut.');
         }

@@ -52,9 +52,10 @@ class BookingController extends Controller{
         if(!Sentinel::getUser()) {
             return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else{
+            $user = Sentinel::getUser();
             $venue = Venue::where('id', $venueid)->first();
             $field = FieldDetail::where('id', $fieldid)->first();
-            return view('pesan-lapangan.pesan', compact('venueid', 'fieldid', 'venue', 'field'));
+            return view('pesan-lapangan.pesan', compact('venueid', 'fieldid', 'venue', 'field', 'user'));
         }
     }
 
