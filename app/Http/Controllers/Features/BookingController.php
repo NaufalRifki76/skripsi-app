@@ -82,7 +82,7 @@ class BookingController extends Controller{
         } else{
             try {
                 $request->validate([
-                    'up'                => 'required',
+                    'up' => 'required',
                 ]);
     
                 $hours = $request->up;

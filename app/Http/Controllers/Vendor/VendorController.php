@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Vendor;
 use App\Http\Controllers\Controller;
 use App\Models\RentHours;
 use App\Models\RentOrder;
+use App\Models\User;
 use App\Models\Venue;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class VendorController extends Controller{
     public function index(Request $request){
@@ -33,7 +35,7 @@ class VendorController extends Controller{
                     return "Rp. $row->price_sum";
                 })
                 ->addColumn('action', function ($row){
-                    $button = "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-danger text-white' data-id='".$row['id']."' id='accBtn' href=''>Tolak</a>";
+                    $button = "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-danger text-white' data-id='".$row['id']."' id='accBtn' href='".route('deny-order', [$row->id])."'>Tolak</a>";
                     $button .= "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-success text-white' data-id='".$row['id']."' id='denyBtn' href='".route('acc-order', [$row->id])."'>Terima</a>";
                     $button .= "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-info text-white' data-id='".$row['id']."' id='detailBtn' href='".route('detail-order', [$row->id])."'>Detail Order</a>";
                     return $button;
@@ -47,18 +49,57 @@ class VendorController extends Controller{
     }
 
     public function accorder($id){
-        $order = RentOrder::where('id', $id)->first();
-        $order->confirmation = 1;
-        $order->save();
-        return redirect()->route('auth.dashboard')->with('success', 'Order telah dikonfirmasi! Silahkan persiapkan lapangan anda untuk pemesanan terebut.');
+        if(!Sentinel::getUser()) {
+            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
+        } else{
+            $order = RentOrder::where('id', $id)->first();
+            $user = User::where('id', $order->user_id)->first();
+            $order->confirmation = 1;
+            $order->save();
+            $user->successful_transaction = $user->successful_transaction + 1;
+            $user->save();
+            return redirect()->route('auth.dashboard')->with('success', 'Order telah dikonfirmasi! Silahkan persiapkan lapangan anda untuk pemesanan terebut.');
+        }
     }
 
     public function denyorder($id){
+        if(!Sentinel::getUser()) {
+            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
+        } else{
+            $order = RentOrder::where('id', $id)->first();
+            return view('layout.penyedia-lapangan.tolak', compact('order', 'id'));
+        }
+    }
 
+    public function storecancelorder(Request $request, $id){
+        if(!Sentinel::getUser()) {
+            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
+        } else{
+            try {
+                $request->validate([
+                    'cancel_reason' => 'required',
+                ]);
+
+                $order = RentOrder::where('id', $id)->first();
+                $order->cancel_reason = $request->cancel_reason;
+                $order->confirmation = 2;
+                $order->save();
+
+                return redirect()->route('auth.dashboard')->with('success', 'Order berhasil ditolak!');
+            } catch (\Throwable $th) {
+                dd($th);
+                DB::rollBack();
+                return back()->with('failed', 'Cek kelengkapan dari form anda!');
+            }
+        }
     }
 
     public function detailorder($id){
-        $order = RentOrder::where('id', $id)->first();
-        return view('layout.penyedia-lapangan.detail-pemesanan', compact('order'));
+        if(!Sentinel::getUser()) {
+            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
+        } else{
+            $order = RentOrder::where('id', $id)->first();
+            return view('layout.penyedia-lapangan.detail-pemesanan', compact('order'));
+        }
     }
 }

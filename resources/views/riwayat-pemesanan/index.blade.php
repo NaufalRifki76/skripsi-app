@@ -293,6 +293,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                @if ($order->confirmation == 2)
+                                    <div class="form-group">
+                                        <label for="cancel_reason" class="h5">Alasan Pemesanan Ditolak</label>
+                                        <textarea class="form-control border-2" style="background-color: #fff" id="cancel_reason" name="cancel_reason" rows="3"
+                                            placeholder="">{{$order->cancel_reason}}</textarea>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>
