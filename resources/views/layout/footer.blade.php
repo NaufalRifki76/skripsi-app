@@ -27,8 +27,8 @@
                     <li class="nav-item mb-2"><a href="{{ route('mitra.index') }}" class="btn-grey-hover text-decoration-none">Bergabung Menjadi Mitra Kami</a></li>
                     <li class="nav-item mb-2"><a href="" class="btn-grey-hover text-decoration-none">Publikasikan Kompetisi Anda</a></li>
                     <li class="nav-item mb-2"><a href="" class="btn-grey-hover text-decoration-none">Formulir Pengembalian Dana</a></li>
-                    <li class="nav-item mb-2"><a href="" class="btn-grey-hover text-decoration-none">FAQs</a></li>
-                    <li class="nav-item mb-2"><a href="" class="btn-grey-hover text-decoration-none">Tentang Kami</a></li>
+                    <li class="nav-item mb-2"><a href="{{route('faq-index')}}" class="btn-grey-hover text-decoration-none">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="{{route('aboutus-index')}}" class="btn-grey-hover text-decoration-none">Tentang Kami</a></li>
                 </ul>
             </div>
         </div>

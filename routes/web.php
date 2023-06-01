@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Features\BookingController;
 use App\Http\Controllers\Features\CompetitionController;
+use App\Http\Controllers\Features\MiscController;
 use App\Http\Controllers\Features\MitraController;
 use App\Http\Controllers\Features\ProfileController;
 use App\Http\Controllers\Features\VipController;
@@ -52,6 +53,10 @@ Route::post('mitra.join', [MitraController::class, 'store'])->name('mitra.join')
 
 // Mitra
 Route::get('mitra.home', [MitraController::class, 'mitraIndex'])->name('mitra.home');
+
+//Miscellaneous
+Route::get('faq-index', [MiscController::class, 'faq'])->name('faq-index');
+Route::get('aboutus-index', [MiscController::class, 'aboutus'])->name('aboutus-index');
 
 // Vendor
 Route::get('index-vendor', [VendorController::class, 'index'])->name('index-vendor');
@@ -163,9 +168,9 @@ Route::get('/detail-pemesanan-mitra', function () {
 
 
 // faq
-Route::get('/faq-index', function () {
-    return view('faq.index');
-})->name('faq.index');
+// Route::get('/faq-index', function () {
+//     return view('faq.index');
+// })->name('faq.index');
 
 
 // tentang kami

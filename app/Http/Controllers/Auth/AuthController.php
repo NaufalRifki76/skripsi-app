@@ -7,6 +7,7 @@ use App\Mail\ActivationMail;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\UserRole;
+use App\Models\Venue;
 use Cartalyst\Sentinel\Laravel\Facades\Activation;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Http\Request;
@@ -19,13 +20,14 @@ class AuthController extends Controller
         if (Sentinel::check()) {
             $userId = Sentinel::getUser()->id;
             $role = UserRole::where('user_id', $userId)->first();
+            $venue = Venue::all();
             if ($role->role_id == 2) {
-                return view('home.index');
+                return view('home.index', compact('venue'));
             } elseif ($role->role_id == 3) {
                 return view('layout.penyedia-lapangan.index');
             }
         } else {
-            return view('home.index');
+            return view('home.index', compact('venue'));
         }
     }
 

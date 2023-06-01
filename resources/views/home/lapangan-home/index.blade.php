@@ -1,3 +1,7 @@
+@php
+    use App\Models\Venue;
+    use App\Models\VenuePhotos;
+@endphp
 <style>
     @media screen and (max-width: 765px) {
         .mobile-img {
@@ -28,59 +32,60 @@
 <div class="container mt-5">
     <h1 class="fw-bold" style="color: #439A97">Lapangan Yang Tersedia</h1>
     <div class="row mt-5">
-        <div class="col-md-6 card-mob">
-            <a href="" class="text-decoration-none text-dark">
-                <div class="card mb-3 shadow card-size-web" style="border-radius: 12px; border: none;">
-                    <div class="row g-0">
-                        <div class="col-md-4 card-image">
-                            <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}"
-                                class="img-fluid mobile-img web-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Lapangan Sepak Bola Senayan</h5>
-                                <p class="card-text mt-3"
-                                    style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Jl. Setia
-                                    Budi
-                                    Barat No.1, Kuningan, Setia Budi</p>
-                                <p class="card-text mt-3"
-                                    style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Lapangan
-                                    Tersedia: 3</p>
-                                <p class="card-text mt-3">Harga</p>
-                                <p class="card-text" style="margin-top: -15px">Rp <b>250.000</b><small
-                                        class="text-muted"> /
-                                        Jam</small></p>
+        @foreach ($venue as $key => $venues)
+            @if($loop->index < 2)
+                <div class="col-md-6">
+                    <a class="text-dark text-decoration-none" href="{{route('lapangan-detail', ['id' => $venues->id])}}">
+                        <div class="card mb-3 card-size-web card-mob zoom shadow" style="border: none">
+                            <div class="row g-0">
+                                <div class="col-md-4 card-image">
+                                    {{-- @php
+                                        $venue_id = Venue::where('id', $key)->first();
+                                        $base64 = VenuePhotos::where('venue_id', $venue_id->id)->first();
+                                    @endphp
+                                    <img src="data:image/png;base64,{{$base64->venue_photo_base64}}"
+                                        class="img-fluid mobile-img web-img" alt="..."> --}}
+                                    @php
+                                        $venue = Venue::where('id', $venues->id)->first();
+                                        if ($venue) {
+                                            $base64 = VenuePhotos::where('venue_id', $venue->id)->first();
+                                            echo '<div class="card-image card-circular">';
+                                            echo '<img class="rounded img-fluid" width="200px" style="height: 195px" src="data:image/png;base64,' . $base64->venue_photo_base64 . '">';
+                                            echo '</div>';
+                                        }
+                                    @endphp
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title fw-bold">{{$venues->venue_name}}</h5>
+                                        <p class="card-text mt-2"
+                                            style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{$venues->venue_address}}</p>
+                                        <div class="d-flex">
+                                            @php
+                                                $qty = $venue->field_detail()->count();
+                                            @endphp
+                                            <p class="card-text" style="margin-right: 10px">Lapangan Tersedia: {{$qty}}</p>
+                                        </div>
+                                        <div class="mt-3">
+                                            <p class="card-text mt-2">Harga mulai dari:</p>
+                                            @php
+                                                $start_price = $venue->field_detail()->min('field_cost_hour');
+                                            @endphp
+                                            <p class="card-text" style="margin-top: -15px">Rp <b>{{$start_price}}</b><small
+                                                    class="text-muted"> /
+                                                    Jam</small></p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-        <div class="col-md-6">
-            <div class="card mb-3 shadow card-size-web card-mob" style="border-radius: 12px; border: none;">
-                <div class="row g-0">
-                    <div class="col-md-4 card-image">
-                        <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}"
-                            class="img-fluid mobile-img web-img" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Lapangan Sepak Bola Senayan</h5>
-                            <p class="card-text text-truncate mt-3" style="max">Jl. Setia Budi
-                                Barat No.1, Kuningan, Setia Budi Jl. Setia Budi
-                                Barat No.1, Kuningan, Setia Budi Jl. Setia Budi
-                                Barat No.1, Kuningan, Setia Budi</p>
-                                <p class="card-text mt-3"
-                                    style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Lapangan
-                                    Tersedia: 3</p>
-                            <p class="card-text mt-3">Harga</p>
-                            <p class="card-text" style="margin-top: -15px">Rp <b>250.000</b><small class="text-muted"> /
-                                    Jam</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            @endif
+            @if($loop->index == 1)
+                @break
+            @endif
+        @endforeach
     </div>
     <div class="text-center mt-3">
         <h6 style="color: #FCE700">Klik tombol di bawah untuk melihat penawaran lainnya</h6>
