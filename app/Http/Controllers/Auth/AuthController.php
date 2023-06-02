@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Redirect;
 class AuthController extends Controller
 {
     public function index(){
+        $venue = Venue::all();
         if (Sentinel::check()) {
             $userId = Sentinel::getUser()->id;
             $role = UserRole::where('user_id', $userId)->first();
-            $venue = Venue::all();
             if ($role->role_id == 2) {
                 return view('home.index', compact('venue'));
             } elseif ($role->role_id == 3) {
