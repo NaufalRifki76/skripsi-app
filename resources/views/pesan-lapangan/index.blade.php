@@ -7,6 +7,11 @@
 @section('content')
 
     <div class="container">
+        <div class="my-3">
+            <a href="{{ route('lapangan-detail', ['id' => $venue->id]) }}" class="text-decoration-none ">
+                <button type="button" id="" name="" class="btn-green-hover">Kembali Ke Halaman Sebelumnya</button>
+            </a>
+        </div>
         <div class="card shadow" style="border: none;">
             <div class="row">
                 <div class="col-md-6">

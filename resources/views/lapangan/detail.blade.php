@@ -22,6 +22,11 @@
 </style>
 @section('content')
     <div class="container">
+        <div class="my-3">
+            <a href="{{ route('lapangan-index') }}" class="text-decoration-none ">
+                <button type="button" id="" name="" class="btn-green-hover">Kembali Ke Halaman Sebelumnya</button>
+            </a>
+        </div>
         <div class="card shadow" style="border: none; max-height: 500px;">
             <div >
                 <div class="row">

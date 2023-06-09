@@ -2,6 +2,11 @@
 
 @section('content')
     <div class="container">
+        <div class="my-3">
+            <a href="#" class="text-decoration-none ">
+                <button type="button" id="" name="" class="btn-green-hover">Kembali Ke Halaman Sebelumnya</button>
+            </a>
+        </div>
         <div class="py-5">
             <p class="h3 fw-bold text-center" style="color: #439A97">Halaman Pemesanan Lapangan</p>
             <p class="h5 fw-normal text-center" style="color: #FCE700">Pilih jam bermain dengan mengisi formulir di bawah!</p>
@@ -488,12 +493,12 @@
                                 <button type="submit" class="btn-green-hover text-decoration-none"> Lanjutkan
                                     Pemesanan</button>
                             </div>
-                            <div class="text-center mt-4 mb-3">
+                            {{-- <div class="text-center mt-4 mb-3">
                                 <a href="{{ route('lapangan.pesan.konfirmasi') }}">
                                     <button type="button" class="btn-green-hover text-decoration-none"> Lanjutkan
                                         Pemesanan test</button>
                                 </a>
-                            </div>
+                            </div> --}}
                         </div>
                     </form>
                 </div>

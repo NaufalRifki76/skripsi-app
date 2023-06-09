@@ -2,6 +2,11 @@
 
 @section('content')
     <div class="container">
+        <div class="my-3">
+            <a href="{{ route('lapangan-order', ['id' => $venue->id]) }}" class="text-decoration-none ">
+                <button type="button" id="" name="" class="btn-green-hover">Kembali Ke Halaman Sebelumnya</button>
+            </a>
+        </div>
         <div class="py-5">
             <p class="h3 fw-bold text-center" style="color: #439A97">Halaman Pemesanan Lapangan</p>
             <p class="h5 fw-normal text-center" style="color: #d14c05">Pilih tanggal bermain dengan mengisi formulir di bawah!
