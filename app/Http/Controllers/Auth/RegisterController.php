@@ -42,7 +42,7 @@ class RegisterController extends Controller
 
         $user = Sentinel::register($credentials);
         $activation = Activation::create($user);
-        $role = Sentinel::findRoleBySlug('admin');
+        $role = Sentinel::findRoleBySlug('user');
         $role->users()->attach($user);
         Mail::to($user->email)->send(new ActivationMail($user, $activation->code));
         if ($activation) {
