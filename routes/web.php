@@ -75,9 +75,9 @@ Route::post('store-deny-order/{id}', [VendorController::class, 'storecancelorder
 // contoh bagus: href={{ route('login') }}
 // contoh pemakaian ada di view('layout.navbar')
 
-Route::get('/register', function () {
-    return view('auth.register');
-})->name('auth.register');
+// Route::get('/register', function () {
+//     return view('auth.register');
+// })->name('auth.register');
 
 //  Subscribe
 // Route::get('/subscribe', function () {

@@ -14,7 +14,11 @@ use Illuminate\Validation\Rules\Password;
 class RegisterController extends Controller
 {
     public function index(){
-        return view('auth.register');
+        if(Sentinel::getUser()) {
+            return redirect()->route('auth.dashboard')->with('failed', 'Aksi tidak diperbolehkan!');
+        } else{
+            return view('auth.register');
+        }
     }
 
     public function create(Request $request){
