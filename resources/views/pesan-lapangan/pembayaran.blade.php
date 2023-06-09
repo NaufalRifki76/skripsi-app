@@ -3,11 +3,16 @@
 @section('content')
     <style>
         .background-img-pemesanan {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Assets/background/bg-pemesanan.jpg");
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{{ asset('Assets/background/bg-pesan.jpg') }}");
         }
     </style>
 
     <div class="container">
+        <div class="my-3">
+            <a href="#" class="text-decoration-none ">
+                <button type="button" id="" name="" class="btn-green-hover">Kembali Ke Halaman Sebelumnya</button>
+            </a>
+        </div>
         <p class="h3 fw-bold text-center py-5" style="color: #439A97">Halaman Pembayaran</p>
         <div class="row">
             <div class="col-md-2"></div>
