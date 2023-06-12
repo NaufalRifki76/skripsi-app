@@ -2,6 +2,12 @@
 
 @section('content')
 
+<style>
+    .background-img-riwayat {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("{{ asset('Assets/riwayat-pemesanan/bg.jpg') }}");
+    }
+</style>
+
 <div class="container">
     <div class="py-5">
         <p class="h1 fw-bold text-center" style="color: #439A97">Ajukan Pengembalian Dana</p>
@@ -10,10 +16,10 @@
     <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                <div class="card shadow-lg mb-5" style="border: none; border-radius: 12px">
-                    <div class="card-body">
+                <div class="card background-img-riwayat shadow-lg mb-5" style="border: none; border-radius: 12px">
+                    <div class="card-body text-white">
                         <div class="text-center mt-3">
-                            <h4 class="fw-bold" style="color: #439A97"> Syarat dan Ketentuan Pengembalian Dana</h4>
+                            <h4 class="fw-bold"> Syarat dan Ketentuan Pengembalian Dana</h4>
                         </div>
                         <div class="mt-3 mx-3" style="text-align: justify">
                             <p class="fs-5">1. Pastikan pemesanan yang anda lakukan statusnya ditolak.</p>
@@ -27,7 +33,7 @@
                             <p class="fs-6 mt-4" style="color: #FCE700">Jika anda telah menyetujui syarat dan ketentuan pengembalian dana, silahkan klik tombol di bawah untuk mengisi formulir!</p>
                         </div>
                         <div class="text-center mb-3">
-                            <a href="{{ route('pengembalian-dana.index') }}" class="btn-green-hover text-decoration-none">Formulir Pengembalian Dana</a>
+                            <a href="{{ route('pengembalian-dana.index') }}" class="btn-green2-hover text-decoration-none">Formulir Pengembalian Dana</a>
                         </div>
                     </div>
                 </div>

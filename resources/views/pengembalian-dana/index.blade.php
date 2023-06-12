@@ -3,7 +3,7 @@
 @section('content')
     <style>
         .background-img-riwayat {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("Assets/riwayat-pemesanan/bg.jpg");
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("{{ asset('Assets/riwayat-pemesanan/bg.jpg') }}");
         }
     </style>
 

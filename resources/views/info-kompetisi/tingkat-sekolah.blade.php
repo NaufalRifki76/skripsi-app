@@ -42,9 +42,9 @@
     <br>
     </div>
     <div class="container row m-5">
+        @foreach ($tournament as $key => $tUmur)
         <div class="col-md-4">
             
-            @foreach ($tournament as $key => $tUmur)
                 <a class="text-dark" style="text-decoration: none" href="">
                 <div class="card mb-3" style="border-radius: 12px">
                     <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}" class="card-img-top img-fluid"
@@ -63,8 +63,7 @@
                     </div>
                 </div>
             </a>
-                @endforeach
-            
         </div>
+        @endforeach
     </div>
 @endsection

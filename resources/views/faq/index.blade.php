@@ -23,7 +23,7 @@
                       </h2>
                       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                          <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          <strong>Cara melakukan pesanan lapangan di Main Bola</strong> Pertama klik booking lapangan yang ada di menu navigasi atau halaman home website Main Bola. Kemudian pilih lapangan yang diinginkan, lalu klik card lapangan tersebut. Setelah itu, klik tombol cari lapangan untuk memilih lapangan yang diinginkan di tempat futsal tersebut. Kemudianuser memilih lapangan yang tersedia di tempat tersebut dengan menekan tombol pesan lapangan. Setelah itu isi formulir yang diminta untuk melanjutkan pemesanan. Langkah terakhir pengguna harus upload bukti pembayaran secara trasfer yang dilakukan ke nomor rekening tertera di menu pembayaran. Pesan berhasil dilakukan ketika pengguna sudah klik tombol pesan lapangan dan upload bukti pembayaran atau tarnsfer.
                         </div>
                       </div>
                     </div>
