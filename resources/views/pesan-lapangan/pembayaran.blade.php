@@ -7,20 +7,21 @@
         }
     </style>
 
+<form action="{{route('lapangan-transfer-store', ['rentorder_id' => $order_info->id])}}" method="POST" enctype="multipart/form-data">
     <div class="container">
         <div class="my-3">
             <a href="#" class="text-decoration-none ">
                 <button type="button" id="" name="" class="btn-green-hover">Kembali Ke Halaman Sebelumnya</button>
             </a>
+            @include('session-flash')
         </div>
         <p class="h3 fw-bold text-center py-5" style="color: #439A97">Halaman Pembayaran</p>
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <div class="card background-img-pemesanan shadow mb-5" style="border: none; border-radius: 12px">
+                    @csrf
                     <div class="card-body">
-                        <form action="{{route('lapangan-transfer-store', ['rentorder_id' => $order_info->id])}}" method="POST" enctype="multipart/form-data">
-                            @csrf
                             <div class="row mb-4">
                                 <h4 class="fw-bold" style="color: #fff">Jumlah Yang Harus Dibayar</h4>
                                 <div class="mb-3">
@@ -59,10 +60,12 @@
                                 </div>
                             </div>
                             <div class="text-center mt-4 mb-3">
-                                <button type="submit" class="btn-green-hover text-decoration-none pembayaran">Pesan
+                                <button type="button" class="btn-green-hover text-decoration-none pembayaran">Pesan
                                     Lapangan</button>
+                                {{-- <button type="submit" class="btn-green-hover text-decoration-none pembayaran">Pesan
+                                    Lapangan</button> --}}
                             </div>
-                        </form>
+                       
                     </div>
                 </div>
             </div>
@@ -76,12 +79,13 @@
             }
         </style>
     @endpush
-    {{-- @push('script')
+    @push('script')
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
             $(document).ready(function() {
                 //melakukan proses multiple input 
-                $(".pembayaran").click(function() {
+                $("form .pembayaran").click(function(e) {
+                    let $form = $(this).closest('form');
                     Swal.fire({
                         title: 'Apakah anda yakin ingin melanjutkan pemesanan?',
                         text: "Pastikan anda telah melakukan upload bukti transfer!",
@@ -89,11 +93,23 @@
                         showCancelButton: true,
                         confirmButtonColor: '#62B6B7',
                         cancelButtonColor: '#d33',
-                        confirmButtonText: '<a type="submit" class="text-decoration-none text-white" href="{{ route('lapangan.pesan.sukses') }}">Ya, lanjutkan pemesanan!</a>',
-                        cancelButtonText: 'Batalkan'
-                    })
+                        confirmButtonText: 'Ya, Lanjutkan Pemesanan!',
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        $form.submit();
+                    } else {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: 'Batal !',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                });
                 });
             });
         </script>
-    @endpush --}}
+    @endpush
+</form>
 @endsection

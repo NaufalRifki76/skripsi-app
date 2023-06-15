@@ -9,6 +9,7 @@ use App\Models\RentHoursAvailable;
 use App\Models\RentOrder;
 use App\Models\User;
 use App\Models\Venue;
+use Carbon\Carbon;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -60,6 +61,7 @@ class BookingController extends Controller{
     }
 
     public function ordertime($venueid, $fieldid, Request $request){
+        // dd(1);
         if(!Sentinel::getUser()) {
             return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else{
@@ -78,9 +80,11 @@ class BookingController extends Controller{
     }
 
     public function orderconfirm($venueid, $fieldid, $date, Request $request){
+        // dd(1);
         if(!Sentinel::getUser()) {
             return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else{
+            // dd(1);
             try {
                 $request->validate([
                     'up' => 'required',
@@ -101,6 +105,7 @@ class BookingController extends Controller{
                     'field'         => $field->field_name,
                     'order_date'    => $date,
                     'price_sum'     => $price_sum,
+                    'created_at'    => Carbon::now(),
                 ]);
     
                 $venue_rent = $venue->rent_hours()->create([
@@ -194,10 +199,10 @@ class BookingController extends Controller{
                 ->first();
 
                 return view('pesan-lapangan.pesan-konfirmasi', compact('order_info', 'field', 'venue_id_forrent', 'venueid'));
-            } catch (\Throwable $th) {
-                dd($th);
+            } catch (\Exception $e) {
+                // dd($e->getMessage());
                 DB::rollBack();
-                return back()->with('failed', 'Cek kelengkapan dari form anda!');
+                return redirect()->route('lapangan-order-date', [$venueid, $fieldid])->with('failed', 'Anda belum memilih jam bermain! Silahkan isi formulir dengan lengkap.');
             }
         }
     }
@@ -217,7 +222,7 @@ class BookingController extends Controller{
             return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else{
             try {
-                $request->validate([
+                $validator = request()->validate([
                     'transfer_confirm_base64' => 'required',
                 ]);
                 
@@ -231,10 +236,10 @@ class BookingController extends Controller{
                 $transcript->transfer_confirm_base64 = $transferBase64;
                 $transcript->save();
                 return view('pesan-lapangan.sukses');
-            } catch (\Throwable $th) {
-                dd($th);
+            } catch (\Exception $e) {
+                // dd($e->getMessage());
                 DB::rollBack();
-                return back()->with('failed', 'Cek kelengkapan dari form anda!');
+                return back()->with('failed', 'Anda belum upload bukti pembayaran, Cek kelengkapan dari form anda!');
             }
         }
     }
