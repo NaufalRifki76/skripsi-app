@@ -161,7 +161,7 @@
                                 </div>
                             </div>
                             <div class="text-center mt-4 mb-3">
-                                <button class="btn-green2-hover text-decoration-none">Kirim</button>
+                                <button class="btn-green2-hover text-decoration-none kirim">Kirim</button>
                             </div>
                         </form>
                     </div>
@@ -179,6 +179,40 @@
     @endpush
 
     @push('script')
+    {{-- Sweet Alert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function() {
+            //melakukan proses multiple input 
+            $("form .kirim").click(function(e) {
+                let $form = $(this).closest('form');
+                Swal.fire({
+                    title: 'Apakah formulir yang anda isi sudah lengkap dan benar?',
+                    text: "Pastikan anda telah mengisi semua formulir yang diminta dengan benar!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#62B6B7',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya, Kirim Formulir',
+                    cancelButtonText: 'Kembali',
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    $form.submit();
+                } else {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'warning',
+                        title: 'Cek kembali formulir anda!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            });
+            });
+        });
+    </script>
+
+
         {{-- Select2 --}}
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         <script>
