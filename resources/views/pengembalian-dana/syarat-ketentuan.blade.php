@@ -33,7 +33,7 @@
                             <p class="fs-6 mt-4" style="color: #FCE700">Jika anda telah menyetujui syarat dan ketentuan pengembalian dana, silahkan klik tombol di bawah untuk mengisi formulir!</p>
                         </div>
                         <div class="text-center mb-3">
-                            <a href="{{ route('pengembalian-dana.index') }}" class="btn-green2-hover text-decoration-none">Formulir Pengembalian Dana</a>
+                            <a href="{{ route('refund-index') }}" class="btn-green2-hover text-decoration-none">Formulir Pengembalian Dana</a>
                         </div>
                     </div>
                 </div>

@@ -25,84 +25,79 @@
                                 <h4 class="fw-bold" style="color: #fff"> Data Diri Pemesan</h4>
                                 <div class="col-md-12 mb-3">
                                     <label for="inputState" class="form-label text-white h5">Nama Pemesan</label>
-                                    <input type="text" class="form-control bg-white" disabled id=""
-                                        placeholder="Isinya nama yang didaftarin pas regist, tapi bisa dia ganti sendiri juga">
+                                    <input type="text" class="form-control bg-white" id="name" name="name" value="{{$user->name}}"
+                                        placeholder="Nama Pemesan...">
                                 </div>
-                                
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="inputState" class="form-label text-white h5">No Telepon</label>
-                                            <input type="text" class="form-control bg-white" disabled id=""
-                                                placeholder="Isinya nomor yang didaftarin pas regist, tapi bisa dia ganti sendiri juga">
-                                        </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="inputState" class="form-label text-white h5">No Telepon</label>
+                                        <input type="text" class="form-control bg-white" id="no_telephone" name="no_telephone" value="{{$user->no_telephone}}"
+                                            placeholder="No. Telepon Pemesan...">
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="inputState" class="form-label text-white h5">Email</label>
-                                            <input type="text" class="form-control bg-white" disabled id=""
-                                                placeholder="Isinya nomor yang didaftarin pas regist, tapi bisa dia ganti sendiri juga">
-                                        </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="inputState" class="form-label text-white h5">Email</label>
+                                        <input type="text" class="form-control bg-white" id="email" name="email" value="{{$user->email}}"
+                                            placeholder="Email Pemesan...">
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="inputState" class="form-label text-white h5">Nama Bank <span
-                                                class="text-danger">*</span></label>
-                                            <input type="text" class="form-control bg-white" required id=""
-                                                placeholder="Isinya nomor yang didaftarin pas regist, tapi bisa dia ganti sendiri juga">
-                                        </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="inputState" class="form-label text-white h5">Nama Bank <span
+                                            class="text-danger">*</span></label>
+                                        <input type="text" class="form-control bg-white" required id="bank" name="bank"
+                                            placeholder="Bank yang Digunakan Pemesan...">
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="inputState" class="form-label text-white h5">No Rekening Anda <span
-                                                class="text-danger">*</span></label>
-                                            <input type="text" class="form-control bg-white" required id=""
-                                                placeholder="Isinya nomor yang didaftarin pas regist, tapi bisa dia ganti sendiri juga">
-                                        </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="inputState" class="form-label text-white h5">No Rekening Anda <span
+                                            class="text-danger">*</span></label>
+                                        <input type="text" class="form-control bg-white" required id="bank_acc_no" name="bank_acc_no"
+                                            placeholder="No. Rekening Pemesan...">
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="mb-3">
-                                            <label for="inputState" class="form-label text-white h5">Atas Nama Rekening <span
-                                                class="text-danger">*</span></label>
-                                            <input type="text" class="form-control bg-white" required id=""
-                                                placeholder="Isinya nomor yang didaftarin pas regist, tapi bisa dia ganti sendiri juga">
-                                        </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label for="inputState" class="form-label text-white h5">Atas Nama Rekening <span
+                                            class="text-danger">*</span></label>
+                                        <input type="text" class="form-control bg-white" required id="bank_acc_name" name="bank_acc_name"
+                                            placeholder="Nama Rekening Pemesan...">
                                     </div>
-                                
+                                </div>
                             </div>
                             <div class="row mb-4">
                                 <h4 class="fw-bold" style="color: #fff">Lapangan Yang Dipesan</h4>
                                 <div class="col-md-6">
-                                    <label for="nama-tempat" class="form-label text-white h5">Nama Tempat <span
+                                    <label for="nama-tempat" class="form-label text-white h5">Nama Venue <span
                                         class="text-danger">*</span></label>
-                                    <select id="nama-tempat" required class="form-select bg-white">
+                                    <select id="venue_name" name="venue_name" required class="form-select bg-white">
                                         <option selected disabled>Pilih tempat  melakukan pemesanan...</option>
-                                        <option value="1">Naufal Futsal</option>
-                                        <option value="2">Faris Futsal</option>
-                                        <option value="3">Ernest Futsal</option>
+                                        @foreach ($venue as $key => $venues)
+                                            <option value="{{$venues->id}}">{{$venues->venue_name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="nama-lapangan" class="form-label text-white h5">Lapangan Yang Di Pilih <span
                                             class="text-danger">*</span></label>
-                                        <select id="nama-lapangan" required class="form-select bg-white">
+                                        <select id="field_name" name="field_name" required class="form-select bg-white">
                                             <option selected disabled>Pilih lapangan...</option>
-                                            <option value="1">Lapangan A</option>
-                                            <option value="2">Lapangan B</option>
-                                            <option value="3">Lapangan C</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="inputState" class="form-label text-white h5">Pilih tanggal pemesanan lapangan <span
                                         class="text-danger">*</span></label>
-                                    <input type="date" class="form-control bg-white" required id="ExpiredDate" placeholder="">
+                                    <input type="date" class="form-control bg-white" required id="order_date" name="order_date" placeholder="">
                                 </div>
                                 <div class="row fieldGroup mb-3">
                                     <div class="col-md-6">
                                         <label for="inputJam" class="form-label text-white h5">Pilih Jam Bermain <span
                                             class="text-danger">*</span></label>
-                                        <select id="inputJam" required class="form-select bg-white">
+                                        <select id="up[]" name="up[]" required class="form-select bg-white">
                                             <option selected>Pilih jam anda bermain...</option>
                                             <option selected value="1">09.00 - 10.00</option>
                                             <option value="2">10.00 - 11.00</option>
@@ -111,7 +106,7 @@
                                     </div>
                                     <div class="col-md-5">
                                         <label for="inputState" class="form-label text-white h5">Harga Sewa</label>
-                                        <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
+                                        <input type="text" disabled class="form-control bg-white" id="field_cost_hour" name="field_cost_hour"
                                             placeholder="Rp. 150000">
                                     </div>
                                     <div class="col-md-1">
@@ -123,16 +118,16 @@
                                     <div class="col-md-6">
                                         <label for="inputJam" class="form-label h5 text-white">Pilih Jam Bermain <span
                                                 class="text-danger">*</span></label>
-                                        <select id="inputJam" class="form-select" required>
+                                        <select id="up[]" name="up[]" class="form-select" required>
                                             <option selected>Pilih jam anda bermain...</option>
                                             <option disabled value="1">09.00 - 10.00</option>
-                                            <option value="2">10.00 - 11.00</option>
-                                            <option value="3">11.00 - 12.00</option>
+                                            <option value="0">00.00 - 01.00</option>
+                                            <option value="1">01.00 - 02.00</option>
                                         </select>
                                     </div>
                                     <div class="col-md-5">
                                         <label for="inputState" class="form-label h5 text-white">Harga Sewa</label>
-                                        <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
+                                        <input type="text" disabled class="form-control bg-white" id="field_cost_hour" name="field_cost_hour"
                                             placeholder="">
                                     </div>
                                     <div class="col-md-1">
@@ -147,7 +142,7 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="inputState" class="form-label text-white h5">Total Biaya Yang Harus Dibayar</label>
-                                    <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
+                                    <input type="text" disabled class="form-control bg-white" id="price_sum" name="price_sum"
                                         placeholder="Rp. 155000">
                                 </div>
                             </div>
@@ -156,12 +151,12 @@
                                 <div class="mb-3">
                                     <label for="inputState" class="form-label text-white h5">Upload Bukti Pembayaran Anda <span
                                         class="text-danger">*</span></label>
-                                    <input type="file" accept=".jpg,.jpeg,.png" class="form-control bg-white" required id=""
-                                    placeholder="Isinya nama yang didaftarin pas regist, tapi bisa dia ganti sendiri juga">
+                                    <input type="file" accept=".jpg,.jpeg,.png" class="form-control bg-white" required id="transfer_confirm_base64" name="transfer_confirm_base64"
+                                    placeholder="">
                                 </div>
                             </div>
                             <div class="text-center mt-4 mb-3">
-                                <button class="btn-green2-hover text-decoration-none kirim">Kirim</button>
+                                <button type="submit" class="btn-green2-hover text-decoration-none">Kirim</button>
                             </div>
                         </form>
                     </div>
@@ -171,6 +166,7 @@
         </div>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     @push('css')
         {{-- Select --}}
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -215,6 +211,37 @@
 
         {{-- Select2 --}}
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#venue_name').change(function() {
+                    var venueid = $(this).val();
+        
+                    // Disable dependent dropdown until options are fetched
+                    $('#field_name').attr('disabled', true);
+        
+                    // Clear dependent dropdown options
+                    $('#field_name').empty();
+                    $('#field_name').append('<option value="">Memuat...</option>');
+        
+                    $.ajax({
+                        url: '{{ route("refund-get-field", ["id" => ":id"]) }}/'.replace(':id', venueid),
+                        type: 'GET',
+                        success: function(response) {
+                            // Enable dependent dropdown
+                            $('#field_name').attr('disabled', false);
+                            $('#field_name').empty();
+                            $('#field_name').append('<option value="">Pilih lapangan...</option>');
+                            $.each(response, function(key, value) {
+                                $('#field_name').append('<option value="' + value.id + '">' + value.field_name + '</option>');
+                            });
+                        },
+                        error: function(xhr) {
+                            console.log(xhr.responseText);
+                        }
+                    });
+                });
+            });
+        </script>
         <script>
             // select
             $(document).ready(function() {

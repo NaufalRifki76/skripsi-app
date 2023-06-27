@@ -8,6 +8,7 @@ use App\Http\Controllers\Features\CompetitionController;
 use App\Http\Controllers\Features\MiscController;
 use App\Http\Controllers\Features\MitraController;
 use App\Http\Controllers\Features\ProfileController;
+use App\Http\Controllers\Features\RefundController;
 use App\Http\Controllers\Features\VipController;
 use App\Http\Controllers\Vendor\VendorController;
 use Illuminate\Support\Facades\Route;
@@ -46,6 +47,11 @@ Route::post('lapangan-transfer-store/{rentorder_id}', [BookingController::class,
 Route::get('kompetisi.index', [CompetitionController::class, 'index'])->name('kompetisi.index');
 Route::get('tingkat-pendidikan.index', [CompetitionController::class, 'pendidikan'])->name('tingkat-pendidikan.index');
 Route::get('tingkat-umur.index', [CompetitionController::class, 'umur'])->name('tingkat-umur.index');
+
+// Refund
+Route::get('refund-snk', [RefundController::class, 'snk'])->name('refund-snk');
+Route::get('refund-index', [RefundController::class, 'index'])->name('refund-index');
+Route::get('refund-get-field/{id}', [RefundController::class, 'dependentfield'])->name('refund-get-field');
 
 // Join Mitra
 Route::get('mitra.index', [MitraController::class, 'index'])->name('mitra.index');
@@ -194,13 +200,13 @@ Route::get('/ganti-password', function () {
 
 
 // pengembalian dana
-Route::get('/pengembalian-dana', function () {
-    return view('pengembalian-dana.index');
-})->name('pengembalian-dana.index');
+// Route::get('/pengembalian-dana', function () {
+//     return view('pengembalian-dana.index');
+// })->name('pengembalian-dana.index');
 
-Route::get('/syarat-pengembalian-dana', function () {
-    return view('pengembalian-dana.syarat-ketentuan');
-})->name('pengembalian-dana.syarat-ketentuan');
+// Route::get('/syarat-pengembalian-dana', function () {
+//     return view('pengembalian-dana.syarat-ketentuan');
+// })->name('pengembalian-dana.syarat-ketentuan');
 
 Route::get('/tolak-pemesanan', function () {
     return view('layout.penyedia-lapangan.tolak');
