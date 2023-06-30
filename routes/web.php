@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\ForgotPassController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Features\BookingController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\Features\ProfileController;
 use App\Http\Controllers\Features\RefundController;
 use App\Http\Controllers\Features\VipController;
 use App\Http\Controllers\Vendor\VendorController;
+
 use Illuminate\Support\Facades\Route;
 
 // Register
@@ -190,9 +192,19 @@ Route::get('/email', function () {
     return view('email.forgot-password');
 })->name('email.forgot-password');
 
-Route::get('/kirim-email', function () {
-    return view('lupa-password.kirim-email');
-})->name('lupa-password.kirim-email');
+// Route::get('/kirim-email', function () {
+//     return view('lupa-password.kirim-email');
+// })->name('lupa-password.kirim-email');
+
+Route::match(['get', 'post'],"/forgot-password/{token}", [ForgotPassController::class, 'changePass'])->name("forgot-pass-mail");
+
+
+Route::get('/forgot-password', [ForgotPassController::class, 'index'])->name('forgotpass');
+
+Route::post(
+    '/forgotpass',
+    [ForgotpassController::class, 'requestEmail']
+)->name('forgotpass-insert');
 
 Route::get('/ganti-password', function () {
     return view('lupa-password.ganti-password');
@@ -211,3 +223,4 @@ Route::get('/ganti-password', function () {
 Route::get('/tolak-pemesanan', function () {
     return view('layout.penyedia-lapangan.tolak');
 })->name('tolak-pemesanan');
+

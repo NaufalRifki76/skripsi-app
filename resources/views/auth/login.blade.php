@@ -107,7 +107,7 @@
                                             </div>
                                             <div class="mt-5">
                                                 <div class="d-flex justify-content-center">
-                                                    <a class="btn-grey-hover" href="#!">Lupa Password?</a>
+                                                    <a class="btn-grey-hover" href="{{ route('forgotpass') }}">Lupa Password?</a>
                                                 </div>
                                                 <div class="d-flex justify-content-center mb-5 mt-3">
                                                     <p>Belum Punya Akun? Silahkan melakukan <a

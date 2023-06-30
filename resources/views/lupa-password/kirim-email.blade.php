@@ -15,15 +15,37 @@
                         </div>
                         <p class="h3 fw-bold text-center">Lupa Password?</p>
                         <p class="fs-6 text-center">isi form di bawah utuk memperbarui password anda!</p>
-                        <div class="mb-3">
-                            <label for="" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="" aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">Pastikan email yang anda isi sesuai dengan email akun anda!</div>
-                        </div>
-                        <p>Kembali ke halaman <a href="{{ route('auth.login') }}">Login</a>.</p>
-                        <div class="text-center">
-                            <button type="" id="" name="" class="btn-green-hover">Kirim</button>
-                        </div>
+                        <!-- Form -->
+                        <form action="{{ route('forgotpass-insert') }}" method="POST">
+                            @csrf
+                            <div class="form-group mb-3">
+                                <label>Email
+                                    <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" placeholder="Enter email" name="email"
+                                    value="{{ old('email') }}" required />
+                                @error('email')
+                                    <span class="form-text text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div class="form-group mb-3">
+                                {{-- <a href="{{ route('front.login') }}" class="" style="text-decoration: none">Kembali ke Login</a> --}}
+                            </div>
+
+                            <div class="row justify-content-between">
+                                @if (Session::has('error'))
+                                    <span class="text-danger">{{ Session::get('error') }}</span>
+                                @elseif(Session::has('success'))
+                                    <span class="text-success">{{ Session::get('success') }}</span>
+                                @else
+                                    <span></span>
+                                @endif
+                                <p>Kembali ke halaman <a href="{{ route('auth.view') }}">Login</a>.</p>
+                            <div class="text-center">
+                                <button type="" id="" name="" class="btn-green-hover">Kirim</button>
+                            </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

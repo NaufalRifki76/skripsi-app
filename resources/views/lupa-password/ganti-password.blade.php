@@ -15,17 +15,21 @@
                         </div>
                         <p class="h3 fw-bold text-center">Lupa Password?</p>
                         <p class="fs-6 text-center">isi form di bawah utuk memperbarui password anda!</p>
-                        <div class="mb-3">
+                        <form action="{{ route('forgot-pass-mail', $token) }}" method="POST" novalidate>
+                         @csrf
+                        <div  class="mb-3">
                             <label for="" class="form-label">Password Baru</label>
-                            <input type="password" class="form-control" id="" aria-describedby="">
-                        </div>
+                            <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror">
+                            <p style="color: red; font-size: 13px; font-style: italic; font-weight: lighter">*Password minimal mempunyai 8 karakter, 1 huruf besar, 1 huruf kecil, dan 1 angka</p>
+                          </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Konfirmasi Password Baru</label>
-                            <input type="password" class="form-control" id="" aria-describedby="">
+                            <input required type="password" name="password_confirmation" id="password_confirmation" class="form-control @error('password') is-invalid @enderror" />
                         </div>
                         <div class="text-center">
-                            <button type="" id="" name="" class="btn-green-hover">Kirim</button>
+                            <button type="submit" id="" name="" class="btn-green-hover">Kirim</button>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
