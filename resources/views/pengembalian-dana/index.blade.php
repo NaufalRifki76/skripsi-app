@@ -198,7 +198,7 @@
                     Swal.fire({
                         position: 'center',
                         icon: 'warning',
-                        title: 'Cek kembali formulir anda!',
+                        title: 'Batal mengirim formulir!',
                         showConfirmButton: false,
                         timer: 1500
                     })

@@ -7,7 +7,7 @@
         }
     </style>
 
-@include('session-flash')
+    @include('session-flash')
 
     <div class="container">
         <div class="py-5">
@@ -20,7 +20,7 @@
             <div class="col-md-8">
                 <div class="card shadow-lg background-img-riwayat mb-5" style="border: none; border-radius: 12px">
                     <div class="card-body">
-                        <form action="{{route('mitra.join')}}" method="POST" enctype="multipart/form-data" novalidate>
+                        <form action="{{ route('mitra.join') }}" method="POST" enctype="multipart/form-data" novalidate>
                             @csrf
                             {{-- Data Venue --}}
                             <div class="row">
@@ -70,24 +70,24 @@
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Nama Bank <span
                                                 class="text-danger">*</span></label>
-                                        <input type="text" required class="form-control bg-white" id="bank" name="bank"
-                                            name="" placeholder="">
+                                        <input type="text" required class="form-control bg-white" id="bank"
+                                            name="bank" name="" placeholder="">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Nomor Rekening <span
                                                 class="text-danger">*</span></label>
-                                        <input type="number" required class="form-control bg-white" id="bank_acc_no" name="bank_acc_no"
-                                            name="" placeholder="">
+                                        <input type="number" required class="form-control bg-white" id="bank_acc_no"
+                                            name="bank_acc_no" name="" placeholder="">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Atas Nama Rekening <span
                                                 class="text-danger">*</span></label>
-                                        <input type="text" required class="form-control bg-white" id="bank_acc_name" name="bank_acc_name"
-                                            name="" placeholder="">
+                                        <input type="text" required class="form-control bg-white" id="bank_acc_name"
+                                            name="bank_acc_name" name="" placeholder="">
                                     </div>
                                 </div>
                                 <div class="mb-3">
@@ -236,7 +236,8 @@
                                         <select id="namaPerlengkapan" name="item_id[]" required class="form-select">
                                             <option disabled selected>Pilih perlengkapan...</option>
                                             @foreach ($rent as $key => $perlengkapan)
-                                                <option value="{{$perlengkapan->id}}">{{$perlengkapan->item_name}}</option>
+                                                <option value="{{ $perlengkapan->id }}">{{ $perlengkapan->item_name }}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -255,12 +256,12 @@
                                             Per-Jam <span class="text-danger">*</span></label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="">Rp</span>
-                                            <input type="number" class="form-control" required id="item_rent_cost" name="item_rent_cost[]"
-                                                aria-describedby="">
+                                            <input type="number" class="form-control" required id="item_rent_cost"
+                                                name="item_rent_cost[]" aria-describedby="">
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="row fieldGroupCopy2" style="display: none;">
                                 <div class="col-md-4">
                                     <div class="mb-3">
@@ -269,7 +270,8 @@
                                         <select id="namaPerlengkapan" name="item_id[]" required class="form-select">
                                             <option disabled selected>Pilih perlengkapan...</option>
                                             @foreach ($rent as $key => $perlengkapan)
-                                                <option value="{{$perlengkapan->id}}">{{$perlengkapan->item_name}}</option>
+                                                <option value="{{ $perlengkapan->id }}">{{ $perlengkapan->item_name }}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -278,8 +280,8 @@
                                     <div class="mb-3">
                                         <label for="inputState" class="form-label h5 text-white">Jumlah <span
                                                 class="text-danger">*</span></label>
-                                        <input type="text" class="form-control bg-white" required id="item_qty" name="item_qty[]"
-                                            placeholder="Jumlah perlengkapan...">
+                                        <input type="text" class="form-control bg-white" required id="item_qty"
+                                            name="item_qty[]" placeholder="Jumlah perlengkapan...">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -288,8 +290,8 @@
                                             Per-Jam <span class="text-danger">*</span></label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="">Rp</span>
-                                            <input type="number" class="form-control" required id="item_rent_cost" name="item_rent_cost[]"
-                                                aria-describedby="">
+                                            <input type="number" class="form-control" required id="item_rent_cost"
+                                                name="item_rent_cost[]" aria-describedby="">
                                         </div>
                                     </div>
                                 </div>
@@ -300,7 +302,7 @@
                             </div>
 
                             <div class="text-center">
-                                <button type="submit" class="btn-green2-hover mt-4">Kirim</button>
+                                <button type="button" class="btn-green2-hover mt-4 kirim">Kirim</button>
                             </div>
                         </form>
                     </div>
@@ -382,6 +384,38 @@
                     } else {
                         $('.showthis-upload').hide();
                     }
+                });
+            });
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            $(document).ready(function() {
+                //melakukan proses multiple input 
+                $("form .kirim").click(function(e) {
+                    let $form = $(this).closest('form');
+                    Swal.fire({
+                        title: 'Apakah anda yakin ingin melanjutkan pendaftaran menjadi mitra?',
+                        text: "Pastikan anda telah mengisi semua formulir yang diminta!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#62B6B7',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Daftar Menjadi Mitra!',
+                        cancelButtonText: 'Batal',
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $form.submit();
+                        } else {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'error',
+                                title: 'Batal mengirim formulir pendaftaran!',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        }
+                    });
                 });
             });
         </script>
