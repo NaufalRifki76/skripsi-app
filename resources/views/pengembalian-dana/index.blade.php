@@ -20,7 +20,7 @@
             <div class="col-md-8">
                 <div class="card shadow-lg background-img-riwayat mb-5" style="border: none; border-radius: 12px">
                     <div class="card-body">
-                        <form action="">
+                        <form action="" method="POST" action="">
                             <div class="row mb-4">
                                 <h4 class="fw-bold" style="color: #fff"> Data Diri Pemesan</h4>
                                 <div class="col-md-12 mb-3">
@@ -99,15 +99,36 @@
                                             class="text-danger">*</span></label>
                                         <select id="up[]" name="up[]" required class="form-select bg-white">
                                             <option selected>Pilih jam anda bermain...</option>
-                                            <option selected value="1">09.00 - 10.00</option>
-                                            <option value="2">10.00 - 11.00</option>
-                                            <option value="3">11.00 - 12.00</option>
+                                            <option value="0">00.00 - 01.00</option>
+                                            <option value="1">01.00 - 02.00</option>
+                                            <option value="2">02.00 - 03.00</option>
+                                            <option value="3">03.00 - 04.00</option>
+                                            <option value="4">04.00 - 05.00</option>
+                                            <option value="5">05.00 - 06.00</option>
+                                            <option value="6">06.00 - 07.00</option>
+                                            <option value="7">07.00 - 08.00</option>
+                                            <option value="8">08.00 - 09.00</option>
+                                            <option value="9">09.00 - 10.00</option>
+                                            <option value="10">10.00 - 11.00</option>
+                                            <option value="11">11.00 - 12.00</option>
+                                            <option value="12">12.00 - 13.00</option>
+                                            <option value="13">13.00 - 14.00</option>
+                                            <option value="14">14.00 - 15.00</option>
+                                            <option value="15">15.00 - 16.00</option>
+                                            <option value="16">16.00 - 17.00</option>
+                                            <option value="17">17.00 - 18.00</option>
+                                            <option value="18">18.00 - 19.00</option>
+                                            <option value="19">19.00 - 20.00</option>
+                                            <option value="20">20.00 - 21.00</option>
+                                            <option value="21">21.00 - 22.00</option>
+                                            <option value="22">22.00 - 23.00</option>
+                                            <option value="23">23.00 - 00.00</option>
                                         </select>
                                     </div>
                                     <div class="col-md-5">
                                         <label for="inputState" class="form-label text-white h5">Harga Sewa</label>
                                         <input type="text" disabled class="form-control bg-white" id="field_cost_hour" name="field_cost_hour"
-                                            placeholder="Rp. 150000">
+                                            placeholder="">
                                     </div>
                                     <div class="col-md-1">
                                         <button type="button" class="btn-green2-hover addMore" style="margin-top: 30px;"><i
@@ -120,16 +141,36 @@
                                                 class="text-danger">*</span></label>
                                         <select id="up[]" name="up[]" class="form-select" required>
                                             <option selected>Pilih jam anda bermain...</option>
-                                            <option disabled value="1">09.00 - 10.00</option>
                                             <option value="0">00.00 - 01.00</option>
                                             <option value="1">01.00 - 02.00</option>
+                                            <option value="2">02.00 - 03.00</option>
+                                            <option value="3">03.00 - 04.00</option>
+                                            <option value="4">04.00 - 05.00</option>
+                                            <option value="5">05.00 - 06.00</option>
+                                            <option value="6">06.00 - 07.00</option>
+                                            <option value="7">07.00 - 08.00</option>
+                                            <option value="8">08.00 - 09.00</option>
+                                            <option value="9">09.00 - 10.00</option>
+                                            <option value="10">10.00 - 11.00</option>
+                                            <option value="11">11.00 - 12.00</option>
+                                            <option value="12">12.00 - 13.00</option>
+                                            <option value="13">13.00 - 14.00</option>
+                                            <option value="14">14.00 - 15.00</option>
+                                            <option value="15">15.00 - 16.00</option>
+                                            <option value="16">16.00 - 17.00</option>
+                                            <option value="17">17.00 - 18.00</option>
+                                            <option value="18">18.00 - 19.00</option>
+                                            <option value="19">19.00 - 20.00</option>
+                                            <option value="20">20.00 - 21.00</option>
+                                            <option value="21">21.00 - 22.00</option>
+                                            <option value="22">22.00 - 23.00</option>
+                                            <option value="23">23.00 - 00.00</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-5">
+                                    {{-- <div class="col-md-5">
                                         <label for="inputState" class="form-label h5 text-white">Harga Sewa</label>
-                                        <input type="text" disabled class="form-control bg-white" id="field_cost_hour" name="field_cost_hour"
-                                            placeholder="">
-                                    </div>
+                                        <input type="text" disabled class="form-control bg-white" id="field_cost_hour" name="field_cost_hour">
+                                    </div> --}}
                                     <div class="col-md-1">
                                         <button type="button" class="btn-red-hover remove" style="margin-top: 30px;"><i
                                                 class="fa-solid fa-trash"></i></button>
@@ -175,39 +216,38 @@
     @endpush
 
     @push('script')
-    {{-- Sweet Alert --}}
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        $(document).ready(function() {
-            //melakukan proses multiple input 
-            $("form .kirim").click(function(e) {
-                let $form = $(this).closest('form');
-                Swal.fire({
-                    title: 'Apakah formulir yang anda isi sudah lengkap dan benar?',
-                    text: "Pastikan anda telah mengisi semua formulir yang diminta dengan benar!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#62B6B7',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Ya, Kirim Formulir',
-                    cancelButtonText: 'Kembali',
-                }).then((result) => {
-                if (result.isConfirmed) {
-                    $form.submit();
-                } else {
+        {{-- Sweet Alert --}}
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            $(document).ready(function() {
+                //melakukan proses multiple input 
+                $("form .kirim").click(function(e) {
+                    let $form = $(this).closest('form');
                     Swal.fire({
-                        position: 'center',
+                        title: 'Apakah formulir yang anda isi sudah lengkap dan benar?',
+                        text: "Pastikan anda telah mengisi semua formulir yang diminta dengan benar!",
                         icon: 'warning',
-                        title: 'Batal mengirim formulir!',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                }
+                        showCancelButton: true,
+                        confirmButtonColor: '#62B6B7',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Ya, Kirim Formulir',
+                        cancelButtonText: 'Kembali',
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        $form.submit();
+                    } else {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'warning',
+                            title: 'Batal mengirim formulir!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                });
+                });
             });
-            });
-        });
-    </script>
-
+        </script>
 
         {{-- Select2 --}}
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -242,6 +282,26 @@
                 });
             });
         </script>
+
+        <script>
+            $(document).ready(function() {
+                $('#field_name').change(function() {
+                    var priceid = $(this).val();
+                    if (priceid){
+                        $.ajax({
+                            url: '{{ route("refund-get-price", ["id" => ":id"]) }}/'.replace(':id', priceid),
+                            type: 'GET',
+                            success: function(data) {
+                                $('#field_cost_hour').val(data.field_cost_hour);
+                            },
+                        });
+                    } else {
+                        $('#field_cost_hour').val('');
+                    }
+                });
+            });
+        </script>
+
         <script>
             // select
             $(document).ready(function() {

@@ -31,4 +31,11 @@ class RefundController extends Controller{
         $field = FieldDetail::where('venue_id', $id)->get();
         return response()->json($field);
     }
+
+    public function dependentprice($id){
+        $price = FieldDetail::where('id', $id)->first();
+        return response()->json($price);
+
+        // echo json_encode(FieldDetail::where('id', $id)->get());
+    }
 }

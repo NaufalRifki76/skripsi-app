@@ -54,6 +54,7 @@ Route::get('tingkat-umur.index', [CompetitionController::class, 'umur'])->name('
 Route::get('refund-snk', [RefundController::class, 'snk'])->name('refund-snk');
 Route::get('refund-index', [RefundController::class, 'index'])->name('refund-index');
 Route::get('refund-get-field/{id}', [RefundController::class, 'dependentfield'])->name('refund-get-field');
+Route::get('refund-get-price/{id}', [RefundController::class, 'dependentprice'])->name('refund-get-price');
 
 // Join Mitra
 Route::get('mitra.index', [MitraController::class, 'index'])->name('mitra.index');
