@@ -127,12 +127,11 @@
                                     </div>
                                     <div class="col-md-5">
                                         <label for="inputState" class="form-label text-white h5">Harga Sewa</label>
-                                        <input type="text" disabled class="form-control bg-white" id="field_cost_hour" name="field_cost_hour"
-                                            placeholder="">
+                                        <input type="text" disabled class="form-control bg-white" id="field_cost_hour" name="field_cost_hour">
                                     </div>
                                     <div class="col-md-1">
-                                        <button type="button" class="btn-green2-hover addMore" style="margin-top: 30px;"><i
-                                                class="fa-solid fa-plus"></i></button>
+                                        <button type="button" class="btn-green2-hover addMore" id="addBtn" style="margin-top: 30px;"><i
+                                        class="fa-solid fa-plus"></i></button>
                                     </div>
                                 </div>
                                 <div class="row fieldGroupCopy mb-3" style="display: none;">
@@ -172,19 +171,17 @@
                                         <input type="text" disabled class="form-control bg-white" id="field_cost_hour" name="field_cost_hour">
                                     </div> --}}
                                     <div class="col-md-1">
-                                        <button type="button" class="btn-red-hover remove" style="margin-top: 30px;"><i
-                                                class="fa-solid fa-trash"></i></button>
+                                        <button type="button" onclick="decrease()" id="delBtn" class="btn-red-hover remove" style="margin-top: 30px;"><i
+                                        class="fa-solid fa-trash"></i></button>
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="inputState" class="form-label text-white h5">Biaya Pemesanan</label>
-                                    <input type="text" disabled class="form-control bg-white" id="ExpiredDate"
-                                        placeholder="Rp. 5000">
+                                    <input type="text" disabled class="form-control bg-white" id="price">
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="inputState" class="form-label text-white h5">Total Biaya Yang Harus Dibayar</label>
-                                    <input type="text" disabled class="form-control bg-white" id="price_sum" name="price_sum"
-                                        placeholder="Rp. 155000">
+                                    <input type="text" disabled class="form-control bg-white" id="price_sum" name="price_sum">
                                 </div>
                             </div>
                             <div class="row mb-4">
@@ -293,6 +290,8 @@
                             type: 'GET',
                             success: function(data) {
                                 $('#field_cost_hour').val(data.field_cost_hour);
+                                $('#price').val(data.field_cost_hour);
+                                $('#price_sum').val(data.field_cost_hour + 5000);
                             },
                         });
                     } else {
@@ -300,6 +299,27 @@
                     }
                 });
             });
+        </script>
+
+        <script>
+            $(document).ready(function() {
+                let input = document.querySelector("#addBtn")
+                input.addEventListener("click", function() {
+                    var price = parseInt(document.getElementById('price').value);
+                    var cost = parseInt(document.getElementById('field_cost_hour').value);
+                    $('#price').val(price + cost);
+                    $('#price_sum').val(price + cost + 5000);
+                });
+            });
+        </script>
+
+        <script>
+            function decrease(){
+                var price = parseInt(document.getElementById('price').value);
+                var cost = parseInt(document.getElementById('field_cost_hour').value);
+                $('#price').val(price - cost);
+                $('#price_sum').val(price - cost + 5000);
+            }
         </script>
 
         <script>
