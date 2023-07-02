@@ -72,7 +72,7 @@
                                 <div class="col-md-6">
                                     <label for="nama-tempat" class="form-label text-white h5">Nama Venue <span
                                         class="text-danger">*</span></label>
-                                    <select id="venue_name" name="venue_name" required class="form-select bg-white">
+                                    <select id="venue_id" name="venue_id" required class="form-select bg-white">
                                         <option selected disabled>Pilih tempat  melakukan pemesanan...</option>
                                         @foreach ($venue as $key => $venues)
                                             <option value="{{$venues->id}}">{{$venues->venue_name}}</option>
@@ -83,7 +83,7 @@
                                     <div class="mb-3">
                                         <label for="nama-lapangan" class="form-label text-white h5">Lapangan Yang Di Pilih <span
                                             class="text-danger">*</span></label>
-                                        <select id="field_name" name="field_name" required class="form-select bg-white">
+                                        <select id="field_detail_id" name="field_detail_id" required class="form-select bg-white">
                                             <option selected disabled>Pilih lapangan...</option>
                                         </select>
                                     </div>
@@ -254,22 +254,22 @@
                     var venueid = $(this).val();
         
                     // Disable dependent dropdown until options are fetched
-                    $('#field_name').attr('disabled', true);
+                    $('#field_detail_id').attr('disabled', true);
         
                     // Clear dependent dropdown options
-                    $('#field_name').empty();
-                    $('#field_name').append('<option value="">Memuat...</option>');
+                    $('#field_detail_id').empty();
+                    $('#field_detail_id').append('<option value="">Memuat...</option>');
         
                     $.ajax({
                         url: '{{ route("refund-get-field", ["id" => ":id"]) }}/'.replace(':id', venueid),
                         type: 'GET',
                         success: function(response) {
                             // Enable dependent dropdown
-                            $('#field_name').attr('disabled', false);
-                            $('#field_name').empty();
-                            $('#field_name').append('<option value="">Pilih lapangan...</option>');
+                            $('#field_detail_id').attr('disabled', false);
+                            $('#field_detail_id').empty();
+                            $('#field_detail_id').append('<option value="">Pilih lapangan...</option>');
                             $.each(response, function(key, value) {
-                                $('#field_name').append('<option value="' + value.id + '">' + value.field_name + '</option>');
+                                $('#field_detail_id').append('<option value="' + value.id + '">' + value.field_detail_id + '</option>');
                             });
                         },
                         error: function(xhr) {
@@ -282,7 +282,7 @@
 
         <script>
             $(document).ready(function() {
-                $('#field_name').change(function() {
+                $('#field_detail_id').change(function() {
                     var priceid = $(this).val();
                     if (priceid){
                         $.ajax({

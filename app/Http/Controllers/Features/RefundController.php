@@ -35,7 +35,15 @@ class RefundController extends Controller{
     public function dependentprice($id){
         $price = FieldDetail::where('id', $id)->first();
         return response()->json($price);
+    }
 
-        // echo json_encode(FieldDetail::where('id', $id)->get());
+    public function store(Request $request){
+        if(!Sentinel::getUser()) {
+            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
+        } else {
+            $request->validate([
+                'up' => 'required',
+            ]);
+        }
     }
 }
