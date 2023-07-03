@@ -20,7 +20,7 @@
             <div class="col-md-8">
                 <div class="card shadow-lg background-img-riwayat mb-5" style="border: none; border-radius: 12px">
                     <div class="card-body">
-                        <form action="" method="POST" action="">
+                        <form action="" method="POST" enctype="multipart/form-data">
                             <div class="row mb-4">
                                 <h4 class="fw-bold" style="color: #fff"> Data Diri Pemesan</h4>
                                 <div class="col-md-12 mb-3">
@@ -250,7 +250,7 @@
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         <script>
             $(document).ready(function() {
-                $('#venue_name').change(function() {
+                $('#venue_id').change(function() {
                     var venueid = $(this).val();
         
                     // Disable dependent dropdown until options are fetched
@@ -269,7 +269,7 @@
                             $('#field_detail_id').empty();
                             $('#field_detail_id').append('<option value="">Pilih lapangan...</option>');
                             $.each(response, function(key, value) {
-                                $('#field_detail_id').append('<option value="' + value.id + '">' + value.field_detail_id + '</option>');
+                                $('#field_detail_id').append('<option value="' + value.id + '">' + value.field_name + '</option>');
                             });
                         },
                         error: function(xhr) {

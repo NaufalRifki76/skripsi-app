@@ -7,6 +7,7 @@ use App\Models\RentHours;
 use App\Models\RentOrder;
 use App\Models\User;
 use App\Models\Venue;
+use Carbon\Carbon;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -88,6 +89,26 @@ class VendorController extends Controller{
                 $order->confirmation = 2;
                 $order->save();
 
+                $hours = RentHours::where('order_id', $order->id)->first();
+                for ($i=0; $i <= 23; $i++) { 
+                    // 00 , 01 , 02, ... , 09
+                    if($i < 10){
+                        $temp = 'up0'.$i;
+                    }
+                    else{
+                        $temp = 'up'.$i;
+                    }
+
+                    // $cek = $hours->$temp;
+                    // if($cek != null){
+                    //     dd($cek, 'cek');
+                    // }
+                    $hours->$temp = null;
+                }
+                $hours->updated_at = Carbon::now();
+                $hours->save();
+
+                // dd($hours->$temp, $cek);
                 return redirect()->route('auth.dashboard')->with('success', 'Order berhasil ditolak!');
             } catch (\Throwable $th) {
                 dd($th);

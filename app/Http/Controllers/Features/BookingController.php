@@ -86,10 +86,12 @@ class BookingController extends Controller{
         } else{
             // dd(1);
             try {
+                
                 $request->validate([
                     'up' => 'required',
                 ]);
     
+                DB::beginTransaction();
                 $hours = $request->up;
                 $venue = Venue::where('id', $venueid)->first();
                 $field = FieldDetail::where('id', $fieldid)->first();
