@@ -20,7 +20,8 @@
             <div class="col-md-8">
                 <div class="card shadow-lg background-img-riwayat mb-5" style="border: none; border-radius: 12px">
                     <div class="card-body">
-                        <form action="" method="POST" enctype="multipart/form-data">
+                        <form action="{{route('refund-store')}}" method="POST" enctype="multipart/form-data">
+                            {{ csrf_field() }}
                             <div class="row mb-4">
                                 <h4 class="fw-bold" style="color: #fff"> Data Diri Pemesan</h4>
                                 <div class="col-md-12 mb-3">
@@ -181,7 +182,7 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="inputState" class="form-label text-white h5">Total Biaya Yang Harus Dibayar</label>
-                                    <input type="text" disabled class="form-control bg-white" id="price_sum" name="price_sum">
+                                    <input type="text" readonly class="form-control bg-white" id="price_sum" name="price_sum">
                                 </div>
                             </div>
                             <div class="row mb-4">

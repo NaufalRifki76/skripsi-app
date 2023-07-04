@@ -202,9 +202,9 @@ class BookingController extends Controller{
 
                 return view('pesan-lapangan.pesan-konfirmasi', compact('order_info', 'field', 'venue_id_forrent', 'venueid'));
             } catch (\Exception $e) {
-                // dd($e->getMessage());
+                dd($e);
                 DB::rollBack();
-                return redirect()->route('lapangan-order-date', [$venueid, $fieldid])->with('failed', 'Anda belum memilih jam bermain! Silahkan isi formulir dengan lengkap.');
+                // return redirect()->route('lapangan-order-date', [$venueid, $fieldid])->with('failed', 'Anda belum memilih jam bermain! Silahkan isi formulir dengan lengkap.');
             }
         }
     }
