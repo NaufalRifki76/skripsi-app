@@ -195,7 +195,7 @@
                                 </div>
                             </div>
                             <div class="text-center mt-4 mb-3">
-                                <button type="submit" class="btn-green2-hover text-decoration-none">Kirim</button>
+                                <button type="button" class="btn-green2-hover text-decoration-none kirim">Kirim</button>
                             </div>
                         </form>
                     </div>
