@@ -14,7 +14,6 @@
                     <span class="">{{ Sentinel::getUser()->name }}</span>
                 </button>
                 <div class="dropdown-menu text-center" style="border-radius: 5px; margin-left: -0px;" aria-labelledby="">
-                    <a class="dropdown-item border-bottom" style="margin-top: -7px;" href="">Profile Lapangan</a>
                     <a class="dropdown-item" style="margin-bottom: -7px;" href="{{ route('auth.logout') }}">Log Out</a>
                 </div>
             </div>
