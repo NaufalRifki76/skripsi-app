@@ -2,11 +2,6 @@
 
 @section('content')
     <div class="container">
-        <div class="my-3">
-            <a href="#" class="text-decoration-none ">
-                <button type="button" id="" name="" class="btn-green-hover">Kembali Ke Halaman Sebelumnya</button>
-            </a>
-        </div>
         <p class="h3 fw-bold text-center py-5" style="color: #439A97">Konfirmasi Pemesanan Lapangan Anda</p>
         <div class="row">
             <div class="col-md-2"></div>

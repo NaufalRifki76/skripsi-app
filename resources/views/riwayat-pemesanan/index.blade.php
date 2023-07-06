@@ -102,14 +102,6 @@
                                     <label for="inputState" class="form-label text-white h5">Tanggal Pemesanan Lapangan</label>
                                     <input disabled type="date" class="form-control bg-white" id="" value="{{$order->order_date}}" placeholder="">
                                 </div>
-                                {{-- <div class="col-md-6 mb-3">
-                                    <label for="inputJam" class="form-label text-white h5">Jam Bermain</label>
-                                    <select disabled id="inputJam" class="form-select bg-white">
-                                        <option selected value="1">09.00 - 10.00</option>
-                                        <option value="2">10.00 - 11.00</option>
-                                        <option value="3">11.00 - 12.00</option>
-                                    </select>
-                                </div> --}}
                                 @php
                                     $hours = RentHours::where('order_id', $order->id)->first();
                                 @endphp
@@ -307,25 +299,6 @@
             @endif
         </div>
         <div class="col-md-2"></div>
-    </div>
-    <div class="d-flex justify-content-center mb-3">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
     </div>
 </div>
 

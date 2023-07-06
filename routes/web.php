@@ -52,6 +52,9 @@ Route::post('lapangan-confirm/{venueid}/{fieldid}/{date}', [BookingController::c
 Route::get('lapangan-transfer-funds/{rentorder_id}/{venue_id}', [BookingController::class, 'transferfunds'])->name('lapangan-transfer-funds');
 Route::post('lapangan-transfer-store/{rentorder_id}', [BookingController::class, 'storetransfer'])->name('lapangan-transfer-store');
 
+// Perlengkapan
+Route::match(['get','post'], '/sewa-perlengkapan', [SewaPerlengkapanController::class, 'index'])->name('sewa-perlengkapan');
+
 // Info Kompetisi
 Route::get('kompetisi.index', [CompetitionController::class, 'index'])->name('kompetisi.index');
 Route::match(['get', 'post'], 'tingkat-pendidikan.index', [CompetitionController::class, 'pendidikan'])->name('tingkat-pendidikan.index');
@@ -145,12 +148,6 @@ Route::get('/riwayat-pemesanan', function () {
 // Route::get('/daftar-lapangan', function () {
 //     return view('mitra.join');
 // })->name('mitra.join');
-
-// Perlengkapan
-Route::match(['get','post'], '/sewa-perlengkapan', [SewaPerlengkapanController::class, 'index'])->name('sewa-perlengkapan');
-// Route::get('/sewa-perlengkapan', function () {
-//     return view('sewa-perlengkapan.index');
-// })->name('sewa-perlengkapan.index');
 
 // Kompetisi
 Route::get('/info-kompetisi', function () {

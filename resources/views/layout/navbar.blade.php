@@ -16,7 +16,7 @@
                     <a class="nav-link" aria-current="page" href="{{route('lapangan-index')}}">Booking Lapangan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="">Info Sewa Perlengkapan</a>
+                    <a class="nav-link" aria-current="page" href="{{ route('sewa-perlengkapan') }}">Info Sewa Perlengkapan</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('kompetisi.index')}}">Info Kompetisi</a>
@@ -29,7 +29,7 @@
                 </button>
                 <div class="dropdown-menu text-center" style="border-radius: 5px; margin-left: -0px;" aria-labelledby="">
                     <a class="dropdown-item border-bottom" style="margin-top: -7px;" href="{{route('profile')}}">Profile</a>
-                    <a class="dropdown-item border-bottom" href="{{route('riwayat-order')}}">Riwayat Pemesanan</a>
+                    <a class="dropdown-item border-bottom" href="{{route('riwayat-order')}}">Riwayat <br>Pemesanan</a>
                     <a class="dropdown-item" style="margin-bottom: -7px;" href="{{ route('auth.logout') }}">Log Out</a>
                 </div>
             </div>
