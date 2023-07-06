@@ -17,8 +17,13 @@ class VenueRentItems extends Model
 
     protected $table = 'venue_rent_items';
 
-    public function venue_rent_item()
+    public function venue()
     {
-        return $this->belongsTo(Venue::class);
+        return $this->belongsTo(Venue::class, 'venue_id', 'id');
+    }
+
+    public function rent_item()
+    {
+        return $this->hasOne(RentItems::class, 'id', 'item_id');
     }
 }

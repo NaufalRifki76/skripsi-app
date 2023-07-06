@@ -41,7 +41,7 @@ class Venue extends Model
 
     public function venue_rent_item()
     {
-        return $this->hasMany(VenueRentItems::class);
+        return $this->hasMany(VenueRentItems::class, 'venue_id', 'id');
     }
 
     public function rent_hours()
