@@ -18,14 +18,24 @@ class CompetitionController extends Controller
         }
     }
 
-    public function pendidikan(){
-        if(!Sentinel::getUser()) {
-            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
-        } else{
+    public function pendidikan(Request $request){
+        if(request()->isMethod('get')){
+            if(!Sentinel::getUser()) {
+                return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
+            }
             $tournament = Tournament::where('age_category', null)->get();
-            // $tournamentPhotos = Tournament::where('education_category', null)->with('tournament_photos')->get();
             return view('info-kompetisi.tingkat-sekolah', compact('tournament'));
         }
+        $tournament = Tournament::when($request->tour_name, function($q) use($request){
+            $q->where('tournament_name', 'LIKE', '%'.$request->tour_name.'%');
+        })
+        ->when($request->category != '-', function($q) use($request){
+            $q->where('education_category', 'LIKE', '%'.$request->category.'%');
+        })
+        ->where('age_category', null)
+        ->get();
+
+        return view('info-kompetisi.tingkat-sekolah', compact('tournament'));
     }
 
     public function umur(){
