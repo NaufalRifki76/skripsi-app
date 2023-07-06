@@ -12,47 +12,55 @@ use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class VendorController extends Controller{
-    public function index(Request $request){
-        if(!Sentinel::getUser()) {
+class VendorController extends Controller
+{
+    public function index(Request $request)
+    {
+        if (!Sentinel::getUser()) {
             return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
-        } else{
+        } else {
             $user = Sentinel::getUser();
             $venue = Venue::where('user_id', $user->id)->first();
             $data = RentOrder::where('venue_id', $venue->id)->get();
-            if($request->ajax()){
+            if ($request->ajax()) {
                 return datatables()->of($data)
-                ->addIndexColumn()
-                ->addColumn('confirmation', function ($row){
-                    if ($row->confirmation == 0) {
-                        return 'Pending';
-                    } elseif ($row->confirmation == 1) {
-                        return 'Diterima';
-                    } elseif ($row->confirmation == 2) {
-                        return 'Ditolak';
-                    }
-                })
-                ->addColumn('price_sum', function ($row){
-                    return "Rp. $row->price_sum";
-                })
-                ->addColumn('action', function ($row){
-                    $button = "<button style='margin-right: 5px;' class='setuju btn btn-sm  btn-danger text-white' data-id='".$row['id']."' id='rejectBtn' href=''>Tolak</button>";
-                    $button .= "<button style='margin-right: 5px;' class='setuju btn btn-sm  btn-success text-white' data-id='".$row['id']."' id='accBtn' href=''>Terima</button>";
-                    $button .= "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-info text-white' data-id='".$row['id']."' id='detailBtn' href='".route('detail-order', [$row->id])."'>Detail Order</a>";
-                    return $button;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
+                    ->addIndexColumn()
+                    ->addColumn('confirmation', function ($row) {
+                        if ($row->confirmation == 0) {
+                            return 'Pending';
+                        } elseif ($row->confirmation == 1) {
+                            return 'Diterima';
+                        } elseif ($row->confirmation == 2) {
+                            return 'Ditolak';
+                        }
+                    })
+                    ->addColumn('price_sum', function ($row) {
+                        return "Rp. $row->price_sum";
+                    })
+                    ->addColumn('action', function ($row) {
+                        if ($row->confirmation == 0) {
+                            $button = "<button style='margin-right: 5px;' class='setuju btn btn-sm  btn-danger text-white' data-id='" . $row['id'] . "' id='rejectBtn' href=''>Tolak</button>";
+                            $button .= "<button style='margin-right: 5px;' class='setuju btn btn-sm  btn-success text-white' data-id='" . $row['id'] . "' id='accBtn' href=''>Terima</button>";
+                            $button .= "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-info text-white' data-id='" . $row['id'] . "' id='detailBtn' href='" . route('detail-order', [$row->id]) . "'>Detail Order</a>";
+                        } elseif ($row->confirmation == 1 || $row->confirmation == 2) {
+                            $button = '';
+                            $button .= "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-info text-white' data-id='" . $row['id'] . "' id='detailBtn' href='" . route('detail-order', [$row->id]) . "'>Detail Order</a>";
+                        }
+                        return $button;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
 
                 //penyedia-lapangan.index
             }
         }
     }
 
-    public function accorder($id){
-        if(!Sentinel::getUser()) {
+    public function accorder($id)
+    {
+        if (!Sentinel::getUser()) {
             return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
-        } else{
+        } else {
             $order = RentOrder::where('id', $id)->first();
             $user = User::where('id', $order->user_id)->first();
             $order->confirmation = 1;
@@ -66,19 +74,21 @@ class VendorController extends Controller{
         }
     }
 
-    public function denyorder($id){
-        if(!Sentinel::getUser()) {
+    public function denyorder($id)
+    {
+        if (!Sentinel::getUser()) {
             return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
-        } else{
+        } else {
             $order = RentOrder::where('id', $id)->first();
             return view('layout.penyedia-lapangan.tolak', compact('order', 'id'));
         }
     }
 
-    public function storecancelorder(Request $request, $id){
-        if(!Sentinel::getUser()) {
+    public function storecancelorder(Request $request, $id)
+    {
+        if (!Sentinel::getUser()) {
             return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
-        } else{
+        } else {
             try {
                 $request->validate([
                     'cancel_reason' => 'required',
@@ -90,13 +100,12 @@ class VendorController extends Controller{
                 $order->save();
 
                 $hours = RentHours::where('order_id', $order->id)->first();
-                for ($i=0; $i <= 23; $i++) { 
+                for ($i = 0; $i <= 23; $i++) {
                     // 00 , 01 , 02, ... , 09
-                    if($i < 10){
-                        $temp = 'up0'.$i;
-                    }
-                    else{
-                        $temp = 'up'.$i;
+                    if ($i < 10) {
+                        $temp = 'up0' . $i;
+                    } else {
+                        $temp = 'up' . $i;
                     }
 
                     // $cek = $hours->$temp;
@@ -118,10 +127,11 @@ class VendorController extends Controller{
         }
     }
 
-    public function detailorder($id){
-        if(!Sentinel::getUser()) {
+    public function detailorder($id)
+    {
+        if (!Sentinel::getUser()) {
             return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
-        } else{
+        } else {
             $order = RentOrder::where('id', $id)->first();
             return view('layout.penyedia-lapangan.detail-pemesanan', compact('order'));
         }

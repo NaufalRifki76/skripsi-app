@@ -38,13 +38,25 @@ class CompetitionController extends Controller
         return view('info-kompetisi.tingkat-sekolah', compact('tournament'));
     }
 
-    public function umur(){
-        if(!Sentinel::getUser()) {
-            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
-        } else{
+    public function umur(Request $request){
+        if(request()->isMethod('get')){
+            if(!Sentinel::getUser()) {
+                return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
+            }
             $tournament = Tournament::where('education_category', null)->get();
             return view('info-kompetisi.tingkat-umur', compact('tournament'));
         }
+
+        $tournament = Tournament::when($request->tour_name, function($q) use($request){
+            $q->where('tournament_name', 'LIKE', '%'.$request->tour_name.'%');
+        })
+        ->when($request->category != '-', function($q) use($request){
+            $q->where('age_category', 'LIKE', '%'.$request->category.'%');
+        })
+        ->where('education_category', null)
+        ->get();
+
+        return view('info-kompetisi.tingkat-umur', compact('tournament'));
     }
 
     public function detail($id){
