@@ -1,5 +1,7 @@
 @extends('layout.index')
-
+@php
+    use App\Models\TournamentPhotos;
+@endphp
 @section('content')
     <div style="background-color: #ECFAF0">
         <div class="container">
@@ -42,28 +44,30 @@
     <br>
     </div>
     <div class="container row m-5">
-        @foreach ($tournament as $key => $tUmur)
-        <div class="col-md-4">
-            
-                <a class="text-dark" style="text-decoration: none" href="">
-                <div class="card mb-3" style="border-radius: 12px">
-                    <img src="{{ asset('Assets/image-lapangan/lapangan-card.jpg') }}" class="card-img-top img-fluid"
-                        style="height: 250px; border-top-left-radius: 12px; border-top-right-radius: 12px" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title mt-2" style="color: #439A97">{{$tUmur->tournament_name}}</h5>
-                        <div class="d-flex my-3">
-                            <i class="fa-solid fa-location-dot mt-1" style="margin-right: 10px"></i>
-                            <p class="card-text" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-                                {{$tUmur->tournament_address}}</p>
+        @foreach ($tournament as $key => $tSekolah)
+            <div class="col-md-4">
+                <a class="text-dark" style="text-decoration: none" href="{{route('kompetisi-detail', ['id' => $tSekolah->id])}}">
+                    <div class="card mb-3" style="border-radius: 12px">
+                        @php
+                            $photo = TournamentPhotos::where('tournament_id', $tSekolah->id)->first();
+                        @endphp
+                        <img src="data:image/png;base64,{{$photo->tournament_photo_base64}}" class="card-img-top img-fluid"
+                            style="height: 250px; border-top-left-radius: 12px; border-top-right-radius: 12px" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title mt-2" style="color: #439A97">{{$tSekolah->tournament_name}}</h5>
+                            <div class="d-flex my-3">
+                                <i class="fa-solid fa-location-dot mt-1" style="margin-right: 10px"></i>
+                                <p class="card-text" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                                    {{$tSekolah->tournament_address}}</p>
+                            </div>
+                            <p class="card-text mt-2" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                                {{$tSekolah->tournament_detail}}</p>
+                            <h6 class="mt-2">Biaya Pendaftaran</h6>
+                            <p class="card-text">Rp <b>{{$tSekolah->entry_fee}}</b></p>
                         </div>
-                        <p class="card-text mt-2" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-                            {{$tUmur->tournament_detail}}</p>
-                        <h6 class="mt-2">Biaya Pendaftaran</h6>
-                        <p class="card-text">Rp <b>{{$tUmur->entry_fee}}</b></p>
                     </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
         @endforeach
     </div>
 @endsection

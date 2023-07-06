@@ -54,8 +54,9 @@ Route::post('lapangan-transfer-store/{rentorder_id}', [BookingController::class,
 
 // Info Kompetisi
 Route::get('kompetisi.index', [CompetitionController::class, 'index'])->name('kompetisi.index');
-Route::get('tingkat-pendidikan/index', [CompetitionController::class, 'pendidikan'])->name('tingkat-pendidikan.index');
-Route::get('tingkat-umur/index', [CompetitionController::class, 'umur'])->name('tingkat-umur.index');
+Route::get('tingkat-pendidikan.index', [CompetitionController::class, 'pendidikan'])->name('tingkat-pendidikan.index');
+Route::get('tingkat-umur.index', [CompetitionController::class, 'umur'])->name('tingkat-umur.index');
+Route::get('kompetisi-detail/{id}', [CompetitionController::class, 'detail'])->name('kompetisi-detail');
 
 // Refund
 Route::get('refund-snk', [RefundController::class, 'snk'])->name('refund-snk');

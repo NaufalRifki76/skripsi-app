@@ -23,7 +23,6 @@ class CompetitionController extends Controller
             return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else{
             $tournament = Tournament::where('age_category', null)->get();
-            // $tournamentPhotos = Tournament::where('education_category', null)->with('tournament_photos')->get();
             return view('info-kompetisi.tingkat-sekolah', compact('tournament'));
         }
     }
@@ -33,8 +32,16 @@ class CompetitionController extends Controller
             return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else{
             $tournament = Tournament::where('education_category', null)->get();
-            // $tournamentPhotos = Tournament::where('age_category', null)->with('tournament_photos')->get();
             return view('info-kompetisi.tingkat-umur', compact('tournament'));
+        }
+    }
+
+    public function detail($id){
+        if(!Sentinel::getUser()) {
+            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
+        } else {
+            $tournament = Tournament::where('id', $id)->first();
+            return view('info-kompetisi.detail', compact('tournament'));
         }
     }
 }
