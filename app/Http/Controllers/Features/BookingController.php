@@ -19,7 +19,7 @@ class BookingController extends Controller{
         if(!Sentinel::getUser()) {
             return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else{
-            $venue = Venue::all();
+            $venue = Venue::where('isdeleted', 0)->get();
             return view('lapangan.index', compact('venue'));
         }
     }

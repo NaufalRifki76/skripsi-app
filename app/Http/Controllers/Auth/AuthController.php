@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Redirect;
 class AuthController extends Controller
 {
     public function index(){
-        $venue = Venue::all();
+        $venue = Venue::where('isdeleted', 0)->get();
         if (Sentinel::check()) {
             $userId = Sentinel::getUser()->id;
             $role = UserRole::where('user_id', $userId)->first();
