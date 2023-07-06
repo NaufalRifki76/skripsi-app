@@ -33,7 +33,7 @@
                                         </div>
                                         <div class="col-md-3 mb-3">
                                             <label class="h5">Bukti Transfer</label><br>
-                                            <button class="btn btn-primary" data-bs-toggle="modal"
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                                 data-bs-target="#bukti-transfer"><i class="fa-solid fa-eye"></i></button>
                                         </div>
                                         <div class="col-md-6 mb-3">
