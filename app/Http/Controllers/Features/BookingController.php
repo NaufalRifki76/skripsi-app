@@ -31,7 +31,7 @@ class BookingController extends Controller{
         })
         ->when(isset($request->cost), function($q) use($request){
             $q->whereHas('field_detail', function($qu) use($request){
-                $qu->where('field_cost_hour', '<', $request->cost);
+                $qu->where('field_cost_hour', '<=', $request->cost);
             });
         })
         ->where('isdeleted', 0)->with('field_detail')
