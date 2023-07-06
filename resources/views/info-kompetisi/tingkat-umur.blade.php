@@ -17,26 +17,29 @@
                         </div>
                         <div class="col-2"></div>
                     </div>
-                    <div class="row py-5 mx-5">
-                        <div class="col-md-6 mb-2">
-                            <label for="inputState" class="form-label">Nama Kompetisi</label>
-                            <input type="text" class="form-control" id="ExpiredDate"
-                                placeholder="Tuliskan nama kompetisi yang ingin anda cari...">
+                    <form action="{{ route('tingkat-umur.index') }}" method="post">
+                        {{ csrf_field() }}
+                        <div class="row py-5 mx-5">
+                            <div class="col-md-6 mb-2">
+                                <label for="inputState" class="form-label">Nama Kompetisi</label>
+                                <input type="text" class="form-control" id="ExpiredDate" name="tour_name"
+                                    placeholder="Tuliskan nama kompetisi yang ingin anda cari...">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="inputState" class="form-label">Kategori Umur</label>
+                                <select id="inputState" class="form-select" name="category">
+                                    <option selected disabled>Pilih Kategori ...</option>
+                                    <option value="U-16">U-16</option>
+                                    <option value="U-19">U-19</option>
+                                    <option value="U-23">U-23</option>
+                                    <option value="-">Semua Usia (Umum)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2 mt-4">
+                                <button type="submit" class="btn-green-hover" style="margin-top: 6px">Cari Kompetisi</button>
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <label for="inputState" class="form-label">Kategori Umur</label>
-                            <select id="inputState" class="form-select">
-                                <option selected>Pilih Kategori ...</option>
-                                <option value="1">17</option>
-                                <option value="2">20</option>
-                                <option value="3">23</option>
-                                <option value="3">Semua Usia (Umum)</option>
-                            </select>
-                        </div>
-                        <div class="col-md-2 mt-4">
-                            <button type="button" class="btn-green-hover" style="margin-top: 6px">Cari Kompetisi</button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
