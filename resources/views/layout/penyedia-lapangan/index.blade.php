@@ -70,15 +70,22 @@
     @endpush
 
     @push('script-mitra')
+        {{-- Data Table --}}
+        <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.4.0/js/responsive.bootstrap5.min.js"></script>
+        <script src="https://cdn.datatables.net/fixedheader/3.3.1/js/dataTables.fixedHeader.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.2/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.bootstrap5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.colVis.min.js"></script>
         {{-- Sweet Alert --}}
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
         {{-- Select2 --}}
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
         <script type="text/javascript">
             $(document).ready(function() {
-                var tabel_mitra = $('#tabel-mitra').DataTable({
+                var tabel_mitra = $('#tabel_mitra').DataTable({
                     processing: true,
                     serverSide: true,
                     responsive: true,
@@ -98,7 +105,6 @@
                             data: 'order_date',
                             name: 'order_date'
                         },
-                        // {data: 'hours', name: 'hours'},
                         {
                             data: 'price_sum',
                             name: 'price_sum'
@@ -127,87 +133,38 @@
                     });
                     var acc_id = $(this).data('id');
                     Swal.fire({
-                        title: 'Apakah anda yakin ingin menerima pemesanan ini?',
-                        text: "Pemesanan yang telah diterima tidak dapat diubah statusnya!",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        cancelButtonText: 'Batal',
-                        confirmButtonText: 'Ya, terima data!'
+                    title: 'Apakah anda yakin ingin menerima data ini?',
+                    text: "Data yang telah diterima tidak dapat diubah statusnya!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    cancelButtonText: 'Batal',
+                    confirmButtonText: 'Ya, terima data!'
                     }).then((result) => {
-                        if (result.isConfirmed) {
-                            $.ajax({
-                                method: "POST",
-                                dataType: "json",
-
-                                data: {
-                                    'id': acc_id,
-                                }
-                            }).done(function(data, textStatus, jqXHR) {
-                                Swal.fire(
-                                    'Berhasil!',
-                                    'Pemesanan berhasil diterima!',
-                                    'success'
-                                )
-                                table_mitra.ajax.reload();
-                            })
-                        } else {
-                            console.log('Penerimaan data gagal!');
-                        }
-                    });
-                });
-
-                // alert button tolak
-                $(document).on('click', '#rejectBtn', function() {
-                    $.ajaxSetup({
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        }
-                    });
-                    var reject_id = $(this).data('id');
-                    Swal.fire({
-                        title: 'Apakah anda yakin ingin menolak pemesanan ini?',
-                        text: "Pemesanan yang telah ditolak tidak dapat diubah statusnya!",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        cancelButtonText: 'Batal',
-                        confirmButtonText: 'Ya, tolak data!'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            $.ajax({
-                                method: "POST",
-                                dataType: "json",
-
-                                data: {
-                                    'id': reject_id,
-                                }
-                            }).done(function(data, textStatus, jqXHR) {
-                                Swal.fire(
-                                    'Berhasil!',
-                                    'Pemesanan berhasil ditolak!',
-                                    'success'
-                                )
-                                table_mitra.ajax.reload();
-                            })
-                        } else {
-                            console.log('Penolakan data gagal!');
-                        }
-                    });
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            method: "POST",
+                            dataType: "json",
+                            url: '{{route("acc-order")}}',
+                            data: {
+                                'id': acc_id,
+                            }
+                        }).done(function(data, textStatus, jqXHR) {
+                            Swal.fire(
+                            'Berhasil!',
+                            'Data berhasil diterima!',
+                            'success'
+                            )
+                            tabel_mitra.ajax.reload();
+                        })
+                    }
+                    else{
+                        console.log('Penerimaan data gagal!');
+                    }
                 });
             });
+        });
         </script>
-
-        {{-- Data Table --}}
-        <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
-        <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
-        <script src="https://cdn.datatables.net/responsive/2.4.0/js/responsive.bootstrap5.min.js"></script>
-        <script src="https://cdn.datatables.net/fixedheader/3.3.1/js/dataTables.fixedHeader.min.js"></script>
-        <script src="https://cdn.datatables.net/buttons/2.3.2/js/dataTables.buttons.min.js"></script>
-        <script src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.bootstrap5.min.js"></script>
-        <script src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.colVis.min.js"></script>
     @endpush
 @endsection

@@ -84,7 +84,7 @@ Route::get('aboutus-index', [MiscController::class, 'aboutus'])->name('aboutus-i
 
 // Vendor
 Route::get('index-vendor', [VendorController::class, 'index'])->name('index-vendor');
-Route::get('acc-order/{id}', [VendorController::class, 'accorder'])->name('acc-order');
+Route::post('acc-order', [VendorController::class, 'accorder'])->name('acc-order');
 Route::get('deny-order/{id}', [VendorController::class, 'denyorder'])->name('deny-order');
 Route::get('detail-order/{id}', [VendorController::class, 'detailorder'])->name('detail-order');
 Route::post('store-deny-order/{id}', [VendorController::class, 'storecancelorder'])->name('store-deny-order');

@@ -39,9 +39,9 @@ class VendorController extends Controller
                     })
                     ->addColumn('action', function ($row) {
                         if ($row->confirmation == 0) {
-                            $button = "<button style='margin-right: 5px;' class='setuju btn btn-sm  btn-danger text-white' data-id='" . $row['id'] . "' id='rejectBtn' href=''>Tolak</button>";
+                            $button = "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-danger text-white' data-id='" . $row['id'] . "' id='rejectBtn' href='".route('deny-order', [$row->id])."'>Tolak</a>";
                             $button .= "<button style='margin-right: 5px;' class='setuju btn btn-sm  btn-success text-white' data-id='" . $row['id'] . "' id='accBtn' href=''>Terima</button>";
-                            $button .= "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-info text-white' data-id='" . $row['id'] . "' id='detailBtn' href='" . route('detail-order', [$row->id]) . "'>Detail Order</a>";
+                            $button .= "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-info text-white' data-id='" . $row['id'] . "' id='detailBtn' href='".route('detail-order', [$row->id])."'>Detail Order</a>";
                         } elseif ($row->confirmation == 1 || $row->confirmation == 2) {
                             $button = '';
                             $button .= "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-info text-white' data-id='" . $row['id'] . "' id='detailBtn' href='" . route('detail-order', [$row->id]) . "'>Detail Order</a>";
@@ -56,26 +56,26 @@ class VendorController extends Controller
         }
     }
 
-    public function accorder($id)
+    public function accorder(Request $request)
     {
         if (!Sentinel::getUser()) {
             return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else {
-            $order = RentOrder::where('id', $id)->first();
+            $order = RentOrder::where('id', $request->id)->first();
             $user = User::where('id', $order->user_id)->first();
             $order->confirmation = 1;
             $order->save();
             $user->successful_transaction = $user->successful_transaction + 1;
             if ($user->successful_transaction == 8) {
                 $user->vip_status = 1;
+                $user->save();
             }
             $user->save();
-            return redirect()->route('auth.dashboard')->with('success', 'Order telah dikonfirmasi! Silahkan persiapkan lapangan anda untuk pemesanan terebut.');
+            return redirect()->route('auth.dashboard')->with('success', 'Order telah dikonfirmasi! Silahkan persiapkan lapangan anda untuk pemesanan tersebut.');
         }
     }
 
-    public function denyorder($id)
-    {
+    public function denyorder($id){
         if (!Sentinel::getUser()) {
             return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
         } else {
