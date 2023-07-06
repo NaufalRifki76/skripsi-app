@@ -79,7 +79,7 @@ Route::get('mitra.home', [MitraController::class, 'mitraIndex'])->name('mitra.ho
 // FAQ
 Route::get('faq-index', [FAQController::class, 'index'])->name('faq-index');
 
-//Miscellaneous
+//About-us
 Route::get('aboutus-index', [MiscController::class, 'aboutus'])->name('aboutus-index');
 
 // Vendor

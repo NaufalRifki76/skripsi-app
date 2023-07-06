@@ -8,10 +8,8 @@ use Illuminate\Http\Request;
 
 class MiscController extends Controller{
     public function aboutus(){
-        if(!Sentinel::getUser()) {
-            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
-        } else{
+       
             return view('tentang-kami.index');
-        }
+      
     }
 }
