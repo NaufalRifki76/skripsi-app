@@ -166,8 +166,8 @@
                             lapangan ini!</p>
                         <p class="fs-5 mt-3">Cari perlengkapan futsal yang anda inginkan
                             dengan menekan tombol di bawah!</p>
-                        <button type="button" id="" name="" class="btn-green-hover">Cari
-                            Perlengkapan</button>
+                        <a href="{{ route('sewa-perlengkapan') }}" id="" name="" class="btn-green-hover text-decoration-none">Cari
+                            Perlengkapan</a>
                     </div>
                 </div>
 
