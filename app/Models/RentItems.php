@@ -14,4 +14,9 @@ class RentItems extends Model
     ];
 
     protected $table = 'rent_items';
+
+    public function venue_rent_item()
+    {
+        return $this->belongsTo(VenueRentItems::class, 'item_id', 'id');
+    }
 }

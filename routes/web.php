@@ -11,6 +11,7 @@ use App\Http\Controllers\Features\MitraController;
 use App\Http\Controllers\Features\ProfileController;
 use App\Http\Controllers\Features\RefundController;
 use App\Http\Controllers\Features\VipController;
+use App\Http\Controllers\SewaPerlengkapanController;
 use App\Http\Controllers\Vendor\VendorController;
 
 use Illuminate\Support\Facades\Route;
@@ -136,9 +137,10 @@ Route::get('/riwayat-pemesanan', function () {
 // })->name('mitra.join');
 
 // Perlengkapan
-Route::get('/sewa-perlengkapan', function () {
-    return view('sewa-perlengkapan.index');
-})->name('sewa-perlengkapan.index');
+Route::match(['get','post'], '/sewa-perlengkapan', [SewaPerlengkapanController::class, 'index'])->name('sewa-perlengkapan');
+// Route::get('/sewa-perlengkapan', function () {
+//     return view('sewa-perlengkapan.index');
+// })->name('sewa-perlengkapan.index');
 
 // Kompetisi
 Route::get('/info-kompetisi', function () {

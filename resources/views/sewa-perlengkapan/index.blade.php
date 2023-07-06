@@ -12,18 +12,21 @@
             </div>
             <div class="col-2"></div>
         </div>
-        <div class="row py-5 mx-5">
-            <div class="col-md-10 mb-2">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="nama-lapangan"
-                        placeholder="Nama Lapangan Yang Anda Cari ...">
-                    <label for="nama-lapangan">Nama Lapangan</label>
+        <form action="{{ route('sewa-perlengkapan') }}" method="POST">
+            {{ csrf_field() }}
+            <div class="row py-5 mx-5">
+                <div class="col-md-10 mb-2">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="nama-lapangan" name="venue"
+                            placeholder="Nama Lapangan Yang Anda Cari ...">
+                        <label for="nama-lapangan">Nama Lapangan</label>
+                    </div>
+                </div>
+                <div class="col-md-2 text-center">
+                    <button type="submit" id="" name="" class="btn-green-transition mt-2">Cari Perlengkapan</button>
                 </div>
             </div>
-            <div class="col-md-2 text-center">
-                <button type="submit" id="" name="" class="btn-green-transition mt-2">Cari Perlengkapan</button>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
     <div class="container">
@@ -43,23 +46,43 @@
         <p class="h4 fw-normal text-center my-5" style="color: #FCE700">Pilih lapangan terlebih dahulu!</p>
 
         {{-- Jika belum milih lapangan tidak akan muncul card dibawah, jika sudah milih lapangan akan muncul card dibawah --}}
-        <div class="card mt-5 border d-flex shadow p-3 m-5">
-            <div class="row g-3">
-                <div class="col-12">
-                    <label for="inputState" class="form-label">Jenis perlengkapan yang tersedia di "Nama Lapangan"</label>
-
+        @if ($search != null)
+            @if(!$venue_rent_items->isEmpty())
+                <div class="card mt-5 border d-flex shadow p-3 m-5">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label for="inputState" class="form-label">Jenis perlengkapan yang tersedia di "{{ $search }}"</label>
+                        </div>
+                        <table id="tabel-perlengkapan" class="table table-striped table-bordered display" width="100%" cellspacing="0">
+                        <thead style="background-color: #439a97">
+                            <tr>
+                                <th class="text-center">Nama perlengkapan</th>
+                                <th class="text-center">Jumlah</th>
+                                <th class="text-center">Harga Sewa (per-sesi)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($venue_rent_items as $vri)
+                                <tr>
+                                    <td class="text-center">{{ $vri->rent_item->item_name }}</td>
+                                    <td class="text-center">{{ $vri->item_qty }}</td>
+                                    <td class="text-center">{{ $vri->item_rent_cost }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    </div>
                 </div>
-                <table id="tabel-perlengkapan" class="table table-striped table-bordered display" width="100%" cellspacing="0">
-                  <thead style="background-color: #439a97">
-                      <tr>
-                          <th class="text-center">Nama perlengkapan</th>
-                          <th class="text-center">Jumlah</th>
-                          <th class="text-center">Harga Sewa (per-sesi)</th>
-                      </tr>
-                  </thead>
-              </table>
-            </div>
-        </div>
+            @else
+                <div class="card mt-5 border d-flex shadow p-3 m-5">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label for="inputState" class="form-label">Tidak ditemukan data yang cocok dengan "{{ $search }}"</label>
+                        </div>
+                    </div>
+                </div>
+            @endif
+        @endif
     </div>
 
     @push('css')
