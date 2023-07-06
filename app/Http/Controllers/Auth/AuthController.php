@@ -79,8 +79,8 @@ class AuthController extends Controller
             }
             return redirect()->route('auth.dashboard');
         } catch (\Throwable $th) {
-            dd($th);
-            // return back()->withInput()->withErrors(["error" => $th->getMessage()]);
+            // dd($th);
+            return back()->withInput()->withErrors(["error" => $th->getMessage()]);
         }
     }
 

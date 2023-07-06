@@ -9,6 +9,7 @@
 
 <form action="{{route('lapangan-transfer-store', ['rentorder_id' => $order_info->id])}}" method="POST" enctype="multipart/form-data">
     <div class="container">
+        @include('session-flash')
         <p class="h3 fw-bold text-center py-5" style="color: #439A97">Halaman Pembayaran</p>
         <div class="row">
             <div class="col-md-2"></div>
