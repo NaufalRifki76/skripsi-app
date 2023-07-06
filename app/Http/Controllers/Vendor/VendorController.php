@@ -36,14 +36,19 @@ class VendorController extends Controller{
                     return "Rp. $row->price_sum";
                 })
                 ->addColumn('action', function ($row){
-                    $button = "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-danger text-white' data-id='".$row['id']."' id='accBtn' href='".route('deny-order', [$row->id])."'>Tolak</a>";
-                    $button .= "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-success text-white' data-id='".$row['id']."' id='denyBtn' href='".route('acc-order', [$row->id])."'>Terima</a>";
-                    $button .= "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-info text-white' data-id='".$row['id']."' id='detailBtn' href='".route('detail-order', [$row->id])."'>Detail Order</a>";
+                    if ($row->confirmation == 0) {
+                        $button = "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-danger text-white' data-id='".$row['id']."' id='accBtn' href='".route('deny-order', [$row->id])."'>Tolak</a>";
+                        $button .= "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-success text-white' data-id='".$row['id']."' id='denyBtn' href='".route('acc-order', [$row->id])."'>Terima</a>";
+                        $button .= "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-info text-white' data-id='".$row['id']."' id='detailBtn' href='".route('detail-order', [$row->id])."'>Detail Order</a>";
+                    } elseif ($row->confirmation == 1 || $row->confirmation == 2) {
+                        $button = '';
+                        $button .= "<a style='margin-right: 5px;' class='setuju btn btn-sm  btn-info text-white' data-id='".$row['id']."' id='detailBtn' href='".route('detail-order', [$row->id])."'>Detail Order</a>";
+                    }
                     return $button;
                 })
                 ->rawColumns(['action'])
                 ->make(true);
-
+                
                 //penyedia-lapangan.index
             }
         }
