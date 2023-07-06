@@ -1,34 +1,59 @@
 @extends('layout.penyedia-lapangan.layout')
 
 @section('mitra')
-    {{-- @include('layout.penyedia-lapangan.modal') --}}
-    <div class="mx-5 my-3">
-        @include('session-flash')
-    </div>
-    <div class="text-center">
-        <h2 class="my-5" style="color: #439a97">Temukan data pemesan lapangan anda pada tabel di bawah!</h2>
-    </div>
-    <div class="card mt-5 border d-flex shadow p-3 m-5">
-        <div class="row g-3">
-            <div class="col-12">
-                <label for="inputState" class="form-label">Data Pemesan Lapangan</label>
-            </div>
-            <table id="tabel-mitra" class="table table-striped table-bordered display text-center" width="100%"
-                cellspacing="0">
-                <thead style="background-color: #439a97">
-                    <tr>
-                        <th class="text-center">Nama Pemesan</th>
-                        <th class="text-center">Lapangan</th>
-                        <th class="text-center">Tanggal</th>
-                        <th class="text-center">Total Harga</th>
-                        <th class="text-center">Status</th>
-                        <th class="text-center">Action</th>
-                    </tr>
-                </thead>
-            </table>
+{{-- @include('layout.penyedia-lapangan.modal') --}}
+<div class="mx-5 my-3">
+    @include('session-flash')
+</div>
+<div class="text-center">
+    <h2 class="my-5" style="color: #439a97">Temukan data pemesan lapangan anda pada tabel di bawah!</h2>
+</div>
+<div class="card mt-5 border d-flex shadow p-3 m-5">
+    <div class="row g-3">
+        <div class="col-12">
+            <label for="inputState" class="form-label">Data Pemesan Lapangan</label>
         </div>
+        <table id="tabel-mitra" class="table table-striped table-bordered display text-center" width="100%" cellspacing="0" >
+            <thead style="background-color: #439a97">
+                <tr>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">Nama Pemesan</th>
+                    <th class="text-center">Lapangan</th>
+                    <th class="text-center">Tanggal</th>
+                    <th class="text-center">Total Harga</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center">Action</th>
+                </tr>
+            </thead>
+        </table>
     </div>
 
+<script type="text/javascript">
+    $(document).ready(function(){  
+        var tabel_mitra = $('#tabel-mitra').DataTable({
+            processing: true,
+            serverSide: true,
+            responsive: true,
+            ajax: {
+                url: "{{route('index-vendor')}}",
+                type: 'GET',
+            },
+            columns: [
+                {data: 'id', name: 'id'},
+                {data: 'cust_name', name: 'cust_name'},
+                {data: 'field', name: 'field'},
+                {data: 'order_date', name: 'order_date'},
+                {data: 'price_sum', name: 'price_sum'},
+                {data: 'confirmation', name: 'confirmation'},
+                {data: 'action', name: 'action'}
+            ],
+            
+            order: [
+                [0, 'asc']
+            ],
+        });
+    });
+</script>
 
 
     @push('css-mitra')
