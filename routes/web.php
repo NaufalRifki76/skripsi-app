@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Features\BookingController;
 use App\Http\Controllers\Features\CompetitionController;
+use App\Http\Controllers\Features\FAQController;
 use App\Http\Controllers\Features\MiscController;
 use App\Http\Controllers\Features\MitraController;
 use App\Http\Controllers\Features\ProfileController;
@@ -72,8 +73,10 @@ Route::post('mitra.join', [MitraController::class, 'store'])->name('mitra.join')
 // Mitra
 Route::get('mitra.home', [MitraController::class, 'mitraIndex'])->name('mitra.home');
 
+// FAQ
+Route::get('faq-index', [FAQController::class, 'index'])->name('faq-index');
+
 //Miscellaneous
-Route::get('faq-index', [MiscController::class, 'faq'])->name('faq-index');
 Route::get('aboutus-index', [MiscController::class, 'aboutus'])->name('aboutus-index');
 
 // Vendor
@@ -82,9 +85,6 @@ Route::get('acc-order/{id}', [VendorController::class, 'accorder'])->name('acc-o
 Route::get('deny-order/{id}', [VendorController::class, 'denyorder'])->name('deny-order');
 Route::get('detail-order/{id}', [VendorController::class, 'detailorder'])->name('detail-order');
 Route::post('store-deny-order/{id}', [VendorController::class, 'storecancelorder'])->name('store-deny-order');
-
-
-
 
 // --------------------- BAGIAN BAWAH INI UNTUK TESTING -------------------- //
 // Route::get('/', function () {
@@ -207,7 +207,6 @@ Route::get('/email', function () {
 // })->name('lupa-password.kirim-email');
 
 Route::match(['get', 'post'],"/forgot-password/{token}", [ForgotPassController::class, 'changePass'])->name("forgot-pass-mail");
-
 
 Route::get('/forgot-password', [ForgotPassController::class, 'index'])->name('forgotpass');
 
