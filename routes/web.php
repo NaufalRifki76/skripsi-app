@@ -31,6 +31,12 @@ Route::get('logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 // Profile
 Route::get('riwayat-order', [ProfileController::class, 'index'])->name('riwayat-order');
+Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
+// Profile
+
+// Route::get('/profile', function () {
+//     return view('profile.index');
+// })->name('profile.index');
 
 // Subscribe
 Route::get('subscribe.index', [VipController::class, 'index'])->name('subscribe.index');
@@ -75,6 +81,9 @@ Route::get('acc-order/{id}', [VendorController::class, 'accorder'])->name('acc-o
 Route::get('deny-order/{id}', [VendorController::class, 'denyorder'])->name('deny-order');
 Route::get('detail-order/{id}', [VendorController::class, 'detailorder'])->name('detail-order');
 Route::post('store-deny-order/{id}', [VendorController::class, 'storecancelorder'])->name('store-deny-order');
+
+
+
 
 // --------------------- BAGIAN BAWAH INI UNTUK TESTING -------------------- //
 // Route::get('/', function () {
@@ -163,10 +172,6 @@ Route::get('/kompetisi-daftar', function () {
     return view('info-kompetisi.daftar');
 })->name('daftar.kompetisi');
 
-// Profile
-Route::get('/profile', function () {
-    return view('profile.index');
-})->name('profile.index');
 
 
 // Penyedia Lapangan
