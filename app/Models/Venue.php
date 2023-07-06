@@ -49,6 +49,11 @@ class Venue extends Model
         return $this->hasMany(RentHours::class);
     }
 
+    public function rent_order()
+    {
+        return $this->belongsTo(RentOrder::class, 'id', 'venue_id');
+    }
+
     public function rent_hours_available()
     {
         return $this->hasOne(RentHoursAvailable::class);

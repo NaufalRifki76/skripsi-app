@@ -31,7 +31,7 @@ Route::post('login', [AuthController::class, 'login'])->name('auth.login');
 Route::get('logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 // Profile
-Route::get('riwayat-order', [ProfileController::class, 'index'])->name('riwayat-order');
+Route::match(['get', 'post'] ,'riwayat-order', [ProfileController::class, 'index'])->name('riwayat-order');
 Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
 // Profile
 

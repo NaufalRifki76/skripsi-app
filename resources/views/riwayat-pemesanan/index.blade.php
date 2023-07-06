@@ -23,18 +23,21 @@
     <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
-            <div class="row py-4 mx-5">
-                <div class="col-md-10 mb-2">
-                    <div class="form-floating">
-                        <input type="text" class="form-control" id="nama-lapangan"
-                            placeholder="Nama Lapangan Yang Anda Cari ...">
-                        <label for="nama-lapangan">Nama Lapangan</label>
+            <form action="{{ route('riwayat-order') }}" method="post">
+                {{ csrf_field() }}
+                <div class="row py-4 mx-5">
+                    <div class="col-md-10 mb-2">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="nama-lapangan"
+                                placeholder="Nama Lapangan Yang Anda Cari ..." name="search">
+                            <label for="nama-lapangan">Nama Lapangan</label>
+                        </div>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <button type="submit" id="" name="" class="btn-green-transition mt-2">Cari Lapangan</button>
                     </div>
                 </div>
-                <div class="col-md-2 text-center">
-                    <button type="submit" id="" name="" class="btn-green-transition mt-2">Cari Lapangan</button>
-                </div>
-            </div>
+            </form>
         </div>
         <div class="col-1"></div>
     </div>

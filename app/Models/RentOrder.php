@@ -28,4 +28,9 @@ class RentOrder extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function venue()
+    {
+        return $this->hasOne(Venue::class, 'id', 'venue_id');
+    }
 }
