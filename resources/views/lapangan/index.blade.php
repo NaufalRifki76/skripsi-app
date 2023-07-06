@@ -53,25 +53,28 @@
                 </div>
                 <div class="col-2"></div>
             </div>
-            <div class="row py-5 mx-5">
-                <div class="col-md-6 mb-2">
-                    <div class="form-floating">
-                        <input type="text" class="form-control" id="nama-lapangan"
-                            placeholder="Nama Lapangan Yang Anda Cari ...">
-                        <label for="nama-lapangan">Nama Lapangan</label>
+            <form action="{{ route('lapangan-index') }}" method="post">
+                {{ csrf_field() }}
+                <div class="row py-5 mx-5">
+                    <div class="col-md-6 mb-2">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="nama-lapangan" name="search"
+                                placeholder="Nama Lapangan Yang Anda Cari ...">
+                            <label for="nama-lapangan">Nama Lapangan</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="number" class="form-control" id="harga-sewa" placeholder="Nominal Harga Sewa ..." name="cost">
+                            <label for="harga-sewa">Harga Sewa</label>
+                        </div>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <button type="submit" id="" name="" class="btn-green-transition mt-2">Cari
+                            Lapangan</button>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="form-floating">
-                        <input type="number" class="form-control" id="harga-sewa" placeholder="Nominal Harga Sewa ...">
-                        <label for="harga-sewa">Harga Sewa</label>
-                    </div>
-                </div>
-                <div class="col-md-2 text-center">
-                    <button type="submit" id="" name="" class="btn-green-transition mt-2">Cari
-                        Lapangan</button>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
     <div class="container py-5">

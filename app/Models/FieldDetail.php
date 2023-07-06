@@ -18,7 +18,7 @@ class FieldDetail extends Model
 
     public function field_detail()
     {
-        return $this->belongsTo(Venue::class);
+        return $this->belongsTo(Venue::class, 'venue_id', 'id');
     }
 
     public function field_base64()

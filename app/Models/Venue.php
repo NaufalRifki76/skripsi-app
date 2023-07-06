@@ -36,7 +36,7 @@ class Venue extends Model
 
     public function field_detail()
     {
-        return $this->hasMany(FieldDetail::class);
+        return $this->hasMany(FieldDetail::class, 'venue_id', 'id');
     }
 
     public function venue_rent_item()

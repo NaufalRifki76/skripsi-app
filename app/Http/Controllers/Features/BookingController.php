@@ -15,13 +15,29 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class BookingController extends Controller{
-    public function index(){
-        if(!Sentinel::getUser()) {
-            return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
-        } else{
+    public function index(Request $request){
+        if(request()->isMethod('get')){
+            if(!Sentinel::getUser()) {
+                return redirect()->route('return.login')->with('failed', 'Silahkan login terlebih dahulu!');
+            }
+            // get all data
             $venue = Venue::where('isdeleted', 0)->get();
+    
             return view('lapangan.index', compact('venue'));
         }
+        // get data by search
+        $venue = Venue::when(isset($request->search), function($q) use($request){
+            $q->where('venue_name', 'LIKE', '%'.$request->search.'%');
+        })
+        ->when(isset($request->cost), function($q) use($request){
+            $q->whereHas('field_detail', function($qu) use($request){
+                $qu->where('field_cost_hour', '<', $request->cost);
+            });
+        })
+        ->where('isdeleted', 0)->with('field_detail')
+        ->get();
+
+        return view('lapangan.index', compact('venue'));
     }
 
     public function venuedetail($id){
