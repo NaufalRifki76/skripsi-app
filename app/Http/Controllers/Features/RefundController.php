@@ -96,7 +96,9 @@ class RefundController extends Controller{
                 DB::commit();
                 return redirect()->route('refund-index')->with('success', 'Permintaan refund anda berhasil disimpan, silahkan menunggu untuk info selanjutnya!');
             } catch (\Throwable $th) {
-                dd($th);
+                // dd($th);
+                DB::rollBack();
+                return back()->with('failed', 'Cek kelengkapan dari form anda!');
             }
         }
     }

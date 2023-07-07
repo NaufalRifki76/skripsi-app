@@ -133,7 +133,7 @@ class MitraController extends Controller
                 DB::commit();
                 return redirect()->route('mitra.index')->with('success', 'Aplikasi mitra anda sedang kami review!');
             } catch (\Throwable $th) {
-                dd($th);
+                // dd($th);
                 DB::rollBack();
                 return back()->with('failed', 'Cek kelengkapan dari form anda!');
             }

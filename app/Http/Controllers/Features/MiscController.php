@@ -8,8 +8,6 @@ use Illuminate\Http\Request;
 
 class MiscController extends Controller{
     public function aboutus(){
-       
-            return view('tentang-kami.index');
-      
+        return view('tentang-kami.index');
     }
 }

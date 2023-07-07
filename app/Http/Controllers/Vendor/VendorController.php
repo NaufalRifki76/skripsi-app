@@ -120,7 +120,7 @@ class VendorController extends Controller
                 // dd($hours->$temp, $cek);
                 return redirect()->route('auth.dashboard')->with('success', 'Order berhasil ditolak!');
             } catch (\Throwable $th) {
-                dd($th);
+                // dd($th);
                 DB::rollBack();
                 return back()->with('failed', 'Cek kelengkapan dari form anda!');
             }
