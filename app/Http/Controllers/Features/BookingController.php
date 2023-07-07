@@ -85,7 +85,7 @@ class BookingController extends Controller{
                 'order_date' => 'required',
             ]);
 
-            $availability = RentHours::where('order_date', $request->order_date)->get();
+            $availability = RentHours::where('order_date', $request->order_date)->where('field_id', $fieldid)->get();
             $date = $request->order_date;
             $hours = RentHoursAvailable::where('venue_id', $venueid)->first();
             $venue = Venue::where('id', $venueid)->first();

@@ -107,11 +107,6 @@ class VendorController extends Controller
                     } else {
                         $temp = 'up' . $i;
                     }
-
-                    // $cek = $hours->$temp;
-                    // if($cek != null){
-                    //     dd($cek, 'cek');
-                    // }
                     $hours->$temp = null;
                 }
                 $hours->updated_at = Carbon::now();
