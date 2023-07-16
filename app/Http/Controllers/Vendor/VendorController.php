@@ -34,6 +34,110 @@ class VendorController extends Controller
                             return 'Ditolak';
                         }
                     })
+                    ->addColumn('start_hour', function ($row) {
+                        $hour = RentHours::where('order_id', $row->id)->first();
+                        if ($hour->up00 == 1) {
+                            return "00.00";
+                        } elseif ($hour->up01 == 1) {
+                            return "01.00";
+                        } elseif ($hour->up02 == 1) {
+                            return "02.00";
+                        } elseif ($hour->up03 == 1) {
+                            return "03.00";
+                        } elseif ($hour->up04 == 1) {
+                            return "04.00";
+                        } elseif ($hour->up05 == 1) {
+                            return "05.00";
+                        } elseif ($hour->up06 == 1) {
+                            return "06.00";
+                        } elseif ($hour->up07 == 1) {
+                            return "07.00";
+                        } elseif ($hour->up08 == 1) {
+                            return "08.00";
+                        } elseif ($hour->up09 == 1) {
+                            return "09.00";
+                        } elseif ($hour->up10 == 1) {
+                            return "10.00";
+                        } elseif ($hour->up11 == 1) {
+                            return "11.00";
+                        } elseif ($hour->up12 == 1) {
+                            return "12.00";
+                        } elseif ($hour->up13 == 1) {
+                            return "13.00";
+                        } elseif ($hour->up14 == 1) {
+                            return "14.00";
+                        } elseif ($hour->up15 == 1) {
+                            return "15.00";
+                        } elseif ($hour->up16 == 1) {
+                            return "16.00";
+                        } elseif ($hour->up17 == 1) {
+                            return "17.00";
+                        } elseif ($hour->up18 == 1) {
+                            return "18.00";
+                        } elseif ($hour->up19 == 1) {
+                            return "19.00";
+                        } elseif ($hour->up20 == 1) {
+                            return "20.00";
+                        } elseif ($hour->up21 == 1) {
+                            return "21.00";
+                        } elseif ($hour->up22 == 1) {
+                            return "22.00";
+                        } elseif ($hour->up23 == 1) {
+                            return "23.00";
+                        }
+                    })
+                    ->addColumn('end_hour', function ($row) {
+                        $hour = RentHours::where('order_id', $row->id)->first();
+                        if ($hour->up23 == 1) {
+                            return "00.00";
+                        } elseif ($hour->up22 == 1) {
+                            return "23.00";
+                        } elseif ($hour->up21 == 1) {
+                            return "22.00";
+                        } elseif ($hour->up20 == 1) {
+                            return "21.00";
+                        } elseif ($hour->up19 == 1) {
+                            return "20.00";
+                        } elseif ($hour->up18 == 1) {
+                            return "19.00";
+                        } elseif ($hour->up17 == 1) {
+                            return "18.00";
+                        } elseif ($hour->up16 == 1) {
+                            return "17.00";
+                        } elseif ($hour->up15 == 1) {
+                            return "16.00";
+                        } elseif ($hour->up14 == 1) {
+                            return "15.00";
+                        } elseif ($hour->up13 == 1) {
+                            return "14.00";
+                        } elseif ($hour->up12 == 1) {
+                            return "13.00";
+                        } elseif ($hour->up11 == 1) {
+                            return "12.00";
+                        } elseif ($hour->up10 == 1) {
+                            return "11.00";
+                        } elseif ($hour->up09 == 1) {
+                            return "10.00";
+                        } elseif ($hour->up08 == 1) {
+                            return "09.00";
+                        } elseif ($hour->up07 == 1) {
+                            return "08.00";
+                        } elseif ($hour->up06 == 1) {
+                            return "07.00";
+                        } elseif ($hour->up05 == 1) {
+                            return "06.00";
+                        } elseif ($hour->up04 == 1) {
+                            return "05.00";
+                        } elseif ($hour->up03 == 1) {
+                            return "04.00";
+                        } elseif ($hour->up02 == 1) {
+                            return "03.00";
+                        } elseif ($hour->up01 == 1) {
+                            return "02.00";
+                        } elseif ($hour->up00 == 1) {
+                            return "01.00";
+                        }
+                    })
                     ->addColumn('price_sum', function ($row) {
                         return "Rp. $row->price_sum";
                     })

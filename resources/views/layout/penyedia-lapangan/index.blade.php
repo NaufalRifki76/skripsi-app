@@ -20,6 +20,8 @@
                     <th class="text-center">Nama Pemesan</th>
                     <th class="text-center">Lapangan</th>
                     <th class="text-center">Tanggal</th>
+                    <th class="text-center">Jam Mulai</th>
+                    <th class="text-center">Jam Selesai</th>
                     <th class="text-center">Total Harga</th>
                     <th class="text-center">Status</th>
                     <th class="text-center">Action</th>
@@ -43,13 +45,15 @@
                 {data: 'cust_name', name: 'cust_name'},
                 {data: 'field', name: 'field'},
                 {data: 'order_date', name: 'order_date'},
+                {data: 'start_hour', name: 'start_hour'},
+                {data: 'end_hour', name: 'end_hour'},
                 {data: 'price_sum', name: 'price_sum'},
                 {data: 'confirmation', name: 'confirmation'},
                 {data: 'action', name: 'action'}
             ],
             
             order: [
-                [0, 'asc']
+                [0, 'desc']
             ],
         });
     });
